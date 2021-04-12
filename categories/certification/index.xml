@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>certification on Henry Post</title><link>/categories/certification/</link><description>Recent content in certification on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="https://www.wangchucheng.com/">C. Wang&lt;/a> and &lt;a href="https://www.ruiqima.com/">R. Ma&lt;/a></copyright><lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/certification/index.xml" rel="self" type="application/rss+xml"/><item><title>Certified Secure Software Lifecycle Professional (CSSLP) Notes</title><link>/posts/2020-06-15-csslp-notes/</link><pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate><guid>/posts/2020-06-15-csslp-notes/</guid><description>TOC https://www.isc2.org/Certifications/CSSLP
+This is a collection of notes I&amp;rsquo;ve taken for the CSSLP. Hopefully they are useful to you as well!
+I made a program to study for this test. Feel free to use it.
+https://github.com/HenryFBP/pyconsolequiz
+This will become a table of contents. Don&amp;rsquo;t touch!
+{:toc}
+Secure Software Concepts Core Concepts Main concept is about restricting user access Confidentiality Keep info away from people who don&amp;rsquo;t NEED to know it</description></item></channel></rss>
