@@ -21,6 +21,12 @@ If you forgot to do that, you can run these commands to initialize and fetch fro
 
 Read <https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/>
 
+## New posts/etc
+
+Read <https://www.wangchucheng.com/en/docs/hugo-eureka/content-management/>
+
+TL;DR `hugo new content/posts/mypost.md`
+
 ## Other Resources
 
 - <https://ruddra.com/hugo-add-toc-anywhere/>
