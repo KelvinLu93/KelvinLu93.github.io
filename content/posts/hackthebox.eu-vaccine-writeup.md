@@ -1,7 +1,9 @@
 ---
+layout: post
 title: "Hackthebox.eu \"Vaccine\" box Writeup"
 date: 2021-05-08T16:36:30-05:00
 draft: false
+categories: [sql injection, reverse shell, programming, security, hacking]
 ---
 
 Just finished my third hackthebox.eu box, and made my first proper writeup.
