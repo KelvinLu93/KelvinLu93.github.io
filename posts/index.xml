@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Henry Post</title><link>/posts/</link><description>Recent content in Posts on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Sat, 08 May 2021 16:36:30 -0500</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hackthebox.eu "Vaccine" box Writeup</title><link>/posts/hackthebox.eu-vaccine-writeup/</link><pubDate>Sat, 08 May 2021 16:36:30 -0500</pubDate><guid>/posts/hackthebox.eu-vaccine-writeup/</guid><description>Just finished my third hackthebox.eu box, and made my first proper writeup.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Henry Post</title><link>/posts/</link><description>Recent content in Posts on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Crash Course Notes</title><link>/posts/2021-05-12-docker-crash-course/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>/posts/2021-05-12-docker-crash-course/</guid><description>The course The course is below.
+https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
+My work for this course can be found here.
+https://github.com/HenryFBP/docker-crash-course
+Section 1: Get Started with Docker 1. Course Overview See course.
+2. Support See course.
+3. Support See course.
+4. Slides See course.
+5. Intro to virtualization Docker is only one implementation of containerization.
+Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.
+This is a problem as you need 1 machine per app, and this is wasteful and wastes CPU and RAM as they are underutilized.</description></item><item><title>Hackthebox.eu "Vaccine" box Writeup</title><link>/posts/hackthebox.eu-vaccine-writeup/</link><pubDate>Sat, 08 May 2021 16:36:30 -0500</pubDate><guid>/posts/hackthebox.eu-vaccine-writeup/</guid><description>Just finished my third hackthebox.eu box, and made my first proper writeup.
 All my disorganized notes on the beginner boxes can be found in each folder here, titled NOTES.md. Also see /boxes/.
 And you can click here for the PDF writeup, or look below.</description></item><item><title>SQL Injection Video</title><link>/posts/2020-12-28-sql-injection-video/</link><pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate><guid>/posts/2020-12-28-sql-injection-video/</guid><description>A video I made about SQL Injection. Took about 5 hours total. I don&amp;rsquo;t do video editing or stuff like this frequently, but thought I&amp;rsquo;d post it here. Enjoy!
 Resources:

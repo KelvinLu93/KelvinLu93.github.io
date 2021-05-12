@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>devops on Henry Post</title><link>/categories/devops/</link><description>Recent content in devops on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Crash Course Notes</title><link>/posts/2021-05-12-docker-crash-course/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>/posts/2021-05-12-docker-crash-course/</guid><description>The course The course is below.
+https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
+My work for this course can be found here.
+https://github.com/HenryFBP/docker-crash-course
+Section 1: Get Started with Docker 1. Course Overview See course.
+2. Support See course.
+3. Support See course.
+4. Slides See course.
+5. Intro to virtualization Docker is only one implementation of containerization.
+Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.
+This is a problem as you need 1 machine per app, and this is wasteful and wastes CPU and RAM as they are underutilized.</description></item></channel></rss>
