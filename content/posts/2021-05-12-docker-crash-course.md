@@ -553,7 +553,22 @@ Then run `docker push henryfbp/betterdebian:1.0.0`.
 You can see it at https://hub.docker.com/repository/docker/henryfbp/betterdebian
 
 ## Section 3: Create Containerized Web Applications
+
+### 19. Containerize a Simple Hello World Web Application
+
 TODO
+
+### 20. Text Direction: Containerize a Hello World Web Application
+
+### 21. Implement a Simple Key-value Lookup Service
+
+### 22. Create Docker Container Links
+
+### 23. Automate Current Workflow with Docker Compose
+
+### 24. Deep Dive into Docker Compose Workflow
+
+### 25. Extra Learning: Things to Watch out When Working with Docker Containers
 
 ## Section 4: Docker Networking
 TODO
