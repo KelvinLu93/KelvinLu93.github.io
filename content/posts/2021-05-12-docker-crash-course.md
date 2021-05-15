@@ -556,7 +556,7 @@ You can see it at https://hub.docker.com/repository/docker/henryfbp/betterdebian
 
 ### 19. Containerize a Simple Hello World Web Application
 
-1. Run `git clone -b v0.1 https://github.com/jleetutorial/dockerapp/` to clone a simple dockerized application.
+1. Run `git clone -b v0.1 https://github.com/henryfbp/dockerapp/` to clone a simple dockerized application.
 
 `-b v0.1` tells git to clone the repo and move the HEAD to the branch `v0.1`, which is an early version of the app.
 
@@ -623,19 +623,153 @@ Then, we're going to enter the container with a shell.
 
 If we run `ps axu`, we see this:
 
-admin@1698ac6cd3ca:~$ ps axu
-USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-admin          1  0.2  0.3  35640 26888 ?        Ss   17:43   0:01 python app.py
-admin          8  0.1  0.0   5756  3704 pts/0    Ss   17:48   0:00 bash
-admin         19  0.0  0.0   9396  3096 pts/0    R+   17:50   0:00 ps axu
+    admin@1698ac6cd3ca:~$ ps axu
+    USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    admin          1  0.2  0.3  35640 26888 ?        Ss   17:43   0:01 python app.py
+    admin          8  0.1  0.0   5756  3704 pts/0    Ss   17:48   0:00 bash
+    admin         19  0.0  0.0   9396  3096 pts/0    R+   17:50   0:00 ps axu
 
 The webserver is still running in the background, while we are in the shell. Note the user running it is `admin`.
 
 ### 20. Text Direction: Containerize a Hello World Web Application
 
+...
+
 ### 21. Implement a Simple Key-value Lookup Service
 
+Inside your `dockerapp` folder, run:
+
+    git stash && git checkout v0.2
+
+To change the HEAD to a newer version of the docker web app example.
+
+Now rebuild the docker image with:
+
+    docker build -t dockerapp:v0.2
+
+Output:
+
+    vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.2)) [1]> docker build -t dockerapp:v0.2 .
+    Sending build context to Docker daemon  86.53kB
+    Step 1/7 : FROM python:3.5
+    ---> 3687eb5ea744
+    Step 2/7 : RUN pip install Flask==0.11.1
+    ---> Using cache
+    ---> 2406c93d981a
+    Step 3/7 : RUN useradd -ms /bin/bash admin
+    ---> Using cache
+    ---> dfeb1e7906d5
+    Step 4/7 : USER admin
+    ---> Using cache
+    ---> 664ea1b9ff07
+    Step 5/7 : WORKDIR /app
+    ---> Using cache
+    ---> 52fdf671467c
+    Step 6/7 : COPY app /app
+    ---> 8663f068c28a
+    Step 7/7 : CMD ["python", "app.py"]
+    ---> Running in ee06eec84720
+    Removing intermediate container ee06eec84720
+    ---> 9ab9b6586dd5
+    Successfully built 9ab9b6586dd5
+    Successfully tagged dockerapp:v0.2
+
+Note that only step 6 and 7 get executed, the rest of the steps are simply reused.
+
+Make sure to stop your previous container next - use `docker ps` and `docker stop <container_id>`.
+
+Next, start the updated dockerapp container with:
+
+    docker run -d -p 5000:5000 dockerapp:v0.2
+
+And visit <http://localhost:5000/>. Play around with the app a bit.
+
+...
+
+Now we'll introduce Redis, a memory cache, to take the role of the database in this application.
+
+I made a new branch called `add-redis` to track my work in this section.
+
+See next section.
+
 ### 22. Create Docker Container Links
+
+Container links are essentially secure LAN links. The links depend on container names.
+
+Run this to get a Redis container running:
+
+    docker run -d --name redis redis:3.2.0
+
+Then `docker ps`:
+
+    vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)> docker ps
+    CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                    NAMES
+    4e369b5bdb17   redis:3.2.0      "docker-entrypoint.s…"   4 seconds ago    Up 1 second     6379/tcp                 redis
+    38847d7d8da3   dockerapp:v0.2   "python app.py"          25 minutes ago   Up 25 minutes   0.0.0.0:5000->5000/tcp   focused_wing
+
+Then build your dockerapp again -- Using the branch `add-redis` (`git checkout add-redis`) and bumping the version as the dockerapp now uses redis.
+
+    docker build -t dockerapp:v0.3 .
+
+Stop `dockerapp:v0.2` with `docker ps` and `docker stop <container_id>` if it's running.
+
+Then start an instance of `dockerapp:v0.3`, except with `--link redis` added:
+
+    docker run -d -p 5000:5000 --link redis dockerapp:v0.3
+
+My understanding is these are just put on some virtual subnet together automagically.
+
+Now visit <http://localhost:5000/> to make sure everything is working.
+
+Running `docker ps`, we can see both boxes running:
+
+    vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)> docker ps
+    CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                    NAMES
+    600048574ea5   dockerapp:v0.3   "python app.py"          4 minutes ago    Up 3 minutes    0.0.0.0:5000->5000/tcp   cool_faraday
+    4e369b5bdb17   redis:3.2.0      "docker-entrypoint.s…"   13 minutes ago   Up 13 minutes   6379/tcp                 redis
+
+Run `docker exec -it 600048574ea5 bash` to enter the Python container.
+
+Then run `more /etc/hosts` to view the initial hostname setup.
+
+    admin@600048574ea5:/app$ more /etc/hosts
+    127.0.0.1	localhost
+    ::1	localhost ip6-localhost ip6-loopback
+    fe00::0	ip6-localnet
+    ff00::0	ip6-mcastprefix
+    ff02::1	ip6-allnodes
+    ff02::2	ip6-allrouters
+    172.17.0.3	redis 4e369b5bdb17
+    172.17.0.2	600048574ea5
+
+Note how `redis` gets assigned a static IP address.
+
+You can run `docker inspect 4e369b5bdb17 | grep -i ip` to confirm that `172.17.0.3` is indeed the IP address of the redis container.
+
+Log into the python container again with `docker exec -it 600048574ea5 bash`, and run `ping redis`.
+
+It works!
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)> docker exec -it 600048574ea5 bash
+admin@600048574ea5:/app$ ping redis
+PING redis (172.17.0.3) 56(84) bytes of data.
+64 bytes from redis (172.17.0.3): icmp_seq=1 ttl=64 time=1.20 ms
+64 bytes from redis (172.17.0.3): icmp_seq=2 ttl=64 time=0.180 ms
+64 bytes from redis (172.17.0.3): icmp_seq=3 ttl=64 time=0.163 ms
+64 bytes from redis (172.17.0.3): icmp_seq=4 ttl=64 time=0.202 ms
+64 bytes from redis (172.17.0.3): icmp_seq=5 ttl=64 time=0.120 ms
+^C
+--- redis ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 58ms
+rtt min/avg/max/mdev = 0.120/0.373/1.202/0.415 ms
+```
+
+#### Summary
+
+The main use for docker container links is for building applications with microservice architecture -- We can run many independent components in different containers.
+
+Docker creates a secure tunnel between the containers that only exposes a minimum of necessary ports.
 
 ### 23. Automate Current Workflow with Docker Compose
 
