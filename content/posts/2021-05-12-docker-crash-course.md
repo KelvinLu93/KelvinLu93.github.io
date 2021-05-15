@@ -810,6 +810,26 @@ Docker Compose eliminates a lot of extra work and makes working with Docker cont
 
 ### 24. Deep Dive into Docker Compose Workflow
 
+If you don't have the docker-compose example set up, run this in my 'dockerapp' repo.
+
+    git stash && git checkout v0.4
+
+You can run `docker-compose up -d` to not have your terminal hijacked by Docker Compose.
+
+You can also run `docker-compose ps` to view information on the running containers managed by `docker-compose` for a specific `docker-compose.yml` file:
+
+    vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)> docker-compose ps
+            Name                       Command               State           Ports         
+    ---------------------------------------------------------------------------------------
+    dockerapp_dockerapp_1   python app.py                    Up      0.0.0.0:5000->5000/tcp
+    dockerapp_redis_1       docker-entrypoint.sh redis ...   Up      6379/tcp              
+
+- `docker-compose logs`. 
+    - Add `-f` to follow log output. Like `tail`.
+    - Add a container name to only view that container's logs - i.e. `docker-compose logs dockerapp`
+
+TODO
+
 ### 25. Extra Learning: Things to Watch out When Working with Docker Containers
 
 ## Section 4: Docker Networking
