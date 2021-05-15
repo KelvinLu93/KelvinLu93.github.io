@@ -773,6 +773,41 @@ Docker creates a secure tunnel between the containers that only exposes a minimu
 
 ### 23. Automate Current Workflow with Docker Compose
 
+Phew, thank god. I was afraid we wouldn't cover it. I love docker-compose.
+
+#### Why Docker Compose?
+
+- We need to manually start up 2 containers and manually link them every time.
+- Doing this for 20 containers or a lot of times is just a waste of time and effort.
+- Think of not using `Pipenv` and having to type `pip install some-crap` 20 times. It's just a waste of time, it can be automated and streamlined.
+
+Example `docker-compose.yml` file, which can be found in the `add-redis` branch (<https://github.com/HenryFBP/dockerapp/tree/add-redis>):
+
+```yaml
+version: '3'
+services:
+    dockerapp:
+        build: .
+        ports:
+            - "5000:5000"
+        depends_on:
+            - redis
+    redis:
+        image: redis:3.2.0
+```
+
+Note that line 4 uses a `Dockerfile` in the same directory as the `docker-compose.yml` file.
+
+As for line 9, you may note the lack of a `build` key. This is because all containers defined in `docker-compose.yml` can either have a base `"image"` command, or a `"build"` instruction. One or the other.
+
+You may note we don't need a link. This is because from version 2 and onwards, it's automatically done between containers managed by Docker Compose.
+
+Make sure no ports are open with `docker ps` and `docker stop`, and then you can just run `docker-compose up`. That's it. Then go to <http://localhost:5000/> and enjoy the fancy console output.
+
+#### Summary
+
+Docker Compose eliminates a lot of extra work and makes working with Docker containers a lot easier.
+
 ### 24. Deep Dive into Docker Compose Workflow
 
 ### 25. Extra Learning: Things to Watch out When Working with Docker Containers
