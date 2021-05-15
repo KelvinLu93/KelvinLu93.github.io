@@ -556,7 +556,80 @@ You can see it at https://hub.docker.com/repository/docker/henryfbp/betterdebian
 
 ### 19. Containerize a Simple Hello World Web Application
 
-TODO
+1. Run `git clone -b v0.1 https://github.com/jleetutorial/dockerapp/` to clone a simple dockerized application.
+
+`-b v0.1` tells git to clone the repo and move the HEAD to the branch `v0.1`, which is an early version of the app.
+
+Inside the working directory, you can see there's just 2 files: 
+
+    app/app.py
+    Dockerfile
+
+`app.py` is a very simple flask app.
+
+Inside Dockerfile:
+
+```
+FROM python:3.5
+RUN pip install Flask==0.11.1
+RUN useradd -ms /bin/bash admin
+USER admin
+WORKDIR /app
+COPY app /app
+CMD ["python", "app.py"] 
+```
+
+1. Use base image `python:3.5`
+2. Install Flask using `pip`
+3. Create a new user, `admin`, who has a default shell of `/bin/bash`.
+4. All commands Docker runs are now run by the newly created `admin` user.
+   
+   Note: It's a good idea to avoid running processes in Docker as a root user to avoid privilege escalation.
+5. Set the current working directory to `/app` for all `COPY`, `ADD`, etc. instructions.
+6. Copy a folder, `app`, on the parent, to the container's filesystem root `/app`.
+7. Start the webserver.
+
+Let's build it!
+
+    docker build -t dockerapp:v0.1 .
+
+And get the newly-built image ID.
+
+    docker images
+
+    REPOSITORY              TAG       IMAGE ID       CREATED              SIZE
+    dockerapp               v0.1      b6069a89ed4c   About a minute ago   881MB
+    henryfbp/betterdebian   1.0.0     7bbb4d211d9b   2 days ago           280MB
+
+
+And then start a container from the image.
+
+    docker run -d -p 5000:5000 b6069a89ed4c
+
+And now, visit <http://localhost:5000/>
+
+Next, run `docker ps` to view the list of running containers, and to get the container ID:
+
+    vagrant@vagrant-virtualbox ~> docker ps
+    CONTAINER ID   IMAGE          COMMAND           CREATED         STATUS         PORTS                    NAMES
+    1698ac6cd3ca   b6069a89ed4c   "python app.py"   2 minutes ago   Up 2 minutes   0.0.0.0:5000->5000/tcp   elastic_ritchie
+
+Then, we're going to enter the container with a shell.
+
+    docker exec -it 1698ac6cd3ca bash
+
+    admin@1698ac6cd3ca:/app$ ls
+    app.py
+
+If we run `ps axu`, we see this:
+
+admin@1698ac6cd3ca:~$ ps axu
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+admin          1  0.2  0.3  35640 26888 ?        Ss   17:43   0:01 python app.py
+admin          8  0.1  0.0   5756  3704 pts/0    Ss   17:48   0:00 bash
+admin         19  0.0  0.0   9396  3096 pts/0    R+   17:50   0:00 ps axu
+
+The webserver is still running in the background, while we are in the shell. Note the user running it is `admin`.
 
 ### 20. Text Direction: Containerize a Hello World Web Application
 
