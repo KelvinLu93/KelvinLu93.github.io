@@ -828,12 +828,78 @@ You can also run `docker-compose ps` to view information on the running containe
     - Add `-f` to follow log output. Like `tail`.
     - Add a container name to only view that container's logs - i.e. `docker-compose logs dockerapp`
 
-TODO
+- `docker-compose stop`... Does what you think it does. Does not remove containers.
+
+- `docker-compose rm` stops then removes all containers.
+
+Note that if you modify the Dockerfile, `docker-compose up` will not recreate the image. You need to run `docker-compose build` if you need to update the image.
 
 ### 25. Extra Learning: Things to Watch out When Working with Docker Containers
 
+Extra article: <https://www.level-up.one/things-watch-working-docker-containers/>
+
 ## Section 4: Docker Networking
-TODO
+
+### 26. Introduction to Docker Networking 
+
+- Docker uses the networking from the host OS to give containers networking
+- Once Docker Daemon is installed, `docker0` interface is created on the host. It is used to bridge outside network to the internal containers.
+- Each container connects to `docker0` through an individual container network interface.
+
+![](2021-05-18-09-24-26.png)
+
+There are 4 types of networks.
+
+1. Closed/None Network
+2. Bridge Network
+3. Host Network
+4. Overlay Network
+
+Run `docker network ls`, which should bring up 3 preinstalled networks.
+
+### 27. None Network
+
+No access to the outside world. This adds a container with a network stack that has no container interface.
+
+To make a closed container, add `--net none` to a `docker run` command:
+
+    docker run -d --net none busybox sleep 1000
+
+Then `docker exec -it <id> sh` and try to `ping 8.8.8.8` - it will fail. `ifconfig` only reports `lo` (loopback) as an adapter.
+
+- Provides max level of network protection
+- Bad if network connection is required
+- Ideal where network access is not necessary
+
+### 28. Bridge Network
+
+Default type of network in Docker containers.
+
+All containers in bridge network are connected to each other, and can also connect to the outside world.
+
+Docker makes a default bridge network called "bridge" when the docker daemon is first installed.
+
+Run
+
+    docker network ls
+
+    docker network inspect bridge
+
+To view details about the "bridge" network.
+
+Subnet range is 172.17.0.0 to 172.17.255.255
+
+Run
+
+    docker run -d --name container_1 busybox sleep 1000
+
+We don't specify `--net` as `bridge` is default.
+
+### 29. Host Network and Overlay Network
+
+### 30. D3: Text Lecture: Overlay Network
+
+### 31. Define Container Networks with Docker Compose
 
 ## Section 5: Create a Continuous Integration Pipeline
 TODO
