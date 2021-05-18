@@ -892,8 +892,43 @@ Subnet range is 172.17.0.0 to 172.17.255.255
 Run
 
     docker run -d --name container_1 busybox sleep 1000
+    docker run -d --name container_2 busybox sleep 1000
 
 We don't specify `--net` as `bridge` is default.
+
+Then run
+
+    docker exec -it container_1 ifconfig
+
+To get `container_1`'s ip address.
+
+And then run
+
+    docker ps
+
+To get `container_2`'s ID.
+
+And then run
+
+    docker exec -it container_2 sh
+
+    ping <container_1_ip>
+
+To see if the bridge network works.
+
+You should be able to ping the other container. This works because the hostname is set to the container name.
+
+#### Separate Bridged Networks cannot communicate
+
+By default, different bridged networks cannot contact eachother. Let's demo this.
+
+Create a new bridge network:
+
+    docker network create --driver bridge my_bridge_network
+
+    docker network ls
+
+    docker network inspect my_bridge_network
 
 ### 29. Host Network and Overlay Network
 
