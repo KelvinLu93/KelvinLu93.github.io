@@ -18,6 +18,7 @@ Clone [this repo](http://github.com/HenryFBP/henryFBP.github.io) and just edit i
 
     git clone --recurse-submodules https://github.com/HenryFBP/henryfbp.github.io
     git remote set-url origin https://your.remote.here.tld/
+    git push
 
 Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
 
