@@ -1089,9 +1089,110 @@ Running `docker exec -it container_3 ifconfig` will show only one `eth` interfac
 
 ### 29. Host Network and Overlay Network
 
+#### Host Network
+
+- The least protected network model. Adds a container on the host's network stack.
+- Containers on the host stack have full access to the host's interface.
+- Called an "Open Container".
+
+To create open containers, you use `--net host`:
+
+    docker run -d --name container_4 --net host busybox sleep 100000
+
+And net info:
+
+    docker exec -it container_4 ifconfig
+
+Results in you seeeing all network interfaces from the host machine:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_4 ifconfig
+br-09d23bc21e33 Link encap:Ethernet  HWaddr 02:42:DF:FC:78:40  
+          inet addr:172.18.0.1  Bcast:172.18.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::42:dfff:fefc:7840/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:32 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:2410 (2.3 KiB)  TX bytes:1206 (1.1 KiB)
+
+docker0   Link encap:Ethernet  HWaddr 02:42:5A:24:9D:D0  
+          inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::42:5aff:fe24:9dd0/64 Scope:Link
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:9 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:11 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:310 (310.0 B)  TX bytes:1122 (1.0 KiB)
+
+eth0      Link encap:Ethernet  HWaddr 08:00:27:6B:C9:D9  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::248:e902:5932:8fac/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:273702 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:70138 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:397121663 (378.7 MiB)  TX bytes:5173643 (4.9 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:3813 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3813 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:12294647 (11.7 MiB)  TX bytes:12294647 (11.7 MiB)
+
+veth4017061 Link encap:Ethernet  HWaddr 9A:A8:54:D0:87:64  
+          inet6 addr: fe80::98a8:54ff:fed0:8764/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:18 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:1436 (1.4 KiB)
+```
+
+- Minimum network security level
+- No isolation on this type of container, so it leaves the container unprotected
+- However, containers running in the host network stack see a higher level of performance than those traversing `docker0` bridge and iptables port mappings.
+
+You should only use this network model if you have a valid reason.
+
+#### Overlay Network
+
+All the other network models, none, bridge, and host, can only be deployed on single machine.
+
+- The overlay network supports multi-host networking.
+- Overlay networks require pre-existing conditions before they can be created.
+    - Running Docker engine in Swarm mode.
+    - A key-value store like consul
+- Most services are deployed across multiple hosts, so the overlay network is widely used in production.
+- The latest docker swarm mode will create the overlay network automatically
+
 ### 30. D3: Text Lecture: Overlay Network
 
+See <https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster>
+
 ### 31. Define Container Networks with Docker Compose
+
+By default, Docker Compose sets up a single network for services. Each container joins the default network and is reachable by other containers on that network.
+
+In the repo, <https://github.com/henryfbp/dockerapp/>, run this:
+
+    git checkout v0.4
+
+Then run `docker-compose up -d`.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))> docker-compose up -d
+Creating network "dockerapp_default" with the default driver
+Creating dockerapp_redis_1 ... done
+Creating dockerapp_dockerapp_1 ... done
+```
+
+You can see `Creating network (...)`.
+
+TODO
 
 ## Section 5: Create a Continuous Integration Pipeline
 TODO
