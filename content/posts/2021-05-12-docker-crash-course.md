@@ -916,6 +916,50 @@ And then run
 
 To see if the bridge network works.
 
+Output:
+
+```
+┌─[vagrant@vagrant-virtualbox]─[~/Github/henryfbp.github.io]
+└──╼ $    docker network ls
+NETWORK ID     NAME                DRIVER    SCOPE
+f4bbec1ad501   bridge              bridge    local
+6990fcf18be5   host                host      local
+09d23bc21e33   my_bridge_network   bridge    local
+84049b5950fc   none                null      local
+┌─[vagrant@vagrant-virtualbox]─[~/Github/henryfbp.github.io]
+└──╼ $    docker network inspect my_bridge_network
+[
+    {
+        "Name": "my_bridge_network",
+        "Id": "09d23bc21e33707d9a3385d07c6c3ddb7494dda233be8be791633a13fcefcb61",
+        "Created": "2021-05-26T18:49:04.675528224-05:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+```
+
 You should be able to ping the other container. This works because the hostname is set to the container name.
 
 #### Separate Bridged Networks cannot communicate
@@ -929,6 +973,119 @@ Create a new bridge network:
     docker network ls
 
     docker network inspect my_bridge_network
+
+Then create a docker box using that bridge network:
+
+    docker run -d --name container_3 --net my_bridge_network busybox sleep 100000
+
+And check the IP of container_3:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_3 ifconfig | grep inet | grep 172
+          inet addr:172.18.0.2  Bcast:172.18.255.255  Mask:255.255.0.0
+```
+
+And then get the IP of container_1:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_1 ifconfig | grep inet | grep 172
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+```
+
+And then try to ping container_1 from container_3:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_3 ping 172.17.0.2
+PING 172.17.0.2 (172.17.0.2): 56 data bytes
+^C
+--- 172.17.0.2 ping statistics ---
+26 packets transmitted, 0 packets received, 100% packet loss
+```
+
+It fails because different bridge networks are isolated from eachother in Docker.
+
+But, docker has a feature that lets us connect a container to another network.
+
+This is done via `docker network connect`.
+
+#### docker network connect
+
+Let's connect `container_3` to our original bridge network.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]> docker network ls
+NETWORK ID     NAME                DRIVER    SCOPE
+f4bbec1ad501   bridge              bridge    local
+6990fcf18be5   host                host      local
+09d23bc21e33   my_bridge_network   bridge    local
+84049b5950fc   none                null      local
+```
+
+`container_{1,2}` are both on `bridge`. Only `container_3` is connected to `my_bridge_network`.
+
+We can attach `bridge` to `container_3` by running:
+
+    docker network connect bridge container_3
+
+And we can see `eth1` interface gets added below:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_3 ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:AC:12:00:02  
+          inet addr:172.18.0.2  Bcast:172.18.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:9 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:806 (806.0 B)  TX bytes:0 (0.0 B)
+
+eth1      Link encap:Ethernet  HWaddr 02:42:AC:11:00:02  
+          inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:736 (736.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+```
+
+And we can ping `container_1` now.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_1 ifconfig | grep inet | grep 172
+          inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker exec -it container_3 ping 172.17.0.3
+PING 172.17.0.3 (172.17.0.3): 56 data bytes
+64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.083 ms
+^C
+--- 172.17.0.3 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 0.083/0.083/0.083 ms
+```
+
+Now let's disconnect `container_3` from the `bridge` network.
+
+    docker network disconnect bridge container_3
+
+Running `docker exec -it container_3 ifconfig` will show only one `eth` interface now instead of two.
+
+#### Recap - Bridge Network
+
+- In a bridge network, containers have access to 2 interfaces:
+    - Loopback (`lo`)
+    - Private interface connected to the bridge network of the host (`eth0`)
+        - This is used to connect to the outside network
+- All containers in the same bridge network can communicate with eachother
+- Containers from different bridge networks can't communicate with eachother
+- Reduces the level of network isolation in favor of better outside connectivity
+- Most suitable where you want to set up a relatively small network on a single host
 
 ### 29. Host Network and Overlay Network
 
