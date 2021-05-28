@@ -1271,10 +1271,43 @@ networks:
 ```
 
 ## Section 5: Create a Continuous Integration Pipeline
-TODO
+
+### 32. Write and Run Unit Tests inside Containers
+
+### 33. Introduction to Continuous Integration
+
+### 34. Text Direction: Introduction to Continuous Integration
+
+### 35. Link CircleCI with Github Account for Setting up a CI Workflow
+
+### 36. Push Docker Images To DockerHub from CircleCI
+
+### 37. Trouble Shooting: Push Docker Images to Docker Hub
 
 ## Section 6: Deploy Docker Containers in Production
-TODO
+
+### 38. Introduction to Running Docker Containers in Production
+
+### 39. Register Digital Ocean Account for Deploying Containerized Applications
+
+### 40. Deploy Docker Application to the Cloud with Docker Machine
+
+### 41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
+
+### 42. Introduction to Docker Swarm and Set up Swarm Cluster
+
+### 43. Deploy Docker App Services to the Cloud via Docker Swarm
+
+### 44. Extra learning Material: Dockers Monitoring Tools
 
 ## Section 7: Additional Learning Materials
-TODO
+
+### 45. What is new in Docker 17.06
+
+### 46. Docker's Native support for Kubernetes
+
+### 47. Future Learning
+
+### 48. Text Lecture: Future Learning
+
+### 49. Coupons to Our Other Courses
