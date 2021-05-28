@@ -1192,7 +1192,83 @@ Creating dockerapp_dockerapp_1 ... done
 
 You can see `Creating network (...)`.
 
-TODO
+The prefix of the default network name comes from the current working directory.
+
+And the default network type is 'bridge'. You can check with `docker network ls`.
+
+When we run `docker-compose down`, the network gets removed.
+
+You can modify the `docker-compose.yml` file to look like the one below:
+
+```yaml
+version: '3'
+services:
+  dockerapp:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: redis:3.2.0
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge
+```
+
+See `networks:` item both under `redis:` node, and in the root YAML object.
+
+Next, save the file and run `docker-compose up -d`.
+
+Note the new network.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))> docker-compose up -d
+Creating network "dockerapp_my_net" with driver "bridge"
+Creating network "dockerapp_default" with the default driver
+Creating dockerapp_redis_1 ... done
+Creating dockerapp_dockerapp_1 ... done
+```
+
+There are even more complex network topologies that can be created. Example.
+
+Here, two custom networks, front and back, are defined.
+
+3 services, `proxy`, `app`, and `db`. The `db` service is on the `back` network. The `proxy` service is isolated from `db`. Only `app` can talk to both.
+
+This provides network isolation between services. These are popular things to do on multi tiered applications.
+
+```yaml
+version: '2'
+
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - front
+  app:
+    build: ./app
+    networks:
+      - front
+      - back
+  db:
+    image: postgres
+    networks:
+      - back
+
+networks:
+  front: # use custom driver
+    driver: custom-driver-1
+  back: # use custom driver w/ opts
+    driver: custom-driver-2
+    driver_opts:
+      foo: "1"
+      bar: "2"
+
+```
 
 ## Section 5: Create a Continuous Integration Pipeline
 TODO
