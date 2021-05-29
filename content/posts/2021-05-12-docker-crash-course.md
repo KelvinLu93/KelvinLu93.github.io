@@ -1321,7 +1321,53 @@ Then, run `docker-compose run dockerapp python test.py` to run the test suite.
 
 ### 33. Introduction to Continuous Integration
 
+- CI lets software engineers test isolated changes when they are added to a larger code base
+- Goal of CI is to provide rapid feedback to immediately eliminate defects introduced into codebase
+
+#### Typical CI Pipeline w/o Docker
+
+1.  Dev checks out source code
+2.  Dev makes changes, adds features, etc
+3.  Dev checks in source code to central repo (commits)
+4.  A CI server triggers a build that does:
+    1.  Check out the latest version
+    2.  Build the code
+    3.  Run unit tests
+    4.  Create a build artifact (package and archive, assign a build label)
+
+#### CI process with Docker involved
+
+The CI server builds the docker image after it builds the application.
+
+The app goes inside the image, and the CI server pushes the image to a docker registry.
+
+You can then pull the newly-built image from the registry.
+
+We'll set up a CI workflow using GitHub as the central repo, and CircleCI as the CI server.
+
+GitHub lets you host public repos for free, and CircleCI is a hosted CI provider that lets you run concurrent builds for free.
+
+You need a GitHub and CircleCI account.
+
+(next part of the lecture is just setting up SSH/GPG keys, use Google if you need to)
+
 ### 34. Text Direction: Introduction to Continuous Integration
+
+URL of the Github account to fork:
+
+https://github.com/jleetutorial/dockerapp
+
+Checking for existing SSH keys:
+
+https://help.github.com/articles/checking-for-existing-ssh-keys/
+
+Generating a new SSH key and adding it to the ssh-agent:
+
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+Adding a new SSH key to your GitHub account:
+
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 ### 35. Link CircleCI with Github Account for Setting up a CI Workflow
 
