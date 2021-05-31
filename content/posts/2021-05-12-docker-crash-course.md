@@ -1371,6 +1371,26 @@ https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 
 ### 35. Link CircleCI with Github Account for Setting up a CI Workflow
 
+`.circleci/` folder is used to store the code that enables the CI workflow.
+
+<https://github.com/HenryFBP/dockerapp/blob/branch-v0.6/.circleci/config.yml>
+
+You can clone the repo and the run `git checkout v0.6`.
+
+-   1. Version number.
+-   2. Jobs key. Every config file needs a build job.
+-   4. A working directory for the rest of the job.
+-   5-6. Specifying the primary container images for this job, for docker to use.
+
+    In CircleCI, all tests run under containers.
+
+    What we want is a docker image that has Git, and we can get these by using `docker:17.05.0-ce-git` as an image name.
+-   7. All of our steps to run in the job.
+-   8. The `checkout` step will check out our code from Github to our working directory.
+-   9. The `setup_remote_docker` step will create a separate docker image for each build, for security purposes.
+       If your code ...TODO
+
+
 ### 36. Push Docker Images To DockerHub from CircleCI
 
 ### 37. Trouble Shooting: Push Docker Images to Docker Hub
