@@ -1388,8 +1388,24 @@ You can clone the repo and the run `git checkout v0.6`.
 -   7. All of our steps to run in the job.
 -   8. The `checkout` step will check out our code from Github to our working directory.
 -   9. The `setup_remote_docker` step will create a separate docker image for each build, for security purposes.
-       If your code ...TODO
+-   10-14. Install `pip` and `docker-compose`.
+-   15-19. Finally, bring up docker containers and run tests.
 
+Now, link CircleCI with your Github account. You can do that here:
+
+<https://app.circleci.com/>
+
+Create a new project and use the existing `.circleci/` folder.
+
+It will fail to log into docker hub. This is because the build is running against the `master` branch, which includes publishing to Docker Hub.
+
+But we only want to run the `v0.6 branch`.
+
+Next, we're going to make a new branch from `v0.6` and make some dummy changes to see what CircleCI does.
+
+We expect to see a new build automatically run, and it should be green.
+
+TODO
 
 ### 36. Push Docker Images To DockerHub from CircleCI
 
