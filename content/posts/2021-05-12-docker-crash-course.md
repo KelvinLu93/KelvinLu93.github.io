@@ -1518,9 +1518,152 @@ http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-r
 
 ### 38. Introduction to Running Docker Containers in Production
 
+#### Opinions about Running Docker in Prod
+
+- Many docker engineers are confident that a distributed web app can be deployed at scale using docker, and have incorporated docker into their production environment.
+- However, there are still some people who are reluctant to use Docker in production as they think Docker workflow is too complex/unstable for real life use cases.
+
+So...is Docker production-ready?
+
+It's very disruptive (good thing) to software dev, ops, system architecture, testing, and compliance practices.
+
+But Docker itself is very young.
+
+#### Concerns about Running Docker in Prod
+
+- There are still some missing pieces about Docker around data persistence, networking, security, and identity management
+- The ecosystem of supporting Dockerized applications in production like tools/monitoring/logging are still not ready yet
+
+#### Companies already running Docker in production
+
+- Spotify
+- Yelp
+- Bedify(?)
+
+#### Why run Docker Containers inside VMs?
+
+The most popular way to run Docker Containers is currently inside virtual machines.
+
+- Addresses security concerns
+- The isolation Docker provides is not as robust as the segregation that Docker provides
+- Without hardware level isolation, all containers share kernel resources.
+    - If 1 container can monopolize resources, it can starve others in a DoS.
+
+Most of the popular container service engines, like Google Container Engine and Amazon EC2 Container Service, still use VMs internally.
+
+#### Docker Machine
+
+The simplest way to provision new VMs and run containers on top of them is by using Docker Machine.
+
+It can
+
+- Provision new VMs
+- Install Docker Engine
+- Configure Docker client with remote docker machines
+
+Local example:
+
+We can provision a VM on our local machine using Docker Machine.
+
+To do that, we use VirtualBox.
+
+Docker Machine also provides drivers for DigitalOcean, Amazon AWS, Google App Ocean, etc; so that you can use Docker Machine to provision VMs in the cloud.
+
+Running containers in the cloud is quite different from running containers on your local box.
+
 ### 39. Register Digital Ocean Account for Deploying Containerized Applications
 
+Make a DO account.
+
+Use a promo code from retailmenot if you want free codes.
+
+Generate an API token, read-write.
+
 ### 40. Deploy Docker Application to the Cloud with Docker Machine
+
+Deploy time!
+
+If you don't have docker machine installed, google it and RTFM ;)
+
+<https://docs.docker.com/machine/install-machine/>
+
+Run
+
+    docker-machine ls
+
+To test it.
+
+You can run
+
+    docker-machine create --driver digitalocean --digitalocean-access-token=<TOKEN GOES HERE> dockerapp-machine
+
+![](/images/2021-05-12-docker-crash-course/docker-machine-DO.png)
+
+Console:
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 dockerapp-machine
+
+Running pre-create checks...
+Creating machine...
+(dockerapp-machine) Creating SSH key...
+(dockerapp-machine) Creating Digital Ocean droplet...
+(dockerapp-machine) Waiting for IP address to be assigned to the Droplet...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with ubuntu(systemd)...
+Installing Docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+```
+
+Note: This is not working for me.
+
+Note2: Started working after SSHing into the box in DigitalOcean and just running `docker`.
+
+Now `docker-machine ls` gives this.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker-machine ls
+NAME                ACTIVE   DRIVER         STATE     URL                        SWARM   DOCKER     ERRORS
+dockerapp-machine   -        digitalocean   Running   tcp://104.131.47.74:2376           v20.10.7   
+```
+
+And we can run `docker-machine env dockerapp-machine` to get the commands that we want to run on our remote machine.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker-machine env dockerapp-machine
+set -gx DOCKER_TLS_VERIFY "1";
+set -gx DOCKER_HOST "tcp://104.131.47.74:2376";
+set -gx DOCKER_CERT_PATH "/home/vagrant/.docker/machine/machines/dockerapp-machine";
+set -gx DOCKER_MACHINE_NAME "dockerapp-machine";
+# Run this command to configure your shell: 
+# eval (docker-machine env dockerapp-machine)
+```
+
+So we run `eval (docker-machine env dockerapp-machine)` (if using `fish` shell).
+
+Now let's run `docker info` to see info about system-wide VMs.
+
+```
+$ docker info 
+(...)
+ Operating System: Ubuntu 16.04.7 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 992.1MiB
+(...)
+```
+
+We're going to now make a copy of `docker-compose.yml` into `prod.yml`.
+
+This should be done in a fork of this repo: <https://github.com/henryfbp/dockerapp/>
+
+    cp docker-compose.yml prod.yml
 
 ### 41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
 
