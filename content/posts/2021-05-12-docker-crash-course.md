@@ -846,7 +846,7 @@ Extra article: <https://www.level-up.one/things-watch-working-docker-containers/
 - Once Docker Daemon is installed, `docker0` interface is created on the host. It is used to bridge outside network to the internal containers.
 - Each container connects to `docker0` through an individual container network interface.
 
-![](2021-05-18-09-24-26.png)
+![](/images/2021-05-12-docker-crash-course/docker-networking.png)
 
 There are 4 types of networks.
 
@@ -1405,7 +1405,21 @@ Next, we're going to make a new branch from `v0.6` and make some dummy changes t
 
 We expect to see a new build automatically run, and it should be green.
 
-TODO
+This will be green because branch `v0.6` does not contain the 'publish to Docker Hub' logic.
+
+    git checkout v0.6
+
+    git checkout -b test-ci
+
+    touch dummy.txt
+
+    git add dummy.txt
+
+    git commit -m "dummy commit"
+
+    git push
+
+![](/images/2021-05-12-docker-crash-course/circleci-1.png)
 
 ### 36. Push Docker Images To DockerHub from CircleCI
 
