@@ -1423,7 +1423,96 @@ This will be green because branch `v0.6` does not contain the 'publish to Docker
 
 ### 36. Push Docker Images To DockerHub from CircleCI
 
+Here, we publish a fully built image to Docker Hub if CI is green.
+
+![](/images/2021-05-12-docker-crash-course/complete-ci.png)
+
+Make a Docker Hub account.
+
+Next, we'll link CircleCI with Docker Hub.
+
+Log into CircleCI and click the build dashboard (upper left).
+
+Then click the "dockerapp" repo.
+
+Click "Project Settings".
+
+Click "Environment Variables".
+
+Set these env vars:
+
+    DOCKER_HUB_USER_ID : your user id
+    DOCKER_HUB_PWD : your password
+    DOCKER_HUB_EMAIL : your email
+
+Next step is to add instructions to CircleCI yaml file.
+
+Make sure it's a forked repo under your Github account, so that you can push to your remote.
+
+Run:
+
+    git checkout v0.6
+
+    git checkout -b circle_ci_publish
+
+And add this key under `steps` to your .circleci/config.yml file:
+
+We should also tag images with commit hashes and other relevant information.
+
+Let's use these 2 tags:
+
+1. Commit hash of the source code
+2. Latest 
+
+Note: The name is `dockerapp_dockerapp` because the first `dockerapp` is the name of the working directory, and the 2nd one is the service name we define in the `compose.yml` file.
+
+Note2: $CIRCLE_SHA1 is the current git commit hash.
+
+```yml
+      - deploy:
+          name: Publish application Docker image
+          command: |
+              docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+
+              docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+              docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
+
+              docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
+              docker push $DOCKER_HUB_USER_ID/dockerapp:latest
+```
+
+Then commit the changes and push to the `circle_ci_publish` branch.
+
+    git add .circleci/
+    git commit -m 'push to docker hub'
+    git push -u origin circle_ci_publish
+
+Now view CircleCI.
+
+<https://hub.docker.com/r/henryfbp/dockerapp/tags?page=1&ordering=last_updated>
+
 ### 37. Trouble Shooting: Push Docker Images to Docker Hub
+
+If you are able to run docker login, but encountered the following unauthorized: authentication required error while running docker push  
+
+    [root@terry ~]# docker login --username=1972
+    Password: 
+    Login Succeeded
+    [root@terry ~]# 
+    [root@terry ~]# docker push asiye_yigit_tutorial/debian:1.01
+    The push refers to a repository [docker.io/asiye_yigit_tutorial/debian]
+    29303f03b719: Preparing 
+    77a77cd4826d: Preparing 
+    fe4c16cbf7a4: Preparing 
+    unauthorized: authentication require
+
+Solution:
+
+Creating the repository on Docker hub before running docker push.
+
+Take a look at 
+
+http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login
 
 ## Section 6: Deploy Docker Containers in Production
 
