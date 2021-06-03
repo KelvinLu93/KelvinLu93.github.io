@@ -1665,6 +1665,56 @@ This should be done in a fork of this repo: <https://github.com/henryfbp/dockera
 
     cp docker-compose.yml prod.yml
 
+And in `prod.yml`, we change it to this:
+
+(see <https://hub.docker.com/r/henryfbp/dockerapp>)
+
+```yml
+
+version: "3.0"
+services:
+  dockerapp:
+    image: henryfbp/dockerapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+  redis:
+    image: redis:3.2.0
+```
+
+This file is available in `master` branch (`git checkout master`).
+
+Now we can run:
+
+    docker-compose -f prod.yml up -d
+
+This deploys all services defined in `prod.yml` to the remote VM.
+
+Assuming we ran `eval (docker-machine env dockerapp-machine)` in the previous step, we can now run `docker-machine ls` to see the status.
+
+You need to run 
+
+    eval (docker-machine env dockerapp-machine)
+
+BEFORE
+
+    docker-compose -f prod.yml up -d
+
+because it sets up required environment variables for deployment that happens when you run `docker-compose ...`.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker-machine ls
+NAME                ACTIVE   DRIVER         STATE     URL                        SWARM   DOCKER     ERRORS
+dockerapp-machine   *        digitalocean   Running   tcp://104.131.47.74:2376           v20.10.7   
+```
+
+And visit <http://104.131.47.74:5000>.
+
+![](/images/2021-05-12-docker-crash-course/docker-machine-deployed-ip.png)
+
+See <https://docs.docker.com/machine/drivers/digital-ocean/> for more info on options for DigitalOcean as a specific docker-machine driver.
+
 ### 41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
 
 ### 42. Introduction to Docker Swarm and Set up Swarm Cluster
