@@ -2,10 +2,10 @@
 https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
 My work for this course can be found here.
 https://github.com/HenryFBP/docker-crash-course
+Slides are here.
 Section 1: Get Started with Docker 1. Course Overview See course.
 2. Support See course.
 3. Support See course.
 4. Slides See course.
 5. Intro to virtualization Docker is only one implementation of containerization.
-Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.
-This is a problem as you need 1 machine per app, and this is wasteful and wastes CPU and RAM as they are underutilized.</description></item></channel></rss>
+Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.</description></item></channel></rss>
