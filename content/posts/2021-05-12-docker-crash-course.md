@@ -1717,9 +1717,155 @@ See <https://docs.docker.com/machine/drivers/digital-ocean/> for more info on op
 
 ### 41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
 
-TODO
+**Docker Machine Create command**
+
+    docker-machine create --driver digitalocean --digitalocean-access-token <xxxxx> docker-app-machine
+
 
 ### 42. Introduction to Docker Swarm and Set up Swarm Cluster
+
+What if we have a complicated system that consists of TONS of containers, and can't fit into 1 host?
+
+How can you scale Docker for large apps?
+
+Here is where Docker Swarm helps.
+
+- A tool that clusters many Docker Engines and schedules containers
+- Decides which host to run the container based on scheduling methods
+
+A docker client contacts a Docker Swarm Manager, which is connected to every Docker Daemon.
+
+This means the Swarm Manager knows the status of all Docker Daemons. The Swarm Manager can group multiple hosts into a cluster and distribute Docker containers among these hosts.
+
+This outsources the manual provisioning workload from the client to the Swarm Manager.
+
+![](/images/2021-05-12-docker-crash-course/docker-swarm-manager.png)
+
+It is also possible to point multiple Docker Clients to the same Swarm Manager.
+
+3 important concepts:
+
+- Node
+- Manager Node
+- Worker Node
+
+A Node is an instance of a Docker Engine in a Swarm.
+
+#### How Swarm cluster works
+
+- To deploy your application to a swarm, you submit your service to a manager node
+- Manager node dispatches units of work called "tasks" to worker nodes
+- Manager nodes also perform orchestration and cluster management functions required to maintain the desired state of the swarm.
+- Manager nodes elect a single leader to orchestrate
+- Worker nodes receive and execute tasks dispatched from manager nodes
+- An agent runs on each worker node and reports on the tasks assigned to it. The worker node notifies the manager node of the current state of its assigned tasks so that the manager can maintain the desired state of each worker.
+
+2-node swarm cluster on DO - A swarm cluster can be composed of any # of swarm managers and worker nodes.
+
+#### Provisioning a Swarm Cluster
+
+1. Deploy 2 VMs - One will be used for the Swarm Manager node, and the other will be used as a worker node.
+2. Appoint the first VM as a Swarm Manager node and init a Swarm Cluster.
+    - `docker swarm init`
+3. Let the second VM join the Swarm Cluster as a worker node.
+    - `docker swarm join`
+
+We name this one `swarm-manager`.
+
+    docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-manager
+
+(if `docker-machine ls` gives "Unable to query docker version", then reset the password, log in with root shell, and `docker-machine ls` should work)
+
+Then configure the env vars:
+
+    docker-machine env swarm-manager
+
+    eval (docker-machine env swarm-manager) #if in fish
+    eval $(docker-machine env swarm-manager) #if in bash
+
+Next, we create a new VM that'll be used as a swarm worker node.
+
+    docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-node
+
+What we'll do next is to appoint the first VM as a Swarm Manager node.
+
+Let's make sure the Swarm Manager VM is the current active VM first.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker-machine ls
+NAME            ACTIVE   DRIVER         STATE     URL                         SWARM   DOCKER     ERRORS
+swarm-manager   *        digitalocean   Running   tcp://167.99.119.137:2376           v20.10.7   
+swarm-node      -        digitalocean   Running   tcp://159.65.182.78:2376            v20.10.7   
+```
+
+Asterisk indicates it is.
+
+Now we can run `docker swarm init`.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker swarm init
+Error response from daemon: could not choose an IP address to advertise since this system has multiple addresses on interface eth0 (167.99.119.137 and 10.17.0.6) - specify one with --advertise-addr
+```
+
+Error! This error means that, since this VM has multiple network interfaces, docker-swarm doesn't know which one to use to communicate.
+
+There is a public IP on WAN, and private IP for hosts on the same network in the datacenter.
+
+This is a feature of DigitalOcean that allows private networking b/w hosts in the same datacenter.
+
+Here, we'll use the public address.
+
+    docker swarm init --advertise-addr 167.99.119.137
+
+...
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]> docker swarm init --advertise-addr 167.99.119.137
+
+Swarm initialized: current node (iw0pru1zzk25nq37clqvdxwe1) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-6a3wy9883sq13xqgo8yc3l6xmebsmla6k13nes4t517kko8hhv-3vcorvaayccj5z05cnwy5kiy4 167.99.119.137:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+Now on to step 3: Let the 2nd VM join the Swarm cluster as a worker node.
+
+So, let's run `docker-machine ssh swarm-node` and run our `docker swarm join ...` command.
+
+```
+vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)> docker-machine ssh swarm-node
+
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-193-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+95 packages can be updated.
+73 updates are security updates.
+
+New release '18.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+root@swarm-node:~#     docker swarm join --token SWMTKN-1-6a3wy9883sq13xqgo8yc3l6xmebsmla6k13nes4t517kko8hhv-3vcorvaayccj5z05cnwy5kiy4 167.99.119.137:2377
+This node joined a swarm as a worker.
+```
+
+Woohoo! A 2-node swarm cluster.
+
+#### Docker Swarm commands
+
+- `docker swarm init`
+    - Initialize a swarm. The docker engine targeted by this command becomes a manager in the newly created single-node swarm.
+
+- `docker swarm join`
+    - Join a swarm as a Swarm node.
+
+- `docker swarm leave`
+    - Leave the swarm.
 
 ### 43. Deploy Docker App Services to the Cloud via Docker Swarm
 
