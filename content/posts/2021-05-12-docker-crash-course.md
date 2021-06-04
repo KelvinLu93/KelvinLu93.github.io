@@ -16,6 +16,8 @@ My work for this course can be found here.
 
 <https://github.com/HenryFBP/docker-crash-course>
 
+[Slides are here.](/files/2021-05-12-docker-crash-course/slides.pdf)
+
 ## Section 1: Get Started with Docker
 
 ### 1. Course Overview
