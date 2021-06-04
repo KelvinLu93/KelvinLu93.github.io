@@ -1717,6 +1717,8 @@ See <https://docs.docker.com/machine/drivers/digital-ocean/> for more info on op
 
 ### 41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine
 
+TODO
+
 ### 42. Introduction to Docker Swarm and Set up Swarm Cluster
 
 ### 43. Deploy Docker App Services to the Cloud via Docker Swarm
