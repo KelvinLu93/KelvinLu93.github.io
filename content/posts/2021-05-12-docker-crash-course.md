@@ -1869,16 +1869,296 @@ Woohoo! A 2-node swarm cluster.
 
 ### 43. Deploy Docker App Services to the Cloud via Docker Swarm
 
+#### Docker Services
+
+Now we will actually deploy services to the cluster we made in the previous part.
+
+- Services can be defined in our docker-compose.yml file
+- The service definition includes which docker images to run, the port mappings, and dependencies:
+```yml
+version: "3.0"
+services:
+  dockerapp:
+    image: henryfbp/dockerapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+```
+
+- When we deploy services in swarm mode, we can also set other important config, under `deploy:`, and it's only available on compose file formats >=3.0
+- The deploy key and its sub-options can be used to load balance and optimize performance for each service.
+
+Here's an example:
+
+```yml
+version: "3.3"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+```
+
+`replicas:3` means Docker will run 3 instances of the nginx image, as a service called nginx.
+
+What is a replica?
+
+![](/images/2021-05-12-docker-crash-course/replicas.png)
+
+When you deploy the nginx service to the swarm, the swarm manager accepts your service definition as the desired state for the service.
+
+Each node runs an nginx container called a "Replica".
+
+We want to run the same containers across multiple hosts for scalability and high availability.
+
+Since port 80 is exposed for each of the 3 containers, we actually can access any of the 3 hosts at port 80.
+
+When all 3 nodes are running a service's container, this concept gets interesting when we have more nodes than replicas.
+
+Let's say we have 4 nodes in our swarm cluster, and swarm deployed 3 replicas of nginx service.
+
+What happens if you hit port 80 of the node which doesn't have nginx replicas? What would happen?
+
+![](/images/2021-05-12-docker-crash-course/replicas2.png)
+
+You'll still connect to the nginx service through one of the 3 available nodes.
+
+Docker calls this "Ingress load balancing"...
+
+- All nodes listen for connections to published service ports.
+- When that service is called by external systems, the receiving node will accept the traffic and internally load balance it using an internal DNS service that Docker maintains
+
+Even if we scale up our cluster to 100 node workers (97 of which have no nginx container running), end users can still connect and just get redirected to 1 of 3 docker hosts running the service containers.
+
+All of this rerouting and load balancing is totally transparent to the end user.
+
+#### Docker Stack
+
+Before we can deploy our "dockerapp" service to Docker Swarm, there is another important concept we have to understand - Docker Stack.
+
+- Docker Stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.
+- A "Stack" is a live collection of all the services defined in your docker-compose.yml file
+- Create a stack from your docker compose file:
+    - `docker stack deploy`
+- In the swarm mode,
+    - Docker Compose files can be used for service definitions
+    - Docker compose commands cannot be reused. Docker compose commands can only schedule the containers to a single node.
+    - We have to use `docker stack` -- `docker stack` is like "docker compose" in swarm mode.
+
+prod.yml:
+```yml
+version: "3.0"
+services:
+  dockerapp:
+    image: henryfbp/dockerapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+```
+
+Make sure the correct machine is activated.
+
+    eval  (docker-machine env swarm-manager) #in fish
+    eval $(docker-machine env swarm-manager) #in bash
+
+Next, we create a stack from our `prod.yml` file and deploy it to docker swarm.
+
+    docker stack deploy --compose-file prod.yml dockerapp_stack
+
+Output:
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker stack deploy --compose-file prod.yml dockerapp_stack
+
+Creating network dockerapp_stack_default
+Creating service dockerapp_stack_dockerapp
+Creating service dockerapp_stack_redis
+```
+
+Docker swarm has created an overlay network for us called "dockerapp_stack_default" for cross-node comms.
+
+Usually, we don't need to customize this config.
+
+Then docker creates both the dockerapp and redis services.
+
+We can list how many services are on the stack with `docker stack ls`.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker stack ls
+NAME              SERVICES   ORCHESTRATOR
+dockerapp_stack   2          Swarm
+```
+
+We can list all the services in a stack by running `docker stack services <STACK_NAME>`.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker stack services dockerapp_stack
+ID             NAME                        MODE         REPLICAS   IMAGE                       PORTS
+4wpd5sw3sb5w   dockerapp_stack_dockerapp   replicated   2/2        henryfbp/dockerapp:latest   *:5000->5000/tcp
+2v4ublkvr2fr   dockerapp_stack_redis       replicated   1/1        redis:3.2.0                 
+```
+
+The redis service has 1 replica, while dockerapp has 2.
+
+Let's access our dockerapp service.
+
+List the IPs of all running VMs with `docker-machine ls`.
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker-machine ls
+NAME            ACTIVE   DRIVER         STATE     URL                         SWARM   DOCKER     ERRORS
+swarm-manager   *        digitalocean   Running   tcp://167.99.119.137:2376           v20.10.7   
+swarm-node      -        digitalocean   Running   tcp://159.65.182.78:2376            v20.10.7   
+```
+
+We should be able to access the dockerapp from any of the hosts because of the ingress load balancing feature of swarm.
+
+Let's use the swarm-node IP in a browser!
+
+<http://159.65.182.78:5000>
+
+It should work and show our app.
+
+The other IP should also work.
+
+#### How to update services in Production?
+
+What should we do if we want to update services in prod?
+
+Just run `docker stack deploy ...`!
+
+Docker will update our services automatically, on the swarm cluster.
+
+Let's see it in action.
+
+Let's use port 4000 instead of 5000.
+
+prod4000.yml:
+```yml
+version: "3.0"
+services:
+  dockerapp:
+    image: henryfbp/dockerapp
+    ports:
+      - "4000:5000" # use port 4000 externally
+    depends_on:
+      - redis
+    deploy:
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+```
+
+    docker stack deploy --compose-file prod4000.yml dockerapp_stack
+
+Output:
+
+    vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker stack deploy --compose-file prod4000.yml dockerapp_stack
+    Updating service dockerapp_stack_dockerapp (id: 4wpd5sw3sb5wffn8mpha3da50)
+    Updating service dockerapp_stack_redis (id: 2v4ublkvr2frbupxvgdfdcl6q)
+
+Let's check the ports with `docker stack services dockerapp_stack`...
+
+```
+vagrant@vagrant-virtualbox ~/G/dockerapp (master)> docker stack services dockerapp_stack
+ID             NAME                        MODE         REPLICAS   IMAGE                       PORTS
+4wpd5sw3sb5w   dockerapp_stack_dockerapp   replicated   2/2        henryfbp/dockerapp:latest   *:4000->5000/tcp
+2v4ublkvr2fr   dockerapp_stack_redis       replicated   1/1        redis:3.2.0                 
+```
+
+Woohoo! The port mapping was updated to 4000.
+
+With `docker deploy`, we can also easily scale our services.
+
+Let's say we want to add 1 more container for the `redis` service - Just add a `deploy:` key with `replicas: 2` and run `docker stack deploy (...)` again.
+
+You can run `docker stack rm (...)` if you don't want it anymore.
+
 ### 44. Extra learning Material: Dockers Monitoring Tools
+
+We didn't cover much about Docker monitoring strategy in this course. However, monitoring tools are handy option for a smooth functioning of your ops. If properly configured, logs and visual data can make a huge difference during troubleshooting.
+We have written a post to summarize some of the popular Docker monitoring tools that you can choose for your environment depending upon your needs.
+
+Check this up if you are interested.
+
+<https://www.level-up.one/dockers-monitoring-tools/>
 
 ## Section 7: Additional Learning Materials
 
 ### 45. What is new in Docker 17.06
 
+Docker 17.06 (stable) was out at June 2017!
+
+Docker moves very fast, with an edge channel released every month and a stable release every 3 months. 
+
+Watch a Video of Mano giving an overview of the new features in Docker 17.06 Community Edition: <https://www.youtube.com/watch?v=-NeaXUGEK_g>
+
+For a detailed list of changes, look through the Docker CE release notes on GitHub: <https://github.com/docker/docker-ce/releases>
+
 ### 46. Docker's Native support for Kubernetes
+
+At DockerCon 2017 in Copenhagen, Docker announced that it's adding support to run applications using Docker’s Swarm orchestrator with Kubernetes on the same computer cluster itself!
+
+Kubernetes is an container orchestration platform which we didn't cover much in this course(We are going to have a course about Kubernetes soon!) . You can think of Kubernetes as a Docker Swarm alternative, but Kubernetes is more production ready than Docker Swarm.
+
+This is an exiting news! The introduction of Docker's native support for Kubernetes gives us the ability to make an orchestration choice with the added security, management and end-to-end Docker experience that we have expected for so long!
+
+Want to read more? Check the news out!
+
+<https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/>
 
 ### 47. Future Learning
 
+See video.
+
 ### 48. Text Lecture: Future Learning
 
+Get a FREE copy of our DevOps book
+
+https://www.level-up.one/devops-pdf-book/
+
+Join our DevOps Facebook Group 
+
+https://www.facebook.com/groups/1911219079195863/
+
 ### 49. Coupons to Our Other Courses
+
+We are happy to offer a $15 discount to our existing students for all our other Udemy courses.
+
+The Complete Jenkins Course For Developers and DevOps($15, Udemy Best Seller in Jenkins category): https://www.udemy.com/the-complete-jenkins-course-for-developers-and-devops/?couponCode=DOCKER_STUDENT_15
+
+IntelliJ IDEA Tricks to Boost Productivity for Java Devs ($15): https://www.udemy.com/intellij-idea-secrets-double-your-coding-speed-in-2-hours/?couponCode=DOCKER_STUDENT_15
+
+Apache Spark with Java - Mastering Big Data! ($15, Udemy Best Seller in Apache Spark Category): https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15
+
+Apache Spark with Scala - Learn Spark from a Big Data Guru($15, Udemy Best Seller in Apache Spark Category): https://www.udemy.com/apache-spark-with-scala-mastering-big-data/?couponCode=https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15
+
+Apache Spark with Python - Big Data with PySpark and Spark($15, Udemy Best Seller in Apache Spark Category): https://www.udemy.com/apache-spark-with-python-big-data-with-pyspark-and-spark/?couponCode=DOCKER_STUDENT_15
+
+Learn Kubernetes from a DevOps guru (Kubernetes + Docker): https://www.udemy.com/kubernetes-from-a-devops-kubernetes-guru/?couponCode=DOCKER_STUDENT_15
+
+If you want more discounts, you can join my mailing list and you will get any of these courses with only $10 (more than 90% discount)
+
+http://www.level-up.one/join/
+
+As always, thanks for having us in your learning journey!
+
+James and Tao
