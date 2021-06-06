@@ -16,6 +16,16 @@ The course is below.
 
 ### 1. Introduction
 
+We'll use Git for SCM, Jenkins for CICD pipelines, Maven as build tool, Ansible for configuraton mgmt post-deployment, Docker to host aps, k8s to manage our docker containers.
+
+We'll use AWS to set all of this up.
+
+## DevOps Flow
+
+Devs usually push code to Git.
+
+When code... TODO
+
 ### 2. What do we cover
 
 ### 3. What is CI and CD
