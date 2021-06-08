@@ -12,9 +12,10 @@ The course is below.
 
 <https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/>
 
-My work for this course can be found here.
+My work for this course can be found here:
 
-<https://github.com/HenryFBP/docker-crash-course>
+- <https://github.com/HenryFBP/docker-crash-course>
+- <https://github.com/henryfbp/dockerapp/>
 
 [Slides are here.](/files/2021-05-12-docker-crash-course/slides.pdf)
 
