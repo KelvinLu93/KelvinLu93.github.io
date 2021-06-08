@@ -6,9 +6,8 @@ DevOps Flow Devs usually push code to Git.
 When code&amp;hellip; TODO
 2. What do we cover 3. What is CI and CD 4. Resources to Setup Simple CI/CD Pipeline 5.</description></item><item><title>Docker Crash Course Notes</title><link>/posts/2021-05-12-docker-crash-course/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>/posts/2021-05-12-docker-crash-course/</guid><description>The course The course is below.
 https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
-My work for this course can be found here.
-https://github.com/HenryFBP/docker-crash-course
-Slides are here.
+My work for this course can be found here:
+https://github.com/HenryFBP/docker-crash-course https://github.com/henryfbp/dockerapp/ Slides are here.
 Section 1: Get Started with Docker 1. Course Overview See course.
 2. Support See course.
 3. Support See course.
