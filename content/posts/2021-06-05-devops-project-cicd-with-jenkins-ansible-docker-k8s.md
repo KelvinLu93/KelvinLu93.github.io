@@ -24,7 +24,13 @@ We'll use AWS to set all of this up.
 
 Devs usually push code to Git.
 
-When code... TODO
+When code is in Git, Jenkins pulls code and builds.
+
+Once a build is completed, an artifact is generated. This artifact gets deployed to a target environment, which could be a VM, container, or k8s cluster.
+
+We should have a tool that deploys this artifact onto our target environment -- In our case, this is what Ansible does, as a deployment service that deploys on a Docker container or k8s cluster.
+
+![](/static/images/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/devops-flow.png)
 
 ### 2. What do we cover
 
