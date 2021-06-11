@@ -37,3 +37,7 @@ TL;DR `hugo new content/posts/mypost.md`
 -   fix favicon
     -   resources.GetMatch icon hugo
     -   link rel="icon"
+
+## VS Code Plugins
+
+- <https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc>
