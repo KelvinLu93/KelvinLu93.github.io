@@ -10,10 +10,15 @@ A: Yes!
 
 I am currently migrating it into Hugo, which this site is running on.
 
+This site is built with Github Actions. See this link.
+
+<https://github.com/HenryFBP/henryfbp.github.io/actions>
+
 Clone [this repo](http://github.com/HenryFBP/henryFBP.github.io) and just edit it and reupload it to GitHub!
 
     git clone --recurse-submodules https://github.com/HenryFBP/henryfbp.github.io
     git remote set-url origin https://your.remote.here.tld/
+    git push
 
 Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
 
