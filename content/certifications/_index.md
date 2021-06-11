@@ -20,10 +20,12 @@ title: Certifications
         - [Fall 2018](#fall-2018)
         - [Spring 2019](#spring-2019)
         - [Fall 2019](#fall-2019)
+    - [New York University: Master's in CyberSecurity](#new-york-university-masters-in-cybersecurity)
 - [UDemy Classes](#udemy-classes)
     - [Ethical Hacking & Bug Hunting: Buffer Overflow For Beginners](#ethical-hacking--bug-hunting-buffer-overflow-for-beginners)
     - [Expert Malware Analysis and Reverse Engineering](#expert-malware-analysis-and-reverse-engineering)
     - [Kali Linux Web App Pentesting Labs](#kali-linux-web-app-pentesting-labs)
+    - [Docker Crash Course for busy DevOps and Developers](#docker-crash-course-for-busy-devops-and-developers)
 
 <!-- /TOC -->
 
@@ -133,22 +135,32 @@ ITMO 417 - Shell Scripting for Sys Admin
 
 ITMS 448 - Cyber Security Technologies 
 
+### New York University: Master's in CyberSecurity
+
+In progress currently.
+
 ## UDemy Classes
 
 ### Ethical Hacking & Bug Hunting: Buffer Overflow For Beginners
 
 <https://udemy.com/course/buffer-overflow-course-exploit-development/>
 
-![](/images/udemy-certificates/UC-01ed10f6-3061-436f-b74d-f6be27737cdc.jpg)
+![](/images/udemy-certificates/Ethical%20Hacking%20&%20Bug%20Hunting%20Buffer%20Overflow%20For%20Beginners.jpg)
 
 ### Expert Malware Analysis and Reverse Engineering
 
 <https://www.udemy.com/course/expert-malware-analysis-and-reverse-engineering/>
 
-![](/images/udemy-certificates/UC-4bd750a8-8a31-443b-9cce-eb92d76d21f8.jpg)
+![](/images/udemy-certificates/Expert%20Malware%20Analysis%20and%20Reverse%20Engineering.jpg)
 
 ### Kali Linux Web App Pentesting Labs
 
 <https://www.udemy.com/course/kali-linux-web-app-pentesting-labs/>
 
-![](/images/udemy-certificates/UC-f69d96a5-084a-47ee-be3f-7c501416f7a8.jpg)
+![](/images/udemy-certificates/Kali%20Linux%20Web%20App%20Pentesting%20Labs.jpg)
+
+### Docker Crash Course for busy DevOps and Developers
+
+<https://usbank.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/>
+
+![](/images/udemy-certificates/Docker%20Crash%20Course%20for%20busy%20DevOps%20and%20Developers.jpg)
