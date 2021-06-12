@@ -3,5 +3,5 @@ https://udemy.com/course/valaxy-devops/
 Section 1: Introduction 1. Introduction We&amp;rsquo;ll use Git for SCM, Jenkins for CICD pipelines, Maven as build tool, Ansible for configuraton mgmt post-deployment, Docker to host aps, k8s to manage our docker containers.
 We&amp;rsquo;ll use AWS to set all of this up.
 DevOps Flow Devs usually push code to Git.
-When code&amp;hellip; TODO
-2. What do we cover 3. What is CI and CD 4. Resources to Setup Simple CI/CD Pipeline 5.</description></item></channel></rss>
+When code is in Git, Jenkins pulls code and builds.
+Once a build is completed, an artifact is generated.</description></item></channel></rss>

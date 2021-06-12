@@ -3,8 +3,8 @@ https://udemy.com/course/valaxy-devops/
 Section 1: Introduction 1. Introduction We&amp;rsquo;ll use Git for SCM, Jenkins for CICD pipelines, Maven as build tool, Ansible for configuraton mgmt post-deployment, Docker to host aps, k8s to manage our docker containers.
 We&amp;rsquo;ll use AWS to set all of this up.
 DevOps Flow Devs usually push code to Git.
-When code&amp;hellip; TODO
-2. What do we cover 3. What is CI and CD 4. Resources to Setup Simple CI/CD Pipeline 5.</description></item><item><title>Docker Crash Course Notes</title><link>/posts/2021-05-12-docker-crash-course/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>/posts/2021-05-12-docker-crash-course/</guid><description>The course The course is below.
+When code is in Git, Jenkins pulls code and builds.
+Once a build is completed, an artifact is generated.</description></item><item><title>Docker Crash Course Notes</title><link>/posts/2021-05-12-docker-crash-course/</link><pubDate>Wed, 12 May 2021 00:00:00 +0000</pubDate><guid>/posts/2021-05-12-docker-crash-course/</guid><description>The course The course is below.
 https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
 My work for this course can be found here:
 https://github.com/HenryFBP/docker-crash-course https://github.com/henryfbp/dockerapp/ Slides are here.
