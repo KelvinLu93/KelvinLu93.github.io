@@ -12,6 +12,18 @@ The course is below.
 
 <https://udemy.com/course/valaxy-devops/>
 
+## My work
+
+My work on this course can be found at the following links:
+
+- <https://github.com/HenryFBP/valaxydevopsproject>
+- <https://github.com/HenryFBP/valaxydevopsproject-hello-world-app>
+
+Forked from respectively:
+
+- <https://github.com/yankils/Simple-DevOps-Project>
+- <https://github.com/yankils/hello-world>
+
 ## Section 1: Introduction
 
 ### 1. Introduction
@@ -34,9 +46,57 @@ We should have a tool that deploys this artifact onto our target environment -- 
 
 ### 2. What do we cover
 
+- Intro
+    - Intro to CI/CD
+    - Tools used to set up DevOps flow
+
+- Setup CI/CD with Jenkins, git, Maven, and Tomcat
+    - Set up Jenkins
+    - Run a test job
+    - Set up and configure Maven + Git
+    - Set up Tomcat server
+    - Install plugins
+    - Integrate Git+Maven in Jenkins
+    - Run CI/CD job
+
+- Introducing Docker
+    - Set up a docker env
+    - Manage Docker with Ansible
+    - Docker Hub repo
+    - Write Dockerfile
+    - Run a job
+
+- Integration with Ansible
+    - Set up Ansible env
+    - Integrate Ansible with Jenkins
+    - Write an Ansible playbook to deploy on a container
+    - Running Jobs
+
+- Introducing k8s
+    - Set up Kubernetes environment
+    - Write deployment and service files
+    - Run a job
+
 ### 3. What is CI and CD
 
+- CI = Continuous Integration
+- CD = Continuous Delivery
+- CD = Continuous Deployment
+
+![](/images/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/ci.png)
+
+Devs commit, push the commits, then builds/unit tests run, then an artifact is deployed (staging) onto a target environment.
+
+The difference between continuous delivery, and continuous deployment, is that the deploy is /automatic/ for continuous deployment, where in continuous delivery, the deploy step is manual.
+
+And for CI, we just run tests against pushed code, but don't make an artifact.
+
 ### 4. Resources to Setup Simple CI/CD Pipeline
+
+1. Github account
+    a. `valaxydevopsproject-hello-world-app` repository (see above)
+    b. `valaxydevopsproject` repository (see above)
+2. AWS Free Tier account.
 
 ### 5. Resources before starting
 
