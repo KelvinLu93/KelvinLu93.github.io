@@ -19,6 +19,9 @@ social:
   - icon: github
     iconPack: fab
     url: https://github.com/HenryFBP
+  - icon: laptop
+    iconPack: fas
+    url: https://github.com/HenryFBP/dotfiles/
 
 weight: 1
 widget:
