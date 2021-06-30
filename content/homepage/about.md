@@ -52,6 +52,8 @@ widget:
 
 <i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i>
 
+foo
+
 I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
 
 In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
