@@ -1766,7 +1766,7 @@ Software deployment in the environment relies on conforming to:
 
 ##### Requirements Traceability Matrix (RTM)
 
-![](/static/images/2020-06-15-CSSLP-notes/requirements-tracebility-matrix-example.png)
+![](/images/2020-06-15-CSSLP-notes/requirements-tracebility-matrix-example.png)
 
 An RTM is used to track and manage all functional requirements as well as implementation details.
 

@@ -33,9 +33,9 @@ The course this post is based off of is Snort Intrusion Detection, Rule Writing,
 
 Some specific network settings should be used to allow capturing of packets.
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/vm-network-interfaces.PNG)
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-1.PNG)
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-2.PNG)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/vm-network-interfaces.PNG)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-1.PNG)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/sec-onion-vm-network-settings-2.PNG)
 
 ### Installation notes
 
@@ -48,7 +48,7 @@ Some specific network settings should be used to allow capturing of packets.
 7.  Choose 'Yes' for 'configure /etc/network/interfaces'.
 8.  Choose `enp0s3` for the management interface, because this is the NAT-ed interface.
         
-    ![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/management-interface-selection.png)
+    ![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/management-interface-selection.png)
     
     `enp0s8` is the host-only interface, which will only be used for sniffing.
     
@@ -56,7 +56,7 @@ Some specific network settings should be used to allow capturing of packets.
 10. Choose 'Yes' for 'Configure sniffing interfaces'.
 11. Your changes should look like this:
 
-    ![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/changes-to-network-setup.png)
+    ![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/changes-to-network-setup.png)
     
     Click 'Yes' and reboot.
 
@@ -158,11 +158,11 @@ Optional UI options:
     
 -   Filter to only view `http.request` to only see HTTP requests:
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httprequest.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httprequest.png)
 
 -   Then, click on any host in the request, and `right click > apply as column`.
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httphost-column.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-httphost-column.png)
 
 -   `view > time display format > first option`
 -   `view > time display format > seconds: 0`
@@ -177,13 +177,13 @@ They clicked on this link in an email and as a result, downloaded a VBE file tha
 
 Packet number 199 shows the request that asks for the VBE file:
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-vbe.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-vbe.png)
 
 VBE files are like VBS scripts, but encoded. <!-- TODO: decode it! analyze it! -->
 
 All of the .txt, .tiff, .dll, .exe files are post-infection files (i.e. packet 379):
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-post-infect-txt.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-post-infect-txt.png)
 
 Some other indicators of post-infection are packets like packet 484 or 2467.
 
@@ -236,7 +236,7 @@ Similar to the first three, but again, a different URI indicator.
 
 Packet 487 has the URI we will use, which is `/bsb/debugnosso/index.php?`:
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-debugnosso.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-debugnosso.png)
 
 #### Line 5
 
@@ -263,9 +263,9 @@ solution you use.
 
 If we wrote the rules correctly, we should see it show up in Squert!
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert.png)
 
-![](/static/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert2.png)
+![](/images/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/lab2-squert2.png)
 
 That's it!
 
