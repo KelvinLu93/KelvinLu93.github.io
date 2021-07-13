@@ -288,6 +288,6 @@ Test the Snort rules we wrote:
     cd dumbpig
     sudo perl dumbpig.pl -r /etc/nsm/rules/local.rules
 
-You can also [download some bad rules here](/static/files/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/bad-rules.rules). Feel free to test them.
+You can also [download some bad rules here](/files/2020-05-30-snort-intrusion-detection-rule-writing-and-pcap-analysis/bad-rules.rules). Feel free to test them.
 
 ## Lab 4: TODO
