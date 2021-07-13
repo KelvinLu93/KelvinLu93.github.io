@@ -22,7 +22,7 @@ What is a dependency??
 
 Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 
-![](2021-07-08-10-30-36.png)
+![](/images/2021-07-08-spring-framework-master-class/layers.png)
 
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:
 
