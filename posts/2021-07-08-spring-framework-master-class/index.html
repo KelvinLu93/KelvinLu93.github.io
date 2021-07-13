@@ -33,7 +33,7 @@ public class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); }  publi
 <span>,</span>
 <a href=/categories/web/ class=hover:text-eureka>web</a>
 <span>,</span>
-<a href=/categories/java/ class=hover:text-eureka>java</a></div></div><div class=content><p>From <a href=https://udemy.com/course/spring-tutorial-for-beginners/>https://udemy.com/course/spring-tutorial-for-beginners/</a>.</p><h2 id=1-intro-to-spring>1. Intro to Spring</h2><p>What is Spring?</p><p>A: It&rsquo;s a Dependency Injection Framework.</p><p>What is DI?</p><p>What is a dependency??</p><h3 id=dependency>Dependency</h3><p>Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.</p><p><img src=2021-07-08-10-30-36.png alt></p><p>Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:</p><pre><code class=language-java>public class BusinessService{
+<a href=/categories/java/ class=hover:text-eureka>java</a></div></div><div class=content><p>From <a href=https://udemy.com/course/spring-tutorial-for-beginners/>https://udemy.com/course/spring-tutorial-for-beginners/</a>.</p><h2 id=1-intro-to-spring>1. Intro to Spring</h2><p>What is Spring?</p><p>A: It&rsquo;s a Dependency Injection Framework.</p><p>What is DI?</p><p>What is a dependency??</p><h3 id=dependency>Dependency</h3><p>Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.</p><p><img src=/images/2021-07-08-spring-framework-master-class/layers.png alt></p><p>Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:</p><pre><code class=language-java>public class BusinessService{
 
     SortAlgo sortAlgo = new BubbleSortAlgo();
 }
