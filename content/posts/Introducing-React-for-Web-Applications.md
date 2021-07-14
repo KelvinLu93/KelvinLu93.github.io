@@ -1,10 +1,10 @@
 ---
-title: "React Notes: Introducing React"
+title: "Build Apps Using React: Introducing React for Web Applications"
 date: 2021-07-13T12:51:46-04:00
 draft: false
 ---
 
-Skillsoft course.
+Skillsoft course, "Build Apps Using React: Introducing React for Web Applications"
 
 Work can be found below:
 
