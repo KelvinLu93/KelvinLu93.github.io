@@ -152,6 +152,9 @@ Spring is a DI Framework!
 - <https://github.com/in28minutes/spring-master-class>
 - [Course Guide PDF](/files/2021-07-08-spring-framework-master-class/SpringMasterClass-CourseGuidev0.1.pdf)
 
+You learn the basics of SF in 6 levels. See Course Guide.
+
+TODO
 
 ===
 
