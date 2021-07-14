@@ -145,7 +145,7 @@ This is called Dependency Injection. SF makes sure that all SF managed classes a
 
 Spring is a DI Framework!
 
-## Section 2: Spring Master Class - Level 1 to Level 6 - Course Overview, Github & More…
+## Section 2: Spring Master Class - Level 1 to Level 6 - Course Overview, Github & More
 
 ### 2. Spring Framework Master Class - Overview
 
@@ -154,632 +154,281 @@ Spring is a DI Framework!
 
 You learn the basics of SF in 6 levels. See Course Guide.
 
-TODO
-
 ===
 
 
-Section 3: Spring Level 1 -
-Introduction to Spring Framework …Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
-0 / 13|1hr 2min
+Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
 
-Progress cannot be changed for this item
-3. Section Introduction - Spring
-Framework in 10 Steps
-1min
+3. Section Introduction - Spring Framework in 10 Steps
 
-Progress cannot be changed for this item
 4. Spring Level 1, 2 and 3 - Github Folder
-1min
 
-Progress cannot be changed for this item
-5. Step 1 - Setting up a Spring Project
-using htttp://start.spring.io
-5min
+5. Step 1 - Setting up a Spring Project using htttp://start.spring.io
 
-Progress cannot be changed for this item
-6. Step 2 - Understanding Tight Coupling
-using the Binary Search Algorithm Exam…6. Step 2 - Understanding Tight Coupling using the Binary Search Algorithm Example
-8min
+6. Step 2 - Understanding Tight Coupling using the Binary Search Algorithm Example
 
-Progress cannot be changed for this item
-7. Step 3 - Making the Binary Search
-Algorithm Example Loosely Coupled
-5min
+7. Step 3 - Making the Binary Search Algorithm Example Loosely Coupled
 
-Progress cannot be changed for this item
-8. Step 4 - Using Spring Framework to
-Manage Dependencies - @Component,…8. Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired
-12min
+8. Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired
 
-Progress cannot be changed for this item
-9. Step 5 - What is happening in the
-background?
-6min
+9. Step 5 - What is happening in the background?
 
-Progress cannot be changed for this item
-10. Step 6 - Dynamic auto wiring and
-Troubleshooting - @Primary
-5min
+10. Step 6 - Dynamic auto wiring and Troubleshooting - @Primary
 
-Progress cannot be changed for this item
-11. Fastest Approach to Solve All Your
-Exceptions
-1min
+11. Fastest Approach to Solve All Your Exceptions
 
-Progress cannot be changed for this item
-12. Step 7 - Constructor and Setter
-Injection
-5min
+12. Step 7 - Constructor and Setter Injection
 
-Progress cannot be changed for this item
 13. Step 8 - Spring Modules
-5min
 
-Progress cannot be changed for this item
 14. Step 9 - Spring Projects
-5min
 
-Progress cannot be changed for this item
 15. Step 10 - Why is Spring Popular?
-4min
-Section 4: Spring Level 2 - Spring
-Framework in Depth
-0 / 19|1hr 53min
 
-Progress cannot be changed for this item
-16. Section Introduction - Spring
-Framework in Depth
-2min
+Section 4: Spring Level 2 - Spring Framework in Depth
 
-Progress cannot be changed for this item
-17. Step 11 - Dependency Injection - A
-few more examples
-6min
+16. Section Introduction - Spring Framework in Depth
 
-Progress cannot be changed for this item
-18. Step 12 - Autowiring in Depth - by
-Name and @Primary
-5min
+17. Step 11 - Dependency Injection - A few more examples
 
-Progress cannot be changed for this item
-19. Step 13 - Autowiring in Depth -
-@Qualifier annotation
-3min
+18. Step 12 - Autowiring in Depth - by Name and @Primary
 
-Progress cannot be changed for this item
-20. Step 14 - Scope of a Bean - Prototype
-and Singleton
-6min
+19. Step 13 - Autowiring in Depth - @Qualifier annotation
 
-Progress cannot be changed for this item
-21. Step 15 - Complex Scope Scenarios of
-a Spring Bean - Mix Prototype and Sing…21. Step 15 - Complex Scope Scenarios of a Spring Bean - Mix Prototype and Singleton
-13min
+20. Step 14 - Scope of a Bean - Prototype and Singleton
 
-Progress cannot be changed for this item
-22. Step 15B - Difference Between
-Spring Singleton and GOF Singleton
-4min
+21. Step 15 - Complex Scope Scenarios of a Spring Bean - Mix Prototype and Singleton
 
-Progress cannot be changed for this item
-23. Step 16 - Using Component Scan to
-scan for beans
-7min
+22. Step 15B - Difference Between Spring Singleton and GOF Singleton
 
-Progress cannot be changed for this item
-24. Step 17 - Lifecycle of a Bean -
-@PostConstruct and @PreDestroy
-6min
+23. Step 16 - Using Component Scan to scan for beans
 
-Progress cannot be changed for this item
-25. Step 18 - Container and Dependency
-Injection (CDI) - @Named, @Inject
-11min
+24. Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy
 
-Progress cannot be changed for this item
-26. Ignore SLF4J Errors in Step 19 - We
-will fix them in Step 20
-1min
+25. Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
 
-Progress cannot be changed for this item
-27. Step 19 - Removing Spring Boot in
-Basic Application
-8min
+26. Ignore SLF4J Errors in Step 19 - We will fix them in Step 20
 
-Progress cannot be changed for this item
-28. Step 20 - Fixing minor stuff - Add
-Logback and Close Application Context
-4min
+27. Step 19 - Removing Spring Boot in Basic Application
 
-Progress cannot be changed for this item
-29. Step 21 - Defining Spring Application
-Context using XML - Part 1
-7min
+28. Step 20 - Fixing minor stuff - Add Logback and Close Application Context
 
-Progress cannot be changed for this item
-30. Step 22 - Defining Spring Application
-Context using XML - Part 2
-4min
+29. Step 21 - Defining Spring Application Context using XML - Part 1
 
-Progress cannot be changed for this item
-31. Step 23 - Mixing XML Context with
-Component Scan for Beans defined wit…31. Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
-8min
+30. Step 22 - Defining Spring Application Context using XML - Part 2
 
-Progress cannot be changed for this item
-32. Step 24 - IOC Container vs
-Application Context vs Bean Factory
-5min
+31. Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
 
-Progress cannot be changed for this item
-33. Step 25 - @Component vs @Service
-vs @Repository vs @Controller
-6min
+32. Step 24 - IOC Container vs Application Context vs Bean Factory
 
-Progress cannot be changed for this item
-34. Step 26 - Read values from external
-properties file
-6min
-Section 5: Basic Tools and
-Frameworks - JUnit in 5 Steps
-0 / 6|23min
+33. Step 25 - @Component vs @Service vs @Repository vs @Controller
 
-Progress cannot be changed for this item
+34. Step 26 - Read values from external properties file
+
+Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
+
 35. Section Introduction - JUnit in 5 Steps
-1min
 
-Progress cannot be changed for this item
 36. Step 1 : What is JUnit and Unit
 Testing?
-4min
 
-Progress cannot be changed for this item
 37. Step 2 : First JUnit Project and Green
 Bar
-5min
 
-Progress cannot be changed for this item
 38. Step 3 : First Code and First Unit Test
-5min
 
-Progress cannot be changed for this item
 39. Step 4 : Other assert methods
-4min
 
-Progress cannot be changed for this item
 40. Step 5 : Important annotations
-5min
-Section 6: Basic Tools and
-Frameworks - Mockito in 5 Steps
-0 / 7|28min
 
-Progress cannot be changed for this item
-41. Section Introduction - Mockito in 5
-Steps
-1min
+Section 6: Basic Tools and Frameworks - Mockito in 5 Steps
 
-Progress cannot be changed for this item
-42. Step 1 : Setting up an example using
-http://start.spring.io.
-6min
+41. Section Introduction - Mockito in 5 Steps
 
-Progress cannot be changed for this item
+42. Step 1 : Setting up an example using http://start.spring.io
+
 43. COURSE UPDATE : JUnit 4 vs JUnit 5
-1min
 
-Progress cannot be changed for this item
-44. Step 2 : Using a Stubs -
-Disadvantages
-4min
+44. Step 2 : Using a Stubs - Disadvantages
 
-Progress cannot be changed for this item
 45. Step 3 : Your first mock with Mockito
-5min
 
-Progress cannot be changed for this item
-46. Step 4 : Using Mockito Annotations -
-@Mock, @InjectMocks, @RunWith
-5min
+46. Step 4 : Using Mockito Annotations - @Mock, @InjectMocks, @RunWith
 
-Progress cannot be changed for this item
 47. Step 5 : Mocking List interface
-6min
-Section 7: Spring Level 3 - Unit
-Testing with Spring Framework
-0 / 4|25min
 
-Progress cannot be changed for this item
-48. Section Introduction - Unit Testing
-with Spring Framework
-1min
+Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
-Progress cannot be changed for this item
-49. Step 27 - Spring Unit Testing with a
-Java Context
-10min
+48. Section Introduction - Unit Testing with Spring Framework
 
-Progress cannot be changed for this item
-50. Spring Unit Testing with an XML
-Context
-4min
+49. Step 27 - Spring Unit Testing with a Java Context
 
-Progress cannot be changed for this item
+50. Spring Unit Testing with an XML Context
+
 51. Spring Unit Testing with Mockito
-10min
-Section 8: Spring Level 4 - Spring
-Boot in 10 Steps
-0 / 11|1hr
 
-Progress cannot be changed for this item
-52. Section Introduction - Spring Boot in
-10 Steps
-1min
+Section 8: Spring Level 4 - Spring Boot in 10 Steps
 
-Progress cannot be changed for this item
-53. Step 1 : Introduction to Spring Boot -
-Goals and Important Features
-6min
+52. Section Introduction - Spring Boot in 10 Steps
 
-Progress cannot be changed for this item
-54. Step 2 : Developing Spring
-Applications before Spring Boot
-4min
+53. Step 1 : Introduction to Spring Boot - Goals and Important Features
 
-Progress cannot be changed for this item
-55. Step 3 : Using Spring Initializr to
-create a Spring Boot Application
-5min
+54. Step 2 : Developing Spring Applications before Spring Boot
 
-Progress cannot be changed for this item
-56. Step 4 : Creating a Simple REST
-Controller
-5min
+55. Step 3 : Using Spring Initializr to create a Spring Boot Application
 
-Progress cannot be changed for this item
-57. Step 5 : What is Spring Boot Auto
-Configuration?
-9min
+56. Step 4 : Creating a Simple REST Controller
 
-Progress cannot be changed for this item
-58. Step 6 : Spring Boot vs Spring vs
-Spring MVC
-6min
+57. Step 5 : What is Spring Boot Auto Configuration?
 
-Progress cannot be changed for this item
-59. Step 7 : Spring Boot Starter Projects -
-Starter Web and Starter JPA
-8min
+58. Step 6 : Spring Boot vs Spring vs Spring MVC
 
-Progress cannot be changed for this item
-60. Step 8 : Overview of different Spring
-Boot Starter Projects
-4min
+59. Step 7 : Spring Boot Starter Projects - Starter Web and Starter JPA
 
-Progress cannot be changed for this item
+60. Step 8 : Overview of different Spring Boot Starter Projects
+
 61. Step 9 : Spring Boot Actuator
-9min
 
-Progress cannot be changed for this item
 62. Step 10 : Spring Boot Developer Tools
-4min
-Section 9: Spring Level 5 - Spring
-AOP
-0 / 12|46min
-Section 10: Spring Level 6 -
-Interacting with Databases - Sprin…Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
-0 / 24|1hr 38min
 
-Progress cannot be changed for this item
-75. Section Introduction - Spring JDBC,
-JPA and Spring Data
-1min
+Section 9: Spring Level 5 - Spring AOP
 
-Progress cannot be changed for this item
-76. Spring JDBC to JPA with Hibernate -
-Github Folder
-0min
+Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
 
-Progress cannot be changed for this item
-77. Step 01 - Setting up a project with
-JDBC, JPA, H2 and Web Dependencies
-6min
+75. Section Introduction - Spring JDBC, JPA and Spring Data
 
-Progress cannot be changed for this item
+76. Spring JDBC to JPA with Hibernate - Github Folder
+
+77. Step 01 - Setting up a project with JDBC, JPA, H2 and Web Dependencies
+
 78. COURSE UPDATE : H2 Database URL
-1min
 
-Progress cannot be changed for this item
 79. Step 02 - Launching up H2 Console
-5min
 
-Progress cannot be changed for this item
 80. Updates to Step 03 and Step 04
-1min
 
-Progress cannot be changed for this item
-81. Step 03 - Creating a Database Table in
-H2
-4min
+81. Step 03 - Creating a Database Table in H2
 
-Progress cannot be changed for this item
 82. Step 04 - Populate data into Person
 Table
-5min
 
-Progress cannot be changed for this item
-83. Step 05 - Implement findAll persons
-Spring JDBC Query Method
-6min
+83. Step 05 - Implement findAll persons Spring JDBC Query Method
 
-Progress cannot be changed for this item
-84. Step 06 - Execute the findAll method
-using CommandLineRunner
-6min
+84. Step 06 - Execute the findAll method using CommandLineRunner
 
-Progress cannot be changed for this item
-85. Step 07 - A Quick Review - JDBC vs
-Spring JDBC
-3min
+85. Step 07 - A Quick Review - JDBC vs Spring JDBC
 
-Progress cannot be changed for this item
-86. Step 08 - Whats in the background?
-Understanding Spring Boot Autoconfig…86. Step 08 - Whats in the background? Understanding Spring Boot Autoconfiguration
-5min
+86. Step 08 - Whats in the background? Understanding Spring Boot Autoconfiguration
 
-Progress cannot be changed for this item
-87. Step 09 - Implementing findById
-Spring JDBC Query Method
-4min
+87. Step 09 - Implementing findById Spring JDBC Query Method
 
-Progress cannot be changed for this item
-88. Step 10 - Implementing deleteById
-Spring JDBC Update Method
-3min
+88. Step 10 - Implementing deleteById Spring JDBC Update Method
 
-Progress cannot be changed for this item
-89. Step 11 - Implementing insert and
-update Spring JDBC Update Methods
-9min
+89. Step 11 - Implementing insert and update Spring JDBC Update Methods
 
-Progress cannot be changed for this item
-90. Step 12 - Creating a custom Spring
-JDBC RowMapper
-5min
+90. Step 12 - Creating a custom Spring JDBC RowMapper
 
-Progress cannot be changed for this item
 91. Step 13 - Quick introduction to JPA
-6min
 
-Progress cannot be changed for this item
 92. Step 14 - Defining Person Entity
-4min
 
-Progress cannot be changed for this item
-93. Step 15 - Implementing findById JPA
-Repository Method
-8min
+93. Step 15 - Implementing findById JPA Repository Method
 
-Progress cannot be changed for this item
-94. Step 16 - Implementing insert and
-update JPA Repository Methods
-4min
+94. Step 16 - Implementing insert and update JPA Repository Methods
 
-Progress cannot be changed for this item
-95. Step 17 - Implementing deleteById
-JPA Repository Method
-2min
+95. Step 17 - Implementing deleteById JPA Repository Method
 
-Progress cannot be changed for this item
-96. Step 18 - Implementing findAll using
-JPQL Named Query
-4min
+96. Step 18 - Implementing findAll using JPQL Named Query
 
-Progress cannot be changed for this item
-97. Step 19 - Introduction to Spring Data
-JPA
-5min
+97. Step 19 - Introduction to Spring Data JPA
 
-Progress cannot be changed for this item
-98. Step 20 - Connecting to Other
-Databases
-3min
-Section 11: Quick Preview - Web
-Applications With Spring MVC
-0 / 26|2hr 59min
+98. Step 20 - Connecting to Other Databases
 
-Progress cannot be changed for this item
-99. Section Introduction - Basic Web
-Application
-1min
+Section 11: Quick Preview - Web Applications With Spring MVC
 
-Progress cannot be changed for this item
+99. Section Introduction - Basic Web Application
+
 100. Links for the Next Lecture
-1min
 
-Progress cannot be changed for this item
-101. Step 01 : Setting up Your First Java
-Web Application
-10min
+101. Step 01 : Setting up Your First Java Web Application
 
-Progress cannot be changed for this item
-102. Step 01 : Theory 1 - Maven and
-Magic
-6min
+102. Step 01 : Theory 1 - Maven and Magic
 
-Progress cannot be changed for this item
-103. Step 01 : Theory 2 - What is a
-Servlet?
-2min
+103. Step 01 : Theory 2 - What is a Servlet?
 
-Progress cannot be changed for this item
-104. Step 01 : Theory 3 - Web Application
-Request Flow
-8min
+104. Step 01 : Theory 3 - Web Application Request Flow
 
-Progress cannot be changed for this item
-105. Step 01 : Theory 4 - Understand Your
-First Servlet - LoginServlet
-7min
+105. Step 01 : Theory 4 - Understand Your First Servlet - LoginServlet
 
-Progress cannot be changed for this item
-106. Step 02 : Create LoginServlet From
-Scratch Again and Your First View
-13min
+106. Step 02 : Create LoginServlet From Scratch Again and Your First View
 
-Progress cannot be changed for this item
-107. Step 02 : Theory - Play Time - Let's
-Try Breaking Things
-4min
+107. Step 02 : Theory - Play Time - Let's Try Breaking Things
 
-Progress cannot be changed for this item
-108. Step 03 : Passing Request
-Parameters using Get Method
-9min
+108. Step 03 : Passing Request Parameters using Get Method
 
-Progress cannot be changed for this item
-109. Step 03 : Theory - Introduction and
-End to Scriptlets
-5min
+109. Step 03 : Theory - Introduction and End to Scriptlets
 
-Progress cannot be changed for this item
-110. Step 04 : Disadvantages of Get
-Parameters
-4min
+110. Step 04 : Disadvantages of Get Parameters
 
-Progress cannot be changed for this item
 111. Step 05 : Your First Post Request
-7min
 
-Progress cannot be changed for this item
-112. Step 06 : Your First Servlet doPost
-Method
-5min
+112. Step 06 : Your First Servlet doPost Method
 
-Progress cannot be changed for this item
 113. Step 07 : Lets Add a Password Field
-9min
 
-Progress cannot be changed for this item
-114. Step 10 : Setting up Maven,Tomcat
-and Simple JEE Application
-7min
+114. Step 10 : Setting up Maven, Tomcat and Simple JEE Application
 
-Progress cannot be changed for this item
 115. Links for the Next Lecture
-1min
 
-Progress cannot be changed for this item
-116. Step 11 : Setting up Spring MVC
-with 4 mini steps
-17min
+116. Step 11 : Setting up Spring MVC with 4 mini steps
 
-Progress cannot be changed for this item
-117. Step 12 : Your First Spring MVC
-Controller
-10min
+117. Step 12 : Your First Spring MVC Controller
 
-Progress cannot be changed for this item
-118. Step 13 : Part 1 - Your First Spring
-MVC View : ViewResolver
-11min
+118. Step 13 : Part 1 - Your First Spring MVC View : ViewResolver
 
-Progress cannot be changed for this item
-119. Step 13 : Part 2 - Theory Break -
-Spring MVC Architecture
-2min
+119. Step 13 : Part 2 - Theory Break - Spring MVC Architecture
 
-Progress cannot be changed for this item
-120. Step 13 : Part 3 - Play Break - Try
-Breaking Things
-4min
+120. Step 13 : Part 3 - Play Break - Try Breaking Things
 
-Progress cannot be changed for this item
-121. Step 14 : Add Logging Framework
-Log4j
-8min
+121. Step 14 : Add Logging Framework Log4j
 
-Progress cannot be changed for this item
-122. Step 15 : Redirect to Welcome Page :
-ModelMap and @RequestParam
-14min
+122. Step 15 : Redirect to Welcome Page: ModelMap and @RequestParam
 
-Progress cannot be changed for this item
-123. Step 16 : Use LoginService to
-Authenticate
-9min
+123. Step 16 : Use LoginService to Authenticate
 
-Progress cannot be changed for this item
-124. Step 17 : Spring Autowiring and
-Dependency Injection
-6min
-Section 12: Basic Tools and
-Frameworks - Eclipse in 5 Steps
-0 / 6|31min
+124. Step 17 : Spring Autowiring and Dependency Injection
 
-Progress cannot be changed for this item
-125. Section Introduction - Eclipse in 5
-Steps
-1min
+Section 12: Basic Tools and Frameworks - Eclipse in 5 Steps
 
-Progress cannot be changed for this item
+125. Section Introduction - Eclipse in 5 Steps
+
 126. Step 1 : Create a Java Project
-5min
 
-Progress cannot be changed for this item
 127. Step 2 : Keyboard Shortcuts
-12min
 
-Progress cannot be changed for this item
 128. Step 3 : Views and Perspectives
-6min
 
-Progress cannot be changed for this item
 129. Step 4 : Save Actions
-4min
 
-Progress cannot be changed for this item
 130. Step 5 : Code Generation
-3min
-Section 13: Basic Tools and
-Frameworks - Maven in 5 Steps
-0 / 6|35min
 
-Progress cannot be changed for this item
-131. Section Introduction - Maven in 5
-Steps
-1min
+Section 13: Basic Tools and Frameworks - Maven in 5 Steps
 
-Progress cannot be changed for this item
-132. Step 1 : Creating and importing a
-Maven Project
-5min
+131. Section Introduction - Maven in 5 Steps
 
-Progress cannot be changed for this item
-133. Step 2 : Understanding Project
-Object Model - pom.xml
-8min
+132. Step 1 : Creating and importing a Maven Project
 
-Progress cannot be changed for this item
+133. Step 2 : Understanding Project Object Model - pom.xml
+
 134. Step 3 : Maven Build Life Cycle
-7min
 
-Progress cannot be changed for this item
 135. Step 4 : How does Maven Work?
-6min
 
-Progress cannot be changed for this item
-136. Step 5 : Important Maven
-Commands
-8min
+136. Step 5 : Important Maven Commands
+
 Section 14: Congratulations
-0 / 2|4min
 
-Progress cannot be changed for this item
 137. Bonus Lecture
-3min
 
-Progress cannot be changed for this item
-138. Spring Master Class -
-Congratulations on Completing the Cou…138. Spring Master Class - Congratulations on Completing the Course
-1min
+138. Spring Master Class - Congratulations on Completing the Course
+
