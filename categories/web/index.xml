@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>web on Henry Post</title><link>/categories/web/</link><description>Recent content in web on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Thu, 08 Jul 2021 10:24:50 -0500</lastBuildDate><atom:link href="/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring Framework Master Class</title><link>/posts/2021-07-08-spring-framework-master-class/</link><pubDate>Thu, 08 Jul 2021 10:24:50 -0500</pubDate><guid>/posts/2021-07-08-spring-framework-master-class/</guid><description>From https://udemy.com/course/spring-tutorial-for-beginners/.
-1. Intro to Spring What is Spring?
+Section 1. Intro to Spring What is Spring?
 A: It&amp;rsquo;s a Dependency Injection Framework.
 What is DI?
 What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:
-public class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); } public class BubbleSortAlgo implements SortAlgo { ... } This is tight coupling because the BusinessService class is tightly coupled with a specific implementation of a class, BubbleSortAlgo.</description></item></channel></rss>
+public class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); } public class BubbleSortAlgo implements SortAlgo { .</description></item></channel></rss>
