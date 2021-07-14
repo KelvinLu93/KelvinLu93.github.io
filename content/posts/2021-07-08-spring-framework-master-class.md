@@ -8,6 +8,8 @@ draft: false
 
 From <https://udemy.com/course/spring-tutorial-for-beginners/>.
 
+Code can be found at 
+
 ## Section 1. Intro to Spring
 
 What is Spring?
@@ -154,16 +156,27 @@ Spring is a DI Framework!
 
 You learn the basics of SF in 6 levels. See Course Guide.
 
-===
+## Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
 
+### 3. Section Introduction - Spring Framework in 10 Steps
 
-Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
+See <https://github.com/in28minutes/spring-master-class/tree/master/01-spring-in-depth> for code.
 
-3. Section Introduction - Spring Framework in 10 Steps
+Use Eclise Oxyen.
 
-4. Spring Level 1, 2 and 3 - Github Folder
+### 4. Spring Level 1, 2 and 3 - Github Folder
 
-5. Step 1 - Setting up a Spring Project using htttp://start.spring.io
+Also, use Spring Initializr with version 2.3.1. Do NOT use snapshot versions.
+
+### 5. Step 1 - Setting up a Spring Project using <http://start.spring.io>
+
+Let's use <http://start.spring.io>.
+
+Use default settings.
+
+Open Eclipse and "Import Existing Maven Projects".
+
+See <https://github.com/HenryFBP/Spring-Framework-Master-Class/tree/master/spring-in-5-steps> for pom.xml.
 
 6. Step 2 - Understanding Tight Coupling using the Binary Search Algorithm Example
 
@@ -185,7 +198,7 @@ Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
 
 15. Step 10 - Why is Spring Popular?
 
-Section 4: Spring Level 2 - Spring Framework in Depth
+## Section 4: Spring Level 2 - Spring Framework in Depth
 
 16. Section Introduction - Spring Framework in Depth
 
@@ -225,7 +238,7 @@ Section 4: Spring Level 2 - Spring Framework in Depth
 
 34. Step 26 - Read values from external properties file
 
-Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
+## Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
 
 35. Section Introduction - JUnit in 5 Steps
 
@@ -241,7 +254,7 @@ Bar
 
 40. Step 5 : Important annotations
 
-Section 6: Basic Tools and Frameworks - Mockito in 5 Steps
+## Section 6: Basic Tools and Frameworks - Mockito in 5 Steps
 
 41. Section Introduction - Mockito in 5 Steps
 
@@ -257,7 +270,7 @@ Section 6: Basic Tools and Frameworks - Mockito in 5 Steps
 
 47. Step 5 : Mocking List interface
 
-Section 7: Spring Level 3 - Unit Testing with Spring Framework
+## Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
 48. Section Introduction - Unit Testing with Spring Framework
 
@@ -267,7 +280,7 @@ Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
 51. Spring Unit Testing with Mockito
 
-Section 8: Spring Level 4 - Spring Boot in 10 Steps
+## Section 8: Spring Level 4 - Spring Boot in 10 Steps
 
 52. Section Introduction - Spring Boot in 10 Steps
 
@@ -291,9 +304,9 @@ Section 8: Spring Level 4 - Spring Boot in 10 Steps
 
 62. Step 10 : Spring Boot Developer Tools
 
-Section 9: Spring Level 5 - Spring AOP
+## Section 9: Spring Level 5 - Spring AOP
 
-Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
+## Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
 
 75. Section Introduction - Spring JDBC, JPA and Spring Data
 
@@ -344,7 +357,7 @@ Table
 
 98. Step 20 - Connecting to Other Databases
 
-Section 11: Quick Preview - Web Applications With Spring MVC
+## Section 11: Quick Preview - Web Applications With Spring MVC
 
 99. Section Introduction - Basic Web Application
 
@@ -398,7 +411,7 @@ Section 11: Quick Preview - Web Applications With Spring MVC
 
 124. Step 17 : Spring Autowiring and Dependency Injection
 
-Section 12: Basic Tools and Frameworks - Eclipse in 5 Steps
+## Section 12: Basic Tools and Frameworks - Eclipse in 5 Steps
 
 125. Section Introduction - Eclipse in 5 Steps
 
@@ -412,7 +425,7 @@ Section 12: Basic Tools and Frameworks - Eclipse in 5 Steps
 
 130. Step 5 : Code Generation
 
-Section 13: Basic Tools and Frameworks - Maven in 5 Steps
+## Section 13: Basic Tools and Frameworks - Maven in 5 Steps
 
 131. Section Introduction - Maven in 5 Steps
 
@@ -426,9 +439,8 @@ Section 13: Basic Tools and Frameworks - Maven in 5 Steps
 
 136. Step 5 : Important Maven Commands
 
-Section 14: Congratulations
+## Section 14: Congratulations
 
 137. Bonus Lecture
 
 138. Spring Master Class - Congratulations on Completing the Course
-
