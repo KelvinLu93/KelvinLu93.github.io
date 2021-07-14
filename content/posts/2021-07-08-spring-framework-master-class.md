@@ -134,6 +134,17 @@ This is called Dependency Injection. SF makes sure that all SF managed classes a
     - The process of SF 
 
 - Dependency Injection
+    - At a high level, the `@Autowired` annotation causing the `SortAlgo` object to be populated is DI.
+    - We are declaring X as a dependency of Y, and X gets automatically filled in.
+
+You may notice these are all kind of related. And all sinple.
+
 - Inversion of Control
+    - When we started off this example, we were explicitly assigning a value to the `sortAlgo` variable. The class `BusinessService` was responsible for creating an instance of the `SortAlgo`.
+    - But when we use `@Autowired`, we delegate control of creating the dependency instance to Spring Framework. We're taking the control away from the class that wants a dependency, and giving it to SF. This is what IoC is.
+
 - IOC Container
+    - Generic term representing anything that implements IoC. In this case, 
+
+
 - Application Context
