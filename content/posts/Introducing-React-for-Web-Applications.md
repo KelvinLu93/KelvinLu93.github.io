@@ -382,7 +382,22 @@ Here's the fixed version:
 <https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/Lists.html>
 
 ## JSX
+
+So, using `React.createElement` sucks... It is tedious AF. Let's not do that. Instead, JSX is something we can use.
+
+JSX is a lot easier to work with for syntax reasons.
+
+"JavaScript Syntax Extension" is a concise syntax to define a tree structure with attributes. It's an XML-based spec - but with JSX you can make custom tags and components.
+
+You get to write HTML-like syntax that gets used to React so that HTML representation of components can coexist with JS code.
+
+- Large trees representing the DOM are intuitively represented
+- Maintains the semantics of JS
+
 ## Babel Compiler
+
+JSX looks very similar to HTML.
+
 ## JSX + Babel
 ## More JSX
 ## Simple Expressions with JSX
