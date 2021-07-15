@@ -148,9 +148,159 @@ This principle of "Single Responsibility" is a classic OOP design pattern. But i
 React is NOT a framework, but a concept and a library built using that concept.
 
 ## React Features
-## Exploting React Features
+
+- React is a declarative framework
+
+This means that design views are associated with state... As state changes, the views will update automatically.
+
+- React is component-based
+
+Each component manages its own state. It doesn't concern itself with other component's state.
+
+- React is extremely performant
+
+React uses a virtual DOM that gets compared with the actual DOM to avoid re-rendering the DOM, which is slow. React avoids excess DOM updates.
+
+- React apps can be rendered serverside too.
+
+Node facilitates serverside rendering using a one-way data flow.
+
+Data flow is strict - It flows only from the top level components to the bottom level components.
+
+React supports web components, but it also supports React Native for Mobile apps.
+
+## Exploring React Features
+
+### "React is a Declarative Library"
+
+You focus on designing views based on internal component state - That's all you need to worry about.
+
+You just tell React what state you want the UI to be in - This abstracts out attribute manipulation, event handling, and DOM updates!!
+
+Your focus should be on UI design. React handles rendering and updating components based on their state.
+
+This makes code predictable, robust, and easy to debug.
+
+Your responsibility is to say "This is how my UI should look for this state".
+
+### React is "Component-based".
+
+React is component-based, and you need to follow component-driven dev't to code in React.
+
+This means that view components in React have both the logic and the behavior of the view.
+
+This eliminates bridging code where UI changes are relayed to the JS code, which updates the DOM automatically.
+
+Grouping components together makes them manageable and easier to maintain.
+
+### Virtual DOM
+
+DOM rendering slows stuff down. VDOM fixes this. React keeps a copy of every DOM element. This copy is VDOM.
+
+It's not wasteful to do this. It speeds up things.
+
+It's an abstraction that lets us make fast UI changes without actually modifying the base DOM.
+
+React compares changes between the DOM and VDOM during a "reconcilliation process" to see what DOM nodes need to be updated to minimize rendering.
+
+This is all done automatically.
+
+### Serverside rendering
+
+- VDOM enables rendering complete UIs without a browser
+- Serverside rendering can make initial page loads very fast
+
+### One-way data flow
+
+React uses composition to build individual view components.
+
+This means that data only flows one way down into individual components.
+
+Data passed to React components flow from parent to child.
+
+Components contain other components within them to build up complex views.
+
+### React Native
+
+This is used to make mobile apps in JS using React.
+
+React libs are separated into:
+
+1. Component libs
+2. DOM libs
+
+In React Native,
+
+1. Component libs
+2. Mobile app rendering libs
+
+RN lets you build platform agnostic native components with high-perf across multiple mobile platforms.
+
 ## The Virtual DOM
+
+Example of a DOM:
+
+- html
+    - body
+        - h4
+        - p
+            - img
+            - img
+        - p
+            - div
+
+And React's corresponding in-memory representation:
+
+- React Node
+    - React Node
+        - React Node
+        - React Node
+            - React Node
+            - React Node
+        - React Node
+            - React Node
+
+React Nodes are also called "React Elements".
+
+### Events
+
+Events cause Elements to be updated.
+
+- User Events
+    - Clicking, swiping, hovering
+- Server Events
+    - Server responds with data
+
+When the elements get updated, the view changes.
+
+So the model getting updated causes the view to get updated.
+
+## VDOM Usefulness
+
+React first renders the changes to the VDOM.
+
+Then, React will go compare all nodes between DOM and VDOM to see what nodes need to be updated. 
+
+React then only updates what's needed in the new DOM.
+
+This is called "Reconciliation".
+
+This is also totally abstracted away from the user as long as you write React code using best practices.
+
+Note: Virtual DOM is an abstraction/design pattern that React uses, it's not an actual technology.
+
+Note 2: VDOM is NOT a "Shadow DOM" - Shadow DOM is a browser technology designed for scoping variables and CSS in web components.
+
+"React Fiber" is an implementation of React's code algo for fast rendering and updates using incremental rendering.
+
 ## Creating a Simple Static HTML page
+
+See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML>
+
+The react libs are on line 4, 5.
+
+"unpkg" is used to TODO
+
 ## Exploring static HTML page
 ## Referencing prod React libs
 ## Nested Elements part 1
