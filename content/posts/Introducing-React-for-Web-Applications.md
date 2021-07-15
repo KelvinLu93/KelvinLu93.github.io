@@ -465,8 +465,13 @@ So much simpler.
 
 Our lists example, converted.
 
-Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/ListsJSX.html>
+Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/ListsJSX.html>.
 
 ## Simple Expressions with JSX
+
+The previous example, but showing how to use "expressions" (string templates) in your JSX code.
+
+Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/SimpleExpressionsJSX.html>.
+
 ## More Expressions with JSX
 ## Summary
