@@ -357,9 +357,30 @@ Check the top-level render call using <div>. See https://fb.me/react-warning-key
 warningWithoutStack @ react.development.js:316
 ```
 
-This is because
+This is because "el" and "another_el" are siblings in the tree:
+
+```js
+var element_list = [el, another_el];
+```
+
+You *should* specify a key when running `React.createElement` to allow React to uniquely identify each element if they are siblings.
+
+Ex:
+
+```js
+var another_el = React.createElement(
+    "p", { id: "para-id", key: "key2" },
+    "React seems rather tedious to work with.");
+```
+
+Here's the fixed version:
+
+<https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/NestedElementsWithUniqueKeys.html>
 
 ## Nested Elements part 2
+
+<https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/Lists.html>
+
 ## JSX
 ## Babel Compiler
 ## JSX + Babel
