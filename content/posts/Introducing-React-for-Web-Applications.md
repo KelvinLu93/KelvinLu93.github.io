@@ -295,14 +295,34 @@ Note 2: VDOM is NOT a "Shadow DOM" - Shadow DOM is a browser technology designed
 
 ## Creating a Simple Static HTML page
 
-See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML>
+See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML/FirstReact.html>
 
-The react libs are on line 4, 5.
+"unpkg" is used to host libs.
 
-"unpkg" is used to TODO
+## Exploring the static HTML page
 
-## Exploring static HTML page
+Download <https://github.com/HenryFBP/introducing-react-work/blob/master/react/StaticHTML/FirstReact.html> and open it with your favorite browser.
+
+Use `CTRL-SHIFT-I` to open Inspect Element. 
+
+Expand the `<body>` tag to see the `<h1>` tag created by the JS.
+
+### Console
+
+Open console.
+
+Notice the devtools extension message.
+
+You can visit <https://unpkg.com/browse/react@16.12.0/umd/> to see the React dev js code. Feel free to read some of the code.
+
+You can also see react-dom at <https://unpkg.com/browse/react-dom@16.12.0/umd/>. You want "react-dom.development.js".
+
 ## Referencing prod React libs
+
+See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML/FirstReact_Production.html>.
+
+The only changes are that we use the prod react libs now, line 5/6.
+
 ## Nested Elements part 1
 ## Nested Elements part 2
 ## JSX
