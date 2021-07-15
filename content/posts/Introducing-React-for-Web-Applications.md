@@ -396,10 +396,77 @@ You get to write HTML-like syntax that gets used to React so that HTML represent
 
 ## Babel Compiler
 
-JSX looks very similar to HTML.
+JSX looks very similar to HTML. But it's not.
+
+It's written in `<script>` tags and interpreted as JS.
+
+You write code in JS, and then write JSX inside JS.
+
+Example:
+
+```jsx
+var some_list = (
+    <ul id="nav-id">
+        <li>Red</li>
+        <li>Green</li>
+    </ul>
+);
+```
+
+It's a good idea to use use parens and semicolon `( ... );` to ensure your JSX code is correct.
+
+Note that this is not HTML.
+
+This is its equivalent JS code, (which would be a pain to write compared to the JSX version):
+
+```js
+var some_list = React.createElement(
+    "ul",
+    { id: "nav-id" },
+    React.createElement(
+        "li",
+        null,
+        "Red"
+    ),
+    React.createElement(
+        "li",
+        null,
+        "Green"
+    )
+);
+```
+
+Browsers do not understand JSX. So any JSX inside JS has to be compiled/translated to a form the browser understands.
+
+We need to use Babel, a compiler, to turn JSX into JS.
+
+React is compatible with features of ECMAScript6, or ES6. FYI, not all browsers support ES6... Babel can also turn ES6 into ES5, which is much more widely supported.
+
+Babel can turn JSX into JS either:
+- In dev mode in the browser, which is highly inefficient, or
+- At build time in prod environments, which is faster
 
 ## JSX + Babel
+
+Run this file in your browser.
+
+<https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/SimpleJSX.html>
+
+```jsx
+ReactDOM.render(
+    <h1>Welcome to react!</h1>,
+    document.getElementById("my-react-app")
+)
+```
+
+So much simpler.
+
 ## More JSX
+
+Our lists example, converted.
+
+Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/ListsJSX.html>
+
 ## Simple Expressions with JSX
 ## More Expressions with JSX
 ## Summary
