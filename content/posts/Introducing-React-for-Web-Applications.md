@@ -108,7 +108,7 @@ We can break this UI down into a component hierarchy.
 
 <https://reactjs.org/docs/thinking-in-react.html>
 
-![](2021-07-14-10-48-47.png)
+![](/images/Introducing-React-for-Web-Applications/react-components.png)
 
 
 1. FilterableProductTable (orange): contains the entirety of the example
@@ -324,6 +324,41 @@ See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/Static
 The only changes are that we use the prod react libs now, line 5/6.
 
 ## Nested Elements part 1
+
+See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/NestedElements.html>. See comments in file. Also run the file to see for yourself.
+
+Tree of elements:
+
+- div#my-react-app
+    - var outer_div_el
+        -   var el
+        -   var another_el
+
+And the resulting HTML once JS runs:
+
+```html
+<div id="my-react-app">
+    <div id="outer-div-id">
+        <div id="inner-div-id">
+            <h2 id="header-id">Welcome to react!</h2>
+        </div>
+        <p id="para-id">React seems rather tedious to work with.</p>
+    </div>
+</div>
+```
+
+Note that there's an error in the console...
+
+```
+Warning: Each child in an array or iterator should have a unique "key" prop.
+
+Check the top-level render call using <div>. See https://fb.me/react-warning-keys for more information.
+    in div
+warningWithoutStack @ react.development.js:316
+```
+
+This is because
+
 ## Nested Elements part 2
 ## JSX
 ## Babel Compiler
