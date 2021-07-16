@@ -47,18 +47,76 @@ State should also flow from higher level components down to lower level componen
 
 See this commit: <https://github.com/HenryFBP/reactjs-learning/commit/9a037e6d415f0ae49cddb5aa04dfe5fcbef62265>
 
+Or this folder:
+
+<https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state>
+
 ## Adding comments
+
+We need event handlers.
+
+```jsx
+//App.js
+
+(...)
+
+  addComment = (message) =>{
+    this.setState(function(prevState){
+      var messages = prevState.messages.concat();
+      messages.push(message);
+      return {
+        messages: messages
+      }
+    });
+  }
+
+```
+
+The act of changing the state re-renders the components.
+
+Next is to wire up the event handler.
+
+See <https://github.com/HenryFBP/reactjs-learning/commit/1b7a0cff1b66eb7f82756c4f7ab8cb645192c2cf> for code.
+
+Note that we use `this.messageInputRef = React.createRef();` in `CommentBox.js` because the input box is an "uncontrolled component", meaning the value in the input box is not controlled using React.Component state. This goes against best practices but is okay because it is a relatively simple input element. This avoids the overhead of managing state and setting up event handlers.
 
 ## Deleting comments
 
+See <https://github.com/HenryFBP/reactjs-learning/commit/a43dfe26356d064a598df96a8c2b7658681431fc>.
+
 ## React devtools
+
+<https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi>
+
+And then try it out!
 
 ## Exploring components with react devtools
 
+Use "Components" view in dev tools and click around.
+
+For profiling, start it and try interacting with the app.
+
 ## Prod build
 
-## Exploring files in prod build
+Run
+
+    npm run build
+
+To make a `./build` folder. Feel free to explore the minified files and "manifest" json file.
+
+Also view "index.html" and "css" files. They're minified.
+
+The ".map" files are source code mappings that assist in debugging.
+
+The "main.HASH.chunk.js" file is our app code, so app.js and all components.
 
 ## Serving a prod build
 
-## Summary
+Run
+
+    npm install -g serve
+
+    serve -s build/
+
+`-s` redirects 404 to `index.html`.
+
