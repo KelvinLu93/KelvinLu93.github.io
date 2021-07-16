@@ -108,7 +108,7 @@ We can break this UI down into a component hierarchy.
 
 <https://reactjs.org/docs/thinking-in-react.html>
 
-![](/images/Introducing-React-for-Web-Applications/react-components.png)
+![](/images/Build-Apps-Using-React-Introducing-React-for-Web-Applications/react-components.png)
 
 
 1. FilterableProductTable (orange): contains the entirety of the example
