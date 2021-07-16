@@ -478,6 +478,3 @@ Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBab
 Function evaluation, `<img>` tags within elements.
 
 Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/MoreExpressionsJSX.html>. Make sure the "images" folder is reachable relative to the HTML file.
-
-## Summary
-
