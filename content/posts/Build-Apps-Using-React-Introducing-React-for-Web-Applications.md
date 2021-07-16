@@ -8,7 +8,7 @@ Skillsoft course, "Build Apps Using React: Introducing React for Web Application
 
 Work can be found below:
 
-<https://github.com/HenryFBP/introducing-react-work>
+<https://github.com/HenryFBP/reactjs-learning>
 
 ## Overview
 
@@ -295,13 +295,13 @@ Note 2: VDOM is NOT a "Shadow DOM" - Shadow DOM is a browser technology designed
 
 ## Creating a Simple Static HTML page
 
-See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML/FirstReact.html>
+See <https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact.html>
 
 "unpkg" is used to host libs.
 
 ## Exploring the static HTML page
 
-Download <https://github.com/HenryFBP/introducing-react-work/blob/master/react/StaticHTML/FirstReact.html> and open it with your favorite browser.
+Download <https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/StaticHTML/FirstReact.html> and open it with your favorite browser.
 
 Use `CTRL-SHIFT-I` to open Inspect Element. 
 
@@ -319,13 +319,13 @@ You can also see react-dom at <https://unpkg.com/browse/react-dom@16.12.0/umd/>.
 
 ## Referencing prod React libs
 
-See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/StaticHTML/FirstReact_Production.html>.
+See <https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact_Production.html>.
 
 The only changes are that we use the prod react libs now, line 5/6.
 
 ## Nested Elements part 1
 
-See <https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/NestedElements.html>. See comments in file. Also run the file to see for yourself.
+See <https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElements.html>. See comments in file. Also run the file to see for yourself.
 
 Tree of elements:
 
@@ -375,11 +375,11 @@ var another_el = React.createElement(
 
 Here's the fixed version:
 
-<https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/NestedElementsWithUniqueKeys.html>
+<https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElementsWithUniqueKeys.html>
 
 ## Nested Elements part 2
 
-<https://github.com/HenryFBP/introducing-react-work/tree/master/react/CreatingElements/Lists.html>
+<https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/Lists.html>
 
 ## JSX
 
@@ -450,7 +450,7 @@ Babel can turn JSX into JS either:
 
 Run this file in your browser.
 
-<https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/SimpleJSX.html>
+<https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleJSX.html>
 
 ```jsx
 ReactDOM.render(
@@ -465,16 +465,16 @@ So much simpler.
 
 Our lists example, converted.
 
-Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/ListsJSX.html>.
+Run <https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/ListsJSX.html>.
 
 ## Simple Expressions with JSX
 
 The previous example, but showing how to use "expressions" (string templates) in your JSX code.
 
-Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/SimpleExpressionsJSX.html>.
+Run <https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleExpressionsJSX.html>.
 
 ## More Expressions with JSX
 
 Function evaluation, `<img>` tags within elements.
 
-Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/MoreExpressionsJSX.html>. Make sure the "images" folder is reachable relative to the HTML file.
+Run <https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/MoreExpressionsJSX.html>. Make sure the "images" folder is reachable relative to the HTML file.
