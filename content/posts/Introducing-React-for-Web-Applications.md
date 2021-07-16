@@ -474,4 +474,10 @@ The previous example, but showing how to use "expressions" (string templates) in
 Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/SimpleExpressionsJSX.html>.
 
 ## More Expressions with JSX
+
+Function evaluation, `<img>` tags within elements.
+
+Run <https://github.com/HenryFBP/introducing-react-work/blob/master/react/JSXBabel/MoreExpressionsJSX.html>. Make sure the "images" folder is reachable relative to the HTML file.
+
 ## Summary
+
