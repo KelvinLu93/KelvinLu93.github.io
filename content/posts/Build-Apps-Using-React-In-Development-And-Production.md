@@ -8,6 +8,10 @@ draft: false
 
 Use `create-react-app` cli tool, and dev tools, to make an app and make a prod build of that app.
 
+Work can be found below:
+
+<https://github.com/HenryFBP/reactjs-learning>
+
 ## Setting up a Simple Comment Application  
 
 Install deps:
