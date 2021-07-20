@@ -163,17 +163,31 @@ Also, uncomment some of the invalid props in `<Student>` object.
 
 ## Accessing Children with Props
 
+`props.children` is a special prop passed to components automatically, which allows a component to access its child elements.
 
+See commit `2fd5e8d1920d80bf3563fa4acd4b1a1ffd58f6e8`.
 
 ## Using expressions to pass in props values
 
+See commit `4b34885017bf73ec54adfb5cb5b734a9de34a0d0`
+
 ## Functions as children
+
+More complicated. Shows you how powerful and "meta" React can be. How you can combine children and expressions to make interesting and intelligent components.
+
+See commit `8b5bd29f176bf4fd45ec676b5d2e8e70c0462b71`
 
 ## State
 
+See commit `fa965152a1756788dd1024517ccc40f25b8cc8c6`
+
 ## Updating state
 
+See below, and commit `a3ffbcdceaf9e5a4caf8109c02423b1c51e597bf`.
+
 ## Event handlers to update state
+
+See commit `2c33bb32343a8b1f64baf6451d430fe6434ff0f8`.
 
 ## Accessing previous state
 
