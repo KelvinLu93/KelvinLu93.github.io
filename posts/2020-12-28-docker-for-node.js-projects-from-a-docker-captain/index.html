@@ -1,10 +1,49 @@
-<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Docker for Node.js Projects From a Docker Captain | Henry Post</title><meta name=generator content="Hugo Eureka 0.8.0"><link rel=stylesheet href=/css/eureka.min.css><script defer src=/js/eureka.min.js></script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'"><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png><meta name=description content="Preamble From https://www.udemy.com/course/docker-mastery-for-nodejs/.
+<!doctype html><html lang=en><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Docker for Node.js Projects From a Docker Captain | Henry Post</title>
+<meta name=generator content="Hugo Eureka 0.8.0">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'">
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
+<meta name=description content="Preamble From https://www.udemy.com/course/docker-mastery-for-nodejs/.
 Code/work in http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git.
-Section 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https://docs.docker.com/compose/ https://github.com/docker/toolbox/releases https://docs.docker.com/compose/compose-file/ https://github.com/BretFisher/ama/issues/8 https://docs.docker.com/compose/compose-file/compose-versioning/ https://github.com/docker/docker.github.io/pull/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20+ flags and puts them into YAML files &ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo; Use the docker-compose for dev&rsquo;t but not for deployment, that should be done with docker command."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Docker for Node.js Projects From a Docker Captain","item":"/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/"},"headline":"Docker for Node.js Projects From a Docker Captain | Henry Post","datePublished":"2020-12-28T00:00:00+00:00","dateModified":"2020-12-28T00:00:00+00:00","wordCount":883,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Preamble From https:\/\/www.udemy.com\/course\/docker-mastery-for-nodejs\/.\nCode\/work in http:\/\/github.com\/HenryFBP\/Docker-for-Node.js-Projects-From-a-Docker-Captain.git.\nSection 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https:\/\/docs.docker.com\/compose\/ https:\/\/github.com\/docker\/toolbox\/releases https:\/\/docs.docker.com\/compose\/compose-file\/ https:\/\/github.com\/BretFisher\/ama\/issues\/8 https:\/\/docs.docker.com\/compose\/compose-file\/compose-versioning\/ https:\/\/github.com\/docker\/docker.github.io\/pull\/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20\u002b flags and puts them into YAML files \u0026ldquo;Let\u0026rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way\u0026rdquo; Use the docker-compose for dev\u0026rsquo;t but not for deployment, that should be done with docker command."}</script><meta property="og:title" content="Docker for Node.js Projects From a Docker Captain | Henry Post"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/"><meta property="og:description" content="Preamble From https://www.udemy.com/course/docker-mastery-for-nodejs/.
+Section 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https://docs.docker.com/compose/ https://github.com/docker/toolbox/releases https://docs.docker.com/compose/compose-file/ https://github.com/BretFisher/ama/issues/8 https://docs.docker.com/compose/compose-file/compose-versioning/ https://github.com/docker/docker.github.io/pull/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20+ flags and puts them into YAML files &ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo; Use the docker-compose for dev&rsquo;t but not for deployment, that should be done with docker command.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Docker for Node.js Projects From a Docker Captain","item":"/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/"},"headline":"Docker for Node.js Projects From a Docker Captain | Henry Post","datePublished":"2020-12-28T00:00:00+00:00","dateModified":"2020-12-28T00:00:00+00:00","wordCount":883,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Preamble From https:\/\/www.udemy.com\/course\/docker-mastery-for-nodejs\/.\nCode\/work in http:\/\/github.com\/HenryFBP\/Docker-for-Node.js-Projects-From-a-Docker-Captain.git.\nSection 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https:\/\/docs.docker.com\/compose\/ https:\/\/github.com\/docker\/toolbox\/releases https:\/\/docs.docker.com\/compose\/compose-file\/ https:\/\/github.com\/BretFisher\/ama\/issues\/8 https:\/\/docs.docker.com\/compose\/compose-file\/compose-versioning\/ https:\/\/github.com\/docker\/docker.github.io\/pull\/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20\u002b flags and puts them into YAML files \u0026ldquo;Let\u0026rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way\u0026rdquo; Use the docker-compose for dev\u0026rsquo;t but not for deployment, that should be done with docker command."}</script><meta property="og:title" content="Docker for Node.js Projects From a Docker Captain | Henry Post">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/posts/2020-12-28-docker-for-node.js-projects-from-a-docker-captain/">
+<meta property="og:description" content="Preamble From https://www.udemy.com/course/docker-mastery-for-nodejs/.
 Code/work in http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git.
-Section 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https://docs.docker.com/compose/ https://github.com/docker/toolbox/releases https://docs.docker.com/compose/compose-file/ https://github.com/BretFisher/ama/issues/8 https://docs.docker.com/compose/compose-file/compose-versioning/ https://github.com/docker/docker.github.io/pull/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20+ flags and puts them into YAML files &ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo; Use the docker-compose for dev&rsquo;t but not for deployment, that should be done with docker command."><meta property="og:locale" content="en"><meta property="og:site_name" content="Henry Post"><meta property="article:published_time" content="2020-12-28T00:00:00+00:00"><meta property="article:modified_time" content="2020-12-28T00:00:00+00:00"><meta property="article:section" content="posts"><body class="flex flex-col min-h-screen"><header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm"><div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
+Section 2: Docker Compose Basics sudo apt install docker docker-compose nodejs npm  Links  https://docs.docker.com/compose/ https://github.com/docker/toolbox/releases https://docs.docker.com/compose/compose-file/ https://github.com/BretFisher/ama/issues/8 https://docs.docker.com/compose/compose-file/compose-versioning/ https://github.com/docker/docker.github.io/pull/7593  Why compose?  CLI is designed around dev workflows Not really designed for production docker-compose CLI talks to docker daemon and can be a substitute for the docker CLI itself docker-compose takes long-ass commands with 20+ flags and puts them into YAML files &ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo; Use the docker-compose for dev&rsquo;t but not for deployment, that should be done with docker command.">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Henry Post">
+<meta property="article:published_time" content="2020-12-28T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-12-28T00:00:00+00:00">
+<meta property="article:section" content="posts">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
 <button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
 <a href=/contact/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Contact</a>
 <a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">Posts</a>
 <a href=/hobbies/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Hobbies</a>
@@ -12,17 +51,315 @@ Section 2: Docker Compose Basics sudo apt install docker docker-compose nodejs n
 <a href=/resume/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Resume</a>
 <a href=/skills/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Skills</a>
 <a href=/certifications/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Certifications</a>
-<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
 <span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="flex-grow pt-16"><div class=pl-scrollbar><div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto"><div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12"><div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8"><h1 class="font-bold text-3xl text-primary-text">Docker for Node.js Projects From a Docker Captain</h1><div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text"><div class="mr-6 my-2"><i class="fas fa-calendar mr-1"></i>
-<span>2020-12-28</span></div><div class="mr-6 my-2"><i class="fas fa-clock mr-1"></i>
-<span>5 min read</span></div><div class="mr-6 my-2"><i class="fas fa-folder mr-1"></i>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">Docker for Node.js Projects From a Docker Captain</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2020-12-28</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>5 min read</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-folder mr-1"></i>
 <a href=/categories/docker/ class=hover:text-eureka>docker</a>
-<span>,</span>
+<span>, </span>
 <a href=/categories/programming/ class=hover:text-eureka>programming</a>
-<span>,</span>
-<a href=/categories/security/ class=hover:text-eureka>security</a></div></div><div class=content><h2 id=preamble>Preamble</h2><p>From <a href=https://www.udemy.com/course/docker-mastery-for-nodejs/>https://www.udemy.com/course/docker-mastery-for-nodejs/</a>.</p><p>Code/work in <a href=http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git>http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git</a>.</p><h2 id=section-2-docker-compose-basics>Section 2: Docker Compose Basics</h2><pre><code>sudo apt install docker docker-compose nodejs npm
-</code></pre><h3 id=links>Links</h3><ul><li><a href=https://docs.docker.com/compose/>https://docs.docker.com/compose/</a></li><li><a href=https://github.com/docker/toolbox/releases>https://github.com/docker/toolbox/releases</a></li><li><a href=https://docs.docker.com/compose/compose-file/>https://docs.docker.com/compose/compose-file/</a></li><li><a href=https://github.com/BretFisher/ama/issues/8>https://github.com/BretFisher/ama/issues/8</a></li><li><a href=https://docs.docker.com/compose/compose-file/compose-versioning/>https://docs.docker.com/compose/compose-file/compose-versioning/</a></li><li><a href=https://github.com/docker/docker.github.io/pull/7593>https://github.com/docker/docker.github.io/pull/7593</a></li></ul><h3 id=why-compose>Why compose?</h3><ul><li>CLI is designed around dev workflows</li><li>Not really designed for production</li><li><code>docker-compose</code> CLI talks to docker daemon and can be a substitute for the <code>docker</code> CLI itself</li><li><code>docker-compose</code> takes long-ass commands with 20+ flags and puts them into YAML files</li><li>&ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo;</li><li>Use the <code>docker-compose</code> for dev&rsquo;t but not for deployment, that should be done with <code>docker</code> command.</li><li>Do not use <code>docker-compose</code> in prod. Swarm/K8s should be used instead.</li></ul><h3 id=compose-file-format>Compose File Format</h3><ul><li>Not industry standard</li><li>Unique to <code>docker-compose</code></li><li>Designed to describe 1 or more containers/networks/volumes; etc and those are called &ldquo;services&rdquo;</li><li>Can layer sets of YAML files, use templates, variables, and even more</li><li>Good idea to stick with single default/simple <code>docker-compose.yml</code> file initially</li><li>(see <a href=https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/docker-mastery-for-nodejs-assignments/sample-01/docker-compose.yml>https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/docker-mastery-for-nodejs-assignments/sample-01/docker-compose.yml</a>)</li><li>On line 6, the <code>.</code> means build the folder that <code>docker-compose.yml</code> is currently residing in.</li><li>Line 7/8, ports is a list of ports that are published/processed by docker</li><li>Note: Docker v3 does NOT replace v2. If you&rsquo;re just focusing on docker-compose locally, there&rsquo;s no reason to use v3. v3 is focused on multi-node server orchestration like secrets etc. v2 is focused on single-node dev workflow. v2 has unique features not found in v3.</li></ul><h3 id=docker-compose-cli>Docker-Compose CLI</h3><ul><li><code>docker-compose</code> cli is designed around developer happiness.</li><li>Many IDEs support it but don&rsquo;t rely on it. Understand CLI.</li><li>&lsquo;batteries included, but swappable&rsquo; is docker&rsquo;s idea<ul><li>A lot of things come default OOTB. Well documented but not obvious. You can always change stuff.</li></ul></li><li>CLI and YAML versions differ, cliv2 NOT equals to yamlv2</li><li><code>docker-compose up</code><ul><li>&ldquo;run everything&rdquo;<ul><li>&ldquo;<code>clone blah; cd blah; docker-compose up"</code></li></ul></li><li>Build/pull image(s) if missing</li><li>Create volume/network container(s)</li><li>Start container(s) in foreground (-d to detach, usually want to do this)</li><li>When you run <code>docker-compose up</code> the first time, it may build images for you, but it&rsquo;s not always going to rebuild those images every time something changes. If you want to rebuild images every time, you add the <code>--build</code> command.</li></ul></li><li><code>docker-compose down</code><ul><li>&ldquo;Stop and delete network/containers&rdquo;</li><li>&ldquo;Leave data alone&rdquo;</li><li>Will not delete volume data. This is a core feature of Docker. You can delete volumes with <code>-v</code>.</li></ul></li><li>Many of these commands have &ldquo;service&rdquo; options at the end<ul><li>You type the command, and then a name of a service from the compose file (service name), and that command will be specific for just that service.</li></ul></li><li><code>build</code>, just rebuild</li><li><code>stop</code>, stop and don&rsquo;t delete</li><li><code>ps</code>, list &ldquo;services&rdquo;</li><li><code>push</code>, push to registry (you must name the images properly)</li><li><code>logs</code> same as docker CLI</li><li><code>exec</code> same as docker CLI</li></ul><h3 id=assignment-compose-cli-basics>Assignment: Compose CLI basics</h3><ul><li><a href=https://asciinema.org/a/dOn9WE4X4KvYP7r4g07RcPtf4>https://asciinema.org/a/dOn9WE4X4KvYP7r4g07RcPtf4</a></li><li><a href=https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/assignments/compose-cli-basics/recording.cast>https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/assignments/compose-cli-basics/recording.cast</a></li></ul><h2 id=section-3-node-dockerfile-best-practice-basics>Section 3: Node Dockerfile Best Practice Basics</h2><h3 id=dockerfile-best-practice-basics>Dockerfile Best Practice Basics</h3><h4 id=copy-vs-add>COPY vs ADD</h4><ul><li>Use COPY and not ADD most of the time.</li><li>COPY and ADD essentially do the same thing but ADD does a lot more. Default to COPY.</li></ul><h4 id=npm-and-yarn>npm and yarn</h4><ul><li>npm/yarn are not necessary to install, you can usually use the one that comes with node.</li><li>Also it doesn&rsquo;t matter if you use npm or yarn.</li><li>Make sure you always clean up extra stuff (<code>npm cache clean --force</code>)</li><li>Use <code>CMD node</code>, not <code>npm</code></li><li><code>npm</code> does not work well as an init process, which is how containers work. 1 process launches everything else.<ul><li><code>npm</code> does not pass signals correctly to node and tends to improperly shut down the container.</li></ul></li></ul><h4 id=workdir-or-mkdir>WORKDIR or mkdir</h4><ul><li>Use <code>WORKDIR</code> and not <code>RUN cd</code>/<code>RUN mkdir</code><ul><li>&mldr;however <code>WORKDIR</code> will not set permissions on dirs like <code>chown</code></li></ul></li></ul><h3 id=from-base-image-guidelines>FROM Base Image Guidelines</h3><ul><li>Base image is the image all of your Node apps will be built on.</li><li>Stick to even numbered major Node releases<ul><li>Even=stable, odd=experimental</li></ul></li><li>Don&rsquo;t use <code>:latest</code> tag</li><li>Pick a stable node version early and stick with that</li><li>Start with Debian if migrating versions</li><li>Stick with what you know and move to Alpine (more minimal and smaller) later<ul><li>Not every app will work flawlessly out of the box using an Alpine base image</li></ul></li><li>Don&rsquo;t use <code>:slim</code><ul><li>&mldr;but it has <code>apt</code>. Use this only if you CAN&rsquo;T use Alpine. May be a PITA to modify.</li></ul></li><li>Don&rsquo;t use <code>:onbuild</code>.<ul><li>It&rsquo;s a Dockerfile command that we don&rsquo;t use (why tho?)</li><li>It tends to cause problems later on</li><li>Originally it was the idea that commands could be set in an official repo that would execute whenever you pulled an image</li><li>This caused users to experience a lack of causality in their commands and not be able to know what was being executed</li></ul></li></ul><h4 id=httpshubdockercom_node><a href=https://hub.docker.com/_/node>https://hub.docker.com/_/node</a></h4><ul><li>All images by default use Debian as their base image.<ul><li>You get <code>apt</code>, <code>openssl</code>, <code>bash</code>, etc.</li></ul></li><li>Latest image is >800MB</li><li>We will use 11/alpine and 10/alpine.</li></ul><h3 id=when-to-use-alpine-debian-or-centos-images>When to use Alpine, Debian, or CentOS images</h3><ul><li><a href=https://kubedex.com/follow-up-container-scanning-comparison/>https://kubedex.com/follow-up-container-scanning-comparison/</a></li><li><a href="https://www.youtube.com/watch?v=e2pAkcqYCG8">https://www.youtube.com/watch?v=e2pAkcqYCG8</a></li></ul><h4 id=alpine>Alpine</h4><ul><li><p>Alpine is &lsquo;small&rsquo; and &lsquo;sec focused&rsquo;</p></li><li><p>Minimal utilities OOTB</p></li><li><p>But Debian/Ubuntu bases are smaller now too (100MB/85MB)</p><ul><li>Used to be 150/200MB</li></ul></li><li><p>Who cares about 100MB anyways?</p><ul><li>IoT?</li></ul></li><li><p>Alpine has its own issues</p><ul><li>2018 nodemon had a problem only on Alpine</li></ul></li><li><p>Alpine CVE scanning fails</p><ul><li>Current Alpine CVE scanning doesn&rsquo;t work due to an Alpine file translation database linking issue</li><li>Debian/Ubuntu/CentOS do work better with the CVE scanning</li></ul></li><li><p>Enterprises may require CentOS or Ubuntu/Debian (there is no CentOS/RHEL Node image)</p></li></ul><h3 id=assignment-making-a-centos-node-image>Assignment: Making a CentOS Node Image</h3><p>See code repo at top.</p></div><div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t"><div><span class="block font-bold">Previous</span>
-<a href=/posts/2020-12-28-sql-injection-video/ class=block>SQL Injection Video</a></div><div class="md:text-right mt-4 md:mt-0"><span class="block font-bold">Next</span>
-<a href=/posts/2020-06-15-csslp-notes/ class=block>Certified Secure Software Lifecycle Professional (CSSLP) Notes</a></div></div></div><div class=col-span-2><div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg"><span class="text-lg font-semibold">On This Page</span></div><div class="sticky-toc hidden lg:block px-6 pb-6"><nav id=TableOfContents><ul><li><a href=#preamble>Preamble</a></li><li><a href=#section-2-docker-compose-basics>Section 2: Docker Compose Basics</a><ul><li><a href=#links>Links</a></li><li><a href=#why-compose>Why compose?</a></li><li><a href=#compose-file-format>Compose File Format</a></li><li><a href=#docker-compose-cli>Docker-Compose CLI</a></li><li><a href=#assignment-compose-cli-basics>Assignment: Compose CLI basics</a></li></ul></li><li><a href=#section-3-node-dockerfile-best-practice-basics>Section 3: Node Dockerfile Best Practice Basics</a><ul><li><a href=#dockerfile-best-practice-basics>Dockerfile Best Practice Basics</a><ul><li><a href=#copy-vs-add>COPY vs ADD</a></li><li><a href=#npm-and-yarn>npm and yarn</a></li><li><a href=#workdir-or-mkdir>WORKDIR or mkdir</a></li></ul></li><li><a href=#from-base-image-guidelines>FROM Base Image Guidelines</a><ul><li><a href=#httpshubdockercom_node><a href=https://hub.docker.com/_/node>https://hub.docker.com/_/node</a></a></li></ul></li><li><a href=#when-to-use-alpine-debian-or-centos-images>When to use Alpine, Debian, or CentOS images</a><ul><li><a href=#alpine>Alpine</a></li></ul></li><li><a href=#assignment-making-a-centos-node-image>Assignment: Making a CentOS Node Image</a></li></ul></li></ul></nav></div><script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script></div></div><script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script></div></div></main><footer class=pl-scrollbar><div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+<span>, </span>
+<a href=/categories/security/ class=hover:text-eureka>security</a>
+</div>
+</div>
+<div class=content>
+<h2 id=preamble>Preamble</h2>
+<p>From <a href=https://www.udemy.com/course/docker-mastery-for-nodejs/>https://www.udemy.com/course/docker-mastery-for-nodejs/</a>.</p>
+<p>Code/work in <a href=http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git>http://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain.git</a>.</p>
+<h2 id=section-2-docker-compose-basics>Section 2: Docker Compose Basics</h2>
+<pre><code>sudo apt install docker docker-compose nodejs npm
+</code></pre>
+<h3 id=links>Links</h3>
+<ul>
+<li><a href=https://docs.docker.com/compose/>https://docs.docker.com/compose/</a></li>
+<li><a href=https://github.com/docker/toolbox/releases>https://github.com/docker/toolbox/releases</a></li>
+<li><a href=https://docs.docker.com/compose/compose-file/>https://docs.docker.com/compose/compose-file/</a></li>
+<li><a href=https://github.com/BretFisher/ama/issues/8>https://github.com/BretFisher/ama/issues/8</a></li>
+<li><a href=https://docs.docker.com/compose/compose-file/compose-versioning/>https://docs.docker.com/compose/compose-file/compose-versioning/</a></li>
+<li><a href=https://github.com/docker/docker.github.io/pull/7593>https://github.com/docker/docker.github.io/pull/7593</a></li>
+</ul>
+<h3 id=why-compose>Why compose?</h3>
+<ul>
+<li>CLI is designed around dev workflows</li>
+<li>Not really designed for production</li>
+<li><code>docker-compose</code> CLI talks to docker daemon and can be a substitute for the <code>docker</code> CLI itself</li>
+<li><code>docker-compose</code> takes long-ass commands with 20+ flags and puts them into YAML files</li>
+<li>&ldquo;Let&rsquo;s not create more scripts, but make a tool that automates workflow in a declarative way&rdquo;</li>
+<li>Use the <code>docker-compose</code> for dev&rsquo;t but not for deployment, that should be done with <code>docker</code> command.</li>
+<li>Do not use <code>docker-compose</code> in prod. Swarm/K8s should be used instead.</li>
+</ul>
+<h3 id=compose-file-format>Compose File Format</h3>
+<ul>
+<li>Not industry standard</li>
+<li>Unique to <code>docker-compose</code></li>
+<li>Designed to describe 1 or more containers/networks/volumes; etc and those are called &ldquo;services&rdquo;</li>
+<li>Can layer sets of YAML files, use templates, variables, and even more</li>
+<li>Good idea to stick with single default/simple <code>docker-compose.yml</code> file initially</li>
+<li>(see <a href=https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/docker-mastery-for-nodejs-assignments/sample-01/docker-compose.yml>https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/docker-mastery-for-nodejs-assignments/sample-01/docker-compose.yml</a>)</li>
+<li>On line 6, the <code>.</code> means build the folder that <code>docker-compose.yml</code> is currently residing in.</li>
+<li>Line 7/8, ports is a list of ports that are published/processed by docker</li>
+<li>Note: Docker v3 does NOT replace v2. If you&rsquo;re just focusing on docker-compose locally, there&rsquo;s no reason to use v3. v3 is focused on multi-node server orchestration like secrets etc. v2 is focused on single-node dev workflow. v2 has unique features not found in v3.</li>
+</ul>
+<h3 id=docker-compose-cli>Docker-Compose CLI</h3>
+<ul>
+<li><code>docker-compose</code> cli is designed around developer happiness.</li>
+<li>Many IDEs support it but don&rsquo;t rely on it. Understand CLI.</li>
+<li>&lsquo;batteries included, but swappable&rsquo; is docker&rsquo;s idea
+<ul>
+<li>A lot of things come default OOTB. Well documented but not obvious. You can always change stuff.</li>
+</ul>
+</li>
+<li>CLI and YAML versions differ, cliv2 NOT equals to yamlv2</li>
+<li><code>docker-compose up</code>
+<ul>
+<li>&ldquo;run everything&rdquo;
+<ul>
+<li>&ldquo;<code>clone blah; cd blah; docker-compose up"</code></li>
+</ul>
+</li>
+<li>Build/pull image(s) if missing</li>
+<li>Create volume/network container(s)</li>
+<li>Start container(s) in foreground (-d to detach, usually want to do this)</li>
+<li>When you run <code>docker-compose up</code> the first time, it may build images for you, but it&rsquo;s not always going to rebuild those images every time something changes. If you want to rebuild images every time, you add the <code>--build</code> command.</li>
+</ul>
+</li>
+<li><code>docker-compose down</code>
+<ul>
+<li>&ldquo;Stop and delete network/containers&rdquo;</li>
+<li>&ldquo;Leave data alone&rdquo;</li>
+<li>Will not delete volume data. This is a core feature of Docker. You can delete volumes with <code>-v</code>.</li>
+</ul>
+</li>
+<li>Many of these commands have &ldquo;service&rdquo; options at the end
+<ul>
+<li>You type the command, and then a name of a service from the compose file (service name), and that command will be specific for just that service.</li>
+</ul>
+</li>
+<li><code>build</code>, just rebuild</li>
+<li><code>stop</code>, stop and don&rsquo;t delete</li>
+<li><code>ps</code>, list &ldquo;services&rdquo;</li>
+<li><code>push</code>, push to registry (you must name the images properly)</li>
+<li><code>logs</code> same as docker CLI</li>
+<li><code>exec</code> same as docker CLI</li>
+</ul>
+<h3 id=assignment-compose-cli-basics>Assignment: Compose CLI basics</h3>
+<ul>
+<li><a href=https://asciinema.org/a/dOn9WE4X4KvYP7r4g07RcPtf4>https://asciinema.org/a/dOn9WE4X4KvYP7r4g07RcPtf4</a></li>
+<li><a href=https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/assignments/compose-cli-basics/recording.cast>https://github.com/HenryFBP/Docker-for-Node.js-Projects-From-a-Docker-Captain/blob/master/assignments/compose-cli-basics/recording.cast</a></li>
+</ul>
+<h2 id=section-3-node-dockerfile-best-practice-basics>Section 3: Node Dockerfile Best Practice Basics</h2>
+<h3 id=dockerfile-best-practice-basics>Dockerfile Best Practice Basics</h3>
+<h4 id=copy-vs-add>COPY vs ADD</h4>
+<ul>
+<li>Use COPY and not ADD most of the time.</li>
+<li>COPY and ADD essentially do the same thing but ADD does a lot more. Default to COPY.</li>
+</ul>
+<h4 id=npm-and-yarn>npm and yarn</h4>
+<ul>
+<li>npm/yarn are not necessary to install, you can usually use the one that comes with node.</li>
+<li>Also it doesn&rsquo;t matter if you use npm or yarn.</li>
+<li>Make sure you always clean up extra stuff (<code>npm cache clean --force</code>)</li>
+<li>Use <code>CMD node</code>, not <code>npm</code></li>
+<li><code>npm</code> does not work well as an init process, which is how containers work. 1 process launches everything else.
+<ul>
+<li><code>npm</code> does not pass signals correctly to node and tends to improperly shut down the container.</li>
+</ul>
+</li>
+</ul>
+<h4 id=workdir-or-mkdir>WORKDIR or mkdir</h4>
+<ul>
+<li>Use <code>WORKDIR</code> and not <code>RUN cd</code>/<code>RUN mkdir</code>
+<ul>
+<li>&mldr;however <code>WORKDIR</code> will not set permissions on dirs like <code>chown</code></li>
+</ul>
+</li>
+</ul>
+<h3 id=from-base-image-guidelines>FROM Base Image Guidelines</h3>
+<ul>
+<li>Base image is the image all of your Node apps will be built on.</li>
+<li>Stick to even numbered major Node releases
+<ul>
+<li>Even=stable, odd=experimental</li>
+</ul>
+</li>
+<li>Don&rsquo;t use <code>:latest</code> tag</li>
+<li>Pick a stable node version early and stick with that</li>
+<li>Start with Debian if migrating versions</li>
+<li>Stick with what you know and move to Alpine (more minimal and smaller) later
+<ul>
+<li>Not every app will work flawlessly out of the box using an Alpine base image</li>
+</ul>
+</li>
+<li>Don&rsquo;t use <code>:slim</code>
+<ul>
+<li>&mldr;but it has <code>apt</code>. Use this only if you CAN&rsquo;T use Alpine. May be a PITA to modify.</li>
+</ul>
+</li>
+<li>Don&rsquo;t use <code>:onbuild</code>.
+<ul>
+<li>It&rsquo;s a Dockerfile command that we don&rsquo;t use (why tho?)</li>
+<li>It tends to cause problems later on</li>
+<li>Originally it was the idea that commands could be set in an official repo that would execute whenever you pulled an image</li>
+<li>This caused users to experience a lack of causality in their commands and not be able to know what was being executed</li>
+</ul>
+</li>
+</ul>
+<h4 id=httpshubdockercom_node><a href=https://hub.docker.com/_/node>https://hub.docker.com/_/node</a></h4>
+<ul>
+<li>All images by default use Debian as their base image.
+<ul>
+<li>You get <code>apt</code>, <code>openssl</code>, <code>bash</code>, etc.</li>
+</ul>
+</li>
+<li>Latest image is >800MB</li>
+<li>We will use 11/alpine and 10/alpine.</li>
+</ul>
+<h3 id=when-to-use-alpine-debian-or-centos-images>When to use Alpine, Debian, or CentOS images</h3>
+<ul>
+<li><a href=https://kubedex.com/follow-up-container-scanning-comparison/>https://kubedex.com/follow-up-container-scanning-comparison/</a></li>
+<li><a href="https://www.youtube.com/watch?v=e2pAkcqYCG8">https://www.youtube.com/watch?v=e2pAkcqYCG8</a></li>
+</ul>
+<h4 id=alpine>Alpine</h4>
+<ul>
+<li>
+<p>Alpine is &lsquo;small&rsquo; and &lsquo;sec focused&rsquo;</p>
+</li>
+<li>
+<p>Minimal utilities OOTB</p>
+</li>
+<li>
+<p>But Debian/Ubuntu bases are smaller now too (100MB/85MB)</p>
+<ul>
+<li>Used to be 150/200MB</li>
+</ul>
+</li>
+<li>
+<p>Who cares about 100MB anyways?</p>
+<ul>
+<li>IoT?</li>
+</ul>
+</li>
+<li>
+<p>Alpine has its own issues</p>
+<ul>
+<li>2018 nodemon had a problem only on Alpine</li>
+</ul>
+</li>
+<li>
+<p>Alpine CVE scanning fails</p>
+<ul>
+<li>Current Alpine CVE scanning doesn&rsquo;t work due to an Alpine file translation database linking issue</li>
+<li>Debian/Ubuntu/CentOS do work better with the CVE scanning</li>
+</ul>
+</li>
+<li>
+<p>Enterprises may require CentOS or Ubuntu/Debian (there is no CentOS/RHEL Node image)</p>
+</li>
+</ul>
+<h3 id=assignment-making-a-centos-node-image>Assignment: Making a CentOS Node Image</h3>
+<p>See code repo at top.</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">Previous</span>
+<a href=/posts/2020-12-28-sql-injection-video/ class=block>SQL Injection Video</a>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">Next</span>
+<a href=/posts/2020-06-15-csslp-notes/ class=block>Certified Secure Software Lifecycle Professional (CSSLP) Notes</a>
+</div>
+</div>
+</div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#preamble>Preamble</a></li>
+<li><a href=#section-2-docker-compose-basics>Section 2: Docker Compose Basics</a>
+<ul>
+<li><a href=#links>Links</a></li>
+<li><a href=#why-compose>Why compose?</a></li>
+<li><a href=#compose-file-format>Compose File Format</a></li>
+<li><a href=#docker-compose-cli>Docker-Compose CLI</a></li>
+<li><a href=#assignment-compose-cli-basics>Assignment: Compose CLI basics</a></li>
+</ul>
+</li>
+<li><a href=#section-3-node-dockerfile-best-practice-basics>Section 3: Node Dockerfile Best Practice Basics</a>
+<ul>
+<li><a href=#dockerfile-best-practice-basics>Dockerfile Best Practice Basics</a>
+<ul>
+<li><a href=#copy-vs-add>COPY vs ADD</a></li>
+<li><a href=#npm-and-yarn>npm and yarn</a></li>
+<li><a href=#workdir-or-mkdir>WORKDIR or mkdir</a></li>
+</ul>
+</li>
+<li><a href=#from-base-image-guidelines>FROM Base Image Guidelines</a>
+<ul>
+<li><a href=#httpshubdockercom_node><a href=https://hub.docker.com/_/node>https://hub.docker.com/_/node</a></a></li>
+</ul>
+</li>
+<li><a href=#when-to-use-alpine-debian-or-centos-images>When to use Alpine, Debian, or CentOS images</a>
+<ul>
+<li><a href=#alpine>Alpine</a></li>
+</ul>
+</li>
+<li><a href=#assignment-making-a-centos-node-image>Assignment: Making a CentOS Node Image</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p>
+</div></div>
+</footer>
+</body>
+</html>

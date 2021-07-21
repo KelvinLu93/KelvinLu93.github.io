@@ -1,18 +1,57 @@
-<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Build Apps Using React: In Development and Production | Henry Post</title><meta name=generator content="Hugo Eureka 0.8.0"><link rel=stylesheet href=/css/eureka.min.css><script defer src=/js/eureka.min.js></script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'"><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png><meta name=description content="Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.
+<!doctype html><html lang=en><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Build Apps Using React: In Development and Production | Henry Post</title>
+<meta name=generator content="Hugo Eureka 0.8.0">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'">
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
+<meta name=description content="Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.
 Work can be found below:
 https://github.com/HenryFBP/reactjs-learning
 Setting up a Simple Comment Application Install deps:
 npm i -g create-react-app npx  Install a react app with JSX, a Babel compiler, and WebPack for asset bundling/minification:
 npx create-react-app comment-app  Start the app:
-cd comment-app npm start  You can see that in src/index.js, this is where the &ldquo;&rdquo; element is defined, from App."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: In Development and Production","item":"/posts/build-apps-using-react-in-development-and-production/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-in-development-and-production/"},"headline":"Build Apps Using React: In Development and Production | Henry Post","datePublished":"2021-07-16T10:41:12-05:00","dateModified":"2021-07-16T10:41:12-05:00","wordCount":387,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.\nWork can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nSetting up a Simple Comment Application Install deps:\nnpm i -g create-react-app npx  Install a react app with JSX, a Babel compiler, and WebPack for asset bundling\/minification:\nnpx create-react-app comment-app  Start the app:\ncd comment-app npm start  You can see that in src\/index.js, this is where the \u0026ldquo;\u0026rdquo; element is defined, from App."}</script><meta property="og:title" content="Build Apps Using React: In Development and Production | Henry Post"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/posts/build-apps-using-react-in-development-and-production/"><meta property="og:description" content="Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.
+cd comment-app npm start  You can see that in src/index.js, this is where the &ldquo;&rdquo; element is defined, from App.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: In Development and Production","item":"/posts/build-apps-using-react-in-development-and-production/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-in-development-and-production/"},"headline":"Build Apps Using React: In Development and Production | Henry Post","datePublished":"2021-07-16T10:41:12-05:00","dateModified":"2021-07-16T10:41:12-05:00","wordCount":387,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.\nWork can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nSetting up a Simple Comment Application Install deps:\nnpm i -g create-react-app npx  Install a react app with JSX, a Babel compiler, and WebPack for asset bundling\/minification:\nnpx create-react-app comment-app  Start the app:\ncd comment-app npm start  You can see that in src\/index.js, this is where the \u0026ldquo;\u0026rdquo; element is defined, from App."}</script><meta property="og:title" content="Build Apps Using React: In Development and Production | Henry Post">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/posts/build-apps-using-react-in-development-and-production/">
+<meta property="og:description" content="Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.
 Work can be found below:
 https://github.com/HenryFBP/reactjs-learning
 Setting up a Simple Comment Application Install deps:
 npm i -g create-react-app npx  Install a react app with JSX, a Babel compiler, and WebPack for asset bundling/minification:
 npx create-react-app comment-app  Start the app:
-cd comment-app npm start  You can see that in src/index.js, this is where the &ldquo;&rdquo; element is defined, from App."><meta property="og:locale" content="en"><meta property="og:site_name" content="Henry Post"><meta property="article:published_time" content="2021-07-16T10:41:12-05:00"><meta property="article:modified_time" content="2021-07-16T10:41:12-05:00"><meta property="article:section" content="posts"><body class="flex flex-col min-h-screen"><header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm"><div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
+cd comment-app npm start  You can see that in src/index.js, this is where the &ldquo;&rdquo; element is defined, from App.">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Henry Post">
+<meta property="article:published_time" content="2021-07-16T10:41:12-05:00">
+<meta property="article:modified_time" content="2021-07-16T10:41:12-05:00">
+<meta property="article:section" content="posts">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
 <button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
 <a href=/contact/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Contact</a>
 <a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">Posts</a>
 <a href=/hobbies/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Hobbies</a>
@@ -20,15 +59,78 @@ cd comment-app npm start  You can see that in src/index.js, this is where the &l
 <a href=/resume/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Resume</a>
 <a href=/skills/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Skills</a>
 <a href=/certifications/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Certifications</a>
-<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
 <span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="flex-grow pt-16"><div class=pl-scrollbar><div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto"><div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12"><div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8"><h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: In Development and Production</h1><div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text"><div class="mr-6 my-2"><i class="fas fa-calendar mr-1"></i>
-<span>2021-07-16</span></div><div class="mr-6 my-2"><i class="fas fa-clock mr-1"></i>
-<span>2 min read</span></div></div><div class=content><h2 id=overview>Overview</h2><p>Use <code>create-react-app</code> cli tool, and dev tools, to make an app and make a prod build of that app.</p><p>Work can be found below:</p><p><a href=https://github.com/HenryFBP/reactjs-learning>https://github.com/HenryFBP/reactjs-learning</a></p><h2 id=setting-up-a-simple-comment-application>Setting up a Simple Comment Application</h2><p>Install deps:</p><pre><code>npm i -g create-react-app npx
-</code></pre><p>Install a react app with JSX, a Babel compiler, and WebPack for asset bundling/minification:</p><pre><code>npx create-react-app comment-app
-</code></pre><p>Start the app:</p><pre><code>cd comment-app
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: In Development and Production</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-07-16</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>2 min read</span>
+</div>
+</div>
+<div class=content>
+<h2 id=overview>Overview</h2>
+<p>Use <code>create-react-app</code> cli tool, and dev tools, to make an app and make a prod build of that app.</p>
+<p>Work can be found below:</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning>https://github.com/HenryFBP/reactjs-learning</a></p>
+<h2 id=setting-up-a-simple-comment-application>Setting up a Simple Comment Application</h2>
+<p>Install deps:</p>
+<pre><code>npm i -g create-react-app npx
+</code></pre>
+<p>Install a react app with JSX, a Babel compiler, and WebPack for asset bundling/minification:</p>
+<pre><code>npx create-react-app comment-app
+</code></pre>
+<p>Start the app:</p>
+<pre><code>cd comment-app
 npm start
-</code></pre><p>You can see that in <code>src/index.js</code>, this is where the &ldquo;<app>&rdquo; element is defined, from <code>App.js</code>.</p><p>See &ldquo;Comment.js&rdquo;, a new component we make:</p><p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-structure-only>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-structure-only</a></p><p>And &ldquo;CommentList&rdquo; is a list of Comment components.</p><p>The above repo has no state or event handlers, just basic HTML structure.</p><p>If you get errors trying to run <code>npm start</code>, just delete <code>node_modules/</code> and run <code>npm install</code> and the <code>npm start</code>.</p><h2 id=adding-state-to-the-app>Adding State to the app</h2><p>Now to add state.</p><p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state</a>.</p><p>You store the state in the highest component possible, which is &ldquo;App&rdquo; in our case.</p><p>State should also flow from higher level components down to lower level components via properties.</p><p>See this commit: <a href=https://github.com/HenryFBP/reactjs-learning/commit/9a037e6d415f0ae49cddb5aa04dfe5fcbef62265>https://github.com/HenryFBP/reactjs-learning/commit/9a037e6d415f0ae49cddb5aa04dfe5fcbef62265</a></p><p>Or this folder:</p><p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state</a></p><h2 id=adding-comments>Adding comments</h2><p>We need event handlers.</p><pre><code class=language-jsx>//App.js
+</code></pre>
+<p>You can see that in <code>src/index.js</code>, this is where the &ldquo;<app>&rdquo; element is defined, from <code>App.js</code>.</p>
+<p>See &ldquo;Comment.js&rdquo;, a new component we make:</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-structure-only>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-structure-only</a></p>
+<p>And &ldquo;CommentList&rdquo; is a list of Comment components.</p>
+<p>The above repo has no state or event handlers, just basic HTML structure.</p>
+<p>If you get errors trying to run <code>npm start</code>, just delete <code>node_modules/</code> and run <code>npm install</code> and the <code>npm start</code>.</p>
+<h2 id=adding-state-to-the-app>Adding State to the app</h2>
+<p>Now to add state.</p>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state</a>.</p>
+<p>You store the state in the highest component possible, which is &ldquo;App&rdquo; in our case.</p>
+<p>State should also flow from higher level components down to lower level components via properties.</p>
+<p>See this commit: <a href=https://github.com/HenryFBP/reactjs-learning/commit/9a037e6d415f0ae49cddb5aa04dfe5fcbef62265>https://github.com/HenryFBP/reactjs-learning/commit/9a037e6d415f0ae49cddb5aa04dfe5fcbef62265</a></p>
+<p>Or this folder:</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state>https://github.com/HenryFBP/reactjs-learning/tree/master/react-apps-in-dev-and-prod/comment-app-with-state</a></p>
+<h2 id=adding-comments>Adding comments</h2>
+<p>We need event handlers.</p>
+<pre><code class=language-jsx>//App.js
 
 (...)
 
@@ -42,11 +144,56 @@ npm start
     });
   }
 
-</code></pre><p>The act of changing the state re-renders the components.</p><p>Next is to wire up the event handler.</p><p>See <a href=https://github.com/HenryFBP/reactjs-learning/commit/1b7a0cff1b66eb7f82756c4f7ab8cb645192c2cf>https://github.com/HenryFBP/reactjs-learning/commit/1b7a0cff1b66eb7f82756c4f7ab8cb645192c2cf</a> for code.</p><p>Note that we use <code>this.messageInputRef = React.createRef();</code> in <code>CommentBox.js</code> because the input box is an &ldquo;uncontrolled component&rdquo;, meaning the value in the input box is not controlled using React.Component state. This goes against best practices but is okay because it is a relatively simple input element. This avoids the overhead of managing state and setting up event handlers.</p><h2 id=deleting-comments>Deleting comments</h2><p>See <a href=https://github.com/HenryFBP/reactjs-learning/commit/a43dfe26356d064a598df96a8c2b7658681431fc>https://github.com/HenryFBP/reactjs-learning/commit/a43dfe26356d064a598df96a8c2b7658681431fc</a>.</p><h2 id=react-devtools>React devtools</h2><p><a href=https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi>https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi</a></p><p>And then try it out!</p><h2 id=exploring-components-with-react-devtools>Exploring components with react devtools</h2><p>Use &ldquo;Components&rdquo; view in dev tools and click around.</p><p>For profiling, start it and try interacting with the app.</p><h2 id=prod-build>Prod build</h2><p>Run</p><pre><code>npm run build
-</code></pre><p>To make a <code>./build</code> folder. Feel free to explore the minified files and &ldquo;manifest&rdquo; json file.</p><p>Also view &ldquo;index.html&rdquo; and &ldquo;css&rdquo; files. They&rsquo;re minified.</p><p>The &ldquo;.map&rdquo; files are source code mappings that assist in debugging.</p><p>The &ldquo;main.HASH.chunk.js&rdquo; file is our app code, so app.js and all components.</p><h2 id=serving-a-prod-build>Serving a prod build</h2><p>Run</p><pre><code>npm install -g serve
+</code></pre>
+<p>The act of changing the state re-renders the components.</p>
+<p>Next is to wire up the event handler.</p>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/commit/1b7a0cff1b66eb7f82756c4f7ab8cb645192c2cf>https://github.com/HenryFBP/reactjs-learning/commit/1b7a0cff1b66eb7f82756c4f7ab8cb645192c2cf</a> for code.</p>
+<p>Note that we use <code>this.messageInputRef = React.createRef();</code> in <code>CommentBox.js</code> because the input box is an &ldquo;uncontrolled component&rdquo;, meaning the value in the input box is not controlled using React.Component state. This goes against best practices but is okay because it is a relatively simple input element. This avoids the overhead of managing state and setting up event handlers.</p>
+<h2 id=deleting-comments>Deleting comments</h2>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/commit/a43dfe26356d064a598df96a8c2b7658681431fc>https://github.com/HenryFBP/reactjs-learning/commit/a43dfe26356d064a598df96a8c2b7658681431fc</a>.</p>
+<h2 id=react-devtools>React devtools</h2>
+<p><a href=https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi>https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi</a></p>
+<p>And then try it out!</p>
+<h2 id=exploring-components-with-react-devtools>Exploring components with react devtools</h2>
+<p>Use &ldquo;Components&rdquo; view in dev tools and click around.</p>
+<p>For profiling, start it and try interacting with the app.</p>
+<h2 id=prod-build>Prod build</h2>
+<p>Run</p>
+<pre><code>npm run build
+</code></pre>
+<p>To make a <code>./build</code> folder. Feel free to explore the minified files and &ldquo;manifest&rdquo; json file.</p>
+<p>Also view &ldquo;index.html&rdquo; and &ldquo;css&rdquo; files. They&rsquo;re minified.</p>
+<p>The &ldquo;.map&rdquo; files are source code mappings that assist in debugging.</p>
+<p>The &ldquo;main.HASH.chunk.js&rdquo; file is our app code, so app.js and all components.</p>
+<h2 id=serving-a-prod-build>Serving a prod build</h2>
+<p>Run</p>
+<pre><code>npm install -g serve
 
 serve -s build/
-</code></pre><p><code>-s</code> redirects 404 to <code>index.html</code>.</p></div><div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t"><div><span class="block font-bold">Previous</span>
-<a href=/posts/build-apps-using-react-props-and-state/ class=block>Build Apps Using React Props and State</a></div><div class="md:text-right mt-4 md:mt-0"><span class="block font-bold">Next</span>
-<a href=/posts/build-apps-using-react-introducing-react-for-web-applications/ class=block>Build Apps Using React: Introducing React for Web Applications</a></div></div></div></div><script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script></div></div></main><footer class=pl-scrollbar><div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+</code></pre>
+<p><code>-s</code> redirects 404 to <code>index.html</code>.</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">Previous</span>
+<a href=/posts/build-apps-using-react-props-and-state/ class=block>Build Apps Using React Props and State</a>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">Next</span>
+<a href=/posts/build-apps-using-react-introducing-react-for-web-applications/ class=block>Build Apps Using React: Introducing React for Web Applications</a>
+</div>
+</div>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p>
+</div></div>
+</footer>
+</body>
+</html>

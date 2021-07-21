@@ -1,4 +1,23 @@
-<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Docker Crash Course Notes | Henry Post</title><meta name=generator content="Hugo Eureka 0.8.0"><link rel=stylesheet href=/css/eureka.min.css><script defer src=/js/eureka.min.js></script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'"><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png><meta name=description content="The course The course is below.
+<!doctype html><html lang=en><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Docker Crash Course Notes | Henry Post</title>
+<meta name=generator content="Hugo Eureka 0.8.0">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'">
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
+<meta name=description content="The course The course is below.
 https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
 My work for this course can be found here:
  https://github.com/HenryFBP/docker-crash-course https://github.com/henryfbp/dockerapp/  Slides are here.
@@ -7,7 +26,13 @@ Section 1: Get Started with Docker 1. Course Overview See course.
 3. Support See course.
 4. Slides See course.
 5. Intro to virtualization Docker is only one implementation of containerization.
-Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Docker Crash Course Notes","item":"/posts/2021-05-12-docker-crash-course/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-05-12-docker-crash-course/"},"headline":"Docker Crash Course Notes | Henry Post","datePublished":"2021-05-12T00:00:00+00:00","dateModified":"2021-05-12T00:00:00+00:00","wordCount":9275,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"The course The course is below.\nhttps:\/\/www.udemy.com\/course\/docker-tutorial-for-devops-run-docker-containers\/\nMy work for this course can be found here:\n https:\/\/github.com\/HenryFBP\/docker-crash-course https:\/\/github.com\/henryfbp\/dockerapp\/  Slides are here.\nSection 1: Get Started with Docker 1. Course Overview See course.\n2. Support See course.\n3. Support See course.\n4. Slides See course.\n5. Intro to virtualization Docker is only one implementation of containerization.\nBefore virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app."}</script><meta property="og:title" content="Docker Crash Course Notes | Henry Post"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/posts/2021-05-12-docker-crash-course/"><meta property="og:description" content="The course The course is below.
+Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Docker Crash Course Notes","item":"/posts/2021-05-12-docker-crash-course/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-05-12-docker-crash-course/"},"headline":"Docker Crash Course Notes | Henry Post","datePublished":"2021-05-12T00:00:00+00:00","dateModified":"2021-05-12T00:00:00+00:00","wordCount":9275,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"The course The course is below.\nhttps:\/\/www.udemy.com\/course\/docker-tutorial-for-devops-run-docker-containers\/\nMy work for this course can be found here:\n https:\/\/github.com\/HenryFBP\/docker-crash-course https:\/\/github.com\/henryfbp\/dockerapp\/  Slides are here.\nSection 1: Get Started with Docker 1. Course Overview See course.\n2. Support See course.\n3. Support See course.\n4. Slides See course.\n5. Intro to virtualization Docker is only one implementation of containerization.\nBefore virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app."}</script><meta property="og:title" content="Docker Crash Course Notes | Henry Post">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/posts/2021-05-12-docker-crash-course/">
+<meta property="og:description" content="The course The course is below.
 https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/
 My work for this course can be found here:
  https://github.com/HenryFBP/docker-crash-course https://github.com/henryfbp/dockerapp/  Slides are here.
@@ -16,9 +41,23 @@ Section 1: Get Started with Docker 1. Course Overview See course.
 3. Support See course.
 4. Slides See course.
 5. Intro to virtualization Docker is only one implementation of containerization.
-Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app."><meta property="og:locale" content="en"><meta property="og:site_name" content="Henry Post"><meta property="article:published_time" content="2021-05-12T00:00:00+00:00"><meta property="article:modified_time" content="2021-05-12T00:00:00+00:00"><meta property="article:section" content="posts"><body class="flex flex-col min-h-screen"><header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm"><div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
+Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Henry Post">
+<meta property="article:published_time" content="2021-05-12T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-05-12T00:00:00+00:00">
+<meta property="article:section" content="posts">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
 <button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
 <a href=/contact/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Contact</a>
 <a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">Posts</a>
 <a href=/hobbies/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Hobbies</a>
@@ -26,57 +65,274 @@ Before virtualization, the OS is installed on a physical machine, and apps run o
 <a href=/resume/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Resume</a>
 <a href=/skills/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Skills</a>
 <a href=/certifications/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Certifications</a>
-<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
 <span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="flex-grow pt-16"><div class=pl-scrollbar><div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto"><div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12"><div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8"><h1 class="font-bold text-3xl text-primary-text">Docker Crash Course Notes</h1><div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text"><div class="mr-6 my-2"><i class="fas fa-calendar mr-1"></i>
-<span>2021-05-12</span></div><div class="mr-6 my-2"><i class="fas fa-clock mr-1"></i>
-<span>44 min read</span></div><div class="mr-6 my-2"><i class="fas fa-folder mr-1"></i>
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">Docker Crash Course Notes</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-05-12</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>44 min read</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-folder mr-1"></i>
 <a href=/categories/programming/ class=hover:text-eureka>programming</a>
-<span>,</span>
+<span>, </span>
 <a href=/categories/docker/ class=hover:text-eureka>docker</a>
-<span>,</span>
-<a href=/categories/devops/ class=hover:text-eureka>devops</a></div></div><div class=content><h2 id=the-course>The course</h2><p>The course is below.</p><p><a href=https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/>https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/</a></p><p>My work for this course can be found here:</p><ul><li><a href=https://github.com/HenryFBP/docker-crash-course>https://github.com/HenryFBP/docker-crash-course</a></li><li><a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a></li></ul><p><a href=/files/2021-05-12-docker-crash-course/slides.pdf>Slides are here.</a></p><h2 id=section-1-get-started-with-docker>Section 1: Get Started with Docker</h2><h3 id=1-course-overview>1. Course Overview</h3><p>See course.</p><h3 id=2-support>2. Support</h3><p>See course.</p><h3 id=3-support>3. Support</h3><p>See course.</p><h3 id=4-slides>4. Slides</h3><p>See course.</p><h3 id=5-intro-to-virtualization>5. Intro to virtualization</h3><p>Docker is only one implementation of containerization.</p><p>Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.</p><p>This is a problem as you need 1 machine per app, and this is wasteful and wastes CPU and RAM as they are underutilized.</p><p>Also, this slows deployment time and makes migration hard.</p><p>Next up, hypervisors run multiple OSes on top of one host OS.</p><p>This is cost efficient and easy to scale, but kernel resources get duplicated as you need 1 kernel per guest OS.</p><p>One more issue is that VM portability is difficult as you have different guest OSes.</p><p>Finally, containerization is a process where only 1 operating system runs - Docker is an implementation of container-based virtualization. The kernel does not get copied, there is only 1 kernel (Container Engine) with containerization.</p><p>By running apps in different VMs, we achieve runtime isolation.</p><p>This means we can use JRE7, 8, 9, 11, etc; without introducing any conflicts.</p><p>Container-based virtualization is more cost-efficient.</p><h3 id=6-dockers-client-server-architecture>6. Docker&rsquo;s Client-Server architecture</h3><p>Docker uses a client-server architecture, and the docker daemon is the server.</p><p>The user interacts through the daemon using <code>docker build</code>, <code>docker run</code>, etc.</p><p>There are 2 types of docker clients:</p><ul><li>CLI</li><li>Kitematic, a Docker client with a GUI</li></ul><p>The docker daemon is also called &ldquo;Docker Engine&rdquo; or &ldquo;Docker Server&rdquo;.</p><p>On OSX/Windows, the Docker daemon runs in a Linux VM.</p><h3 id=7-install-docker>7. Install Docker</h3><p>&mldr;</p><h3 id=8-install-docker-toolbox>8. Install Docker Toolbox</h3><p>&mldr;</p><h3 id=9-important-concepts-of-docker-technology>9. Important Concepts of Docker Technology</h3><h4 id=images>Images</h4><ul><li>Read-only templates used to create containers</li><li>Created with <code>docker build</code> command by us or other users</li><li>Can be large<ul><li>Intended to be made of other images</li></ul></li><li>Stored in a Docker registry</li></ul><h4 id=containers>Containers</h4><ul><li>metaphor: If an image is a Java class, then a container is an instance of that class</li><li>Lightweight and portable encapsulations of an environment</li><li>Created from images</li><li>Runnable</li><li>Has binaries and dependencies on filesystem</li></ul><h4 id=registries>Registries</h4><ul><li>Where images are stored.</li><li>You can self host or use DockerHub, docker&rsquo;s public registry</li></ul><h4 id=repositories>Repositories</h4><ul><li>Inside a registry, images are stored in repos</li><li>A collection of different docker images with the same name, but different tags/versions</li></ul><h4 id=docker-hub>Docker Hub</h4><p>A public docker registry with a LOT of images you can use.</p><p><a href=https://hub.docker.com/>https://hub.docker.com/</a></p><p>It&rsquo;s recommended to use official images instead of non-official images.</p><h3 id=10-hello-world-docker-container>10. Hello World Docker Container</h3><p>We&rsquo;ll create a container from <code>busybox</code> image.</p><p><a href=https://hub.docker.com/_/busybox>https://hub.docker.com/_/busybox</a></p><p>It&rsquo;s a very small image.</p><p>In Tags, we can see 1.24 as our version.</p><p>Run <code>docker images</code> to see what images you have pulled.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker images
+<span>, </span>
+<a href=/categories/devops/ class=hover:text-eureka>devops</a>
+</div>
+</div>
+<div class=content>
+<h2 id=the-course>The course</h2>
+<p>The course is below.</p>
+<p><a href=https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/>https://www.udemy.com/course/docker-tutorial-for-devops-run-docker-containers/</a></p>
+<p>My work for this course can be found here:</p>
+<ul>
+<li><a href=https://github.com/HenryFBP/docker-crash-course>https://github.com/HenryFBP/docker-crash-course</a></li>
+<li><a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a></li>
+</ul>
+<p><a href=/files/2021-05-12-docker-crash-course/slides.pdf>Slides are here.</a></p>
+<h2 id=section-1-get-started-with-docker>Section 1: Get Started with Docker</h2>
+<h3 id=1-course-overview>1. Course Overview</h3>
+<p>See course.</p>
+<h3 id=2-support>2. Support</h3>
+<p>See course.</p>
+<h3 id=3-support>3. Support</h3>
+<p>See course.</p>
+<h3 id=4-slides>4. Slides</h3>
+<p>See course.</p>
+<h3 id=5-intro-to-virtualization>5. Intro to virtualization</h3>
+<p>Docker is only one implementation of containerization.</p>
+<p>Before virtualization, the OS is installed on a physical machine, and apps run on the OS. Each machine only ran 1 app.</p>
+<p>This is a problem as you need 1 machine per app, and this is wasteful and wastes CPU and RAM as they are underutilized.</p>
+<p>Also, this slows deployment time and makes migration hard.</p>
+<p>Next up, hypervisors run multiple OSes on top of one host OS.</p>
+<p>This is cost efficient and easy to scale, but kernel resources get duplicated as you need 1 kernel per guest OS.</p>
+<p>One more issue is that VM portability is difficult as you have different guest OSes.</p>
+<p>Finally, containerization is a process where only 1 operating system runs - Docker is an implementation of container-based virtualization. The kernel does not get copied, there is only 1 kernel (Container Engine) with containerization.</p>
+<p>By running apps in different VMs, we achieve runtime isolation.</p>
+<p>This means we can use JRE7, 8, 9, 11, etc; without introducing any conflicts.</p>
+<p>Container-based virtualization is more cost-efficient.</p>
+<h3 id=6-dockers-client-server-architecture>6. Docker&rsquo;s Client-Server architecture</h3>
+<p>Docker uses a client-server architecture, and the docker daemon is the server.</p>
+<p>The user interacts through the daemon using <code>docker build</code>, <code>docker run</code>, etc.</p>
+<p>There are 2 types of docker clients:</p>
+<ul>
+<li>CLI</li>
+<li>Kitematic, a Docker client with a GUI</li>
+</ul>
+<p>The docker daemon is also called &ldquo;Docker Engine&rdquo; or &ldquo;Docker Server&rdquo;.</p>
+<p>On OSX/Windows, the Docker daemon runs in a Linux VM.</p>
+<h3 id=7-install-docker>7. Install Docker</h3>
+<p>&mldr;</p>
+<h3 id=8-install-docker-toolbox>8. Install Docker Toolbox</h3>
+<p>&mldr;</p>
+<h3 id=9-important-concepts-of-docker-technology>9. Important Concepts of Docker Technology</h3>
+<h4 id=images>Images</h4>
+<ul>
+<li>Read-only templates used to create containers</li>
+<li>Created with <code>docker build</code> command by us or other users</li>
+<li>Can be large
+<ul>
+<li>Intended to be made of other images</li>
+</ul>
+</li>
+<li>Stored in a Docker registry</li>
+</ul>
+<h4 id=containers>Containers</h4>
+<ul>
+<li>metaphor: If an image is a Java class, then a container is an instance of that class</li>
+<li>Lightweight and portable encapsulations of an environment</li>
+<li>Created from images</li>
+<li>Runnable</li>
+<li>Has binaries and dependencies on filesystem</li>
+</ul>
+<h4 id=registries>Registries</h4>
+<ul>
+<li>Where images are stored.</li>
+<li>You can self host or use DockerHub, docker&rsquo;s public registry</li>
+</ul>
+<h4 id=repositories>Repositories</h4>
+<ul>
+<li>Inside a registry, images are stored in repos</li>
+<li>A collection of different docker images with the same name, but different tags/versions</li>
+</ul>
+<h4 id=docker-hub>Docker Hub</h4>
+<p>A public docker registry with a LOT of images you can use.</p>
+<p><a href=https://hub.docker.com/>https://hub.docker.com/</a></p>
+<p>It&rsquo;s recommended to use official images instead of non-official images.</p>
+<h3 id=10-hello-world-docker-container>10. Hello World Docker Container</h3>
+<p>We&rsquo;ll create a container from <code>busybox</code> image.</p>
+<p><a href=https://hub.docker.com/_/busybox>https://hub.docker.com/_/busybox</a></p>
+<p>It&rsquo;s a very small image.</p>
+<p>In Tags, we can see 1.24 as our version.</p>
+<p>Run <code>docker images</code> to see what images you have pulled.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker images
 REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
-</code></pre><p>None.</p><p>Run <code>docker run busybox:1.24 echo "hello world"</code> to run the specific tagged box with a command.</p><p>We can also run the container in interactive mode with <code>-i</code> and <code>-t</code>.</p><p><code>-i</code> starts an interactive container.</p><p><code>-t</code> creates a pseudo-TTY that attaches <code>stdin</code> and <code>stdout</code>.</p><pre><code>docker run -i -t busybox:1.24 
-</code></pre><p>Note that the container&rsquo;s filesystem is lost when the container shuts down. If you made a file in the terminal, it would not be kept.</p><h3 id=11-deep-dive-into-docker-containers>11. Deep Dive into Docker Containers</h3><p>Most cases, you want to run containers in the background.</p><p>Use <code>-d</code> for detatched mode.</p><p>Example:</p><pre><code>docker run -d busybox:1.24 sleep 1000
-</code></pre><p>This docker container will sleep for 1000 seconds.</p><p>Run <code>docker ps</code> to see it running. You can run <code>docker ps -a</code> to see all previous commands.</p><hr><p>If you want to delete the container when it exists, you add <code>--rm</code>.</p><p>Example:</p><pre><code>docker run --rm busybox:1.24 sleep 1
-</code></pre><p>Now, if you run <code>docker ps -a</code> you will NOT see the container that ran <code>sleep 1</code>.</p><hr><p>You can also specify a name of a container with <code>--name</code>.</p><p>Example:</p><pre><code>docker run --name hello_world busybox:1.24
-</code></pre><p>Running <code>docker ps -a</code> will show you the name.</p><hr><p>Another useful command is <code>docker inspect</code>. This will show you low level info on an image.</p><p>Start a container in detached mode with <code>docker run -d busybox:1.24 sleep 999</code>, and you get a long container ID from that command.</p><p>Then run <code>docker inspect 13eedc4b42499231873f6926620d148ee219146c78b4727e08d0798d426a7f8d</code> to get a JSON array.</p><p>You get the address, memory info, image ID, log path, etc.</p><h3 id=12-docker-port-mapping-and-docker-logs-command>12. Docker Port Mapping and Docker Logs Command</h3><p>We&rsquo;ll use Tomcat.</p><p><a href=https://hub.docker.com/_/tomcat>https://hub.docker.com/_/tomcat</a></p><p>Tomcat runs on port 8080 by default.</p><p>But Docker lets you expose container ports (VM) onto host ports by using <code>-p</code> option.</p><p>Example: Tomcat runs on port 8080 in container, and is exposed onto 8888 in the host:</p><pre><code>docker run -it -d -p 8888:8080 tomcat:8.0
-</code></pre><p>The format is <code>-p host_port:container_port</code>.</p><p>This means you can later visit http://localhost:8888 in your browser, in the host OS. If you&rsquo;re not using Linux, scroll up to see the host IP and use that instead of <code>localhost</code>.</p><p>You can later run <code>docker logs container_id</code> to see the logs from a container.</p><h3 id=13-deep-dive-into-logging>13. Deep Dive into Logging</h3><p><a href=https://www.level-up.one/deep-dive-into-docker-logging>https://www.level-up.one/deep-dive-into-docker-logging</a></p><h2 id=section-2-working-with-docker-images>Section 2: Working with Docker Images</h2><h3 id=14-docker-image-layers>14. Docker Image Layers</h3><p>Docker images are a stack of layers. Example:</p><pre><code>Description     Type
+</code></pre>
+<p>None.</p>
+<p>Run <code>docker run busybox:1.24 echo "hello world"</code> to run the specific tagged box with a command.</p>
+<p>We can also run the container in interactive mode with <code>-i</code> and <code>-t</code>.</p>
+<p><code>-i</code> starts an interactive container.</p>
+<p><code>-t</code> creates a pseudo-TTY that attaches <code>stdin</code> and <code>stdout</code>.</p>
+<pre><code>docker run -i -t busybox:1.24 
+</code></pre>
+<p>Note that the container&rsquo;s filesystem is lost when the container shuts down. If you made a file in the terminal, it would not be kept.</p>
+<h3 id=11-deep-dive-into-docker-containers>11. Deep Dive into Docker Containers</h3>
+<p>Most cases, you want to run containers in the background.</p>
+<p>Use <code>-d</code> for detatched mode.</p>
+<p>Example:</p>
+<pre><code>docker run -d busybox:1.24 sleep 1000
+</code></pre>
+<p>This docker container will sleep for 1000 seconds.</p>
+<p>Run <code>docker ps</code> to see it running. You can run <code>docker ps -a</code> to see all previous commands.</p>
+<hr>
+<p>If you want to delete the container when it exists, you add <code>--rm</code>.</p>
+<p>Example:</p>
+<pre><code>docker run --rm busybox:1.24 sleep 1
+</code></pre>
+<p>Now, if you run <code>docker ps -a</code> you will NOT see the container that ran <code>sleep 1</code>.</p>
+<hr>
+<p>You can also specify a name of a container with <code>--name</code>.</p>
+<p>Example:</p>
+<pre><code>docker run --name hello_world busybox:1.24
+</code></pre>
+<p>Running <code>docker ps -a</code> will show you the name.</p>
+<hr>
+<p>Another useful command is <code>docker inspect</code>. This will show you low level info on an image.</p>
+<p>Start a container in detached mode with <code>docker run -d busybox:1.24 sleep 999</code>, and you get a long container ID from that command.</p>
+<p>Then run <code>docker inspect 13eedc4b42499231873f6926620d148ee219146c78b4727e08d0798d426a7f8d</code> to get a JSON array.</p>
+<p>You get the address, memory info, image ID, log path, etc.</p>
+<h3 id=12-docker-port-mapping-and-docker-logs-command>12. Docker Port Mapping and Docker Logs Command</h3>
+<p>We&rsquo;ll use Tomcat.</p>
+<p><a href=https://hub.docker.com/_/tomcat>https://hub.docker.com/_/tomcat</a></p>
+<p>Tomcat runs on port 8080 by default.</p>
+<p>But Docker lets you expose container ports (VM) onto host ports by using <code>-p</code> option.</p>
+<p>Example: Tomcat runs on port 8080 in container, and is exposed onto 8888 in the host:</p>
+<pre><code>docker run -it -d -p 8888:8080 tomcat:8.0
+</code></pre>
+<p>The format is <code>-p host_port:container_port</code>.</p>
+<p>This means you can later visit http://localhost:8888 in your browser, in the host OS. If you&rsquo;re not using Linux, scroll up to see the host IP and use that instead of <code>localhost</code>.</p>
+<p>You can later run <code>docker logs container_id</code> to see the logs from a container.</p>
+<h3 id=13-deep-dive-into-logging>13. Deep Dive into Logging</h3>
+<p><a href=https://www.level-up.one/deep-dive-into-docker-logging>https://www.level-up.one/deep-dive-into-docker-logging</a></p>
+<h2 id=section-2-working-with-docker-images>Section 2: Working with Docker Images</h2>
+<h3 id=14-docker-image-layers>14. Docker Image Layers</h3>
+<p>Docker images are a stack of layers. Example:</p>
+<pre><code>Description     Type
 --------------------------
 writable        Container
 add apache      Image
 add emacs       Image
 Kernel          bootfs
-</code></pre><p>You can check the full set of layers making up an image by running:</p><pre><code>docker history busybox:1.24
-</code></pre><p>Gives us:</p><pre><code>IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
+</code></pre>
+<p>You can check the full set of layers making up an image by running:</p>
+<pre><code>docker history busybox:1.24
+</code></pre>
+<p>Gives us:</p>
+<pre><code>IMAGE          CREATED       CREATED BY                                      SIZE      COMMENT
 47bcc53f74dc   5 years ago   /bin/sh -c #(nop) CMD [&quot;sh&quot;]                    0B        
 &lt;missing&gt;      5 years ago   /bin/sh -c #(nop) ADD file:47ca6e777c36a4cff…   1.11MB    
-</code></pre><p>The base layer adds a file, and the next just runs <code>sh</code>.</p><p>When you make a new container, you add a new writable layer on top of the existing stack of layers.</p><p>This layer is often called the &ldquo;writable container layer&rdquo;.</p><p>All changes made to the running container will be writen to this thin writable container layer.</p><p>The main difference between a container and an image is the top writable layer exists in the container.</p><p>When the container is deleted, the writable layer also gets deleted, but the image is unchanged.</p><p>This means multiple containers can share the same image.</p><h3 id=15-build-docker-images-by-using-docker-commit>15. Build Docker images by using <code>docker commit</code></h3><p>2 ways to build a docker image:</p><ol><li>Commit changes made in a Docker container.</li><li>Write a <code>Dockerfile</code>.</li></ol><p>Steps for type 1:</p><ol><li>Spin up a container from a base image</li><li>Install a package</li><li>Commit changes that were made</li></ol><p>Let&rsquo;s do it!</p><p><a href=https://hub.docker.com/_/debian>https://hub.docker.com/_/debian</a></p><pre><code>docker run -it debian:jessie
+</code></pre>
+<p>The base layer adds a file, and the next just runs <code>sh</code>.</p>
+<p>When you make a new container, you add a new writable layer on top of the existing stack of layers.</p>
+<p>This layer is often called the &ldquo;writable container layer&rdquo;.</p>
+<p>All changes made to the running container will be writen to this thin writable container layer.</p>
+<p>The main difference between a container and an image is the top writable layer exists in the container.</p>
+<p>When the container is deleted, the writable layer also gets deleted, but the image is unchanged.</p>
+<p>This means multiple containers can share the same image.</p>
+<h3 id=15-build-docker-images-by-using-docker-commit>15. Build Docker images by using <code>docker commit</code></h3>
+<p>2 ways to build a docker image:</p>
+<ol>
+<li>Commit changes made in a Docker container.</li>
+<li>Write a <code>Dockerfile</code>.</li>
+</ol>
+<p>Steps for type 1:</p>
+<ol>
+<li>Spin up a container from a base image</li>
+<li>Install a package</li>
+<li>Commit changes that were made</li>
+</ol>
+<p>Let&rsquo;s do it!</p>
+<p><a href=https://hub.docker.com/_/debian>https://hub.docker.com/_/debian</a></p>
+<pre><code>docker run -it debian:jessie
 
 ls
 
 git
-</code></pre><p>Git&rsquo;s not installed.</p><pre><code>apt-get update &amp;&amp; apt-get install -y git
+</code></pre>
+<p>Git&rsquo;s not installed.</p>
+<pre><code>apt-get update &amp;&amp; apt-get install -y git
 
 clear
 
 git
-</code></pre><p>Now we can <code>exit</code> and commit our container as a new docker image.</p><pre><code>exit
+</code></pre>
+<p>Now we can <code>exit</code> and commit our container as a new docker image.</p>
+<pre><code>exit
 
 docker commit container_id repository_name:tag
-</code></pre><p>For me this was:</p><pre><code>docker commit 3b6f832d9588 henryfbp/debian:1.0.0
-</code></pre><p>Now if we run <code>docker images</code>, we can see our new image:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker images
+</code></pre>
+<p>For me this was:</p>
+<pre><code>docker commit 3b6f832d9588 henryfbp/debian:1.0.0
+</code></pre>
+<p>Now if we run <code>docker images</code>, we can see our new image:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker images
 REPOSITORY        TAG       IMAGE ID       CREATED          SIZE
 henryfbp/debian   1.0.0     53ad0d3f3c1a   51 seconds ago   224MB
 debian            jessie    3aaeab7a4777   6 weeks ago      129MB
 busybox           1.24      47bcc53f74dc   5 years ago      1.11MB
-</code></pre><p>We can even start a container from our new image.</p><pre><code>docker run -it henryfbp/debian:1.0.0
+</code></pre>
+<p>We can even start a container from our new image.</p>
+<pre><code>docker run -it henryfbp/debian:1.0.0
 
 ls
 
 git
-</code></pre><h3 id=16-build-docker-images-by-making-a-dockerfile>16. Build Docker Images by making a <code>Dockerfile</code></h3><p>A Dockerfile is a text document that contains all the steps to assemble an image.</p><p>Each instruction adds a layer.</p><p>See <a href=https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-example>https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-example</a>.</p><p>Run <code>docker build henryfbp/debian .</code> in the same dir as the Dockerfile.</p><ul><li>Docker build takes the path (<code>.</code>) to the build context as an argument.</li><li>When the build starts, the docker client packs all the files in the build context path into a tarball and transfer that file to the daemon.</li><li>By default, docker searches for <code>Dockerfile</code> in the root of the build context path.</li><li>If your <code>Dockerfile</code> doesn&rsquo;t sit in the root of the build context path, you can use <code>-f</code> to change the Dockerfile path.</li></ul><p>Output:</p><pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-example (master) [1]&gt; docker build -t henryfbp/debian .
+</code></pre>
+<h3 id=16-build-docker-images-by-making-a-dockerfile>16. Build Docker Images by making a <code>Dockerfile</code></h3>
+<p>A Dockerfile is a text document that contains all the steps to assemble an image.</p>
+<p>Each instruction adds a layer.</p>
+<p>See <a href=https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-example>https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-example</a>.</p>
+<p>Run <code>docker build henryfbp/debian .</code> in the same dir as the Dockerfile.</p>
+<ul>
+<li>Docker build takes the path (<code>.</code>) to the build context as an argument.</li>
+<li>When the build starts, the docker client packs all the files in the build context path into a tarball and transfer that file to the daemon.</li>
+<li>By default, docker searches for <code>Dockerfile</code> in the root of the build context path.</li>
+<li>If your <code>Dockerfile</code> doesn&rsquo;t sit in the root of the build context path, you can use <code>-f</code> to change the Dockerfile path.</li>
+</ul>
+<p>Output:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-example (master) [1]&gt; docker build -t henryfbp/debian .
 Sending build context to Docker daemon  2.048kB
 Step 1/4 : FROM debian:jessie
 ---&gt; 3aaeab7a4777
@@ -93,18 +349,40 @@ Removing intermediate container 69eb836d88b3
 ---&gt; 3490c50cf88b
 Successfully built 3490c50cf88b
 Successfully tagged henryfbp/debian:latest
-</code></pre><p>The reason we see <code>Removing intermediate container 69eb836d88b3</code> is because the Docker daemon runs each instruction in a different container.</p><p>Once it writes changes to an image, and commits it, the container used to run the old instruction is removed. This is repeated. Containers are ephemeral and only used once in this scenario. Images are persistent and read only.</p><h3 id=17-dockerfile-in-depth>17. Dockerfile in-depth</h3><h4 id=chain-run-instructions>Chain RUN instructions</h4><ul><li>Each RUN command executes the command on the top writable layer of the container, and then commit the container as a new image.</li><li>The new image is used for the next step in the Dockerfile. So each RUN instruction will create a new image layer.</li><li>It is recommended to chain RUN instructions in Dockerfile to reduce the number of image layers created.</li></ul><p>Example Dockerfile:</p><p><a href=https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-in-depth>https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-in-depth</a></p><pre><code>FROM debian:jessie
+</code></pre>
+<p>The reason we see <code>Removing intermediate container 69eb836d88b3</code> is because the Docker daemon runs each instruction in a different container.</p>
+<p>Once it writes changes to an image, and commits it, the container used to run the old instruction is removed. This is repeated. Containers are ephemeral and only used once in this scenario. Images are persistent and read only.</p>
+<h3 id=17-dockerfile-in-depth>17. Dockerfile in-depth</h3>
+<h4 id=chain-run-instructions>Chain RUN instructions</h4>
+<ul>
+<li>Each RUN command executes the command on the top writable layer of the container, and then commit the container as a new image.</li>
+<li>The new image is used for the next step in the Dockerfile. So each RUN instruction will create a new image layer.</li>
+<li>It is recommended to chain RUN instructions in Dockerfile to reduce the number of image layers created.</li>
+</ul>
+<p>Example Dockerfile:</p>
+<p><a href=https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-in-depth>https://github.com/HenryFBP/docker-crash-course/tree/master/dockerfile-in-depth</a></p>
+<pre><code>FROM debian:jessie
 RUN apt-get update &amp;&amp; apt-get install -y \ 
   git \
   vim
-</code></pre><h4 id=cmd-instructions>CMD Instructions</h4><ul><li>This specifies what command to run when the container starts up.</li><li>If not specified in the Dockerfile, Docker will use the default command defined in the base image.</li><li>The CMD instruction doesn&rsquo;t run when building the image. Only when the container starts up.</li><li>You can use EXEC form (preferred) or use shell form.</li></ul><pre><code>FROM debian:jessie
+</code></pre>
+<h4 id=cmd-instructions>CMD Instructions</h4>
+<ul>
+<li>This specifies what command to run when the container starts up.</li>
+<li>If not specified in the Dockerfile, Docker will use the default command defined in the base image.</li>
+<li>The CMD instruction doesn&rsquo;t run when building the image. Only when the container starts up.</li>
+<li>You can use EXEC form (preferred) or use shell form.</li>
+</ul>
+<pre><code>FROM debian:jessie
 RUN apt-get update &amp;&amp; apt-get install -y \ 
   git \
   python \
   vim
 
 CMD [&quot;python&quot;, &quot;-c&quot;, &quot;print('hello from python!')&quot;]
-</code></pre><p>Output:</p><pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker build -t henryfbp/debian .
+</code></pre>
+<p>Output:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker build -t henryfbp/debian .
 Sending build context to Docker daemon  2.048kB
 Step 1/3 : FROM debian:jessie
  ---&gt; 3aaeab7a4777
@@ -115,10 +393,21 @@ Step 3/3 : CMD [&quot;python&quot;, &quot;-c&quot;, &quot;print('hello from pyth
  ---&gt; Using cache
  ---&gt; 3707fcb27c55
 Successfully built 3707fcb27c55
-</code></pre><p>Then we can run <code>docker run 3707fcb27c55</code>:</p><pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker run 3707fcb27c55
+</code></pre>
+<p>Then we can run <code>docker run 3707fcb27c55</code>:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker run 3707fcb27c55
 hello from python!
-</code></pre><p>You can also overwrite the <code>CMD</code> instruction like this:</p><pre><code>docker run 3707fcb27c55 echo &quot;hello from sh!&quot;
-</code></pre><h4 id=docker-cache>Docker Cache</h4><ul><li>Each time docker executes an instruction, it builds a new image layer</li><li>If the instruction doesn&rsquo;t change, docker will just reuse an existing layer.</li></ul><p>Example - &ldquo;Using cache&rdquo; can be seen:</p><pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker build -t henryfbp/debian .
+</code></pre>
+<p>You can also overwrite the <code>CMD</code> instruction like this:</p>
+<pre><code>docker run 3707fcb27c55 echo &quot;hello from sh!&quot;
+</code></pre>
+<h4 id=docker-cache>Docker Cache</h4>
+<ul>
+<li>Each time docker executes an instruction, it builds a new image layer</li>
+<li>If the instruction doesn&rsquo;t change, docker will just reuse an existing layer.</li>
+</ul>
+<p>Example - &ldquo;Using cache&rdquo; can be seen:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker build -t henryfbp/debian .
 Sending build context to Docker daemon  2.048kB
 Step 1/3 : FROM debian:jessie
  ---&gt; 3aaeab7a4777
@@ -129,18 +418,37 @@ Step 3/3 : CMD [&quot;python&quot;, &quot;-c&quot;, &quot;print('hello from pyth
  ---&gt; Using cache
  ---&gt; 3707fcb27c55
 Successfully built 3707fcb27c55
-</code></pre><p>This can speed up build time a lot. But it may cause issues if used too much.</p><h4 id=aggressive-caching>Aggressive Caching</h4><p>Changing this:</p><pre><code>FROM ubuntu:14.04
+</code></pre>
+<p>This can speed up build time a lot. But it may cause issues if used too much.</p>
+<h4 id=aggressive-caching>Aggressive Caching</h4>
+<p>Changing this:</p>
+<pre><code>FROM ubuntu:14.04
 RUN apt-get update
 RUN apt-get install -y git
-</code></pre><p>To this:</p><pre><code>FROM ubuntu:14.04
+</code></pre>
+<p>To this:</p>
+<pre><code>FROM ubuntu:14.04
 RUN apt-get update
 RUN apt-get install -y git curl
-</code></pre><p>Means the first 2 lines are reused.</p><p>This means <code>apt-get update</code> would not be run, which may result in you getting an out of date version of <code>git</code> and <code>curl</code>.</p><p>One solution: Chain instructions.</p><pre><code>FROM ubuntu:14.04
+</code></pre>
+<p>Means the first 2 lines are reused.</p>
+<p>This means <code>apt-get update</code> would not be run, which may result in you getting an out of date version of <code>git</code> and <code>curl</code>.</p>
+<p>One solution: Chain instructions.</p>
+<pre><code>FROM ubuntu:14.04
 RUN apt-get update &amp;&amp; apt-get install -y \
     git \ 
     curl
-</code></pre><p>This ensures that whenever <code>apt-get install</code> is modified, <code>apt-get update</code> gets run again as well.</p><p>You could also add <code>--no-cache=true</code>.</p><pre><code>docker build -t henryfbp/debian . --no-cache=true
-</code></pre><h4 id=copy-instruction>COPY instruction</h4><ul><li>Copies files to the container.</li></ul><p>Example:</p><pre><code>FROM debian:jessie
+</code></pre>
+<p>This ensures that whenever <code>apt-get install</code> is modified, <code>apt-get update</code> gets run again as well.</p>
+<p>You could also add <code>--no-cache=true</code>.</p>
+<pre><code>docker build -t henryfbp/debian . --no-cache=true
+</code></pre>
+<h4 id=copy-instruction>COPY instruction</h4>
+<ul>
+<li>Copies files to the container.</li>
+</ul>
+<p>Example:</p>
+<pre><code>FROM debian:jessie
 RUN apt-get update &amp;&amp; apt-get install -y \ 
   git \
   python \
@@ -151,8 +459,31 @@ COPY foo.txt /src/foo.txt
 RUN cat /src/foo.txt
 
 CMD [&quot;python&quot;, &quot;-c&quot;, &quot;print('hello from python!')&quot;]
-</code></pre><h4 id=add-instruction>ADD instruction</h4><ul><li>Similar to COPY</li><li>ADD can do more magic</li><li>It can download files from the internet</li><li>Also can unpack compressed files.</li><li>COPY is preferred to ADD, as COPY is more transparent. Use COPY unless you need ADD.</li></ul><h3 id=18-push-docker-images-to-docker-hub>18. Push Docker images to Docker Hub</h3><p>Use <a href=https://hub.docker.com/>https://hub.docker.com/</a> and make a Docker Hub account.</p><p>Mine is <a href=https://hub.docker.com/u/henryfbp>https://hub.docker.com/u/henryfbp</a>.</p><p>I made a repo here:</p><p><a href=https://hub.docker.com/repository/docker/henryfbp/betterdebian>https://hub.docker.com/repository/docker/henryfbp/betterdebian</a></p><p>I&rsquo;m going to go to <code>docker-crash-course/dockerfile-in-depth</code> from this repo:</p><p><a href=https://github.com/HenryFBP/docker-crash-course/>https://github.com/HenryFBP/docker-crash-course/</a></p><p>And run <code>docker build -t henryfbp/debian:1.0.1 .</code></p><p>Then run <code>docker images</code> to get its image ID. It should be at the top.</p><p>To rename our image, run</p><pre><code>docker tag 7bbb4d211d9b henryfbp/betterdebian:1.0.0
-</code></pre><p>If we didn&rsquo;t add <code>:1.0.0</code>, docker would have just used &ldquo;latest&rdquo; as the default tag, which is sloppy and should be avoided.</p><p>Images tagged &lsquo;latest&rsquo; will not be automatically updated when a newer version of the image is pushed to the repo. Avoid using latest tag. Avoid pulling latest tag. Specify tags every time.</p><p>Then run <code>docker images</code> again. You should see the tagged image.</p><pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker images
+</code></pre>
+<h4 id=add-instruction>ADD instruction</h4>
+<ul>
+<li>Similar to COPY</li>
+<li>ADD can do more magic</li>
+<li>It can download files from the internet</li>
+<li>Also can unpack compressed files.</li>
+<li>COPY is preferred to ADD, as COPY is more transparent. Use COPY unless you need ADD.</li>
+</ul>
+<h3 id=18-push-docker-images-to-docker-hub>18. Push Docker images to Docker Hub</h3>
+<p>Use <a href=https://hub.docker.com/>https://hub.docker.com/</a> and make a Docker Hub account.</p>
+<p>Mine is <a href=https://hub.docker.com/u/henryfbp>https://hub.docker.com/u/henryfbp</a>.</p>
+<p>I made a repo here:</p>
+<p><a href=https://hub.docker.com/repository/docker/henryfbp/betterdebian>https://hub.docker.com/repository/docker/henryfbp/betterdebian</a></p>
+<p>I&rsquo;m going to go to <code>docker-crash-course/dockerfile-in-depth</code> from this repo:</p>
+<p><a href=https://github.com/HenryFBP/docker-crash-course/>https://github.com/HenryFBP/docker-crash-course/</a></p>
+<p>And run <code>docker build -t henryfbp/debian:1.0.1 .</code></p>
+<p>Then run <code>docker images</code> to get its image ID. It should be at the top.</p>
+<p>To rename our image, run</p>
+<pre><code>docker tag 7bbb4d211d9b henryfbp/betterdebian:1.0.0
+</code></pre>
+<p>If we didn&rsquo;t add <code>:1.0.0</code>, docker would have just used &ldquo;latest&rdquo; as the default tag, which is sloppy and should be avoided.</p>
+<p>Images tagged &lsquo;latest&rsquo; will not be automatically updated when a newer version of the image is pushed to the repo. Avoid using latest tag. Avoid pulling latest tag. Specify tags every time.</p>
+<p>Then run <code>docker images</code> again. You should see the tagged image.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/d/dockerfile-in-depth (master)&gt; docker images
 REPOSITORY              TAG       IMAGE ID       CREATED       SIZE
 henryfbp/betterdebian   1.0.0     7bbb4d211d9b   4 hours ago   280MB
 henryfbp/debian         1.0.1     7bbb4d211d9b   4 hours ago   280MB
@@ -160,43 +491,107 @@ henryfbp/debian         latest    7bbb4d211d9b   4 hours ago   280MB
 henryfbp/debian         1.0.0     53ad0d3f3c1a   5 hours ago   224MB
 tomcat                  9.0       c0e850d7b9bb   2 weeks ago   667MB
 debian                  jessie    3aaeab7a4777   6 weeks ago   129MB
-</code></pre><p>The next step is to push <code>henryfbp/betterdebian:1.0.0</code> to docker hub.</p><p>You need to use <code>docker login --username=henryfbp</code> and then provide your password first.</p><p>Then run <code>docker push henryfbp/betterdebian:1.0.0</code>.</p><pre><code>vagrant@vagrant-virtualbox ~&gt; docker push henryfbp/betterdebian:1.0.0
+</code></pre>
+<p>The next step is to push <code>henryfbp/betterdebian:1.0.0</code> to docker hub.</p>
+<p>You need to use <code>docker login --username=henryfbp</code> and then provide your password first.</p>
+<p>Then run <code>docker push henryfbp/betterdebian:1.0.0</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~&gt; docker push henryfbp/betterdebian:1.0.0
 The push refers to repository [docker.io/henryfbp/betterdebian]
 4084515d3265: Pushed 
 de0ab1eee188: Pushed 
 fac8b84e323e: Mounted from library/debian 
 1.0.0: digest: sha256:93f342ed49915cef585c0756143e72b166466fd48f7a13f8afa2c5927a017eea size: 948
-</code></pre><p>You can see it at <a href=https://hub.docker.com/repository/docker/henryfbp/betterdebian>https://hub.docker.com/repository/docker/henryfbp/betterdebian</a></p><h2 id=section-3-create-containerized-web-applications>Section 3: Create Containerized Web Applications</h2><h3 id=19-containerize-a-simple-hello-world-web-application>19. Containerize a Simple Hello World Web Application</h3><ol><li>Run <code>git clone -b v0.1 https://github.com/henryfbp/dockerapp/</code> to clone a simple dockerized application.</li></ol><p><code>-b v0.1</code> tells git to clone the repo and move the HEAD to the branch <code>v0.1</code>, which is an early version of the app.</p><p>Inside the working directory, you can see there&rsquo;s just 2 files:</p><pre><code>app/app.py
+</code></pre>
+<p>You can see it at <a href=https://hub.docker.com/repository/docker/henryfbp/betterdebian>https://hub.docker.com/repository/docker/henryfbp/betterdebian</a></p>
+<h2 id=section-3-create-containerized-web-applications>Section 3: Create Containerized Web Applications</h2>
+<h3 id=19-containerize-a-simple-hello-world-web-application>19. Containerize a Simple Hello World Web Application</h3>
+<ol>
+<li>Run <code>git clone -b v0.1 https://github.com/henryfbp/dockerapp/</code> to clone a simple dockerized application.</li>
+</ol>
+<p><code>-b v0.1</code> tells git to clone the repo and move the HEAD to the branch <code>v0.1</code>, which is an early version of the app.</p>
+<p>Inside the working directory, you can see there&rsquo;s just 2 files:</p>
+<pre><code>app/app.py
 Dockerfile
-</code></pre><p><code>app.py</code> is a very simple flask app.</p><p>Inside Dockerfile:</p><pre><code>FROM python:3.5
+</code></pre>
+<p><code>app.py</code> is a very simple flask app.</p>
+<p>Inside Dockerfile:</p>
+<pre><code>FROM python:3.5
 RUN pip install Flask==0.11.1
 RUN useradd -ms /bin/bash admin
 USER admin
 WORKDIR /app
 COPY app /app
 CMD [&quot;python&quot;, &quot;app.py&quot;] 
-</code></pre><ol><li><p>Use base image <code>python:3.5</code></p></li><li><p>Install Flask using <code>pip</code></p></li><li><p>Create a new user, <code>admin</code>, who has a default shell of <code>/bin/bash</code>.</p></li><li><p>All commands Docker runs are now run by the newly created <code>admin</code> user.</p><p>Note: It&rsquo;s a good idea to avoid running processes in Docker as a root user to avoid privilege escalation.</p></li><li><p>Set the current working directory to <code>/app</code> for all <code>COPY</code>, <code>ADD</code>, etc. instructions.</p></li><li><p>Copy a folder, <code>app</code>, on the parent, to the container&rsquo;s filesystem root <code>/app</code>.</p></li><li><p>Start the webserver.</p></li></ol><p>Let&rsquo;s build it!</p><pre><code>docker build -t dockerapp:v0.1 .
-</code></pre><p>And get the newly-built image ID.</p><pre><code>docker images
+</code></pre>
+<ol>
+<li>
+<p>Use base image <code>python:3.5</code></p>
+</li>
+<li>
+<p>Install Flask using <code>pip</code></p>
+</li>
+<li>
+<p>Create a new user, <code>admin</code>, who has a default shell of <code>/bin/bash</code>.</p>
+</li>
+<li>
+<p>All commands Docker runs are now run by the newly created <code>admin</code> user.</p>
+<p>Note: It&rsquo;s a good idea to avoid running processes in Docker as a root user to avoid privilege escalation.</p>
+</li>
+<li>
+<p>Set the current working directory to <code>/app</code> for all <code>COPY</code>, <code>ADD</code>, etc. instructions.</p>
+</li>
+<li>
+<p>Copy a folder, <code>app</code>, on the parent, to the container&rsquo;s filesystem root <code>/app</code>.</p>
+</li>
+<li>
+<p>Start the webserver.</p>
+</li>
+</ol>
+<p>Let&rsquo;s build it!</p>
+<pre><code>docker build -t dockerapp:v0.1 .
+</code></pre>
+<p>And get the newly-built image ID.</p>
+<pre><code>docker images
 
 REPOSITORY              TAG       IMAGE ID       CREATED              SIZE
 dockerapp               v0.1      b6069a89ed4c   About a minute ago   881MB
 henryfbp/betterdebian   1.0.0     7bbb4d211d9b   2 days ago           280MB
-</code></pre><p>And then start a container from the image.</p><pre><code>docker run -d -p 5000:5000 b6069a89ed4c
-</code></pre><p>And now, visit <a href=http://localhost:5000/>http://localhost:5000/</a></p><p>Next, run <code>docker ps</code> to view the list of running containers, and to get the container ID:</p><pre><code>vagrant@vagrant-virtualbox ~&gt; docker ps
+</code></pre>
+<p>And then start a container from the image.</p>
+<pre><code>docker run -d -p 5000:5000 b6069a89ed4c
+</code></pre>
+<p>And now, visit <a href=http://localhost:5000/>http://localhost:5000/</a></p>
+<p>Next, run <code>docker ps</code> to view the list of running containers, and to get the container ID:</p>
+<pre><code>vagrant@vagrant-virtualbox ~&gt; docker ps
 CONTAINER ID   IMAGE          COMMAND           CREATED         STATUS         PORTS                    NAMES
 1698ac6cd3ca   b6069a89ed4c   &quot;python app.py&quot;   2 minutes ago   Up 2 minutes   0.0.0.0:5000-&gt;5000/tcp   elastic_ritchie
-</code></pre><p>Then, we&rsquo;re going to enter the container with a shell.</p><pre><code>docker exec -it 1698ac6cd3ca bash
+</code></pre>
+<p>Then, we&rsquo;re going to enter the container with a shell.</p>
+<pre><code>docker exec -it 1698ac6cd3ca bash
 
 admin@1698ac6cd3ca:/app$ ls
 app.py
-</code></pre><p>If we run <code>ps axu</code>, we see this:</p><pre><code>admin@1698ac6cd3ca:~$ ps axu
+</code></pre>
+<p>If we run <code>ps axu</code>, we see this:</p>
+<pre><code>admin@1698ac6cd3ca:~$ ps axu
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 admin          1  0.2  0.3  35640 26888 ?        Ss   17:43   0:01 python app.py
 admin          8  0.1  0.0   5756  3704 pts/0    Ss   17:48   0:00 bash
 admin         19  0.0  0.0   9396  3096 pts/0    R+   17:50   0:00 ps axu
-</code></pre><p>The webserver is still running in the background, while we are in the shell. Note the user running it is <code>admin</code>.</p><h3 id=20-text-direction-containerize-a-hello-world-web-application>20. Text Direction: Containerize a Hello World Web Application</h3><p>&mldr;</p><h3 id=21-implement-a-simple-key-value-lookup-service>21. Implement a Simple Key-value Lookup Service</h3><p>Inside your <code>dockerapp</code> folder, run:</p><pre><code>git stash &amp;&amp; git checkout v0.2
-</code></pre><p>To change the HEAD to a newer version of the docker web app example.</p><p>Now rebuild the docker image with:</p><pre><code>docker build -t dockerapp:v0.2
-</code></pre><p>Output:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.2)) [1]&gt; docker build -t dockerapp:v0.2 .
+</code></pre>
+<p>The webserver is still running in the background, while we are in the shell. Note the user running it is <code>admin</code>.</p>
+<h3 id=20-text-direction-containerize-a-hello-world-web-application>20. Text Direction: Containerize a Hello World Web Application</h3>
+<p>&mldr;</p>
+<h3 id=21-implement-a-simple-key-value-lookup-service>21. Implement a Simple Key-value Lookup Service</h3>
+<p>Inside your <code>dockerapp</code> folder, run:</p>
+<pre><code>git stash &amp;&amp; git checkout v0.2
+</code></pre>
+<p>To change the HEAD to a newer version of the docker web app example.</p>
+<p>Now rebuild the docker image with:</p>
+<pre><code>docker build -t dockerapp:v0.2
+</code></pre>
+<p>Output:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.2)) [1]&gt; docker build -t dockerapp:v0.2 .
 Sending build context to Docker daemon  86.53kB
 Step 1/7 : FROM python:3.5
 ---&gt; 3687eb5ea744
@@ -220,19 +615,46 @@ Removing intermediate container ee06eec84720
 ---&gt; 9ab9b6586dd5
 Successfully built 9ab9b6586dd5
 Successfully tagged dockerapp:v0.2
-</code></pre><p>Note that only step 6 and 7 get executed, the rest of the steps are simply reused.</p><p>Make sure to stop your previous container next - use <code>docker ps</code> and <code>docker stop &lt;container_id></code>.</p><p>Next, start the updated dockerapp container with:</p><pre><code>docker run -d -p 5000:5000 dockerapp:v0.2
-</code></pre><p>And visit <a href=http://localhost:5000/>http://localhost:5000/</a>. Play around with the app a bit.</p><p>&mldr;</p><p>Now we&rsquo;ll introduce Redis, a memory cache, to take the role of the database in this application.</p><p>I made a new branch called <code>add-redis</code> to track my work in this section.</p><p>See next section.</p><h3 id=22-create-docker-container-links>22. Create Docker Container Links</h3><p>Container links are essentially secure LAN links. The links depend on container names.</p><p>Run this to get a Redis container running:</p><pre><code>docker run -d --name redis redis:3.2.0
-</code></pre><p>Then <code>docker ps</code>:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker ps
+</code></pre>
+<p>Note that only step 6 and 7 get executed, the rest of the steps are simply reused.</p>
+<p>Make sure to stop your previous container next - use <code>docker ps</code> and <code>docker stop &lt;container_id></code>.</p>
+<p>Next, start the updated dockerapp container with:</p>
+<pre><code>docker run -d -p 5000:5000 dockerapp:v0.2
+</code></pre>
+<p>And visit <a href=http://localhost:5000/>http://localhost:5000/</a>. Play around with the app a bit.</p>
+<p>&mldr;</p>
+<p>Now we&rsquo;ll introduce Redis, a memory cache, to take the role of the database in this application.</p>
+<p>I made a new branch called <code>add-redis</code> to track my work in this section.</p>
+<p>See next section.</p>
+<h3 id=22-create-docker-container-links>22. Create Docker Container Links</h3>
+<p>Container links are essentially secure LAN links. The links depend on container names.</p>
+<p>Run this to get a Redis container running:</p>
+<pre><code>docker run -d --name redis redis:3.2.0
+</code></pre>
+<p>Then <code>docker ps</code>:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker ps
 CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                    NAMES
 4e369b5bdb17   redis:3.2.0      &quot;docker-entrypoint.s…&quot;   4 seconds ago    Up 1 second     6379/tcp                 redis
 38847d7d8da3   dockerapp:v0.2   &quot;python app.py&quot;          25 minutes ago   Up 25 minutes   0.0.0.0:5000-&gt;5000/tcp   focused_wing
-</code></pre><p>Then build your dockerapp again &ndash; Using the branch <code>add-redis</code> (<code>git checkout add-redis</code>) and bumping the version as the dockerapp now uses redis.</p><pre><code>docker build -t dockerapp:v0.3 .
-</code></pre><p>Stop <code>dockerapp:v0.2</code> with <code>docker ps</code> and <code>docker stop &lt;container_id></code> if it&rsquo;s running.</p><p>Then start an instance of <code>dockerapp:v0.3</code>, except with <code>--link redis</code> added:</p><pre><code>docker run -d -p 5000:5000 --link redis dockerapp:v0.3
-</code></pre><p>My understanding is these are just put on some virtual subnet together automagically.</p><p>Now visit <a href=http://localhost:5000/>http://localhost:5000/</a> to make sure everything is working.</p><p>Running <code>docker ps</code>, we can see both boxes running:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker ps
+</code></pre>
+<p>Then build your dockerapp again &ndash; Using the branch <code>add-redis</code> (<code>git checkout add-redis</code>) and bumping the version as the dockerapp now uses redis.</p>
+<pre><code>docker build -t dockerapp:v0.3 .
+</code></pre>
+<p>Stop <code>dockerapp:v0.2</code> with <code>docker ps</code> and <code>docker stop &lt;container_id></code> if it&rsquo;s running.</p>
+<p>Then start an instance of <code>dockerapp:v0.3</code>, except with <code>--link redis</code> added:</p>
+<pre><code>docker run -d -p 5000:5000 --link redis dockerapp:v0.3
+</code></pre>
+<p>My understanding is these are just put on some virtual subnet together automagically.</p>
+<p>Now visit <a href=http://localhost:5000/>http://localhost:5000/</a> to make sure everything is working.</p>
+<p>Running <code>docker ps</code>, we can see both boxes running:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker ps
 CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                    NAMES
 600048574ea5   dockerapp:v0.3   &quot;python app.py&quot;          4 minutes ago    Up 3 minutes    0.0.0.0:5000-&gt;5000/tcp   cool_faraday
 4e369b5bdb17   redis:3.2.0      &quot;docker-entrypoint.s…&quot;   13 minutes ago   Up 13 minutes   6379/tcp                 redis
-</code></pre><p>Run <code>docker exec -it 600048574ea5 bash</code> to enter the Python container.</p><p>Then run <code>more /etc/hosts</code> to view the initial hostname setup.</p><pre><code>admin@600048574ea5:/app$ more /etc/hosts
+</code></pre>
+<p>Run <code>docker exec -it 600048574ea5 bash</code> to enter the Python container.</p>
+<p>Then run <code>more /etc/hosts</code> to view the initial hostname setup.</p>
+<pre><code>admin@600048574ea5:/app$ more /etc/hosts
 127.0.0.1	localhost
 ::1	localhost ip6-localhost ip6-loopback
 fe00::0	ip6-localnet
@@ -241,7 +663,12 @@ ff02::1	ip6-allnodes
 ff02::2	ip6-allrouters
 172.17.0.3	redis 4e369b5bdb17
 172.17.0.2	600048574ea5
-</code></pre><p>Note how <code>redis</code> gets assigned a static IP address.</p><p>You can run <code>docker inspect 4e369b5bdb17 | grep -i ip</code> to confirm that <code>172.17.0.3</code> is indeed the IP address of the redis container.</p><p>Log into the python container again with <code>docker exec -it 600048574ea5 bash</code>, and run <code>ping redis</code>.</p><p>It works!</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker exec -it 600048574ea5 bash
+</code></pre>
+<p>Note how <code>redis</code> gets assigned a static IP address.</p>
+<p>You can run <code>docker inspect 4e369b5bdb17 | grep -i ip</code> to confirm that <code>172.17.0.3</code> is indeed the IP address of the redis container.</p>
+<p>Log into the python container again with <code>docker exec -it 600048574ea5 bash</code>, and run <code>ping redis</code>.</p>
+<p>It works!</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker exec -it 600048574ea5 bash
 admin@600048574ea5:/app$ ping redis
 PING redis (172.17.0.3) 56(84) bytes of data.
 64 bytes from redis (172.17.0.3): icmp_seq=1 ttl=64 time=1.20 ms
@@ -253,7 +680,20 @@ PING redis (172.17.0.3) 56(84) bytes of data.
 --- redis ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 58ms
 rtt min/avg/max/mdev = 0.120/0.373/1.202/0.415 ms
-</code></pre><h4 id=summary>Summary</h4><p>The main use for docker container links is for building applications with microservice architecture &ndash; We can run many independent components in different containers.</p><p>Docker creates a secure tunnel between the containers that only exposes a minimum of necessary ports.</p><h3 id=23-automate-current-workflow-with-docker-compose>23. Automate Current Workflow with Docker Compose</h3><p>Phew, thank god. I was afraid we wouldn&rsquo;t cover it. I love docker-compose.</p><h4 id=why-docker-compose>Why Docker Compose?</h4><ul><li>We need to manually start up 2 containers and manually link them every time.</li><li>Doing this for 20 containers or a lot of times is just a waste of time and effort.</li><li>Think of not using <code>Pipenv</code> and having to type <code>pip install some-crap</code> 20 times. It&rsquo;s just a waste of time, it can be automated and streamlined.</li></ul><p>Example <code>docker-compose.yml</code> file, which can be found in the <code>add-redis</code> branch (<a href=https://github.com/HenryFBP/dockerapp/tree/add-redis>https://github.com/HenryFBP/dockerapp/tree/add-redis</a>):</p><pre><code class=language-yaml>version: '3'
+</code></pre>
+<h4 id=summary>Summary</h4>
+<p>The main use for docker container links is for building applications with microservice architecture &ndash; We can run many independent components in different containers.</p>
+<p>Docker creates a secure tunnel between the containers that only exposes a minimum of necessary ports.</p>
+<h3 id=23-automate-current-workflow-with-docker-compose>23. Automate Current Workflow with Docker Compose</h3>
+<p>Phew, thank god. I was afraid we wouldn&rsquo;t cover it. I love docker-compose.</p>
+<h4 id=why-docker-compose>Why Docker Compose?</h4>
+<ul>
+<li>We need to manually start up 2 containers and manually link them every time.</li>
+<li>Doing this for 20 containers or a lot of times is just a waste of time and effort.</li>
+<li>Think of not using <code>Pipenv</code> and having to type <code>pip install some-crap</code> 20 times. It&rsquo;s just a waste of time, it can be automated and streamlined.</li>
+</ul>
+<p>Example <code>docker-compose.yml</code> file, which can be found in the <code>add-redis</code> branch (<a href=https://github.com/HenryFBP/dockerapp/tree/add-redis>https://github.com/HenryFBP/dockerapp/tree/add-redis</a>):</p>
+<pre><code class=language-yaml>version: '3'
 services:
     dockerapp:
         build: .
@@ -263,24 +703,102 @@ services:
             - redis
     redis:
         image: redis:3.2.0
-</code></pre><p>Note that line 4 uses a <code>Dockerfile</code> in the same directory as the <code>docker-compose.yml</code> file.</p><p>As for line 9, you may note the lack of a <code>build</code> key. This is because all containers defined in <code>docker-compose.yml</code> can either have a base <code>"image"</code> command, or a <code>"build"</code> instruction. One or the other.</p><p>You may note we don&rsquo;t need a link. This is because from version 2 and onwards, it&rsquo;s automatically done between containers managed by Docker Compose.</p><p>Make sure no ports are open with <code>docker ps</code> and <code>docker stop</code>, and then you can just run <code>docker-compose up</code>. That&rsquo;s it. Then go to <a href=http://localhost:5000/>http://localhost:5000/</a> and enjoy the fancy console output.</p><h4 id=summary-1>Summary</h4><p>Docker Compose eliminates a lot of extra work and makes working with Docker containers a lot easier.</p><h3 id=24-deep-dive-into-docker-compose-workflow>24. Deep Dive into Docker Compose Workflow</h3><p>If you don&rsquo;t have the docker-compose example set up, run this in my &lsquo;dockerapp&rsquo; repo.</p><pre><code>git stash &amp;&amp; git checkout v0.4
-</code></pre><p>You can run <code>docker-compose up -d</code> to not have your terminal hijacked by Docker Compose.</p><p>You can also run <code>docker-compose ps</code> to view information on the running containers managed by <code>docker-compose</code> for a specific <code>docker-compose.yml</code> file:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker-compose ps
+</code></pre>
+<p>Note that line 4 uses a <code>Dockerfile</code> in the same directory as the <code>docker-compose.yml</code> file.</p>
+<p>As for line 9, you may note the lack of a <code>build</code> key. This is because all containers defined in <code>docker-compose.yml</code> can either have a base <code>"image"</code> command, or a <code>"build"</code> instruction. One or the other.</p>
+<p>You may note we don&rsquo;t need a link. This is because from version 2 and onwards, it&rsquo;s automatically done between containers managed by Docker Compose.</p>
+<p>Make sure no ports are open with <code>docker ps</code> and <code>docker stop</code>, and then you can just run <code>docker-compose up</code>. That&rsquo;s it. Then go to <a href=http://localhost:5000/>http://localhost:5000/</a> and enjoy the fancy console output.</p>
+<h4 id=summary-1>Summary</h4>
+<p>Docker Compose eliminates a lot of extra work and makes working with Docker containers a lot easier.</p>
+<h3 id=24-deep-dive-into-docker-compose-workflow>24. Deep Dive into Docker Compose Workflow</h3>
+<p>If you don&rsquo;t have the docker-compose example set up, run this in my &lsquo;dockerapp&rsquo; repo.</p>
+<pre><code>git stash &amp;&amp; git checkout v0.4
+</code></pre>
+<p>You can run <code>docker-compose up -d</code> to not have your terminal hijacked by Docker Compose.</p>
+<p>You can also run <code>docker-compose ps</code> to view information on the running containers managed by <code>docker-compose</code> for a specific <code>docker-compose.yml</code> file:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (add-redis)&gt; docker-compose ps
         Name                       Command               State           Ports         
 ---------------------------------------------------------------------------------------
 dockerapp_dockerapp_1   python app.py                    Up      0.0.0.0:5000-&gt;5000/tcp
 dockerapp_redis_1       docker-entrypoint.sh redis ...   Up      6379/tcp              
-</code></pre><ul><li><p><code>docker-compose logs</code>.</p><ul><li>Add <code>-f</code> to follow log output. Like <code>tail</code>.</li><li>Add a container name to only view that container&rsquo;s logs - i.e. <code>docker-compose logs dockerapp</code></li></ul></li><li><p><code>docker-compose stop</code>&mldr; Does what you think it does. Does not remove containers.</p></li><li><p><code>docker-compose rm</code> stops then removes all containers.</p></li></ul><p>Note that if you modify the Dockerfile, <code>docker-compose up</code> will not recreate the image. You need to run <code>docker-compose build</code> if you need to update the image.</p><h3 id=25-extra-learning-things-to-watch-out-when-working-with-docker-containers>25. Extra Learning: Things to Watch out When Working with Docker Containers</h3><p>Extra article: <a href=https://www.level-up.one/things-watch-working-docker-containers/>https://www.level-up.one/things-watch-working-docker-containers/</a></p><h2 id=section-4-docker-networking>Section 4: Docker Networking</h2><h3 id=26-introduction-to-docker-networking>26. Introduction to Docker Networking</h3><ul><li>Docker uses the networking from the host OS to give containers networking</li><li>Once Docker Daemon is installed, <code>docker0</code> interface is created on the host. It is used to bridge outside network to the internal containers.</li><li>Each container connects to <code>docker0</code> through an individual container network interface.</li></ul><p><img src=/images/2021-05-12-docker-crash-course/docker-networking.png alt></p><p>There are 4 types of networks.</p><ol><li>Closed/None Network</li><li>Bridge Network</li><li>Host Network</li><li>Overlay Network</li></ol><p>Run <code>docker network ls</code>, which should bring up 3 preinstalled networks.</p><h3 id=27-none-network>27. None Network</h3><p>No access to the outside world. This adds a container with a network stack that has no container interface.</p><p>To make a closed container, add <code>--net none</code> to a <code>docker run</code> command:</p><pre><code>docker run -d --net none busybox sleep 1000
-</code></pre><p>Then <code>docker exec -it &lt;id> sh</code> and try to <code>ping 8.8.8.8</code> - it will fail. <code>ifconfig</code> only reports <code>lo</code> (loopback) as an adapter.</p><ul><li>Provides max level of network protection</li><li>Bad if network connection is required</li><li>Ideal where network access is not necessary</li></ul><h3 id=28-bridge-network>28. Bridge Network</h3><p>Default type of network in Docker containers.</p><p>All containers in bridge network are connected to each other, and can also connect to the outside world.</p><p>Docker makes a default bridge network called &ldquo;bridge&rdquo; when the docker daemon is first installed.</p><p>Run</p><pre><code>docker network ls
+</code></pre>
+<ul>
+<li>
+<p><code>docker-compose logs</code>.</p>
+<ul>
+<li>Add <code>-f</code> to follow log output. Like <code>tail</code>.</li>
+<li>Add a container name to only view that container&rsquo;s logs - i.e. <code>docker-compose logs dockerapp</code></li>
+</ul>
+</li>
+<li>
+<p><code>docker-compose stop</code>&mldr; Does what you think it does. Does not remove containers.</p>
+</li>
+<li>
+<p><code>docker-compose rm</code> stops then removes all containers.</p>
+</li>
+</ul>
+<p>Note that if you modify the Dockerfile, <code>docker-compose up</code> will not recreate the image. You need to run <code>docker-compose build</code> if you need to update the image.</p>
+<h3 id=25-extra-learning-things-to-watch-out-when-working-with-docker-containers>25. Extra Learning: Things to Watch out When Working with Docker Containers</h3>
+<p>Extra article: <a href=https://www.level-up.one/things-watch-working-docker-containers/>https://www.level-up.one/things-watch-working-docker-containers/</a></p>
+<h2 id=section-4-docker-networking>Section 4: Docker Networking</h2>
+<h3 id=26-introduction-to-docker-networking>26. Introduction to Docker Networking</h3>
+<ul>
+<li>Docker uses the networking from the host OS to give containers networking</li>
+<li>Once Docker Daemon is installed, <code>docker0</code> interface is created on the host. It is used to bridge outside network to the internal containers.</li>
+<li>Each container connects to <code>docker0</code> through an individual container network interface.</li>
+</ul>
+<p><img src=/images/2021-05-12-docker-crash-course/docker-networking.png alt></p>
+<p>There are 4 types of networks.</p>
+<ol>
+<li>Closed/None Network</li>
+<li>Bridge Network</li>
+<li>Host Network</li>
+<li>Overlay Network</li>
+</ol>
+<p>Run <code>docker network ls</code>, which should bring up 3 preinstalled networks.</p>
+<h3 id=27-none-network>27. None Network</h3>
+<p>No access to the outside world. This adds a container with a network stack that has no container interface.</p>
+<p>To make a closed container, add <code>--net none</code> to a <code>docker run</code> command:</p>
+<pre><code>docker run -d --net none busybox sleep 1000
+</code></pre>
+<p>Then <code>docker exec -it &lt;id> sh</code> and try to <code>ping 8.8.8.8</code> - it will fail. <code>ifconfig</code> only reports <code>lo</code> (loopback) as an adapter.</p>
+<ul>
+<li>Provides max level of network protection</li>
+<li>Bad if network connection is required</li>
+<li>Ideal where network access is not necessary</li>
+</ul>
+<h3 id=28-bridge-network>28. Bridge Network</h3>
+<p>Default type of network in Docker containers.</p>
+<p>All containers in bridge network are connected to each other, and can also connect to the outside world.</p>
+<p>Docker makes a default bridge network called &ldquo;bridge&rdquo; when the docker daemon is first installed.</p>
+<p>Run</p>
+<pre><code>docker network ls
 
 docker network inspect bridge
-</code></pre><p>To view details about the &ldquo;bridge&rdquo; network.</p><p>Subnet range is 172.17.0.0 to 172.17.255.255</p><p>Run</p><pre><code>docker run -d --name container_1 busybox sleep 1000
+</code></pre>
+<p>To view details about the &ldquo;bridge&rdquo; network.</p>
+<p>Subnet range is 172.17.0.0 to 172.17.255.255</p>
+<p>Run</p>
+<pre><code>docker run -d --name container_1 busybox sleep 1000
 docker run -d --name container_2 busybox sleep 1000
-</code></pre><p>We don&rsquo;t specify <code>--net</code> as <code>bridge</code> is default.</p><p>Then run</p><pre><code>docker exec -it container_1 ifconfig
-</code></pre><p>To get <code>container_1</code>&rsquo;s ip address.</p><p>And then run</p><pre><code>docker ps
-</code></pre><p>To get <code>container_2</code>&rsquo;s ID.</p><p>And then run</p><pre><code>docker exec -it container_2 sh
+</code></pre>
+<p>We don&rsquo;t specify <code>--net</code> as <code>bridge</code> is default.</p>
+<p>Then run</p>
+<pre><code>docker exec -it container_1 ifconfig
+</code></pre>
+<p>To get <code>container_1</code>&rsquo;s ip address.</p>
+<p>And then run</p>
+<pre><code>docker ps
+</code></pre>
+<p>To get <code>container_2</code>&rsquo;s ID.</p>
+<p>And then run</p>
+<pre><code>docker exec -it container_2 sh
 
 ping &lt;container_1_ip&gt;
-</code></pre><p>To see if the bridge network works.</p><p>Output:</p><pre><code>┌─[vagrant@vagrant-virtualbox]─[~/Github/henryfbp.github.io]
+</code></pre>
+<p>To see if the bridge network works.</p>
+<p>Output:</p>
+<pre><code>┌─[vagrant@vagrant-virtualbox]─[~/Github/henryfbp.github.io]
 └──╼ $    docker network ls
 NETWORK ID     NAME                DRIVER    SCOPE
 f4bbec1ad501   bridge              bridge    local
@@ -319,29 +837,53 @@ f4bbec1ad501   bridge              bridge    local
         &quot;Labels&quot;: {}
     }
 ]
-</code></pre><p>You should be able to ping the other container. This works because the hostname is set to the container name.</p><h4 id=separate-bridged-networks-cannot-communicate>Separate Bridged Networks cannot communicate</h4><p>By default, different bridged networks cannot contact eachother. Let&rsquo;s demo this.</p><p>Create a new bridge network:</p><pre><code>docker network create --driver bridge my_bridge_network
+</code></pre>
+<p>You should be able to ping the other container. This works because the hostname is set to the container name.</p>
+<h4 id=separate-bridged-networks-cannot-communicate>Separate Bridged Networks cannot communicate</h4>
+<p>By default, different bridged networks cannot contact eachother. Let&rsquo;s demo this.</p>
+<p>Create a new bridge network:</p>
+<pre><code>docker network create --driver bridge my_bridge_network
 
 docker network ls
 
 docker network inspect my_bridge_network
-</code></pre><p>Then create a docker box using that bridge network:</p><pre><code>docker run -d --name container_3 --net my_bridge_network busybox sleep 100000
-</code></pre><p>And check the IP of container_3:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ifconfig | grep inet | grep 172
+</code></pre>
+<p>Then create a docker box using that bridge network:</p>
+<pre><code>docker run -d --name container_3 --net my_bridge_network busybox sleep 100000
+</code></pre>
+<p>And check the IP of container_3:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ifconfig | grep inet | grep 172
           inet addr:172.18.0.2  Bcast:172.18.255.255  Mask:255.255.0.0
-</code></pre><p>And then get the IP of container_1:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_1 ifconfig | grep inet | grep 172
+</code></pre>
+<p>And then get the IP of container_1:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_1 ifconfig | grep inet | grep 172
           inet addr:172.17.0.2  Bcast:172.17.255.255  Mask:255.255.0.0
-</code></pre><p>And then try to ping container_1 from container_3:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ping 172.17.0.2
+</code></pre>
+<p>And then try to ping container_1 from container_3:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ping 172.17.0.2
 PING 172.17.0.2 (172.17.0.2): 56 data bytes
 ^C
 --- 172.17.0.2 ping statistics ---
 26 packets transmitted, 0 packets received, 100% packet loss
-</code></pre><p>It fails because different bridge networks are isolated from eachother in Docker.</p><p>But, docker has a feature that lets us connect a container to another network.</p><p>This is done via <code>docker network connect</code>.</p><h4 id=docker-network-connect>docker network connect</h4><p>Let&rsquo;s connect <code>container_3</code> to our original bridge network.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]&gt; docker network ls
+</code></pre>
+<p>It fails because different bridge networks are isolated from eachother in Docker.</p>
+<p>But, docker has a feature that lets us connect a container to another network.</p>
+<p>This is done via <code>docker network connect</code>.</p>
+<h4 id=docker-network-connect>docker network connect</h4>
+<p>Let&rsquo;s connect <code>container_3</code> to our original bridge network.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]&gt; docker network ls
 NETWORK ID     NAME                DRIVER    SCOPE
 f4bbec1ad501   bridge              bridge    local
 6990fcf18be5   host                host      local
 09d23bc21e33   my_bridge_network   bridge    local
 84049b5950fc   none                null      local
-</code></pre><p><code>container_{1,2}</code> are both on <code>bridge</code>. Only <code>container_3</code> is connected to <code>my_bridge_network</code>.</p><p>We can attach <code>bridge</code> to <code>container_3</code> by running:</p><pre><code>docker network connect bridge container_3
-</code></pre><p>And we can see <code>eth1</code> interface gets added below:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ifconfig
+</code></pre>
+<p><code>container_{1,2}</code> are both on <code>bridge</code>. Only <code>container_3</code> is connected to <code>my_bridge_network</code>.</p>
+<p>We can attach <code>bridge</code> to <code>container_3</code> by running:</p>
+<pre><code>docker network connect bridge container_3
+</code></pre>
+<p>And we can see <code>eth1</code> interface gets added below:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ifconfig
 eth0      Link encap:Ethernet  HWaddr 02:42:AC:12:00:02  
           inet addr:172.18.0.2  Bcast:172.18.255.255  Mask:255.255.0.0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
@@ -365,7 +907,9 @@ lo        Link encap:Local Loopback
           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000 
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
-</code></pre><p>And we can ping <code>container_1</code> now.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_1 ifconfig | grep inet | grep 172
+</code></pre>
+<p>And we can ping <code>container_1</code> now.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_1 ifconfig | grep inet | grep 172
           inet addr:172.17.0.3  Bcast:172.17.255.255  Mask:255.255.0.0
 vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_3 ping 172.17.0.3
 PING 172.17.0.3 (172.17.0.3): 56 data bytes
@@ -374,10 +918,43 @@ PING 172.17.0.3 (172.17.0.3): 56 data bytes
 --- 172.17.0.3 ping statistics ---
 1 packets transmitted, 1 packets received, 0% packet loss
 round-trip min/avg/max = 0.083/0.083/0.083 ms
-</code></pre><p>Now let&rsquo;s disconnect <code>container_3</code> from the <code>bridge</code> network.</p><pre><code>docker network disconnect bridge container_3
-</code></pre><p>Running <code>docker exec -it container_3 ifconfig</code> will show only one <code>eth</code> interface now instead of two.</p><h4 id=recap---bridge-network>Recap - Bridge Network</h4><ul><li>In a bridge network, containers have access to 2 interfaces:<ul><li>Loopback (<code>lo</code>)</li><li>Private interface connected to the bridge network of the host (<code>eth0</code>)<ul><li>This is used to connect to the outside network</li></ul></li></ul></li><li>All containers in the same bridge network can communicate with eachother</li><li>Containers from different bridge networks can&rsquo;t communicate with eachother</li><li>Reduces the level of network isolation in favor of better outside connectivity</li><li>Most suitable where you want to set up a relatively small network on a single host</li></ul><h3 id=29-host-network-and-overlay-network>29. Host Network and Overlay Network</h3><h4 id=host-network>Host Network</h4><ul><li>The least protected network model. Adds a container on the host&rsquo;s network stack.</li><li>Containers on the host stack have full access to the host&rsquo;s interface.</li><li>Called an &ldquo;Open Container&rdquo;.</li></ul><p>To create open containers, you use <code>--net host</code>:</p><pre><code>docker run -d --name container_4 --net host busybox sleep 100000
-</code></pre><p>And net info:</p><pre><code>docker exec -it container_4 ifconfig
-</code></pre><p>Results in you seeeing all network interfaces from the host machine:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_4 ifconfig
+</code></pre>
+<p>Now let&rsquo;s disconnect <code>container_3</code> from the <code>bridge</code> network.</p>
+<pre><code>docker network disconnect bridge container_3
+</code></pre>
+<p>Running <code>docker exec -it container_3 ifconfig</code> will show only one <code>eth</code> interface now instead of two.</p>
+<h4 id=recap---bridge-network>Recap - Bridge Network</h4>
+<ul>
+<li>In a bridge network, containers have access to 2 interfaces:
+<ul>
+<li>Loopback (<code>lo</code>)</li>
+<li>Private interface connected to the bridge network of the host (<code>eth0</code>)
+<ul>
+<li>This is used to connect to the outside network</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>All containers in the same bridge network can communicate with eachother</li>
+<li>Containers from different bridge networks can&rsquo;t communicate with eachother</li>
+<li>Reduces the level of network isolation in favor of better outside connectivity</li>
+<li>Most suitable where you want to set up a relatively small network on a single host</li>
+</ul>
+<h3 id=29-host-network-and-overlay-network>29. Host Network and Overlay Network</h3>
+<h4 id=host-network>Host Network</h4>
+<ul>
+<li>The least protected network model. Adds a container on the host&rsquo;s network stack.</li>
+<li>Containers on the host stack have full access to the host&rsquo;s interface.</li>
+<li>Called an &ldquo;Open Container&rdquo;.</li>
+</ul>
+<p>To create open containers, you use <code>--net host</code>:</p>
+<pre><code>docker run -d --name container_4 --net host busybox sleep 100000
+</code></pre>
+<p>And net info:</p>
+<pre><code>docker exec -it container_4 ifconfig
+</code></pre>
+<p>Results in you seeeing all network interfaces from the host machine:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker exec -it container_4 ifconfig
 br-09d23bc21e33 Link encap:Ethernet  HWaddr 02:42:DF:FC:78:40  
           inet addr:172.18.0.1  Bcast:172.18.255.255  Mask:255.255.0.0
           inet6 addr: fe80::42:dfff:fefc:7840/64 Scope:Link
@@ -421,12 +998,45 @@ veth4017061 Link encap:Ethernet  HWaddr 9A:A8:54:D0:87:64
           TX packets:18 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:0 
           RX bytes:0 (0.0 B)  TX bytes:1436 (1.4 KiB)
-</code></pre><ul><li>Minimum network security level</li><li>No isolation on this type of container, so it leaves the container unprotected</li><li>However, containers running in the host network stack see a higher level of performance than those traversing <code>docker0</code> bridge and iptables port mappings.</li></ul><p>You should only use this network model if you have a valid reason.</p><h4 id=overlay-network>Overlay Network</h4><p>All the other network models, none, bridge, and host, can only be deployed on single machine.</p><ul><li>The overlay network supports multi-host networking.</li><li>Overlay networks require pre-existing conditions before they can be created.<ul><li>Running Docker engine in Swarm mode.</li><li>A key-value store like consul</li></ul></li><li>Most services are deployed across multiple hosts, so the overlay network is widely used in production.</li><li>The latest docker swarm mode will create the overlay network automatically</li></ul><h3 id=30-d3-text-lecture-overlay-network>30. D3: Text Lecture: Overlay Network</h3><p>See <a href=https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster>https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster</a></p><h3 id=31-define-container-networks-with-docker-compose>31. Define Container Networks with Docker Compose</h3><p>By default, Docker Compose sets up a single network for services. Each container joins the default network and is reachable by other containers on that network.</p><p>In the repo, <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a>, run this:</p><pre><code>git checkout v0.4
-</code></pre><p>Then run <code>docker-compose up -d</code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))&gt; docker-compose up -d
+</code></pre>
+<ul>
+<li>Minimum network security level</li>
+<li>No isolation on this type of container, so it leaves the container unprotected</li>
+<li>However, containers running in the host network stack see a higher level of performance than those traversing <code>docker0</code> bridge and iptables port mappings.</li>
+</ul>
+<p>You should only use this network model if you have a valid reason.</p>
+<h4 id=overlay-network>Overlay Network</h4>
+<p>All the other network models, none, bridge, and host, can only be deployed on single machine.</p>
+<ul>
+<li>The overlay network supports multi-host networking.</li>
+<li>Overlay networks require pre-existing conditions before they can be created.
+<ul>
+<li>Running Docker engine in Swarm mode.</li>
+<li>A key-value store like consul</li>
+</ul>
+</li>
+<li>Most services are deployed across multiple hosts, so the overlay network is widely used in production.</li>
+<li>The latest docker swarm mode will create the overlay network automatically</li>
+</ul>
+<h3 id=30-d3-text-lecture-overlay-network>30. D3: Text Lecture: Overlay Network</h3>
+<p>See <a href=https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster>https://docs.docker.com/engine/userguide/networking/overlay-standalone-swarm/#create-a-swarm-cluster</a></p>
+<h3 id=31-define-container-networks-with-docker-compose>31. Define Container Networks with Docker Compose</h3>
+<p>By default, Docker Compose sets up a single network for services. Each container joins the default network and is reachable by other containers on that network.</p>
+<p>In the repo, <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a>, run this:</p>
+<pre><code>git checkout v0.4
+</code></pre>
+<p>Then run <code>docker-compose up -d</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))&gt; docker-compose up -d
 Creating network &quot;dockerapp_default&quot; with the default driver
 Creating dockerapp_redis_1 ... done
 Creating dockerapp_dockerapp_1 ... done
-</code></pre><p>You can see <code>Creating network (...)</code>.</p><p>The prefix of the default network name comes from the current working directory.</p><p>And the default network type is &lsquo;bridge&rsquo;. You can check with <code>docker network ls</code>.</p><p>When we run <code>docker-compose down</code>, the network gets removed.</p><p>You can modify the <code>docker-compose.yml</code> file to look like the one below:</p><pre><code class=language-yaml>version: '3'
+</code></pre>
+<p>You can see <code>Creating network (...)</code>.</p>
+<p>The prefix of the default network name comes from the current working directory.</p>
+<p>And the default network type is &lsquo;bridge&rsquo;. You can check with <code>docker network ls</code>.</p>
+<p>When we run <code>docker-compose down</code>, the network gets removed.</p>
+<p>You can modify the <code>docker-compose.yml</code> file to look like the one below:</p>
+<pre><code class=language-yaml>version: '3'
 services:
   dockerapp:
     build: .
@@ -442,12 +1052,21 @@ services:
 networks:
   my_net:
     driver: bridge
-</code></pre><p>See <code>networks:</code> item both under <code>redis:</code> node, and in the root YAML object.</p><p>Next, save the file and run <code>docker-compose up -d</code>.</p><p>Note the new network.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))&gt; docker-compose up -d
+</code></pre>
+<p>See <code>networks:</code> item both under <code>redis:</code> node, and in the root YAML object.</p>
+<p>Next, save the file and run <code>docker-compose up -d</code>.</p>
+<p>Note the new network.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp ((v0.4))&gt; docker-compose up -d
 Creating network &quot;dockerapp_my_net&quot; with driver &quot;bridge&quot;
 Creating network &quot;dockerapp_default&quot; with the default driver
 Creating dockerapp_redis_1 ... done
 Creating dockerapp_dockerapp_1 ... done
-</code></pre><p>There are even more complex network topologies that can be created. Example.</p><p>Here, two custom networks, front and back, are defined.</p><p>3 services, <code>proxy</code>, <code>app</code>, and <code>db</code>. The <code>db</code> service is on the <code>back</code> network. The <code>proxy</code> service is isolated from <code>db</code>. Only <code>app</code> can talk to both.</p><p>This provides network isolation between services. These are popular things to do on multi tiered applications.</p><pre><code class=language-yaml>version: '2'
+</code></pre>
+<p>There are even more complex network topologies that can be created. Example.</p>
+<p>Here, two custom networks, front and back, are defined.</p>
+<p>3 services, <code>proxy</code>, <code>app</code>, and <code>db</code>. The <code>db</code> service is on the <code>back</code> network. The <code>proxy</code> service is isolated from <code>db</code>. Only <code>app</code> can talk to both.</p>
+<p>This provides network isolation between services. These are popular things to do on multi tiered applications.</p>
+<pre><code class=language-yaml>version: '2'
 
 services:
   proxy:
@@ -473,7 +1092,19 @@ networks:
       foo: &quot;1&quot;
       bar: &quot;2&quot;
 
-</code></pre><h2 id=section-5-create-a-continuous-integration-pipeline>Section 5: Create a Continuous Integration Pipeline</h2><h3 id=32-write-and-run-unit-tests-inside-containers>32. Write and Run Unit Tests inside Containers</h3><h4 id=unit-tests-will>Unit tests will&mldr;</h4><ul><li>Test basic functionality of app code, ideally w/o reliance on external services</li><li>Run as quickly as possible so that developers can iterate faster w/o waiting for test results</li></ul><h4 id=run-it-already>Run it already!</h4><p>They&rsquo;re already written.</p><p>Clone <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a> and inside the <code>dockerapp/</code> folder, run <code>git checkout v0.5</code>.</p><p>See <code>/app/test.py</code>:</p><pre><code class=language-py>import unittest
+</code></pre>
+<h2 id=section-5-create-a-continuous-integration-pipeline>Section 5: Create a Continuous Integration Pipeline</h2>
+<h3 id=32-write-and-run-unit-tests-inside-containers>32. Write and Run Unit Tests inside Containers</h3>
+<h4 id=unit-tests-will>Unit tests will&mldr;</h4>
+<ul>
+<li>Test basic functionality of app code, ideally w/o reliance on external services</li>
+<li>Run as quickly as possible so that developers can iterate faster w/o waiting for test results</li>
+</ul>
+<h4 id=run-it-already>Run it already!</h4>
+<p>They&rsquo;re already written.</p>
+<p>Clone <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a> and inside the <code>dockerapp/</code> folder, run <code>git checkout v0.5</code>.</p>
+<p>See <code>/app/test.py</code>:</p>
+<pre><code class=language-py>import unittest
 import app
 
 class TestDockerapp(unittest.TestCase):
@@ -496,7 +1127,102 @@ class TestDockerapp(unittest.TestCase):
 
 if __name__=='__main__':
     unittest.main()
-</code></pre><p>This is a simple test file that will make sure the app can save/load a key value pair.</p><p>Run <code>docker-compose up -d --build</code> to rebuild all the containers.</p><p>Then, run <code>docker-compose run dockerapp python test.py</code> to run the test suite.</p><h3 id=33-introduction-to-continuous-integration>33. Introduction to Continuous Integration</h3><ul><li>CI lets software engineers test isolated changes when they are added to a larger code base</li><li>Goal of CI is to provide rapid feedback to immediately eliminate defects introduced into codebase</li></ul><h4 id=typical-ci-pipeline-wo-docker>Typical CI Pipeline w/o Docker</h4><ol><li>Dev checks out source code</li><li>Dev makes changes, adds features, etc</li><li>Dev checks in source code to central repo (commits)</li><li>A CI server triggers a build that does:<ol><li>Check out the latest version</li><li>Build the code</li><li>Run unit tests</li><li>Create a build artifact (package and archive, assign a build label)</li></ol></li></ol><h4 id=ci-process-with-docker-involved>CI process with Docker involved</h4><p>The CI server builds the docker image after it builds the application.</p><p>The app goes inside the image, and the CI server pushes the image to a docker registry.</p><p>You can then pull the newly-built image from the registry.</p><p>We&rsquo;ll set up a CI workflow using GitHub as the central repo, and CircleCI as the CI server.</p><p>GitHub lets you host public repos for free, and CircleCI is a hosted CI provider that lets you run concurrent builds for free.</p><p>You need a GitHub and CircleCI account.</p><p>(next part of the lecture is just setting up SSH/GPG keys, use Google if you need to)</p><h3 id=34-text-direction-introduction-to-continuous-integration>34. Text Direction: Introduction to Continuous Integration</h3><p>URL of the Github account to fork:</p><p><a href=https://github.com/jleetutorial/dockerapp>https://github.com/jleetutorial/dockerapp</a></p><p>Checking for existing SSH keys:</p><p><a href=https://help.github.com/articles/checking-for-existing-ssh-keys/>https://help.github.com/articles/checking-for-existing-ssh-keys/</a></p><p>Generating a new SSH key and adding it to the ssh-agent:</p><p><a href=https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a></p><p>Adding a new SSH key to your GitHub account:</p><p><a href=https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/</a></p><h3 id=35-link-circleci-with-github-account-for-setting-up-a-ci-workflow>35. Link CircleCI with Github Account for Setting up a CI Workflow</h3><p><code>.circleci/</code> folder is used to store the code that enables the CI workflow.</p><p><a href=https://github.com/HenryFBP/dockerapp/blob/branch-v0.6/.circleci/config.yml>https://github.com/HenryFBP/dockerapp/blob/branch-v0.6/.circleci/config.yml</a></p><p>You can clone the repo and the run <code>git checkout v0.6</code>.</p><ul><li><ol><li>Version number.</li></ol></li><li><ol start=2><li>Jobs key. Every config file needs a build job.</li></ol></li><li><ol start=4><li>A working directory for the rest of the job.</li></ol></li><li><p>5-6. Specifying the primary container images for this job, for docker to use.</p><p>In CircleCI, all tests run under containers.</p><p>What we want is a docker image that has Git, and we can get these by using <code>docker:17.05.0-ce-git</code> as an image name.</p></li><li><ol start=7><li>All of our steps to run in the job.</li></ol></li><li><ol start=8><li>The <code>checkout</code> step will check out our code from Github to our working directory.</li></ol></li><li><ol start=9><li>The <code>setup_remote_docker</code> step will create a separate docker image for each build, for security purposes.</li></ol></li><li><p>10-14. Install <code>pip</code> and <code>docker-compose</code>.</p></li><li><p>15-19. Finally, bring up docker containers and run tests.</p></li></ul><p>Now, link CircleCI with your Github account. You can do that here:</p><p><a href=https://app.circleci.com/>https://app.circleci.com/</a></p><p>Create a new project and use the existing <code>.circleci/</code> folder.</p><p>It will fail to log into docker hub. This is because the build is running against the <code>master</code> branch, which includes publishing to Docker Hub.</p><p>But we only want to run the <code>v0.6 branch</code>.</p><p>Next, we&rsquo;re going to make a new branch from <code>v0.6</code> and make some dummy changes to see what CircleCI does.</p><p>We expect to see a new build automatically run, and it should be green.</p><p>This will be green because branch <code>v0.6</code> does not contain the &lsquo;publish to Docker Hub&rsquo; logic.</p><pre><code>git checkout v0.6
+</code></pre>
+<p>This is a simple test file that will make sure the app can save/load a key value pair.</p>
+<p>Run <code>docker-compose up -d --build</code> to rebuild all the containers.</p>
+<p>Then, run <code>docker-compose run dockerapp python test.py</code> to run the test suite.</p>
+<h3 id=33-introduction-to-continuous-integration>33. Introduction to Continuous Integration</h3>
+<ul>
+<li>CI lets software engineers test isolated changes when they are added to a larger code base</li>
+<li>Goal of CI is to provide rapid feedback to immediately eliminate defects introduced into codebase</li>
+</ul>
+<h4 id=typical-ci-pipeline-wo-docker>Typical CI Pipeline w/o Docker</h4>
+<ol>
+<li>Dev checks out source code</li>
+<li>Dev makes changes, adds features, etc</li>
+<li>Dev checks in source code to central repo (commits)</li>
+<li>A CI server triggers a build that does:
+<ol>
+<li>Check out the latest version</li>
+<li>Build the code</li>
+<li>Run unit tests</li>
+<li>Create a build artifact (package and archive, assign a build label)</li>
+</ol>
+</li>
+</ol>
+<h4 id=ci-process-with-docker-involved>CI process with Docker involved</h4>
+<p>The CI server builds the docker image after it builds the application.</p>
+<p>The app goes inside the image, and the CI server pushes the image to a docker registry.</p>
+<p>You can then pull the newly-built image from the registry.</p>
+<p>We&rsquo;ll set up a CI workflow using GitHub as the central repo, and CircleCI as the CI server.</p>
+<p>GitHub lets you host public repos for free, and CircleCI is a hosted CI provider that lets you run concurrent builds for free.</p>
+<p>You need a GitHub and CircleCI account.</p>
+<p>(next part of the lecture is just setting up SSH/GPG keys, use Google if you need to)</p>
+<h3 id=34-text-direction-introduction-to-continuous-integration>34. Text Direction: Introduction to Continuous Integration</h3>
+<p>URL of the Github account to fork:</p>
+<p><a href=https://github.com/jleetutorial/dockerapp>https://github.com/jleetutorial/dockerapp</a></p>
+<p>Checking for existing SSH keys:</p>
+<p><a href=https://help.github.com/articles/checking-for-existing-ssh-keys/>https://help.github.com/articles/checking-for-existing-ssh-keys/</a></p>
+<p>Generating a new SSH key and adding it to the ssh-agent:</p>
+<p><a href=https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/</a></p>
+<p>Adding a new SSH key to your GitHub account:</p>
+<p><a href=https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/>https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/</a></p>
+<h3 id=35-link-circleci-with-github-account-for-setting-up-a-ci-workflow>35. Link CircleCI with Github Account for Setting up a CI Workflow</h3>
+<p><code>.circleci/</code> folder is used to store the code that enables the CI workflow.</p>
+<p><a href=https://github.com/HenryFBP/dockerapp/blob/branch-v0.6/.circleci/config.yml>https://github.com/HenryFBP/dockerapp/blob/branch-v0.6/.circleci/config.yml</a></p>
+<p>You can clone the repo and the run <code>git checkout v0.6</code>.</p>
+<ul>
+<li>
+<ol>
+<li>Version number.</li>
+</ol>
+</li>
+<li>
+<ol start=2>
+<li>Jobs key. Every config file needs a build job.</li>
+</ol>
+</li>
+<li>
+<ol start=4>
+<li>A working directory for the rest of the job.</li>
+</ol>
+</li>
+<li>
+<p>5-6. Specifying the primary container images for this job, for docker to use.</p>
+<p>In CircleCI, all tests run under containers.</p>
+<p>What we want is a docker image that has Git, and we can get these by using <code>docker:17.05.0-ce-git</code> as an image name.</p>
+</li>
+<li>
+<ol start=7>
+<li>All of our steps to run in the job.</li>
+</ol>
+</li>
+<li>
+<ol start=8>
+<li>The <code>checkout</code> step will check out our code from Github to our working directory.</li>
+</ol>
+</li>
+<li>
+<ol start=9>
+<li>The <code>setup_remote_docker</code> step will create a separate docker image for each build, for security purposes.</li>
+</ol>
+</li>
+<li>
+<p>10-14. Install <code>pip</code> and <code>docker-compose</code>.</p>
+</li>
+<li>
+<p>15-19. Finally, bring up docker containers and run tests.</p>
+</li>
+</ul>
+<p>Now, link CircleCI with your Github account. You can do that here:</p>
+<p><a href=https://app.circleci.com/>https://app.circleci.com/</a></p>
+<p>Create a new project and use the existing <code>.circleci/</code> folder.</p>
+<p>It will fail to log into docker hub. This is because the build is running against the <code>master</code> branch, which includes publishing to Docker Hub.</p>
+<p>But we only want to run the <code>v0.6 branch</code>.</p>
+<p>Next, we&rsquo;re going to make a new branch from <code>v0.6</code> and make some dummy changes to see what CircleCI does.</p>
+<p>We expect to see a new build automatically run, and it should be green.</p>
+<p>This will be green because branch <code>v0.6</code> does not contain the &lsquo;publish to Docker Hub&rsquo; logic.</p>
+<pre><code>git checkout v0.6
 
 git checkout -b test-ci
 
@@ -507,13 +1233,39 @@ git add dummy.txt
 git commit -m &quot;dummy commit&quot;
 
 git push
-</code></pre><p><img src=/images/2021-05-12-docker-crash-course/circleci-1.png alt></p><h3 id=36-push-docker-images-to-dockerhub-from-circleci>36. Push Docker Images To DockerHub from CircleCI</h3><p>Here, we publish a fully built image to Docker Hub if CI is green.</p><p><img src=/images/2021-05-12-docker-crash-course/complete-ci.png alt></p><p>Make a Docker Hub account.</p><p>Next, we&rsquo;ll link CircleCI with Docker Hub.</p><p>Log into CircleCI and click the build dashboard (upper left).</p><p>Then click the &ldquo;dockerapp&rdquo; repo.</p><p>Click &ldquo;Project Settings&rdquo;.</p><p>Click &ldquo;Environment Variables&rdquo;.</p><p>Set these env vars:</p><pre><code>DOCKER_HUB_USER_ID : your user id
+</code></pre>
+<p><img src=/images/2021-05-12-docker-crash-course/circleci-1.png alt></p>
+<h3 id=36-push-docker-images-to-dockerhub-from-circleci>36. Push Docker Images To DockerHub from CircleCI</h3>
+<p>Here, we publish a fully built image to Docker Hub if CI is green.</p>
+<p><img src=/images/2021-05-12-docker-crash-course/complete-ci.png alt></p>
+<p>Make a Docker Hub account.</p>
+<p>Next, we&rsquo;ll link CircleCI with Docker Hub.</p>
+<p>Log into CircleCI and click the build dashboard (upper left).</p>
+<p>Then click the &ldquo;dockerapp&rdquo; repo.</p>
+<p>Click &ldquo;Project Settings&rdquo;.</p>
+<p>Click &ldquo;Environment Variables&rdquo;.</p>
+<p>Set these env vars:</p>
+<pre><code>DOCKER_HUB_USER_ID : your user id
 DOCKER_HUB_PWD : your password
 DOCKER_HUB_EMAIL : your email
-</code></pre><p>Next step is to add instructions to CircleCI yaml file.</p><p>Make sure it&rsquo;s a forked repo under your Github account, so that you can push to your remote.</p><p>Run:</p><pre><code>git checkout v0.6
+</code></pre>
+<p>Next step is to add instructions to CircleCI yaml file.</p>
+<p>Make sure it&rsquo;s a forked repo under your Github account, so that you can push to your remote.</p>
+<p>Run:</p>
+<pre><code>git checkout v0.6
 
 git checkout -b circle_ci_publish
-</code></pre><p>And add this key under <code>steps</code> to your .circleci/config.yml file:</p><p>We should also tag images with commit hashes and other relevant information.</p><p>Let&rsquo;s use these 2 tags:</p><ol><li>Commit hash of the source code</li><li>Latest</li></ol><p>Note: The name is <code>dockerapp_dockerapp</code> because the first <code>dockerapp</code> is the name of the working directory, and the 2nd one is the service name we define in the <code>compose.yml</code> file.</p><p>Note2: $CIRCLE_SHA1 is the current git commit hash.</p><pre><code class=language-yml>      - deploy:
+</code></pre>
+<p>And add this key under <code>steps</code> to your .circleci/config.yml file:</p>
+<p>We should also tag images with commit hashes and other relevant information.</p>
+<p>Let&rsquo;s use these 2 tags:</p>
+<ol>
+<li>Commit hash of the source code</li>
+<li>Latest</li>
+</ol>
+<p>Note: The name is <code>dockerapp_dockerapp</code> because the first <code>dockerapp</code> is the name of the working directory, and the 2nd one is the service name we define in the <code>compose.yml</code> file.</p>
+<p>Note2: $CIRCLE_SHA1 is the current git commit hash.</p>
+<pre><code class=language-yml>      - deploy:
           name: Publish application Docker image
           command: |
               docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
@@ -523,10 +1275,17 @@ git checkout -b circle_ci_publish
 
               docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
               docker push $DOCKER_HUB_USER_ID/dockerapp:latest
-</code></pre><p>Then commit the changes and push to the <code>circle_ci_publish</code> branch.</p><pre><code>git add .circleci/
+</code></pre>
+<p>Then commit the changes and push to the <code>circle_ci_publish</code> branch.</p>
+<pre><code>git add .circleci/
 git commit -m 'push to docker hub'
 git push -u origin circle_ci_publish
-</code></pre><p>Now view CircleCI.</p><p><a href="https://hub.docker.com/r/henryfbp/dockerapp/tags?page=1&ordering=last_updated">https://hub.docker.com/r/henryfbp/dockerapp/tags?page=1&ordering=last_updated</a></p><h3 id=37-trouble-shooting-push-docker-images-to-docker-hub>37. Trouble Shooting: Push Docker Images to Docker Hub</h3><p>If you are able to run docker login, but encountered the following unauthorized: authentication required error while running docker push</p><pre><code>[root@terry ~]# docker login --username=1972
+</code></pre>
+<p>Now view CircleCI.</p>
+<p><a href="https://hub.docker.com/r/henryfbp/dockerapp/tags?page=1&ordering=last_updated">https://hub.docker.com/r/henryfbp/dockerapp/tags?page=1&ordering=last_updated</a></p>
+<h3 id=37-trouble-shooting-push-docker-images-to-docker-hub>37. Trouble Shooting: Push Docker Images to Docker Hub</h3>
+<p>If you are able to run docker login, but encountered the following unauthorized: authentication required error while running docker push</p>
+<pre><code>[root@terry ~]# docker login --username=1972
 Password: 
 Login Succeeded
 [root@terry ~]# 
@@ -536,9 +1295,75 @@ The push refers to a repository [docker.io/asiye_yigit_tutorial/debian]
 77a77cd4826d: Preparing 
 fe4c16cbf7a4: Preparing 
 unauthorized: authentication require
-</code></pre><p>Solution:</p><p>Creating the repository on Docker hub before running docker push.</p><p>Take a look at</p><p><a href=http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login>http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login</a></p><h2 id=section-6-deploy-docker-containers-in-production>Section 6: Deploy Docker Containers in Production</h2><h3 id=38-introduction-to-running-docker-containers-in-production>38. Introduction to Running Docker Containers in Production</h3><h4 id=opinions-about-running-docker-in-prod>Opinions about Running Docker in Prod</h4><ul><li>Many docker engineers are confident that a distributed web app can be deployed at scale using docker, and have incorporated docker into their production environment.</li><li>However, there are still some people who are reluctant to use Docker in production as they think Docker workflow is too complex/unstable for real life use cases.</li></ul><p>So&mldr;is Docker production-ready?</p><p>It&rsquo;s very disruptive (good thing) to software dev, ops, system architecture, testing, and compliance practices.</p><p>But Docker itself is very young.</p><h4 id=concerns-about-running-docker-in-prod>Concerns about Running Docker in Prod</h4><ul><li>There are still some missing pieces about Docker around data persistence, networking, security, and identity management</li><li>The ecosystem of supporting Dockerized applications in production like tools/monitoring/logging are still not ready yet</li></ul><h4 id=companies-already-running-docker-in-production>Companies already running Docker in production</h4><ul><li>Spotify</li><li>Yelp</li><li>Bedify(?)</li></ul><h4 id=why-run-docker-containers-inside-vms>Why run Docker Containers inside VMs?</h4><p>The most popular way to run Docker Containers is currently inside virtual machines.</p><ul><li>Addresses security concerns</li><li>The isolation Docker provides is not as robust as the segregation that Docker provides</li><li>Without hardware level isolation, all containers share kernel resources.<ul><li>If 1 container can monopolize resources, it can starve others in a DoS.</li></ul></li></ul><p>Most of the popular container service engines, like Google Container Engine and Amazon EC2 Container Service, still use VMs internally.</p><h4 id=docker-machine>Docker Machine</h4><p>The simplest way to provision new VMs and run containers on top of them is by using Docker Machine.</p><p>It can</p><ul><li>Provision new VMs</li><li>Install Docker Engine</li><li>Configure Docker client with remote docker machines</li></ul><p>Local example:</p><p>We can provision a VM on our local machine using Docker Machine.</p><p>To do that, we use VirtualBox.</p><p>Docker Machine also provides drivers for DigitalOcean, Amazon AWS, Google App Ocean, etc; so that you can use Docker Machine to provision VMs in the cloud.</p><p>Running containers in the cloud is quite different from running containers on your local box.</p><h3 id=39-register-digital-ocean-account-for-deploying-containerized-applications>39. Register Digital Ocean Account for Deploying Containerized Applications</h3><p>Make a DO account.</p><p>Use a promo code from retailmenot if you want free codes.</p><p>Generate an API token, read-write.</p><h3 id=40-deploy-docker-application-to-the-cloud-with-docker-machine>40. Deploy Docker Application to the Cloud with Docker Machine</h3><p>Deploy time!</p><p>If you don&rsquo;t have docker machine installed, google it and RTFM ;)</p><p><a href=https://docs.docker.com/machine/install-machine/>https://docs.docker.com/machine/install-machine/</a></p><p>Run</p><pre><code>docker-machine ls
-</code></pre><p>To test it.</p><p>You can run</p><pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=&lt;TOKEN GOES HERE&gt; dockerapp-machine
-</code></pre><p><img src=/images/2021-05-12-docker-crash-course/docker-machine-DO.png alt></p><p>Console:</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 dockerapp-machine
+</code></pre>
+<p>Solution:</p>
+<p>Creating the repository on Docker hub before running docker push.</p>
+<p>Take a look at</p>
+<p><a href=http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login>http://stackoverflow.com/questions/36663742/docker-unauthorized-authentication-required-upon-push-with-successful-login</a></p>
+<h2 id=section-6-deploy-docker-containers-in-production>Section 6: Deploy Docker Containers in Production</h2>
+<h3 id=38-introduction-to-running-docker-containers-in-production>38. Introduction to Running Docker Containers in Production</h3>
+<h4 id=opinions-about-running-docker-in-prod>Opinions about Running Docker in Prod</h4>
+<ul>
+<li>Many docker engineers are confident that a distributed web app can be deployed at scale using docker, and have incorporated docker into their production environment.</li>
+<li>However, there are still some people who are reluctant to use Docker in production as they think Docker workflow is too complex/unstable for real life use cases.</li>
+</ul>
+<p>So&mldr;is Docker production-ready?</p>
+<p>It&rsquo;s very disruptive (good thing) to software dev, ops, system architecture, testing, and compliance practices.</p>
+<p>But Docker itself is very young.</p>
+<h4 id=concerns-about-running-docker-in-prod>Concerns about Running Docker in Prod</h4>
+<ul>
+<li>There are still some missing pieces about Docker around data persistence, networking, security, and identity management</li>
+<li>The ecosystem of supporting Dockerized applications in production like tools/monitoring/logging are still not ready yet</li>
+</ul>
+<h4 id=companies-already-running-docker-in-production>Companies already running Docker in production</h4>
+<ul>
+<li>Spotify</li>
+<li>Yelp</li>
+<li>Bedify(?)</li>
+</ul>
+<h4 id=why-run-docker-containers-inside-vms>Why run Docker Containers inside VMs?</h4>
+<p>The most popular way to run Docker Containers is currently inside virtual machines.</p>
+<ul>
+<li>Addresses security concerns</li>
+<li>The isolation Docker provides is not as robust as the segregation that Docker provides</li>
+<li>Without hardware level isolation, all containers share kernel resources.
+<ul>
+<li>If 1 container can monopolize resources, it can starve others in a DoS.</li>
+</ul>
+</li>
+</ul>
+<p>Most of the popular container service engines, like Google Container Engine and Amazon EC2 Container Service, still use VMs internally.</p>
+<h4 id=docker-machine>Docker Machine</h4>
+<p>The simplest way to provision new VMs and run containers on top of them is by using Docker Machine.</p>
+<p>It can</p>
+<ul>
+<li>Provision new VMs</li>
+<li>Install Docker Engine</li>
+<li>Configure Docker client with remote docker machines</li>
+</ul>
+<p>Local example:</p>
+<p>We can provision a VM on our local machine using Docker Machine.</p>
+<p>To do that, we use VirtualBox.</p>
+<p>Docker Machine also provides drivers for DigitalOcean, Amazon AWS, Google App Ocean, etc; so that you can use Docker Machine to provision VMs in the cloud.</p>
+<p>Running containers in the cloud is quite different from running containers on your local box.</p>
+<h3 id=39-register-digital-ocean-account-for-deploying-containerized-applications>39. Register Digital Ocean Account for Deploying Containerized Applications</h3>
+<p>Make a DO account.</p>
+<p>Use a promo code from retailmenot if you want free codes.</p>
+<p>Generate an API token, read-write.</p>
+<h3 id=40-deploy-docker-application-to-the-cloud-with-docker-machine>40. Deploy Docker Application to the Cloud with Docker Machine</h3>
+<p>Deploy time!</p>
+<p>If you don&rsquo;t have docker machine installed, google it and RTFM ;)</p>
+<p><a href=https://docs.docker.com/machine/install-machine/>https://docs.docker.com/machine/install-machine/</a></p>
+<p>Run</p>
+<pre><code>docker-machine ls
+</code></pre>
+<p>To test it.</p>
+<p>You can run</p>
+<pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=&lt;TOKEN GOES HERE&gt; dockerapp-machine
+</code></pre>
+<p><img src=/images/2021-05-12-docker-crash-course/docker-machine-DO.png alt></p>
+<p>Console:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 dockerapp-machine
 
 Running pre-create checks...
 Creating machine...
@@ -554,17 +1379,26 @@ Installing Docker...
 Copying certs to the local machine directory...
 Copying certs to the remote machine...
 Setting Docker configuration on the remote daemon...
-</code></pre><p>Note: This is not working for me.</p><p>Note2: Started working after SSHing into the box in DigitalOcean and just running <code>docker</code>.</p><p>Now <code>docker-machine ls</code> gives this.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ls
+</code></pre>
+<p>Note: This is not working for me.</p>
+<p>Note2: Started working after SSHing into the box in DigitalOcean and just running <code>docker</code>.</p>
+<p>Now <code>docker-machine ls</code> gives this.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ls
 NAME                ACTIVE   DRIVER         STATE     URL                        SWARM   DOCKER     ERRORS
 dockerapp-machine   -        digitalocean   Running   tcp://104.131.47.74:2376           v20.10.7   
-</code></pre><p>And we can run <code>docker-machine env dockerapp-machine</code> to get the commands that we want to run on our remote machine.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine env dockerapp-machine
+</code></pre>
+<p>And we can run <code>docker-machine env dockerapp-machine</code> to get the commands that we want to run on our remote machine.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine env dockerapp-machine
 set -gx DOCKER_TLS_VERIFY &quot;1&quot;;
 set -gx DOCKER_HOST &quot;tcp://104.131.47.74:2376&quot;;
 set -gx DOCKER_CERT_PATH &quot;/home/vagrant/.docker/machine/machines/dockerapp-machine&quot;;
 set -gx DOCKER_MACHINE_NAME &quot;dockerapp-machine&quot;;
 # Run this command to configure your shell: 
 # eval (docker-machine env dockerapp-machine)
-</code></pre><p>So we run <code>eval (docker-machine env dockerapp-machine)</code> (if using <code>fish</code> shell).</p><p>Now let&rsquo;s run <code>docker info</code> to see info about system-wide VMs.</p><pre><code>$ docker info 
+</code></pre>
+<p>So we run <code>eval (docker-machine env dockerapp-machine)</code> (if using <code>fish</code> shell).</p>
+<p>Now let&rsquo;s run <code>docker info</code> to see info about system-wide VMs.</p>
+<pre><code>$ docker info 
 (...)
  Operating System: Ubuntu 16.04.7 LTS
  OSType: linux
@@ -572,8 +1406,14 @@ set -gx DOCKER_MACHINE_NAME &quot;dockerapp-machine&quot;;
  CPUs: 1
  Total Memory: 992.1MiB
 (...)
-</code></pre><p>We&rsquo;re going to now make a copy of <code>docker-compose.yml</code> into <code>prod.yml</code>.</p><p>This should be done in a fork of this repo: <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a></p><pre><code>cp docker-compose.yml prod.yml
-</code></pre><p>And in <code>prod.yml</code>, we change it to this:</p><p>(see <a href=https://hub.docker.com/r/henryfbp/dockerapp>https://hub.docker.com/r/henryfbp/dockerapp</a>)</p><pre><code class=language-yml>
+</code></pre>
+<p>We&rsquo;re going to now make a copy of <code>docker-compose.yml</code> into <code>prod.yml</code>.</p>
+<p>This should be done in a fork of this repo: <a href=https://github.com/henryfbp/dockerapp/>https://github.com/henryfbp/dockerapp/</a></p>
+<pre><code>cp docker-compose.yml prod.yml
+</code></pre>
+<p>And in <code>prod.yml</code>, we change it to this:</p>
+<p>(see <a href=https://hub.docker.com/r/henryfbp/dockerapp>https://hub.docker.com/r/henryfbp/dockerapp</a>)</p>
+<pre><code class=language-yml>
 version: &quot;3.0&quot;
 services:
   dockerapp:
@@ -584,27 +1424,108 @@ services:
       - redis
   redis:
     image: redis:3.2.0
-</code></pre><p>This file is available in <code>master</code> branch (<code>git checkout master</code>).</p><p>Now we can run:</p><pre><code>docker-compose -f prod.yml up -d
-</code></pre><p>This deploys all services defined in <code>prod.yml</code> to the remote VM.</p><p>Assuming we ran <code>eval (docker-machine env dockerapp-machine)</code> in the previous step, we can now run <code>docker-machine ls</code> to see the status.</p><p>You need to run</p><pre><code>eval (docker-machine env dockerapp-machine)
-</code></pre><p>BEFORE</p><pre><code>docker-compose -f prod.yml up -d
-</code></pre><p>because it sets up required environment variables for deployment that happens when you run <code>docker-compose ...</code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker-machine ls
+</code></pre>
+<p>This file is available in <code>master</code> branch (<code>git checkout master</code>).</p>
+<p>Now we can run:</p>
+<pre><code>docker-compose -f prod.yml up -d
+</code></pre>
+<p>This deploys all services defined in <code>prod.yml</code> to the remote VM.</p>
+<p>Assuming we ran <code>eval (docker-machine env dockerapp-machine)</code> in the previous step, we can now run <code>docker-machine ls</code> to see the status.</p>
+<p>You need to run</p>
+<pre><code>eval (docker-machine env dockerapp-machine)
+</code></pre>
+<p>BEFORE</p>
+<pre><code>docker-compose -f prod.yml up -d
+</code></pre>
+<p>because it sets up required environment variables for deployment that happens when you run <code>docker-compose ...</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker-machine ls
 NAME                ACTIVE   DRIVER         STATE     URL                        SWARM   DOCKER     ERRORS
 dockerapp-machine   *        digitalocean   Running   tcp://104.131.47.74:2376           v20.10.7   
-</code></pre><p>And visit <a href=http://104.131.47.74:5000>http://104.131.47.74:5000</a>.</p><p><img src=/images/2021-05-12-docker-crash-course/docker-machine-deployed-ip.png alt></p><p>See <a href=https://docs.docker.com/machine/drivers/digital-ocean/>https://docs.docker.com/machine/drivers/digital-ocean/</a> for more info on options for DigitalOcean as a specific docker-machine driver.</p><h3 id=41-text-direction-deploy-docker-application-to-the-cloud-with-docker-machine>41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine</h3><p><strong>Docker Machine Create command</strong></p><pre><code>docker-machine create --driver digitalocean --digitalocean-access-token &lt;xxxxx&gt; docker-app-machine
-</code></pre><h3 id=42-introduction-to-docker-swarm-and-set-up-swarm-cluster>42. Introduction to Docker Swarm and Set up Swarm Cluster</h3><p>What if we have a complicated system that consists of TONS of containers, and can&rsquo;t fit into 1 host?</p><p>How can you scale Docker for large apps?</p><p>Here is where Docker Swarm helps.</p><ul><li>A tool that clusters many Docker Engines and schedules containers</li><li>Decides which host to run the container based on scheduling methods</li></ul><p>A docker client contacts a Docker Swarm Manager, which is connected to every Docker Daemon.</p><p>This means the Swarm Manager knows the status of all Docker Daemons. The Swarm Manager can group multiple hosts into a cluster and distribute Docker containers among these hosts.</p><p>This outsources the manual provisioning workload from the client to the Swarm Manager.</p><p><img src=/images/2021-05-12-docker-crash-course/docker-swarm-manager.png alt></p><p>It is also possible to point multiple Docker Clients to the same Swarm Manager.</p><p>3 important concepts:</p><ul><li>Node</li><li>Manager Node</li><li>Worker Node</li></ul><p>A Node is an instance of a Docker Engine in a Swarm.</p><h4 id=how-swarm-cluster-works>How Swarm cluster works</h4><ul><li>To deploy your application to a swarm, you submit your service to a manager node</li><li>Manager node dispatches units of work called &ldquo;tasks&rdquo; to worker nodes</li><li>Manager nodes also perform orchestration and cluster management functions required to maintain the desired state of the swarm.</li><li>Manager nodes elect a single leader to orchestrate</li><li>Worker nodes receive and execute tasks dispatched from manager nodes</li><li>An agent runs on each worker node and reports on the tasks assigned to it. The worker node notifies the manager node of the current state of its assigned tasks so that the manager can maintain the desired state of each worker.</li></ul><p>2-node swarm cluster on DO - A swarm cluster can be composed of any # of swarm managers and worker nodes.</p><h4 id=provisioning-a-swarm-cluster>Provisioning a Swarm Cluster</h4><ol><li>Deploy 2 VMs - One will be used for the Swarm Manager node, and the other will be used as a worker node.</li><li>Appoint the first VM as a Swarm Manager node and init a Swarm Cluster.<ul><li><code>docker swarm init</code></li></ul></li><li>Let the second VM join the Swarm Cluster as a worker node.<ul><li><code>docker swarm join</code></li></ul></li></ol><p>We name this one <code>swarm-manager</code>.</p><pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-manager
-</code></pre><p>(if <code>docker-machine ls</code> gives &ldquo;Unable to query docker version&rdquo;, then reset the password, log in with root shell, and <code>docker-machine ls</code> should work)</p><p>Then configure the env vars:</p><pre><code>docker-machine env swarm-manager
+</code></pre>
+<p>And visit <a href=http://104.131.47.74:5000>http://104.131.47.74:5000</a>.</p>
+<p><img src=/images/2021-05-12-docker-crash-course/docker-machine-deployed-ip.png alt></p>
+<p>See <a href=https://docs.docker.com/machine/drivers/digital-ocean/>https://docs.docker.com/machine/drivers/digital-ocean/</a> for more info on options for DigitalOcean as a specific docker-machine driver.</p>
+<h3 id=41-text-direction-deploy-docker-application-to-the-cloud-with-docker-machine>41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine</h3>
+<p><strong>Docker Machine Create command</strong></p>
+<pre><code>docker-machine create --driver digitalocean --digitalocean-access-token &lt;xxxxx&gt; docker-app-machine
+</code></pre>
+<h3 id=42-introduction-to-docker-swarm-and-set-up-swarm-cluster>42. Introduction to Docker Swarm and Set up Swarm Cluster</h3>
+<p>What if we have a complicated system that consists of TONS of containers, and can&rsquo;t fit into 1 host?</p>
+<p>How can you scale Docker for large apps?</p>
+<p>Here is where Docker Swarm helps.</p>
+<ul>
+<li>A tool that clusters many Docker Engines and schedules containers</li>
+<li>Decides which host to run the container based on scheduling methods</li>
+</ul>
+<p>A docker client contacts a Docker Swarm Manager, which is connected to every Docker Daemon.</p>
+<p>This means the Swarm Manager knows the status of all Docker Daemons. The Swarm Manager can group multiple hosts into a cluster and distribute Docker containers among these hosts.</p>
+<p>This outsources the manual provisioning workload from the client to the Swarm Manager.</p>
+<p><img src=/images/2021-05-12-docker-crash-course/docker-swarm-manager.png alt></p>
+<p>It is also possible to point multiple Docker Clients to the same Swarm Manager.</p>
+<p>3 important concepts:</p>
+<ul>
+<li>Node</li>
+<li>Manager Node</li>
+<li>Worker Node</li>
+</ul>
+<p>A Node is an instance of a Docker Engine in a Swarm.</p>
+<h4 id=how-swarm-cluster-works>How Swarm cluster works</h4>
+<ul>
+<li>To deploy your application to a swarm, you submit your service to a manager node</li>
+<li>Manager node dispatches units of work called &ldquo;tasks&rdquo; to worker nodes</li>
+<li>Manager nodes also perform orchestration and cluster management functions required to maintain the desired state of the swarm.</li>
+<li>Manager nodes elect a single leader to orchestrate</li>
+<li>Worker nodes receive and execute tasks dispatched from manager nodes</li>
+<li>An agent runs on each worker node and reports on the tasks assigned to it. The worker node notifies the manager node of the current state of its assigned tasks so that the manager can maintain the desired state of each worker.</li>
+</ul>
+<p>2-node swarm cluster on DO - A swarm cluster can be composed of any # of swarm managers and worker nodes.</p>
+<h4 id=provisioning-a-swarm-cluster>Provisioning a Swarm Cluster</h4>
+<ol>
+<li>Deploy 2 VMs - One will be used for the Swarm Manager node, and the other will be used as a worker node.</li>
+<li>Appoint the first VM as a Swarm Manager node and init a Swarm Cluster.
+<ul>
+<li><code>docker swarm init</code></li>
+</ul>
+</li>
+<li>Let the second VM join the Swarm Cluster as a worker node.
+<ul>
+<li><code>docker swarm join</code></li>
+</ul>
+</li>
+</ol>
+<p>We name this one <code>swarm-manager</code>.</p>
+<pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-manager
+</code></pre>
+<p>(if <code>docker-machine ls</code> gives &ldquo;Unable to query docker version&rdquo;, then reset the password, log in with root shell, and <code>docker-machine ls</code> should work)</p>
+<p>Then configure the env vars:</p>
+<pre><code>docker-machine env swarm-manager
 
 eval (docker-machine env swarm-manager) #if in fish
 eval $(docker-machine env swarm-manager) #if in bash
-</code></pre><p>Next, we create a new VM that&rsquo;ll be used as a swarm worker node.</p><pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-node
-</code></pre><p>What we&rsquo;ll do next is to appoint the first VM as a Swarm Manager node.</p><p>Let&rsquo;s make sure the Swarm Manager VM is the current active VM first.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ls
+</code></pre>
+<p>Next, we create a new VM that&rsquo;ll be used as a swarm worker node.</p>
+<pre><code>docker-machine create --driver digitalocean --digitalocean-access-token=b8d4facaa8291b55aa5fae1f8901a7f8675ac34a04f11f11a35364501e50e8d2 swarm-node
+</code></pre>
+<p>What we&rsquo;ll do next is to appoint the first VM as a Swarm Manager node.</p>
+<p>Let&rsquo;s make sure the Swarm Manager VM is the current active VM first.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ls
 NAME            ACTIVE   DRIVER         STATE     URL                         SWARM   DOCKER     ERRORS
 swarm-manager   *        digitalocean   Running   tcp://167.99.119.137:2376           v20.10.7   
 swarm-node      -        digitalocean   Running   tcp://159.65.182.78:2376            v20.10.7   
-</code></pre><p>Asterisk indicates it is.</p><p>Now we can run <code>docker swarm init</code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker swarm init
+</code></pre>
+<p>Asterisk indicates it is.</p>
+<p>Now we can run <code>docker swarm init</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker swarm init
 Error response from daemon: could not choose an IP address to advertise since this system has multiple addresses on interface eth0 (167.99.119.137 and 10.17.0.6) - specify one with --advertise-addr
-</code></pre><p>Error! This error means that, since this VM has multiple network interfaces, docker-swarm doesn&rsquo;t know which one to use to communicate.</p><p>There is a public IP on WAN, and private IP for hosts on the same network in the datacenter.</p><p>This is a feature of DigitalOcean that allows private networking b/w hosts in the same datacenter.</p><p>Here, we&rsquo;ll use the public address.</p><pre><code>docker swarm init --advertise-addr 167.99.119.137
-</code></pre><p>&mldr;</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]&gt; docker swarm init --advertise-addr 167.99.119.137
+</code></pre>
+<p>Error! This error means that, since this VM has multiple network interfaces, docker-swarm doesn&rsquo;t know which one to use to communicate.</p>
+<p>There is a public IP on WAN, and private IP for hosts on the same network in the datacenter.</p>
+<p>This is a feature of DigitalOcean that allows private networking b/w hosts in the same datacenter.</p>
+<p>Here, we&rsquo;ll use the public address.</p>
+<pre><code>docker swarm init --advertise-addr 167.99.119.137
+</code></pre>
+<p>&mldr;</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master) [1]&gt; docker swarm init --advertise-addr 167.99.119.137
 
 Swarm initialized: current node (iw0pru1zzk25nq37clqvdxwe1) is now a manager.
 
@@ -613,7 +1534,10 @@ To add a worker to this swarm, run the following command:
     docker swarm join --token SWMTKN-1-6a3wy9883sq13xqgo8yc3l6xmebsmla6k13nes4t517kko8hhv-3vcorvaayccj5z05cnwy5kiy4 167.99.119.137:2377
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
-</code></pre><p>Now on to step 3: Let the 2nd VM join the Swarm cluster as a worker node.</p><p>So, let&rsquo;s run <code>docker-machine ssh swarm-node</code> and run our <code>docker swarm join ...</code> command.</p><pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ssh swarm-node
+</code></pre>
+<p>Now on to step 3: Let the 2nd VM join the Swarm cluster as a worker node.</p>
+<p>So, let&rsquo;s run <code>docker-machine ssh swarm-node</code> and run our <code>docker swarm join ...</code> command.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/henryfbp.github.io (master)&gt; docker-machine ssh swarm-node
 
 Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 4.4.0-193-generic x86_64)
 
@@ -629,7 +1553,37 @@ Run 'do-release-upgrade' to upgrade to it.
 
 root@swarm-node:~#     docker swarm join --token SWMTKN-1-6a3wy9883sq13xqgo8yc3l6xmebsmla6k13nes4t517kko8hhv-3vcorvaayccj5z05cnwy5kiy4 167.99.119.137:2377
 This node joined a swarm as a worker.
-</code></pre><p>Woohoo! A 2-node swarm cluster.</p><h4 id=docker-swarm-commands>Docker Swarm commands</h4><ul><li><p><code>docker swarm init</code></p><ul><li>Initialize a swarm. The docker engine targeted by this command becomes a manager in the newly created single-node swarm.</li></ul></li><li><p><code>docker swarm join</code></p><ul><li>Join a swarm as a Swarm node.</li></ul></li><li><p><code>docker swarm leave</code></p><ul><li>Leave the swarm.</li></ul></li></ul><h3 id=43-deploy-docker-app-services-to-the-cloud-via-docker-swarm>43. Deploy Docker App Services to the Cloud via Docker Swarm</h3><h4 id=docker-services>Docker Services</h4><p>Now we will actually deploy services to the cluster we made in the previous part.</p><ul><li>Services can be defined in our docker-compose.yml file</li><li>The service definition includes which docker images to run, the port mappings, and dependencies:</li></ul><pre><code class=language-yml>version: &quot;3.0&quot;
+</code></pre>
+<p>Woohoo! A 2-node swarm cluster.</p>
+<h4 id=docker-swarm-commands>Docker Swarm commands</h4>
+<ul>
+<li>
+<p><code>docker swarm init</code></p>
+<ul>
+<li>Initialize a swarm. The docker engine targeted by this command becomes a manager in the newly created single-node swarm.</li>
+</ul>
+</li>
+<li>
+<p><code>docker swarm join</code></p>
+<ul>
+<li>Join a swarm as a Swarm node.</li>
+</ul>
+</li>
+<li>
+<p><code>docker swarm leave</code></p>
+<ul>
+<li>Leave the swarm.</li>
+</ul>
+</li>
+</ul>
+<h3 id=43-deploy-docker-app-services-to-the-cloud-via-docker-swarm>43. Deploy Docker App Services to the Cloud via Docker Swarm</h3>
+<h4 id=docker-services>Docker Services</h4>
+<p>Now we will actually deploy services to the cluster we made in the previous part.</p>
+<ul>
+<li>Services can be defined in our docker-compose.yml file</li>
+<li>The service definition includes which docker images to run, the port mappings, and dependencies:</li>
+</ul>
+<pre><code class=language-yml>version: &quot;3.0&quot;
 services:
   dockerapp:
     image: henryfbp/dockerapp
@@ -641,7 +1595,13 @@ services:
       replicas: 2
   redis:
     image: redis:3.2.0
-</code></pre><ul><li>When we deploy services in swarm mode, we can also set other important config, under <code>deploy:</code>, and it&rsquo;s only available on compose file formats >=3.0</li><li>The deploy key and its sub-options can be used to load balance and optimize performance for each service.</li></ul><p>Here&rsquo;s an example:</p><pre><code class=language-yml>version: &quot;3.3&quot;
+</code></pre>
+<ul>
+<li>When we deploy services in swarm mode, we can also set other important config, under <code>deploy:</code>, and it&rsquo;s only available on compose file formats >=3.0</li>
+<li>The deploy key and its sub-options can be used to load balance and optimize performance for each service.</li>
+</ul>
+<p>Here&rsquo;s an example:</p>
+<pre><code class=language-yml>version: &quot;3.3&quot;
 services:
   nginx:
     image: nginx:latest
@@ -655,7 +1615,46 @@ services:
           memory: 50M
       restart_policy:
         condition: on-failure
-</code></pre><p><code>replicas:3</code> means Docker will run 3 instances of the nginx image, as a service called nginx.</p><p>What is a replica?</p><p><img src=/images/2021-05-12-docker-crash-course/replicas.png alt></p><p>When you deploy the nginx service to the swarm, the swarm manager accepts your service definition as the desired state for the service.</p><p>Each node runs an nginx container called a &ldquo;Replica&rdquo;.</p><p>We want to run the same containers across multiple hosts for scalability and high availability.</p><p>Since port 80 is exposed for each of the 3 containers, we actually can access any of the 3 hosts at port 80.</p><p>When all 3 nodes are running a service&rsquo;s container, this concept gets interesting when we have more nodes than replicas.</p><p>Let&rsquo;s say we have 4 nodes in our swarm cluster, and swarm deployed 3 replicas of nginx service.</p><p>What happens if you hit port 80 of the node which doesn&rsquo;t have nginx replicas? What would happen?</p><p><img src=/images/2021-05-12-docker-crash-course/replicas2.png alt></p><p>You&rsquo;ll still connect to the nginx service through one of the 3 available nodes.</p><p>Docker calls this &ldquo;Ingress load balancing&rdquo;&mldr;</p><ul><li>All nodes listen for connections to published service ports.</li><li>When that service is called by external systems, the receiving node will accept the traffic and internally load balance it using an internal DNS service that Docker maintains</li></ul><p>Even if we scale up our cluster to 100 node workers (97 of which have no nginx container running), end users can still connect and just get redirected to 1 of 3 docker hosts running the service containers.</p><p>All of this rerouting and load balancing is totally transparent to the end user.</p><h4 id=docker-stack>Docker Stack</h4><p>Before we can deploy our &ldquo;dockerapp&rdquo; service to Docker Swarm, there is another important concept we have to understand - Docker Stack.</p><ul><li>Docker Stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</li><li>A &ldquo;Stack&rdquo; is a live collection of all the services defined in your docker-compose.yml file</li><li>Create a stack from your docker compose file:<ul><li><code>docker stack deploy</code></li></ul></li><li>In the swarm mode,<ul><li>Docker Compose files can be used for service definitions</li><li>Docker compose commands cannot be reused. Docker compose commands can only schedule the containers to a single node.</li><li>We have to use <code>docker stack</code> &ndash; <code>docker stack</code> is like &ldquo;docker compose&rdquo; in swarm mode.</li></ul></li></ul><p>prod.yml:</p><pre><code class=language-yml>version: &quot;3.0&quot;
+</code></pre>
+<p><code>replicas:3</code> means Docker will run 3 instances of the nginx image, as a service called nginx.</p>
+<p>What is a replica?</p>
+<p><img src=/images/2021-05-12-docker-crash-course/replicas.png alt></p>
+<p>When you deploy the nginx service to the swarm, the swarm manager accepts your service definition as the desired state for the service.</p>
+<p>Each node runs an nginx container called a &ldquo;Replica&rdquo;.</p>
+<p>We want to run the same containers across multiple hosts for scalability and high availability.</p>
+<p>Since port 80 is exposed for each of the 3 containers, we actually can access any of the 3 hosts at port 80.</p>
+<p>When all 3 nodes are running a service&rsquo;s container, this concept gets interesting when we have more nodes than replicas.</p>
+<p>Let&rsquo;s say we have 4 nodes in our swarm cluster, and swarm deployed 3 replicas of nginx service.</p>
+<p>What happens if you hit port 80 of the node which doesn&rsquo;t have nginx replicas? What would happen?</p>
+<p><img src=/images/2021-05-12-docker-crash-course/replicas2.png alt></p>
+<p>You&rsquo;ll still connect to the nginx service through one of the 3 available nodes.</p>
+<p>Docker calls this &ldquo;Ingress load balancing&rdquo;&mldr;</p>
+<ul>
+<li>All nodes listen for connections to published service ports.</li>
+<li>When that service is called by external systems, the receiving node will accept the traffic and internally load balance it using an internal DNS service that Docker maintains</li>
+</ul>
+<p>Even if we scale up our cluster to 100 node workers (97 of which have no nginx container running), end users can still connect and just get redirected to 1 of 3 docker hosts running the service containers.</p>
+<p>All of this rerouting and load balancing is totally transparent to the end user.</p>
+<h4 id=docker-stack>Docker Stack</h4>
+<p>Before we can deploy our &ldquo;dockerapp&rdquo; service to Docker Swarm, there is another important concept we have to understand - Docker Stack.</p>
+<ul>
+<li>Docker Stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together.</li>
+<li>A &ldquo;Stack&rdquo; is a live collection of all the services defined in your docker-compose.yml file</li>
+<li>Create a stack from your docker compose file:
+<ul>
+<li><code>docker stack deploy</code></li>
+</ul>
+</li>
+<li>In the swarm mode,
+<ul>
+<li>Docker Compose files can be used for service definitions</li>
+<li>Docker compose commands cannot be reused. Docker compose commands can only schedule the containers to a single node.</li>
+<li>We have to use <code>docker stack</code> &ndash; <code>docker stack</code> is like &ldquo;docker compose&rdquo; in swarm mode.</li>
+</ul>
+</li>
+</ul>
+<p>prod.yml:</p>
+<pre><code class=language-yml>version: &quot;3.0&quot;
 services:
   dockerapp:
     image: henryfbp/dockerapp
@@ -667,26 +1666,56 @@ services:
       replicas: 2
   redis:
     image: redis:3.2.0
-</code></pre><p>Make sure the correct machine is activated.</p><pre><code>eval  (docker-machine env swarm-manager) #in fish
+</code></pre>
+<p>Make sure the correct machine is activated.</p>
+<pre><code>eval  (docker-machine env swarm-manager) #in fish
 eval $(docker-machine env swarm-manager) #in bash
-</code></pre><p>Next, we create a stack from our <code>prod.yml</code> file and deploy it to docker swarm.</p><pre><code>docker stack deploy --compose-file prod.yml dockerapp_stack
-</code></pre><p>Output:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack deploy --compose-file prod.yml dockerapp_stack
+</code></pre>
+<p>Next, we create a stack from our <code>prod.yml</code> file and deploy it to docker swarm.</p>
+<pre><code>docker stack deploy --compose-file prod.yml dockerapp_stack
+</code></pre>
+<p>Output:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack deploy --compose-file prod.yml dockerapp_stack
 
 Creating network dockerapp_stack_default
 Creating service dockerapp_stack_dockerapp
 Creating service dockerapp_stack_redis
-</code></pre><p>Docker swarm has created an overlay network for us called &ldquo;dockerapp_stack_default&rdquo; for cross-node comms.</p><p>Usually, we don&rsquo;t need to customize this config.</p><p>Then docker creates both the dockerapp and redis services.</p><p>We can list how many services are on the stack with <code>docker stack ls</code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack ls
+</code></pre>
+<p>Docker swarm has created an overlay network for us called &ldquo;dockerapp_stack_default&rdquo; for cross-node comms.</p>
+<p>Usually, we don&rsquo;t need to customize this config.</p>
+<p>Then docker creates both the dockerapp and redis services.</p>
+<p>We can list how many services are on the stack with <code>docker stack ls</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack ls
 NAME              SERVICES   ORCHESTRATOR
 dockerapp_stack   2          Swarm
-</code></pre><p>We can list all the services in a stack by running <code>docker stack services &lt;STACK_NAME></code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack services dockerapp_stack
+</code></pre>
+<p>We can list all the services in a stack by running <code>docker stack services &lt;STACK_NAME></code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack services dockerapp_stack
 ID             NAME                        MODE         REPLICAS   IMAGE                       PORTS
 4wpd5sw3sb5w   dockerapp_stack_dockerapp   replicated   2/2        henryfbp/dockerapp:latest   *:5000-&gt;5000/tcp
 2v4ublkvr2fr   dockerapp_stack_redis       replicated   1/1        redis:3.2.0                 
-</code></pre><p>The redis service has 1 replica, while dockerapp has 2.</p><p>Let&rsquo;s access our dockerapp service.</p><p>List the IPs of all running VMs with <code>docker-machine ls</code>.</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker-machine ls
+</code></pre>
+<p>The redis service has 1 replica, while dockerapp has 2.</p>
+<p>Let&rsquo;s access our dockerapp service.</p>
+<p>List the IPs of all running VMs with <code>docker-machine ls</code>.</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker-machine ls
 NAME            ACTIVE   DRIVER         STATE     URL                         SWARM   DOCKER     ERRORS
 swarm-manager   *        digitalocean   Running   tcp://167.99.119.137:2376           v20.10.7   
 swarm-node      -        digitalocean   Running   tcp://159.65.182.78:2376            v20.10.7   
-</code></pre><p>We should be able to access the dockerapp from any of the hosts because of the ingress load balancing feature of swarm.</p><p>Let&rsquo;s use the swarm-node IP in a browser!</p><p><a href=http://159.65.182.78:5000>http://159.65.182.78:5000</a></p><p>It should work and show our app.</p><p>The other IP should also work.</p><h4 id=how-to-update-services-in-production>How to update services in Production?</h4><p>What should we do if we want to update services in prod?</p><p>Just run <code>docker stack deploy ...</code>!</p><p>Docker will update our services automatically, on the swarm cluster.</p><p>Let&rsquo;s see it in action.</p><p>Let&rsquo;s use port 4000 instead of 5000.</p><p>prod4000.yml:</p><pre><code class=language-yml>version: &quot;3.0&quot;
+</code></pre>
+<p>We should be able to access the dockerapp from any of the hosts because of the ingress load balancing feature of swarm.</p>
+<p>Let&rsquo;s use the swarm-node IP in a browser!</p>
+<p><a href=http://159.65.182.78:5000>http://159.65.182.78:5000</a></p>
+<p>It should work and show our app.</p>
+<p>The other IP should also work.</p>
+<h4 id=how-to-update-services-in-production>How to update services in Production?</h4>
+<p>What should we do if we want to update services in prod?</p>
+<p>Just run <code>docker stack deploy ...</code>!</p>
+<p>Docker will update our services automatically, on the swarm cluster.</p>
+<p>Let&rsquo;s see it in action.</p>
+<p>Let&rsquo;s use port 4000 instead of 5000.</p>
+<p>prod4000.yml:</p>
+<pre><code class=language-yml>version: &quot;3.0&quot;
 services:
   dockerapp:
     image: henryfbp/dockerapp
@@ -698,16 +1727,239 @@ services:
       replicas: 2
   redis:
     image: redis:3.2.0
-</code></pre><pre><code>docker stack deploy --compose-file prod4000.yml dockerapp_stack
-</code></pre><p>Output:</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack deploy --compose-file prod4000.yml dockerapp_stack
+</code></pre>
+<pre><code>docker stack deploy --compose-file prod4000.yml dockerapp_stack
+</code></pre>
+<p>Output:</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack deploy --compose-file prod4000.yml dockerapp_stack
 Updating service dockerapp_stack_dockerapp (id: 4wpd5sw3sb5wffn8mpha3da50)
 Updating service dockerapp_stack_redis (id: 2v4ublkvr2frbupxvgdfdcl6q)
-</code></pre><p>Let&rsquo;s check the ports with <code>docker stack services dockerapp_stack</code>&mldr;</p><pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack services dockerapp_stack
+</code></pre>
+<p>Let&rsquo;s check the ports with <code>docker stack services dockerapp_stack</code>&mldr;</p>
+<pre><code>vagrant@vagrant-virtualbox ~/G/dockerapp (master)&gt; docker stack services dockerapp_stack
 ID             NAME                        MODE         REPLICAS   IMAGE                       PORTS
 4wpd5sw3sb5w   dockerapp_stack_dockerapp   replicated   2/2        henryfbp/dockerapp:latest   *:4000-&gt;5000/tcp
 2v4ublkvr2fr   dockerapp_stack_redis       replicated   1/1        redis:3.2.0                 
-</code></pre><p>Woohoo! The port mapping was updated to 4000.</p><p>With <code>docker deploy</code>, we can also easily scale our services.</p><p>Let&rsquo;s say we want to add 1 more container for the <code>redis</code> service - Just add a <code>deploy:</code> key with <code>replicas: 2</code> and run <code>docker stack deploy (...)</code> again.</p><p>You can run <code>docker stack rm (...)</code> if you don&rsquo;t want it anymore.</p><h3 id=44-extra-learning-material-dockers-monitoring-tools>44. Extra learning Material: Dockers Monitoring Tools</h3><p>We didn&rsquo;t cover much about Docker monitoring strategy in this course. However, monitoring tools are handy option for a smooth functioning of your ops. If properly configured, logs and visual data can make a huge difference during troubleshooting.
-We have written a post to summarize some of the popular Docker monitoring tools that you can choose for your environment depending upon your needs.</p><p>Check this up if you are interested.</p><p><a href=https://www.level-up.one/dockers-monitoring-tools/>https://www.level-up.one/dockers-monitoring-tools/</a></p><h2 id=section-7-additional-learning-materials>Section 7: Additional Learning Materials</h2><h3 id=45-what-is-new-in-docker-1706>45. What is new in Docker 17.06</h3><p>Docker 17.06 (stable) was out at June 2017!</p><p>Docker moves very fast, with an edge channel released every month and a stable release every 3 months.</p><p>Watch a Video of Mano giving an overview of the new features in Docker 17.06 Community Edition: <a href="https://www.youtube.com/watch?v=-NeaXUGEK_g">https://www.youtube.com/watch?v=-NeaXUGEK_g</a></p><p>For a detailed list of changes, look through the Docker CE release notes on GitHub: <a href=https://github.com/docker/docker-ce/releases>https://github.com/docker/docker-ce/releases</a></p><h3 id=46-dockers-native-support-for-kubernetes>46. Docker&rsquo;s Native support for Kubernetes</h3><p>At DockerCon 2017 in Copenhagen, Docker announced that it&rsquo;s adding support to run applications using Docker’s Swarm orchestrator with Kubernetes on the same computer cluster itself!</p><p>Kubernetes is an container orchestration platform which we didn&rsquo;t cover much in this course(We are going to have a course about Kubernetes soon!) . You can think of Kubernetes as a Docker Swarm alternative, but Kubernetes is more production ready than Docker Swarm.</p><p>This is an exiting news! The introduction of Docker&rsquo;s native support for Kubernetes gives us the ability to make an orchestration choice with the added security, management and end-to-end Docker experience that we have expected for so long!</p><p>Want to read more? Check the news out!</p><p><a href=https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/>https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/</a></p><h3 id=47-future-learning>47. Future Learning</h3><p>See video.</p><h3 id=48-text-lecture-future-learning>48. Text Lecture: Future Learning</h3><p>Get a FREE copy of our DevOps book</p><p><a href=https://www.level-up.one/devops-pdf-book/>https://www.level-up.one/devops-pdf-book/</a></p><p>Join our DevOps Facebook Group</p><p><a href=https://www.facebook.com/groups/1911219079195863/>https://www.facebook.com/groups/1911219079195863/</a></p><h3 id=49-coupons-to-our-other-courses>49. Coupons to Our Other Courses</h3><p>We are happy to offer a $15 discount to our existing students for all our other Udemy courses.</p><p>The Complete Jenkins Course For Developers and DevOps($15, Udemy Best Seller in Jenkins category): <a href="https://www.udemy.com/the-complete-jenkins-course-for-developers-and-devops/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/the-complete-jenkins-course-for-developers-and-devops/?couponCode=DOCKER_STUDENT_15</a></p><p>IntelliJ IDEA Tricks to Boost Productivity for Java Devs ($15): <a href="https://www.udemy.com/intellij-idea-secrets-double-your-coding-speed-in-2-hours/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/intellij-idea-secrets-double-your-coding-speed-in-2-hours/?couponCode=DOCKER_STUDENT_15</a></p><p>Apache Spark with Java - Mastering Big Data! ($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15</a></p><p>Apache Spark with Scala - Learn Spark from a Big Data Guru($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-with-scala-mastering-big-data/?couponCode=https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-with-scala-mastering-big-data/?couponCode=https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15</a></p><p>Apache Spark with Python - Big Data with PySpark and Spark($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-with-python-big-data-with-pyspark-and-spark/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-with-python-big-data-with-pyspark-and-spark/?couponCode=DOCKER_STUDENT_15</a></p><p>Learn Kubernetes from a DevOps guru (Kubernetes + Docker): <a href="https://www.udemy.com/kubernetes-from-a-devops-kubernetes-guru/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/kubernetes-from-a-devops-kubernetes-guru/?couponCode=DOCKER_STUDENT_15</a></p><p>If you want more discounts, you can join my mailing list and you will get any of these courses with only $10 (more than 90% discount)</p><p><a href=http://www.level-up.one/join/>http://www.level-up.one/join/</a></p><p>As always, thanks for having us in your learning journey!</p><p>James and Tao</p></div><div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t"><div><span class="block font-bold">Previous</span>
-<a href=/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/ class=block>Devops Project CI/CD With Jenkins, Ansible, Docker, K8s</a></div><div class="md:text-right mt-4 md:mt-0"><span class="block font-bold">Next</span>
-<a href=/posts/hackthebox.eu-vaccine-writeup/ class=block>Hackthebox.eu "Vaccine" box Writeup</a></div></div></div><div class=col-span-2><div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg"><span class="text-lg font-semibold">On This Page</span></div><div class="sticky-toc hidden lg:block px-6 pb-6"><nav id=TableOfContents><ul><li><a href=#the-course>The course</a></li><li><a href=#section-1-get-started-with-docker>Section 1: Get Started with Docker</a><ul><li><a href=#1-course-overview>1. Course Overview</a></li><li><a href=#2-support>2. Support</a></li><li><a href=#3-support>3. Support</a></li><li><a href=#4-slides>4. Slides</a></li><li><a href=#5-intro-to-virtualization>5. Intro to virtualization</a></li><li><a href=#6-dockers-client-server-architecture>6. Docker&rsquo;s Client-Server architecture</a></li><li><a href=#7-install-docker>7. Install Docker</a></li><li><a href=#8-install-docker-toolbox>8. Install Docker Toolbox</a></li><li><a href=#9-important-concepts-of-docker-technology>9. Important Concepts of Docker Technology</a><ul><li><a href=#images>Images</a></li><li><a href=#containers>Containers</a></li><li><a href=#registries>Registries</a></li><li><a href=#repositories>Repositories</a></li><li><a href=#docker-hub>Docker Hub</a></li></ul></li><li><a href=#10-hello-world-docker-container>10. Hello World Docker Container</a></li><li><a href=#11-deep-dive-into-docker-containers>11. Deep Dive into Docker Containers</a></li><li><a href=#12-docker-port-mapping-and-docker-logs-command>12. Docker Port Mapping and Docker Logs Command</a></li><li><a href=#13-deep-dive-into-logging>13. Deep Dive into Logging</a></li></ul></li><li><a href=#section-2-working-with-docker-images>Section 2: Working with Docker Images</a><ul><li><a href=#14-docker-image-layers>14. Docker Image Layers</a></li><li><a href=#15-build-docker-images-by-using-docker-commit>15. Build Docker images by using <code>docker commit</code></a></li><li><a href=#16-build-docker-images-by-making-a-dockerfile>16. Build Docker Images by making a <code>Dockerfile</code></a></li><li><a href=#17-dockerfile-in-depth>17. Dockerfile in-depth</a><ul><li><a href=#chain-run-instructions>Chain RUN instructions</a></li><li><a href=#cmd-instructions>CMD Instructions</a></li><li><a href=#docker-cache>Docker Cache</a></li><li><a href=#aggressive-caching>Aggressive Caching</a></li><li><a href=#copy-instruction>COPY instruction</a></li><li><a href=#add-instruction>ADD instruction</a></li></ul></li><li><a href=#18-push-docker-images-to-docker-hub>18. Push Docker images to Docker Hub</a></li></ul></li><li><a href=#section-3-create-containerized-web-applications>Section 3: Create Containerized Web Applications</a><ul><li><a href=#19-containerize-a-simple-hello-world-web-application>19. Containerize a Simple Hello World Web Application</a></li><li><a href=#20-text-direction-containerize-a-hello-world-web-application>20. Text Direction: Containerize a Hello World Web Application</a></li><li><a href=#21-implement-a-simple-key-value-lookup-service>21. Implement a Simple Key-value Lookup Service</a></li><li><a href=#22-create-docker-container-links>22. Create Docker Container Links</a><ul><li><a href=#summary>Summary</a></li></ul></li><li><a href=#23-automate-current-workflow-with-docker-compose>23. Automate Current Workflow with Docker Compose</a><ul><li><a href=#why-docker-compose>Why Docker Compose?</a></li><li><a href=#summary-1>Summary</a></li></ul></li><li><a href=#24-deep-dive-into-docker-compose-workflow>24. Deep Dive into Docker Compose Workflow</a></li><li><a href=#25-extra-learning-things-to-watch-out-when-working-with-docker-containers>25. Extra Learning: Things to Watch out When Working with Docker Containers</a></li></ul></li><li><a href=#section-4-docker-networking>Section 4: Docker Networking</a><ul><li><a href=#26-introduction-to-docker-networking>26. Introduction to Docker Networking</a></li><li><a href=#27-none-network>27. None Network</a></li><li><a href=#28-bridge-network>28. Bridge Network</a><ul><li><a href=#separate-bridged-networks-cannot-communicate>Separate Bridged Networks cannot communicate</a></li><li><a href=#docker-network-connect>docker network connect</a></li><li><a href=#recap---bridge-network>Recap - Bridge Network</a></li></ul></li><li><a href=#29-host-network-and-overlay-network>29. Host Network and Overlay Network</a><ul><li><a href=#host-network>Host Network</a></li><li><a href=#overlay-network>Overlay Network</a></li></ul></li><li><a href=#30-d3-text-lecture-overlay-network>30. D3: Text Lecture: Overlay Network</a></li><li><a href=#31-define-container-networks-with-docker-compose>31. Define Container Networks with Docker Compose</a></li></ul></li><li><a href=#section-5-create-a-continuous-integration-pipeline>Section 5: Create a Continuous Integration Pipeline</a><ul><li><a href=#32-write-and-run-unit-tests-inside-containers>32. Write and Run Unit Tests inside Containers</a><ul><li><a href=#unit-tests-will>Unit tests will&mldr;</a></li><li><a href=#run-it-already>Run it already!</a></li></ul></li><li><a href=#33-introduction-to-continuous-integration>33. Introduction to Continuous Integration</a><ul><li><a href=#typical-ci-pipeline-wo-docker>Typical CI Pipeline w/o Docker</a></li><li><a href=#ci-process-with-docker-involved>CI process with Docker involved</a></li></ul></li><li><a href=#34-text-direction-introduction-to-continuous-integration>34. Text Direction: Introduction to Continuous Integration</a></li><li><a href=#35-link-circleci-with-github-account-for-setting-up-a-ci-workflow>35. Link CircleCI with Github Account for Setting up a CI Workflow</a></li><li><a href=#36-push-docker-images-to-dockerhub-from-circleci>36. Push Docker Images To DockerHub from CircleCI</a></li><li><a href=#37-trouble-shooting-push-docker-images-to-docker-hub>37. Trouble Shooting: Push Docker Images to Docker Hub</a></li></ul></li><li><a href=#section-6-deploy-docker-containers-in-production>Section 6: Deploy Docker Containers in Production</a><ul><li><a href=#38-introduction-to-running-docker-containers-in-production>38. Introduction to Running Docker Containers in Production</a><ul><li><a href=#opinions-about-running-docker-in-prod>Opinions about Running Docker in Prod</a></li><li><a href=#concerns-about-running-docker-in-prod>Concerns about Running Docker in Prod</a></li><li><a href=#companies-already-running-docker-in-production>Companies already running Docker in production</a></li><li><a href=#why-run-docker-containers-inside-vms>Why run Docker Containers inside VMs?</a></li><li><a href=#docker-machine>Docker Machine</a></li></ul></li><li><a href=#39-register-digital-ocean-account-for-deploying-containerized-applications>39. Register Digital Ocean Account for Deploying Containerized Applications</a></li><li><a href=#40-deploy-docker-application-to-the-cloud-with-docker-machine>40. Deploy Docker Application to the Cloud with Docker Machine</a></li><li><a href=#41-text-direction-deploy-docker-application-to-the-cloud-with-docker-machine>41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine</a></li><li><a href=#42-introduction-to-docker-swarm-and-set-up-swarm-cluster>42. Introduction to Docker Swarm and Set up Swarm Cluster</a><ul><li><a href=#how-swarm-cluster-works>How Swarm cluster works</a></li><li><a href=#provisioning-a-swarm-cluster>Provisioning a Swarm Cluster</a></li><li><a href=#docker-swarm-commands>Docker Swarm commands</a></li></ul></li><li><a href=#43-deploy-docker-app-services-to-the-cloud-via-docker-swarm>43. Deploy Docker App Services to the Cloud via Docker Swarm</a><ul><li><a href=#docker-services>Docker Services</a></li><li><a href=#docker-stack>Docker Stack</a></li><li><a href=#how-to-update-services-in-production>How to update services in Production?</a></li></ul></li><li><a href=#44-extra-learning-material-dockers-monitoring-tools>44. Extra learning Material: Dockers Monitoring Tools</a></li></ul></li><li><a href=#section-7-additional-learning-materials>Section 7: Additional Learning Materials</a><ul><li><a href=#45-what-is-new-in-docker-1706>45. What is new in Docker 17.06</a></li><li><a href=#46-dockers-native-support-for-kubernetes>46. Docker&rsquo;s Native support for Kubernetes</a></li><li><a href=#47-future-learning>47. Future Learning</a></li><li><a href=#48-text-lecture-future-learning>48. Text Lecture: Future Learning</a></li><li><a href=#49-coupons-to-our-other-courses>49. Coupons to Our Other Courses</a></li></ul></li></ul></nav></div><script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script></div></div><script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script></div></div></main><footer class=pl-scrollbar><div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+</code></pre>
+<p>Woohoo! The port mapping was updated to 4000.</p>
+<p>With <code>docker deploy</code>, we can also easily scale our services.</p>
+<p>Let&rsquo;s say we want to add 1 more container for the <code>redis</code> service - Just add a <code>deploy:</code> key with <code>replicas: 2</code> and run <code>docker stack deploy (...)</code> again.</p>
+<p>You can run <code>docker stack rm (...)</code> if you don&rsquo;t want it anymore.</p>
+<h3 id=44-extra-learning-material-dockers-monitoring-tools>44. Extra learning Material: Dockers Monitoring Tools</h3>
+<p>We didn&rsquo;t cover much about Docker monitoring strategy in this course. However, monitoring tools are handy option for a smooth functioning of your ops. If properly configured, logs and visual data can make a huge difference during troubleshooting.
+We have written a post to summarize some of the popular Docker monitoring tools that you can choose for your environment depending upon your needs.</p>
+<p>Check this up if you are interested.</p>
+<p><a href=https://www.level-up.one/dockers-monitoring-tools/>https://www.level-up.one/dockers-monitoring-tools/</a></p>
+<h2 id=section-7-additional-learning-materials>Section 7: Additional Learning Materials</h2>
+<h3 id=45-what-is-new-in-docker-1706>45. What is new in Docker 17.06</h3>
+<p>Docker 17.06 (stable) was out at June 2017!</p>
+<p>Docker moves very fast, with an edge channel released every month and a stable release every 3 months.</p>
+<p>Watch a Video of Mano giving an overview of the new features in Docker 17.06 Community Edition: <a href="https://www.youtube.com/watch?v=-NeaXUGEK_g">https://www.youtube.com/watch?v=-NeaXUGEK_g</a></p>
+<p>For a detailed list of changes, look through the Docker CE release notes on GitHub: <a href=https://github.com/docker/docker-ce/releases>https://github.com/docker/docker-ce/releases</a></p>
+<h3 id=46-dockers-native-support-for-kubernetes>46. Docker&rsquo;s Native support for Kubernetes</h3>
+<p>At DockerCon 2017 in Copenhagen, Docker announced that it&rsquo;s adding support to run applications using Docker’s Swarm orchestrator with Kubernetes on the same computer cluster itself!</p>
+<p>Kubernetes is an container orchestration platform which we didn&rsquo;t cover much in this course(We are going to have a course about Kubernetes soon!) . You can think of Kubernetes as a Docker Swarm alternative, but Kubernetes is more production ready than Docker Swarm.</p>
+<p>This is an exiting news! The introduction of Docker&rsquo;s native support for Kubernetes gives us the ability to make an orchestration choice with the added security, management and end-to-end Docker experience that we have expected for so long!</p>
+<p>Want to read more? Check the news out!</p>
+<p><a href=https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/>https://www.level-up.one/dockers-native-support-to-kubernetes-for-a-containerization-revolution/</a></p>
+<h3 id=47-future-learning>47. Future Learning</h3>
+<p>See video.</p>
+<h3 id=48-text-lecture-future-learning>48. Text Lecture: Future Learning</h3>
+<p>Get a FREE copy of our DevOps book</p>
+<p><a href=https://www.level-up.one/devops-pdf-book/>https://www.level-up.one/devops-pdf-book/</a></p>
+<p>Join our DevOps Facebook Group</p>
+<p><a href=https://www.facebook.com/groups/1911219079195863/>https://www.facebook.com/groups/1911219079195863/</a></p>
+<h3 id=49-coupons-to-our-other-courses>49. Coupons to Our Other Courses</h3>
+<p>We are happy to offer a $15 discount to our existing students for all our other Udemy courses.</p>
+<p>The Complete Jenkins Course For Developers and DevOps($15, Udemy Best Seller in Jenkins category): <a href="https://www.udemy.com/the-complete-jenkins-course-for-developers-and-devops/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/the-complete-jenkins-course-for-developers-and-devops/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>IntelliJ IDEA Tricks to Boost Productivity for Java Devs ($15): <a href="https://www.udemy.com/intellij-idea-secrets-double-your-coding-speed-in-2-hours/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/intellij-idea-secrets-double-your-coding-speed-in-2-hours/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>Apache Spark with Java - Mastering Big Data! ($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>Apache Spark with Scala - Learn Spark from a Big Data Guru($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-with-scala-mastering-big-data/?couponCode=https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-with-scala-mastering-big-data/?couponCode=https://www.udemy.com/apache-spark-course-with-java/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>Apache Spark with Python - Big Data with PySpark and Spark($15, Udemy Best Seller in Apache Spark Category): <a href="https://www.udemy.com/apache-spark-with-python-big-data-with-pyspark-and-spark/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/apache-spark-with-python-big-data-with-pyspark-and-spark/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>Learn Kubernetes from a DevOps guru (Kubernetes + Docker): <a href="https://www.udemy.com/kubernetes-from-a-devops-kubernetes-guru/?couponCode=DOCKER_STUDENT_15">https://www.udemy.com/kubernetes-from-a-devops-kubernetes-guru/?couponCode=DOCKER_STUDENT_15</a></p>
+<p>If you want more discounts, you can join my mailing list and you will get any of these courses with only $10 (more than 90% discount)</p>
+<p><a href=http://www.level-up.one/join/>http://www.level-up.one/join/</a></p>
+<p>As always, thanks for having us in your learning journey!</p>
+<p>James and Tao</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">Previous</span>
+<a href=/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/ class=block>Devops Project CI/CD With Jenkins, Ansible, Docker, K8s</a>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">Next</span>
+<a href=/posts/hackthebox.eu-vaccine-writeup/ class=block>Hackthebox.eu "Vaccine" box Writeup</a>
+</div>
+</div>
+</div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#the-course>The course</a></li>
+<li><a href=#section-1-get-started-with-docker>Section 1: Get Started with Docker</a>
+<ul>
+<li><a href=#1-course-overview>1. Course Overview</a></li>
+<li><a href=#2-support>2. Support</a></li>
+<li><a href=#3-support>3. Support</a></li>
+<li><a href=#4-slides>4. Slides</a></li>
+<li><a href=#5-intro-to-virtualization>5. Intro to virtualization</a></li>
+<li><a href=#6-dockers-client-server-architecture>6. Docker&rsquo;s Client-Server architecture</a></li>
+<li><a href=#7-install-docker>7. Install Docker</a></li>
+<li><a href=#8-install-docker-toolbox>8. Install Docker Toolbox</a></li>
+<li><a href=#9-important-concepts-of-docker-technology>9. Important Concepts of Docker Technology</a>
+<ul>
+<li><a href=#images>Images</a></li>
+<li><a href=#containers>Containers</a></li>
+<li><a href=#registries>Registries</a></li>
+<li><a href=#repositories>Repositories</a></li>
+<li><a href=#docker-hub>Docker Hub</a></li>
+</ul>
+</li>
+<li><a href=#10-hello-world-docker-container>10. Hello World Docker Container</a></li>
+<li><a href=#11-deep-dive-into-docker-containers>11. Deep Dive into Docker Containers</a></li>
+<li><a href=#12-docker-port-mapping-and-docker-logs-command>12. Docker Port Mapping and Docker Logs Command</a></li>
+<li><a href=#13-deep-dive-into-logging>13. Deep Dive into Logging</a></li>
+</ul>
+</li>
+<li><a href=#section-2-working-with-docker-images>Section 2: Working with Docker Images</a>
+<ul>
+<li><a href=#14-docker-image-layers>14. Docker Image Layers</a></li>
+<li><a href=#15-build-docker-images-by-using-docker-commit>15. Build Docker images by using <code>docker commit</code></a></li>
+<li><a href=#16-build-docker-images-by-making-a-dockerfile>16. Build Docker Images by making a <code>Dockerfile</code></a></li>
+<li><a href=#17-dockerfile-in-depth>17. Dockerfile in-depth</a>
+<ul>
+<li><a href=#chain-run-instructions>Chain RUN instructions</a></li>
+<li><a href=#cmd-instructions>CMD Instructions</a></li>
+<li><a href=#docker-cache>Docker Cache</a></li>
+<li><a href=#aggressive-caching>Aggressive Caching</a></li>
+<li><a href=#copy-instruction>COPY instruction</a></li>
+<li><a href=#add-instruction>ADD instruction</a></li>
+</ul>
+</li>
+<li><a href=#18-push-docker-images-to-docker-hub>18. Push Docker images to Docker Hub</a></li>
+</ul>
+</li>
+<li><a href=#section-3-create-containerized-web-applications>Section 3: Create Containerized Web Applications</a>
+<ul>
+<li><a href=#19-containerize-a-simple-hello-world-web-application>19. Containerize a Simple Hello World Web Application</a></li>
+<li><a href=#20-text-direction-containerize-a-hello-world-web-application>20. Text Direction: Containerize a Hello World Web Application</a></li>
+<li><a href=#21-implement-a-simple-key-value-lookup-service>21. Implement a Simple Key-value Lookup Service</a></li>
+<li><a href=#22-create-docker-container-links>22. Create Docker Container Links</a>
+<ul>
+<li><a href=#summary>Summary</a></li>
+</ul>
+</li>
+<li><a href=#23-automate-current-workflow-with-docker-compose>23. Automate Current Workflow with Docker Compose</a>
+<ul>
+<li><a href=#why-docker-compose>Why Docker Compose?</a></li>
+<li><a href=#summary-1>Summary</a></li>
+</ul>
+</li>
+<li><a href=#24-deep-dive-into-docker-compose-workflow>24. Deep Dive into Docker Compose Workflow</a></li>
+<li><a href=#25-extra-learning-things-to-watch-out-when-working-with-docker-containers>25. Extra Learning: Things to Watch out When Working with Docker Containers</a></li>
+</ul>
+</li>
+<li><a href=#section-4-docker-networking>Section 4: Docker Networking</a>
+<ul>
+<li><a href=#26-introduction-to-docker-networking>26. Introduction to Docker Networking</a></li>
+<li><a href=#27-none-network>27. None Network</a></li>
+<li><a href=#28-bridge-network>28. Bridge Network</a>
+<ul>
+<li><a href=#separate-bridged-networks-cannot-communicate>Separate Bridged Networks cannot communicate</a></li>
+<li><a href=#docker-network-connect>docker network connect</a></li>
+<li><a href=#recap---bridge-network>Recap - Bridge Network</a></li>
+</ul>
+</li>
+<li><a href=#29-host-network-and-overlay-network>29. Host Network and Overlay Network</a>
+<ul>
+<li><a href=#host-network>Host Network</a></li>
+<li><a href=#overlay-network>Overlay Network</a></li>
+</ul>
+</li>
+<li><a href=#30-d3-text-lecture-overlay-network>30. D3: Text Lecture: Overlay Network</a></li>
+<li><a href=#31-define-container-networks-with-docker-compose>31. Define Container Networks with Docker Compose</a></li>
+</ul>
+</li>
+<li><a href=#section-5-create-a-continuous-integration-pipeline>Section 5: Create a Continuous Integration Pipeline</a>
+<ul>
+<li><a href=#32-write-and-run-unit-tests-inside-containers>32. Write and Run Unit Tests inside Containers</a>
+<ul>
+<li><a href=#unit-tests-will>Unit tests will&mldr;</a></li>
+<li><a href=#run-it-already>Run it already!</a></li>
+</ul>
+</li>
+<li><a href=#33-introduction-to-continuous-integration>33. Introduction to Continuous Integration</a>
+<ul>
+<li><a href=#typical-ci-pipeline-wo-docker>Typical CI Pipeline w/o Docker</a></li>
+<li><a href=#ci-process-with-docker-involved>CI process with Docker involved</a></li>
+</ul>
+</li>
+<li><a href=#34-text-direction-introduction-to-continuous-integration>34. Text Direction: Introduction to Continuous Integration</a></li>
+<li><a href=#35-link-circleci-with-github-account-for-setting-up-a-ci-workflow>35. Link CircleCI with Github Account for Setting up a CI Workflow</a></li>
+<li><a href=#36-push-docker-images-to-dockerhub-from-circleci>36. Push Docker Images To DockerHub from CircleCI</a></li>
+<li><a href=#37-trouble-shooting-push-docker-images-to-docker-hub>37. Trouble Shooting: Push Docker Images to Docker Hub</a></li>
+</ul>
+</li>
+<li><a href=#section-6-deploy-docker-containers-in-production>Section 6: Deploy Docker Containers in Production</a>
+<ul>
+<li><a href=#38-introduction-to-running-docker-containers-in-production>38. Introduction to Running Docker Containers in Production</a>
+<ul>
+<li><a href=#opinions-about-running-docker-in-prod>Opinions about Running Docker in Prod</a></li>
+<li><a href=#concerns-about-running-docker-in-prod>Concerns about Running Docker in Prod</a></li>
+<li><a href=#companies-already-running-docker-in-production>Companies already running Docker in production</a></li>
+<li><a href=#why-run-docker-containers-inside-vms>Why run Docker Containers inside VMs?</a></li>
+<li><a href=#docker-machine>Docker Machine</a></li>
+</ul>
+</li>
+<li><a href=#39-register-digital-ocean-account-for-deploying-containerized-applications>39. Register Digital Ocean Account for Deploying Containerized Applications</a></li>
+<li><a href=#40-deploy-docker-application-to-the-cloud-with-docker-machine>40. Deploy Docker Application to the Cloud with Docker Machine</a></li>
+<li><a href=#41-text-direction-deploy-docker-application-to-the-cloud-with-docker-machine>41. Text Direction: Deploy Docker Application to the Cloud with Docker Machine</a></li>
+<li><a href=#42-introduction-to-docker-swarm-and-set-up-swarm-cluster>42. Introduction to Docker Swarm and Set up Swarm Cluster</a>
+<ul>
+<li><a href=#how-swarm-cluster-works>How Swarm cluster works</a></li>
+<li><a href=#provisioning-a-swarm-cluster>Provisioning a Swarm Cluster</a></li>
+<li><a href=#docker-swarm-commands>Docker Swarm commands</a></li>
+</ul>
+</li>
+<li><a href=#43-deploy-docker-app-services-to-the-cloud-via-docker-swarm>43. Deploy Docker App Services to the Cloud via Docker Swarm</a>
+<ul>
+<li><a href=#docker-services>Docker Services</a></li>
+<li><a href=#docker-stack>Docker Stack</a></li>
+<li><a href=#how-to-update-services-in-production>How to update services in Production?</a></li>
+</ul>
+</li>
+<li><a href=#44-extra-learning-material-dockers-monitoring-tools>44. Extra learning Material: Dockers Monitoring Tools</a></li>
+</ul>
+</li>
+<li><a href=#section-7-additional-learning-materials>Section 7: Additional Learning Materials</a>
+<ul>
+<li><a href=#45-what-is-new-in-docker-1706>45. What is new in Docker 17.06</a></li>
+<li><a href=#46-dockers-native-support-for-kubernetes>46. Docker&rsquo;s Native support for Kubernetes</a></li>
+<li><a href=#47-future-learning>47. Future Learning</a></li>
+<li><a href=#48-text-lecture-future-learning>48. Text Lecture: Future Learning</a></li>
+<li><a href=#49-coupons-to-our-other-courses>49. Coupons to Our Other Courses</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p>
+</div></div>
+</footer>
+</body>
+</html>

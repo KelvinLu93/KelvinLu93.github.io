@@ -1,18 +1,57 @@
-<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width"><title>Build Apps Using React: Introducing React for Web Applications | Henry Post</title><meta name=generator content="Hugo Eureka 0.8.0"><link rel=stylesheet href=/css/eureka.min.css><script defer src=/js/eureka.min.js></script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'"><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script><link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_2.png><link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_2.png><meta name=description content="Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;
+<!doctype html><html lang=en><meta charset=utf-8>
+<meta name=viewport content="width=device-width">
+<title>Build Apps Using React: Introducing React for Web Applications | Henry Post</title>
+<meta name=generator content="Hugo Eureka 0.8.0">
+<link rel=stylesheet href=/css/eureka.min.css>
+<script defer src=/js/eureka.min.js></script>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" as=style onload="this.onload=null,this.rel='stylesheet'">
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js integrity="sha256-uNYoXefWRqv+PsIF/OflNmwtKM4lStn9yrz2gVl6ymo=" crossorigin></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css integrity=sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X media=print onload="this.media='all',this.onload=null" crossorigin>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js integrity=sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4 crossorigin></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js integrity=sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa crossorigin></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script>
+<script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
+<link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
+<meta name=description content="Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;
 Work can be found below:
 https://github.com/HenryFBP/reactjs-learning
 Overview React is a declarative, component based JS lib made by FB.
 It uses an architectural design called &ldquo;Virtual DOM&rdquo; that makes it ideal for apps that work with fast-changing data.
 It also uses a declarative extension to JS called JSX, making it easy to control component rendering.
- Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -> JS    After this course, you&rsquo;ll implement a simple webpage using React APIs."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: Introducing React for Web Applications","item":"/posts/build-apps-using-react-introducing-react-for-web-applications/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-introducing-react-for-web-applications/"},"headline":"Build Apps Using React: Introducing React for Web Applications | Henry Post","datePublished":"2021-07-13T12:51:46-04:00","dateModified":"2021-07-13T12:51:46-04:00","wordCount":1924,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Skillsoft course, \u0026ldquo;Build Apps Using React: Introducing React for Web Applications\u0026rdquo;\nWork can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nOverview React is a declarative, component based JS lib made by FB.\nIt uses an architectural design called \u0026ldquo;Virtual DOM\u0026rdquo; that makes it ideal for apps that work with fast-changing data.\nIt also uses a declarative extension to JS called JSX, making it easy to control component rendering.\n Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -\u0026gt; JS    After this course, you\u0026rsquo;ll implement a simple webpage using React APIs."}</script><meta property="og:title" content="Build Apps Using React: Introducing React for Web Applications | Henry Post"><meta property="og:type" content="article"><meta property="og:image" content="/images/icon.png"><meta property="og:url" content="/posts/build-apps-using-react-introducing-react-for-web-applications/"><meta property="og:description" content="Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;
+ Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -> JS    After this course, you&rsquo;ll implement a simple webpage using React APIs.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: Introducing React for Web Applications","item":"/posts/build-apps-using-react-introducing-react-for-web-applications/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-introducing-react-for-web-applications/"},"headline":"Build Apps Using React: Introducing React for Web Applications | Henry Post","datePublished":"2021-07-13T12:51:46-04:00","dateModified":"2021-07-13T12:51:46-04:00","wordCount":1924,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Skillsoft course, \u0026ldquo;Build Apps Using React: Introducing React for Web Applications\u0026rdquo;\nWork can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nOverview React is a declarative, component based JS lib made by FB.\nIt uses an architectural design called \u0026ldquo;Virtual DOM\u0026rdquo; that makes it ideal for apps that work with fast-changing data.\nIt also uses a declarative extension to JS called JSX, making it easy to control component rendering.\n Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -\u0026gt; JS    After this course, you\u0026rsquo;ll implement a simple webpage using React APIs."}</script><meta property="og:title" content="Build Apps Using React: Introducing React for Web Applications | Henry Post">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/images/icon.png">
+<meta property="og:url" content="/posts/build-apps-using-react-introducing-react-for-web-applications/">
+<meta property="og:description" content="Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;
 Work can be found below:
 https://github.com/HenryFBP/reactjs-learning
 Overview React is a declarative, component based JS lib made by FB.
 It uses an architectural design called &ldquo;Virtual DOM&rdquo; that makes it ideal for apps that work with fast-changing data.
 It also uses a declarative extension to JS called JSX, making it easy to control component rendering.
- Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -> JS    After this course, you&rsquo;ll implement a simple webpage using React APIs."><meta property="og:locale" content="en"><meta property="og:site_name" content="Henry Post"><meta property="article:published_time" content="2021-07-13T12:51:46-04:00"><meta property="article:modified_time" content="2021-07-13T12:51:46-04:00"><meta property="article:section" content="posts"><body class="flex flex-col min-h-screen"><header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm"><div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
+ Virtual DOM  Helps React improve rendering by only updating changed components   JSX  Render into HTML   Babel compiler  JSX -> JS    After this course, you&rsquo;ll implement a simple webpage using React APIs.">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Henry Post">
+<meta property="article:published_time" content="2021-07-13T12:51:46-04:00">
+<meta property="article:modified_time" content="2021-07-13T12:51:46-04:00">
+<meta property="article:section" content="posts">
+<body class="flex flex-col min-h-screen">
+<header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+<div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+<a href=/ class="mr-6 text-primary-text text-xl font-bold">Henry Post</a>
 <button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
+<i class="fas fa-bars"></i>
+</button>
+<div id=target class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+<div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+<a href=/about-site/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">About Site</a>
 <a href=/contact/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Contact</a>
 <a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item mr-4">Posts</a>
 <a href=/hobbies/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Hobbies</a>
@@ -20,11 +59,126 @@ It also uses a declarative extension to JS called JSX, making it easy to control
 <a href=/resume/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Resume</a>
 <a href=/skills/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Skills</a>
 <a href=/certifications/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Certifications</a>
-<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
+<a href=/why-me/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent mr-4">Why me?</a>
+</div>
+<div class=flex>
+<div class="relative pt-4 md:pt-0">
+<div class="cursor-pointer hover:text-eureka" id=lightDarkMode>
+<i class="fas fa-adjust"></i>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open>
+</div>
+<div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions>
+<span class="px-4 py-1 hover:text-eureka" name=Light>Light</span>
 <span class="px-4 py-1 hover:text-eureka" name=Dark>Dark</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="flex-grow pt-16"><div class=pl-scrollbar><div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto"><div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12"><div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8"><h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: Introducing React for Web Applications</h1><div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text"><div class="mr-6 my-2"><i class="fas fa-calendar mr-1"></i>
-<span>2021-07-13</span></div><div class="mr-6 my-2"><i class="fas fa-clock mr-1"></i>
-<span>10 min read</span></div></div><div class=content><p>Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;</p><p>Work can be found below:</p><p><a href=https://github.com/HenryFBP/reactjs-learning>https://github.com/HenryFBP/reactjs-learning</a></p><h2 id=overview>Overview</h2><p>React is a declarative, component based JS lib made by FB.</p><p>It uses an architectural design called &ldquo;Virtual DOM&rdquo; that makes it ideal for apps that work with fast-changing data.</p><p>It also uses a declarative extension to JS called JSX, making it easy to control component rendering.</p><ul><li>Virtual DOM<ul><li>Helps React improve rendering by only updating changed components</li></ul></li><li>JSX<ul><li>Render into HTML</li></ul></li><li>Babel compiler<ul><li>JSX -> JS</li></ul></li></ul><p>After this course, you&rsquo;ll implement a simple webpage using React APIs.</p><h2 id=introducing-react>Introducing React</h2><p>In 1990s-2000s, we used static HTML/CSS webpages. No real JS.</p><p>In 2000-2010, we started using JS to run clientside code to enhance webpages.</p><h3 id=what-is-react>What is React?</h3><p>Using plain JS to make web apps is a PITA. Web apps aren&rsquo;t really maintainable with vanilla JS.</p><ul><li>React is a lib that helps web devs make interactive web apps.</li><li>UI building in structured and maintainable way</li><li>Used a LOT in Facebook, built for FB</li><li>Open source project</li><li>Instagram uses React too</li><li>React is relatively new, public in May 2013<ul><li>But very good for making component-based UI</li></ul></li></ul><p>React is NOT a framework.</p><p>React is a UI Library. It allows you to build components that are:</p><ul><li>Reusable</li><li>Stateful</li><li>Interactive</li></ul><h3 id=mvc-programming-paradigm>MVC programming paradigm</h3><p>UI interfaces generally follow the model-view-controller paradigm.</p><ul><li>Model<ul><li>UIs have to work with data used to CRUD data.</li><li>What is used to represent the data. i.e. DB model, <code>Person</code> etc.</li></ul></li><li>View<ul><li>What the user sees.</li><li>The data is visualized using the view.</li></ul></li><li>Controller<ul><li>All of the complex bits that allow the View to work with the Model.</li></ul></li></ul><p>When you build UIs, you split up components to be part of the Model, View, or Controller.</p><p>React focuses entirely on the View. It does not interact with the data directly.</p><p>It is used to build component-based UIs.</p><p>Every UI is made of logical units - called &ldquo;Components&rdquo;.</p><p>The whole idea behind using React is that these Components are reusable. Developed once and meant to be reused across multiple pages and applications.</p><p>Simple Components come together in React to make more complex Components.</p><p>&ldquo;Component-driven Development&rdquo;.</p><h2 id=thinking-in-react>Thinking in React</h2><p>Let&rsquo;s say we have a UI that looks like this:</p><pre><code>Search: ________
+<span class="px-4 py-1 hover:text-eureka" name=Auto>Auto</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile>
+</div>
+</nav>
+<script>let element=document.getElementById('lightDarkMode');storageColorScheme==null||storageColorScheme=='Auto'?document.addEventListener('DOMContentLoaded',()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change',switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'sun'),element.firstElementChild.classList.add('fa-sun')):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove('fa-adjust'),element.firstElementChild.setAttribute("data-icon",'moon'),element.firstElementChild.classList.add('fa-moon')),document.addEventListener('DOMContentLoaded',()=>{getcolorscheme(),switchBurger()})</script>
+</div>
+</header>
+<main class="flex-grow pt-16">
+<div class=pl-scrollbar>
+<div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: Introducing React for Web Applications</h1>
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+<div class="mr-6 my-2">
+<i class="fas fa-calendar mr-1"></i>
+<span>2021-07-13</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-clock mr-1"></i>
+<span>10 min read</span>
+</div>
+</div>
+<div class=content>
+<p>Skillsoft course, &ldquo;Build Apps Using React: Introducing React for Web Applications&rdquo;</p>
+<p>Work can be found below:</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning>https://github.com/HenryFBP/reactjs-learning</a></p>
+<h2 id=overview>Overview</h2>
+<p>React is a declarative, component based JS lib made by FB.</p>
+<p>It uses an architectural design called &ldquo;Virtual DOM&rdquo; that makes it ideal for apps that work with fast-changing data.</p>
+<p>It also uses a declarative extension to JS called JSX, making it easy to control component rendering.</p>
+<ul>
+<li>Virtual DOM
+<ul>
+<li>Helps React improve rendering by only updating changed components</li>
+</ul>
+</li>
+<li>JSX
+<ul>
+<li>Render into HTML</li>
+</ul>
+</li>
+<li>Babel compiler
+<ul>
+<li>JSX -> JS</li>
+</ul>
+</li>
+</ul>
+<p>After this course, you&rsquo;ll implement a simple webpage using React APIs.</p>
+<h2 id=introducing-react>Introducing React</h2>
+<p>In 1990s-2000s, we used static HTML/CSS webpages. No real JS.</p>
+<p>In 2000-2010, we started using JS to run clientside code to enhance webpages.</p>
+<h3 id=what-is-react>What is React?</h3>
+<p>Using plain JS to make web apps is a PITA. Web apps aren&rsquo;t really maintainable with vanilla JS.</p>
+<ul>
+<li>React is a lib that helps web devs make interactive web apps.</li>
+<li>UI building in structured and maintainable way</li>
+<li>Used a LOT in Facebook, built for FB</li>
+<li>Open source project</li>
+<li>Instagram uses React too</li>
+<li>React is relatively new, public in May 2013
+<ul>
+<li>But very good for making component-based UI</li>
+</ul>
+</li>
+</ul>
+<p>React is NOT a framework.</p>
+<p>React is a UI Library. It allows you to build components that are:</p>
+<ul>
+<li>Reusable</li>
+<li>Stateful</li>
+<li>Interactive</li>
+</ul>
+<h3 id=mvc-programming-paradigm>MVC programming paradigm</h3>
+<p>UI interfaces generally follow the model-view-controller paradigm.</p>
+<ul>
+<li>Model
+<ul>
+<li>UIs have to work with data used to CRUD data.</li>
+<li>What is used to represent the data. i.e. DB model, <code>Person</code> etc.</li>
+</ul>
+</li>
+<li>View
+<ul>
+<li>What the user sees.</li>
+<li>The data is visualized using the view.</li>
+</ul>
+</li>
+<li>Controller
+<ul>
+<li>All of the complex bits that allow the View to work with the Model.</li>
+</ul>
+</li>
+</ul>
+<p>When you build UIs, you split up components to be part of the Model, View, or Controller.</p>
+<p>React focuses entirely on the View. It does not interact with the data directly.</p>
+<p>It is used to build component-based UIs.</p>
+<p>Every UI is made of logical units - called &ldquo;Components&rdquo;.</p>
+<p>The whole idea behind using React is that these Components are reusable. Developed once and meant to be reused across multiple pages and applications.</p>
+<p>Simple Components come together in React to make more complex Components.</p>
+<p>&ldquo;Component-driven Development&rdquo;.</p>
+<h2 id=thinking-in-react>Thinking in React</h2>
+<p>Let&rsquo;s say we have a UI that looks like this:</p>
+<pre><code>Search: ________
 
 [ ] Only show products in stock
 
@@ -39,7 +193,212 @@ Basketball  $29.99
 iPod Touch  $99.99
 iPhone 5    $399.99
 Nexus 7     $199.99
-</code></pre><p>You can see we have two categories - electronics and sporting goods.</p><p>We can break this UI down into a component hierarchy.</p><p><a href=https://reactjs.org/docs/thinking-in-react.html>https://reactjs.org/docs/thinking-in-react.html</a></p><p><img src=/images/Build-Apps-Using-React-Introducing-React-for-Web-Applications/react-components.png alt></p><ol><li>FilterableProductTable (orange): contains the entirety of the example</li></ol><p>The entire UI (orange) can be thought of as a top-level component. Lets&rsquo;s call it a <code>FilterableProductTable</code>. And it&rsquo;s the root of our component hierarchy.</p><ol start=2><li>SearchBar (blue): receives all user input</li></ol><p>Next, the search bar and checkbox can be another component. It obviously sits inside the <code>FilterableProductTable</code> component.</p><ol start=3><li>ProductTable (green): displays and filters the data collection based on user input</li></ol><p>The green table can be thought of as another nested component. This is the actual display of products available. Note that this product table can be further broken down into nested sub components.</p><p>For example, &ldquo;Sporting Goods&rdquo; and &ldquo;Electronics&rdquo; are their own categories and could be individual components, as category headers (4 and 5).</p><p>It is optional to you how granular you want to get when using the React JS library.</p><ol start=4><li>ProductCategoryRow (turquoise): displays a heading for each category</li><li>ProductRow (red): displays a row for each product</li></ol><p>All of these components together build a component tree:</p><ul><li>FilterableProductTable<ul><li>SearchBar</li><li>ProductTable<ul><li>ProductCategoryRow</li><li>ProductRow</li></ul></li></ul></li></ul><p>&mldr;</p><p>Components are considered &ldquo;well designed&rdquo; when when each component has a single responsibility.</p><p>This principle of &ldquo;Single Responsibility&rdquo; is a classic OOP design pattern. But is also important in component-driven dev&rsquo;t &ndash; each component has 1 responsibility and is reusable.</p><p>React is NOT a framework, but a concept and a library built using that concept.</p><h2 id=react-features>React Features</h2><ul><li>React is a declarative framework</li></ul><p>This means that design views are associated with state&mldr; As state changes, the views will update automatically.</p><ul><li>React is component-based</li></ul><p>Each component manages its own state. It doesn&rsquo;t concern itself with other component&rsquo;s state.</p><ul><li>React is extremely performant</li></ul><p>React uses a virtual DOM that gets compared with the actual DOM to avoid re-rendering the DOM, which is slow. React avoids excess DOM updates.</p><ul><li>React apps can be rendered serverside too.</li></ul><p>Node facilitates serverside rendering using a one-way data flow.</p><p>Data flow is strict - It flows only from the top level components to the bottom level components.</p><p>React supports web components, but it also supports React Native for Mobile apps.</p><h2 id=exploring-react-features>Exploring React Features</h2><h3 id=react-is-a-declarative-library>&ldquo;React is a Declarative Library&rdquo;</h3><p>You focus on designing views based on internal component state - That&rsquo;s all you need to worry about.</p><p>You just tell React what state you want the UI to be in - This abstracts out attribute manipulation, event handling, and DOM updates!!</p><p>Your focus should be on UI design. React handles rendering and updating components based on their state.</p><p>This makes code predictable, robust, and easy to debug.</p><p>Your responsibility is to say &ldquo;This is how my UI should look for this state&rdquo;.</p><h3 id=react-is-component-based>React is &ldquo;Component-based&rdquo;.</h3><p>React is component-based, and you need to follow component-driven dev&rsquo;t to code in React.</p><p>This means that view components in React have both the logic and the behavior of the view.</p><p>This eliminates bridging code where UI changes are relayed to the JS code, which updates the DOM automatically.</p><p>Grouping components together makes them manageable and easier to maintain.</p><h3 id=virtual-dom>Virtual DOM</h3><p>DOM rendering slows stuff down. VDOM fixes this. React keeps a copy of every DOM element. This copy is VDOM.</p><p>It&rsquo;s not wasteful to do this. It speeds up things.</p><p>It&rsquo;s an abstraction that lets us make fast UI changes without actually modifying the base DOM.</p><p>React compares changes between the DOM and VDOM during a &ldquo;reconcilliation process&rdquo; to see what DOM nodes need to be updated to minimize rendering.</p><p>This is all done automatically.</p><h3 id=serverside-rendering>Serverside rendering</h3><ul><li>VDOM enables rendering complete UIs without a browser</li><li>Serverside rendering can make initial page loads very fast</li></ul><h3 id=one-way-data-flow>One-way data flow</h3><p>React uses composition to build individual view components.</p><p>This means that data only flows one way down into individual components.</p><p>Data passed to React components flow from parent to child.</p><p>Components contain other components within them to build up complex views.</p><h3 id=react-native>React Native</h3><p>This is used to make mobile apps in JS using React.</p><p>React libs are separated into:</p><ol><li>Component libs</li><li>DOM libs</li></ol><p>In React Native,</p><ol><li>Component libs</li><li>Mobile app rendering libs</li></ol><p>RN lets you build platform agnostic native components with high-perf across multiple mobile platforms.</p><h2 id=the-virtual-dom>The Virtual DOM</h2><p>Example of a DOM:</p><ul><li>html<ul><li>body<ul><li>h4</li><li>p<ul><li>img</li><li>img</li></ul></li><li>p<ul><li>div</li></ul></li></ul></li></ul></li></ul><p>And React&rsquo;s corresponding in-memory representation:</p><ul><li>React Node<ul><li>React Node<ul><li>React Node</li><li>React Node<ul><li>React Node</li><li>React Node</li></ul></li><li>React Node<ul><li>React Node</li></ul></li></ul></li></ul></li></ul><p>React Nodes are also called &ldquo;React Elements&rdquo;.</p><h3 id=events>Events</h3><p>Events cause Elements to be updated.</p><ul><li>User Events<ul><li>Clicking, swiping, hovering</li></ul></li><li>Server Events<ul><li>Server responds with data</li></ul></li></ul><p>When the elements get updated, the view changes.</p><p>So the model getting updated causes the view to get updated.</p><h2 id=vdom-usefulness>VDOM Usefulness</h2><p>React first renders the changes to the VDOM.</p><p>Then, React will go compare all nodes between DOM and VDOM to see what nodes need to be updated.</p><p>React then only updates what&rsquo;s needed in the new DOM.</p><p>This is called &ldquo;Reconciliation&rdquo;.</p><p>This is also totally abstracted away from the user as long as you write React code using best practices.</p><p>Note: Virtual DOM is an abstraction/design pattern that React uses, it&rsquo;s not an actual technology.</p><p>Note 2: VDOM is NOT a &ldquo;Shadow DOM&rdquo; - Shadow DOM is a browser technology designed for scoping variables and CSS in web components.</p><p>&ldquo;React Fiber&rdquo; is an implementation of React&rsquo;s code algo for fast rendering and updates using incremental rendering.</p><h2 id=creating-a-simple-static-html-page>Creating a Simple Static HTML page</h2><p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact.html</a></p><p>&ldquo;unpkg&rdquo; is used to host libs.</p><h2 id=exploring-the-static-html-page>Exploring the static HTML page</h2><p>Download <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/StaticHTML/FirstReact.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/StaticHTML/FirstReact.html</a> and open it with your favorite browser.</p><p>Use <code>CTRL-SHIFT-I</code> to open Inspect Element.</p><p>Expand the <code>&lt;body></code> tag to see the <code>&lt;h1></code> tag created by the JS.</p><h3 id=console>Console</h3><p>Open console.</p><p>Notice the devtools extension message.</p><p>You can visit <a href=https://unpkg.com/browse/react@16.12.0/umd/>https://unpkg.com/browse/react@16.12.0/umd/</a> to see the React dev js code. Feel free to read some of the code.</p><p>You can also see react-dom at <a href=https://unpkg.com/browse/react-dom@16.12.0/umd/>https://unpkg.com/browse/react-dom@16.12.0/umd/</a>. You want &ldquo;react-dom.development.js&rdquo;.</p><h2 id=referencing-prod-react-libs>Referencing prod React libs</h2><p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact_Production.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact_Production.html</a>.</p><p>The only changes are that we use the prod react libs now, line 5/6.</p><h2 id=nested-elements-part-1>Nested Elements part 1</h2><p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElements.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElements.html</a>. See comments in file. Also run the file to see for yourself.</p><p>Tree of elements:</p><ul><li>div#my-react-app<ul><li>var outer_div_el<ul><li>var el</li><li>var another_el</li></ul></li></ul></li></ul><p>And the resulting HTML once JS runs:</p><pre><code class=language-html>&lt;div id=&quot;my-react-app&quot;&gt;
+</code></pre>
+<p>You can see we have two categories - electronics and sporting goods.</p>
+<p>We can break this UI down into a component hierarchy.</p>
+<p><a href=https://reactjs.org/docs/thinking-in-react.html>https://reactjs.org/docs/thinking-in-react.html</a></p>
+<p><img src=/images/Build-Apps-Using-React-Introducing-React-for-Web-Applications/react-components.png alt></p>
+<ol>
+<li>FilterableProductTable (orange): contains the entirety of the example</li>
+</ol>
+<p>The entire UI (orange) can be thought of as a top-level component. Lets&rsquo;s call it a <code>FilterableProductTable</code>. And it&rsquo;s the root of our component hierarchy.</p>
+<ol start=2>
+<li>SearchBar (blue): receives all user input</li>
+</ol>
+<p>Next, the search bar and checkbox can be another component. It obviously sits inside the <code>FilterableProductTable</code> component.</p>
+<ol start=3>
+<li>ProductTable (green): displays and filters the data collection based on user input</li>
+</ol>
+<p>The green table can be thought of as another nested component. This is the actual display of products available. Note that this product table can be further broken down into nested sub components.</p>
+<p>For example, &ldquo;Sporting Goods&rdquo; and &ldquo;Electronics&rdquo; are their own categories and could be individual components, as category headers (4 and 5).</p>
+<p>It is optional to you how granular you want to get when using the React JS library.</p>
+<ol start=4>
+<li>ProductCategoryRow (turquoise): displays a heading for each category</li>
+<li>ProductRow (red): displays a row for each product</li>
+</ol>
+<p>All of these components together build a component tree:</p>
+<ul>
+<li>FilterableProductTable
+<ul>
+<li>SearchBar</li>
+<li>ProductTable
+<ul>
+<li>ProductCategoryRow</li>
+<li>ProductRow</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&mldr;</p>
+<p>Components are considered &ldquo;well designed&rdquo; when when each component has a single responsibility.</p>
+<p>This principle of &ldquo;Single Responsibility&rdquo; is a classic OOP design pattern. But is also important in component-driven dev&rsquo;t &ndash; each component has 1 responsibility and is reusable.</p>
+<p>React is NOT a framework, but a concept and a library built using that concept.</p>
+<h2 id=react-features>React Features</h2>
+<ul>
+<li>React is a declarative framework</li>
+</ul>
+<p>This means that design views are associated with state&mldr; As state changes, the views will update automatically.</p>
+<ul>
+<li>React is component-based</li>
+</ul>
+<p>Each component manages its own state. It doesn&rsquo;t concern itself with other component&rsquo;s state.</p>
+<ul>
+<li>React is extremely performant</li>
+</ul>
+<p>React uses a virtual DOM that gets compared with the actual DOM to avoid re-rendering the DOM, which is slow. React avoids excess DOM updates.</p>
+<ul>
+<li>React apps can be rendered serverside too.</li>
+</ul>
+<p>Node facilitates serverside rendering using a one-way data flow.</p>
+<p>Data flow is strict - It flows only from the top level components to the bottom level components.</p>
+<p>React supports web components, but it also supports React Native for Mobile apps.</p>
+<h2 id=exploring-react-features>Exploring React Features</h2>
+<h3 id=react-is-a-declarative-library>&ldquo;React is a Declarative Library&rdquo;</h3>
+<p>You focus on designing views based on internal component state - That&rsquo;s all you need to worry about.</p>
+<p>You just tell React what state you want the UI to be in - This abstracts out attribute manipulation, event handling, and DOM updates!!</p>
+<p>Your focus should be on UI design. React handles rendering and updating components based on their state.</p>
+<p>This makes code predictable, robust, and easy to debug.</p>
+<p>Your responsibility is to say &ldquo;This is how my UI should look for this state&rdquo;.</p>
+<h3 id=react-is-component-based>React is &ldquo;Component-based&rdquo;.</h3>
+<p>React is component-based, and you need to follow component-driven dev&rsquo;t to code in React.</p>
+<p>This means that view components in React have both the logic and the behavior of the view.</p>
+<p>This eliminates bridging code where UI changes are relayed to the JS code, which updates the DOM automatically.</p>
+<p>Grouping components together makes them manageable and easier to maintain.</p>
+<h3 id=virtual-dom>Virtual DOM</h3>
+<p>DOM rendering slows stuff down. VDOM fixes this. React keeps a copy of every DOM element. This copy is VDOM.</p>
+<p>It&rsquo;s not wasteful to do this. It speeds up things.</p>
+<p>It&rsquo;s an abstraction that lets us make fast UI changes without actually modifying the base DOM.</p>
+<p>React compares changes between the DOM and VDOM during a &ldquo;reconcilliation process&rdquo; to see what DOM nodes need to be updated to minimize rendering.</p>
+<p>This is all done automatically.</p>
+<h3 id=serverside-rendering>Serverside rendering</h3>
+<ul>
+<li>VDOM enables rendering complete UIs without a browser</li>
+<li>Serverside rendering can make initial page loads very fast</li>
+</ul>
+<h3 id=one-way-data-flow>One-way data flow</h3>
+<p>React uses composition to build individual view components.</p>
+<p>This means that data only flows one way down into individual components.</p>
+<p>Data passed to React components flow from parent to child.</p>
+<p>Components contain other components within them to build up complex views.</p>
+<h3 id=react-native>React Native</h3>
+<p>This is used to make mobile apps in JS using React.</p>
+<p>React libs are separated into:</p>
+<ol>
+<li>Component libs</li>
+<li>DOM libs</li>
+</ol>
+<p>In React Native,</p>
+<ol>
+<li>Component libs</li>
+<li>Mobile app rendering libs</li>
+</ol>
+<p>RN lets you build platform agnostic native components with high-perf across multiple mobile platforms.</p>
+<h2 id=the-virtual-dom>The Virtual DOM</h2>
+<p>Example of a DOM:</p>
+<ul>
+<li>html
+<ul>
+<li>body
+<ul>
+<li>h4</li>
+<li>p
+<ul>
+<li>img</li>
+<li>img</li>
+</ul>
+</li>
+<li>p
+<ul>
+<li>div</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>And React&rsquo;s corresponding in-memory representation:</p>
+<ul>
+<li>React Node
+<ul>
+<li>React Node
+<ul>
+<li>React Node</li>
+<li>React Node
+<ul>
+<li>React Node</li>
+<li>React Node</li>
+</ul>
+</li>
+<li>React Node
+<ul>
+<li>React Node</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>React Nodes are also called &ldquo;React Elements&rdquo;.</p>
+<h3 id=events>Events</h3>
+<p>Events cause Elements to be updated.</p>
+<ul>
+<li>User Events
+<ul>
+<li>Clicking, swiping, hovering</li>
+</ul>
+</li>
+<li>Server Events
+<ul>
+<li>Server responds with data</li>
+</ul>
+</li>
+</ul>
+<p>When the elements get updated, the view changes.</p>
+<p>So the model getting updated causes the view to get updated.</p>
+<h2 id=vdom-usefulness>VDOM Usefulness</h2>
+<p>React first renders the changes to the VDOM.</p>
+<p>Then, React will go compare all nodes between DOM and VDOM to see what nodes need to be updated.</p>
+<p>React then only updates what&rsquo;s needed in the new DOM.</p>
+<p>This is called &ldquo;Reconciliation&rdquo;.</p>
+<p>This is also totally abstracted away from the user as long as you write React code using best practices.</p>
+<p>Note: Virtual DOM is an abstraction/design pattern that React uses, it&rsquo;s not an actual technology.</p>
+<p>Note 2: VDOM is NOT a &ldquo;Shadow DOM&rdquo; - Shadow DOM is a browser technology designed for scoping variables and CSS in web components.</p>
+<p>&ldquo;React Fiber&rdquo; is an implementation of React&rsquo;s code algo for fast rendering and updates using incremental rendering.</p>
+<h2 id=creating-a-simple-static-html-page>Creating a Simple Static HTML page</h2>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact.html</a></p>
+<p>&ldquo;unpkg&rdquo; is used to host libs.</p>
+<h2 id=exploring-the-static-html-page>Exploring the static HTML page</h2>
+<p>Download <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/StaticHTML/FirstReact.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/StaticHTML/FirstReact.html</a> and open it with your favorite browser.</p>
+<p>Use <code>CTRL-SHIFT-I</code> to open Inspect Element.</p>
+<p>Expand the <code>&lt;body></code> tag to see the <code>&lt;h1></code> tag created by the JS.</p>
+<h3 id=console>Console</h3>
+<p>Open console.</p>
+<p>Notice the devtools extension message.</p>
+<p>You can visit <a href=https://unpkg.com/browse/react@16.12.0/umd/>https://unpkg.com/browse/react@16.12.0/umd/</a> to see the React dev js code. Feel free to read some of the code.</p>
+<p>You can also see react-dom at <a href=https://unpkg.com/browse/react-dom@16.12.0/umd/>https://unpkg.com/browse/react-dom@16.12.0/umd/</a>. You want &ldquo;react-dom.development.js&rdquo;.</p>
+<h2 id=referencing-prod-react-libs>Referencing prod React libs</h2>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact_Production.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/StaticHTML/FirstReact_Production.html</a>.</p>
+<p>The only changes are that we use the prod react libs now, line 5/6.</p>
+<h2 id=nested-elements-part-1>Nested Elements part 1</h2>
+<p>See <a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElements.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElements.html</a>. See comments in file. Also run the file to see for yourself.</p>
+<p>Tree of elements:</p>
+<ul>
+<li>div#my-react-app
+<ul>
+<li>var outer_div_el
+<ul>
+<li>var el</li>
+<li>var another_el</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>And the resulting HTML once JS runs:</p>
+<pre><code class=language-html>&lt;div id=&quot;my-react-app&quot;&gt;
     &lt;div id=&quot;outer-div-id&quot;&gt;
         &lt;div id=&quot;inner-div-id&quot;&gt;
             &lt;h2 id=&quot;header-id&quot;&gt;Welcome to react!&lt;/h2&gt;
@@ -47,22 +406,52 @@ Nexus 7     $199.99
         &lt;p id=&quot;para-id&quot;&gt;React seems rather tedious to work with.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-</code></pre><p>Note that there&rsquo;s an error in the console&mldr;</p><pre><code>Warning: Each child in an array or iterator should have a unique &quot;key&quot; prop.
+</code></pre>
+<p>Note that there&rsquo;s an error in the console&mldr;</p>
+<pre><code>Warning: Each child in an array or iterator should have a unique &quot;key&quot; prop.
 
 Check the top-level render call using &lt;div&gt;. See https://fb.me/react-warning-keys for more information.
     in div
 warningWithoutStack @ react.development.js:316
-</code></pre><p>This is because &ldquo;el&rdquo; and &ldquo;another_el&rdquo; are siblings in the tree:</p><pre><code class=language-js>var element_list = [el, another_el];
-</code></pre><p>You <em>should</em> specify a key when running <code>React.createElement</code> to allow React to uniquely identify each element if they are siblings.</p><p>Ex:</p><pre><code class=language-js>var another_el = React.createElement(
+</code></pre>
+<p>This is because &ldquo;el&rdquo; and &ldquo;another_el&rdquo; are siblings in the tree:</p>
+<pre><code class=language-js>var element_list = [el, another_el];
+</code></pre>
+<p>You <em>should</em> specify a key when running <code>React.createElement</code> to allow React to uniquely identify each element if they are siblings.</p>
+<p>Ex:</p>
+<pre><code class=language-js>var another_el = React.createElement(
     &quot;p&quot;, { id: &quot;para-id&quot;, key: &quot;key2&quot; },
     &quot;React seems rather tedious to work with.&quot;);
-</code></pre><p>Here&rsquo;s the fixed version:</p><p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElementsWithUniqueKeys.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElementsWithUniqueKeys.html</a></p><h2 id=nested-elements-part-2>Nested Elements part 2</h2><p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/Lists.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/Lists.html</a></p><h2 id=jsx>JSX</h2><p>So, using <code>React.createElement</code> sucks&mldr; It is tedious AF. Let&rsquo;s not do that. Instead, JSX is something we can use.</p><p>JSX is a lot easier to work with for syntax reasons.</p><p>&ldquo;JavaScript Syntax Extension&rdquo; is a concise syntax to define a tree structure with attributes. It&rsquo;s an XML-based spec - but with JSX you can make custom tags and components.</p><p>You get to write HTML-like syntax that gets used to React so that HTML representation of components can coexist with JS code.</p><ul><li>Large trees representing the DOM are intuitively represented</li><li>Maintains the semantics of JS</li></ul><h2 id=babel-compiler>Babel Compiler</h2><p>JSX looks very similar to HTML. But it&rsquo;s not.</p><p>It&rsquo;s written in <code>&lt;script></code> tags and interpreted as JS.</p><p>You write code in JS, and then write JSX inside JS.</p><p>Example:</p><pre><code class=language-jsx>var some_list = (
+</code></pre>
+<p>Here&rsquo;s the fixed version:</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElementsWithUniqueKeys.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/NestedElementsWithUniqueKeys.html</a></p>
+<h2 id=nested-elements-part-2>Nested Elements part 2</h2>
+<p><a href=https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/Lists.html>https://github.com/HenryFBP/reactjs-learning/tree/master/react-for-web-apps/CreatingElements/Lists.html</a></p>
+<h2 id=jsx>JSX</h2>
+<p>So, using <code>React.createElement</code> sucks&mldr; It is tedious AF. Let&rsquo;s not do that. Instead, JSX is something we can use.</p>
+<p>JSX is a lot easier to work with for syntax reasons.</p>
+<p>&ldquo;JavaScript Syntax Extension&rdquo; is a concise syntax to define a tree structure with attributes. It&rsquo;s an XML-based spec - but with JSX you can make custom tags and components.</p>
+<p>You get to write HTML-like syntax that gets used to React so that HTML representation of components can coexist with JS code.</p>
+<ul>
+<li>Large trees representing the DOM are intuitively represented</li>
+<li>Maintains the semantics of JS</li>
+</ul>
+<h2 id=babel-compiler>Babel Compiler</h2>
+<p>JSX looks very similar to HTML. But it&rsquo;s not.</p>
+<p>It&rsquo;s written in <code>&lt;script></code> tags and interpreted as JS.</p>
+<p>You write code in JS, and then write JSX inside JS.</p>
+<p>Example:</p>
+<pre><code class=language-jsx>var some_list = (
     &lt;ul id=&quot;nav-id&quot;&gt;
         &lt;li&gt;Red&lt;/li&gt;
         &lt;li&gt;Green&lt;/li&gt;
     &lt;/ul&gt;
 );
-</code></pre><p>It&rsquo;s a good idea to use use parens and semicolon <code>( ... );</code> to ensure your JSX code is correct.</p><p>Note that this is not HTML.</p><p>This is its equivalent JS code, (which would be a pain to write compared to the JSX version):</p><pre><code class=language-js>var some_list = React.createElement(
+</code></pre>
+<p>It&rsquo;s a good idea to use use parens and semicolon <code>( ... );</code> to ensure your JSX code is correct.</p>
+<p>Note that this is not HTML.</p>
+<p>This is its equivalent JS code, (which would be a pain to write compared to the JSX version):</p>
+<pre><code class=language-js>var some_list = React.createElement(
     &quot;ul&quot;,
     { id: &quot;nav-id&quot; },
     React.createElement(
@@ -76,11 +465,55 @@ warningWithoutStack @ react.development.js:316
         &quot;Green&quot;
     )
 );
-</code></pre><p>Browsers do not understand JSX. So any JSX inside JS has to be compiled/translated to a form the browser understands.</p><p>We need to use Babel, a compiler, to turn JSX into JS.</p><p>React is compatible with features of ECMAScript6, or ES6. FYI, not all browsers support ES6&mldr; Babel can also turn ES6 into ES5, which is much more widely supported.</p><p>Babel can turn JSX into JS either:</p><ul><li>In dev mode in the browser, which is highly inefficient, or</li><li>At build time in prod environments, which is faster</li></ul><h2 id=jsx--babel>JSX + Babel</h2><p>Run this file in your browser.</p><p><a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleJSX.html</a></p><pre><code class=language-jsx>ReactDOM.render(
+</code></pre>
+<p>Browsers do not understand JSX. So any JSX inside JS has to be compiled/translated to a form the browser understands.</p>
+<p>We need to use Babel, a compiler, to turn JSX into JS.</p>
+<p>React is compatible with features of ECMAScript6, or ES6. FYI, not all browsers support ES6&mldr; Babel can also turn ES6 into ES5, which is much more widely supported.</p>
+<p>Babel can turn JSX into JS either:</p>
+<ul>
+<li>In dev mode in the browser, which is highly inefficient, or</li>
+<li>At build time in prod environments, which is faster</li>
+</ul>
+<h2 id=jsx--babel>JSX + Babel</h2>
+<p>Run this file in your browser.</p>
+<p><a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleJSX.html</a></p>
+<pre><code class=language-jsx>ReactDOM.render(
     &lt;h1&gt;Welcome to react!&lt;/h1&gt;,
     document.getElementById(&quot;my-react-app&quot;)
 )
-</code></pre><p>So much simpler.</p><h2 id=more-jsx>More JSX</h2><p>Our lists example, converted.</p><p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/ListsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/ListsJSX.html</a>.</p><h2 id=simple-expressions-with-jsx>Simple Expressions with JSX</h2><p>The previous example, but showing how to use &ldquo;expressions&rdquo; (string templates) in your JSX code.</p><p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleExpressionsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleExpressionsJSX.html</a>.</p><h2 id=more-expressions-with-jsx>More Expressions with JSX</h2><p>Function evaluation, <code>&lt;img></code> tags within elements.</p><p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/MoreExpressionsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/MoreExpressionsJSX.html</a>. Make sure the &ldquo;images&rdquo; folder is reachable relative to the HTML file.</p></div><div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t"><div><span class="block font-bold">Previous</span>
-<a href=/posts/build-apps-using-react-in-development-and-production/ class=block>Build Apps Using React: In Development and Production</a></div><div class="md:text-right mt-4 md:mt-0"><span class="block font-bold">Next</span>
-<a href=/posts/2021-07-08-spring-framework-master-class/ class=block>Spring Framework Master Class</a></div></div></div></div><script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script></div></div></main><footer class=pl-scrollbar><div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+</code></pre>
+<p>So much simpler.</p>
+<h2 id=more-jsx>More JSX</h2>
+<p>Our lists example, converted.</p>
+<p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/ListsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/ListsJSX.html</a>.</p>
+<h2 id=simple-expressions-with-jsx>Simple Expressions with JSX</h2>
+<p>The previous example, but showing how to use &ldquo;expressions&rdquo; (string templates) in your JSX code.</p>
+<p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleExpressionsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/SimpleExpressionsJSX.html</a>.</p>
+<h2 id=more-expressions-with-jsx>More Expressions with JSX</h2>
+<p>Function evaluation, <code>&lt;img></code> tags within elements.</p>
+<p>Run <a href=https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/MoreExpressionsJSX.html>https://github.com/HenryFBP/reactjs-learning/blob/master/react-for-web-apps/JSXBabel/MoreExpressionsJSX.html</a>. Make sure the &ldquo;images&rdquo; folder is reachable relative to the HTML file.</p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
+<span class="block font-bold">Previous</span>
+<a href=/posts/build-apps-using-react-in-development-and-production/ class=block>Build Apps Using React: In Development and Production</a>
+</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">Next</span>
+<a href=/posts/2021-07-08-spring-framework-master-class/ class=block>Spring Framework Master Class</a>
+</div>
+</div>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
+</div>
+</div>
+</main>
+<footer class=pl-scrollbar>
+<div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+<p class="text-sm text-tertiary-text">&copy; 2021 <a href=http://henrypost.net/>Henry Post</a>
+&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p>
+</div></div>
+</footer>
+</body>
+</html>
