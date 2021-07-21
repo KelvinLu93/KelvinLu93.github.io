@@ -2,6 +2,8 @@
 title: "Build Apps Using React: Introducing React for Web Applications"
 date: 2021-07-13T12:51:46-04:00
 draft: false
+toc: true
+categories: [react]
 ---
 
 Skillsoft course, "Build Apps Using React: Introducing React for Web Applications"

@@ -2,6 +2,8 @@
 title: "Build Apps Using React Props and State"
 date: 2021-07-19T10:41:01-05:00
 draft: false
+toc: true
+categories: [react]
 ---
 
 Work can be found below:

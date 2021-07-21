@@ -2,6 +2,8 @@
 title: "Build Apps Using React: In Development and Production"
 date: 2021-07-16T10:41:12-05:00
 draft: false
+toc: true
+categories: [react]
 ---
 
 ## Overview
