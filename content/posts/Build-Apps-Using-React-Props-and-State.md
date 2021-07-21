@@ -191,4 +191,4 @@ See commit `2c33bb32343a8b1f64baf6451d430fe6434ff0f8`.
 
 ## Accessing previous state
 
-## Summary
+see commit `0af27c333919e290b1d76918686d1ce712ea08fa`
