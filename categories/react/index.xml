@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>react on Henry Post</title><link>/categories/react/</link><description>Recent content in react on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Wed, 21 Jul 2021 12:47:58 -0500</lastBuildDate><atom:link href="/categories/react/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Apps Using React: Advanced Features in React</title><link>/posts/build-apps-using-react-advanced-features-in-react/</link><pubDate>Wed, 21 Jul 2021 12:47:58 -0500</pubDate><guid>/posts/build-apps-using-react-advanced-features-in-react/</guid><description>Lists without keys Unique Keys for lists Correct key usage Rendering using conditional if Conditional Rendering using variables Conditional Rendering using inline logical ops Ternary ops and preventing rendering Local state Disadvantages Removing state from lower level components Lifting state up to higher components Code reuse using inheritance Code reuse using composition Using composition to customize child elts Using composition for specialization etc</description></item><item><title>Build Apps Using React Props and State</title><link>/posts/build-apps-using-react-props-and-state/</link><pubDate>Mon, 19 Jul 2021 10:41:01 -0500</pubDate><guid>/posts/build-apps-using-react-props-and-state/</guid><description>Work can be found below:
+https://github.com/HenryFBP/reactjs-learning
+Props and State Props and state - data associated with components
+Props Components need to have a way to receive data from the rest of the app.
+And then a way to reference the data in the &amp;ldquo;render&amp;rdquo; function of the app.
+Then render() displays the data.
+There are two ways to pass data to a react component:
+props data you pass in from the rest of the app to a component so that the component can use the data to display itself state data that is internal to a component Let&amp;rsquo;s cover props first.</description></item><item><title>Build Apps Using React: In Development and Production</title><link>/posts/build-apps-using-react-in-development-and-production/</link><pubDate>Fri, 16 Jul 2021 10:41:12 -0500</pubDate><guid>/posts/build-apps-using-react-in-development-and-production/</guid><description>Overview Use create-react-app cli tool, and dev tools, to make an app and make a prod build of that app.
+Work can be found below:
+https://github.com/HenryFBP/reactjs-learning
+Setting up a Simple Comment Application Install deps:
+npm i -g create-react-app npx Install a react app with JSX, a Babel compiler, and WebPack for asset bundling/minification:
+npx create-react-app comment-app Start the app:
+cd comment-app npm start You can see that in src/index.js, this is where the &amp;ldquo;&amp;rdquo; element is defined, from App.</description></item><item><title>Build Apps Using React: Introducing React for Web Applications</title><link>/posts/build-apps-using-react-introducing-react-for-web-applications/</link><pubDate>Tue, 13 Jul 2021 12:51:46 -0400</pubDate><guid>/posts/build-apps-using-react-introducing-react-for-web-applications/</guid><description>Skillsoft course, &amp;ldquo;Build Apps Using React: Introducing React for Web Applications&amp;rdquo;
+Work can be found below:
+https://github.com/HenryFBP/reactjs-learning
+Overview React is a declarative, component based JS lib made by FB.
+It uses an architectural design called &amp;ldquo;Virtual DOM&amp;rdquo; that makes it ideal for apps that work with fast-changing data.
+It also uses a declarative extension to JS called JSX, making it easy to control component rendering.
+Virtual DOM Helps React improve rendering by only updating changed components JSX Render into HTML Babel compiler JSX -&amp;gt; JS After this course, you&amp;rsquo;ll implement a simple webpage using React APIs.</description></item></channel></rss>

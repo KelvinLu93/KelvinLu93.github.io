@@ -1,6 +1,6 @@
 <!doctype html><html lang=en><meta charset=utf-8>
 <meta name=viewport content="width=device-width">
-<title>Posts | Henry Post</title>
+<title>Build Apps Using React: Advanced Features in React | Henry Post</title>
 <meta name=generator content="Hugo Eureka 0.8.0">
 <link rel=stylesheet href=/css/eureka.min.css>
 <script defer src=/js/eureka.min.js></script>
@@ -17,17 +17,18 @@
 <script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js integrity="sha256-Zmpaaj+GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE=" crossorigin></script>
 <link rel=icon type=image/png sizes=32x32 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png>
 <link rel=apple-touch-icon sizes=180x180 href=/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png>
-<meta name=description content="Eureka is a elegant and powerful theme for Hugo.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Analyzing document-based malware and reverse engineering it","description":"The course The course this post is based off of is Expert Malware Analysis and Reverse Engineering by Abhinav Singh.\nhttps://www.udemy.com/course/expert-malware-analysis-and-reverse-engineering/\nMy code All of my code I used to create these screenshots and data is below.\nhttps://github.com/HenryFBP/VagrantPackerFiles/tree/master/vagrant/windows-analysis-and-vulnerable\nThe last commit that this content was modified on can be accessed below.\nhttps://github.com/HenryFBP/VagrantPackerFiles/tree/d2175b7252f8d3e16e0a41e193a9c7da35942245/\nTools   Windows VM\n https://github.com/HenryFBP/VagrantPackerFiles/tree/master/vagrant/windows-analysis-and-vulnerable    Documents\n oledump oleid olemeta    PDFs\n pdf-parser pdfid pdfobjflow3    MS Office file formats OLE Compound file  You can use oledump and oletools to view OLE files.","url":"/posts/2020-04-27-analyzing-document-based-malware-and-reverse-engineering-it/"},{"@type":"ListItem","position":2,"name":"Exploiting Vulnserver!","description":"My work/code View my work/code for this blog post at:\nhttps://github.com/HenryFBP/VagrantPackerFiles/tree/e6b73090ed23bda867f36a7f23951da6a54b55b6\nThe course As part of on-the-job training, I got the chance to take a really nice course on UDemy called \u0026lsquo;Ethical Hacking \u0026amp; Bug Hunting: Buffer Overflow For Beginners\u0026rsquo; by Eslam Medhat.\nhttps://www.udemy.com/course/buffer-overflow-course-exploit-development/\nIt uses Kali and Windows VMs that communicate with eachother in order to perform DLL injection that leads to a reverse shell being opened.\nAs someone who has never exploited this vulnerability before, this course gave me an intimate look into exactly how these attacks occur and how to craft one from scratch, provided you have the binary of the exploitable program.","url":"/posts/2020-04-07-exploiting-vulnserver/"}]}</script><meta property="og:title" content="Posts | Henry Post">
-<meta property="og:type" content="website">
+<meta name=description content="Lists without keys Unique Keys for lists Correct key usage Rendering using conditional if Conditional Rendering using variables Conditional Rendering using inline logical ops Ternary ops and preventing rendering Local state Disadvantages Removing state from lower level components Lifting state up to higher components Code reuse using inheritance Code reuse using composition Using composition to customize child elts Using composition for specialization etc ">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: Advanced Features in React","item":"/posts/build-apps-using-react-advanced-features-in-react/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-advanced-features-in-react/"},"headline":"Build Apps Using React: Advanced Features in React | Henry Post","datePublished":"2021-07-21T12:47:58-05:00","dateModified":"2021-07-21T12:47:58-05:00","wordCount":63,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Lists without keys Unique Keys for lists Correct key usage Rendering using conditional if Conditional Rendering using variables Conditional Rendering using inline logical ops Ternary ops and preventing rendering Local state Disadvantages Removing state from lower level components Lifting state up to higher components Code reuse using inheritance Code reuse using composition Using composition to customize child elts Using composition for specialization etc "}</script><meta property="og:title" content="Build Apps Using React: Advanced Features in React | Henry Post">
+<meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
-<meta property="og:url" content="/posts/">
-<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo.">
+<meta property="og:url" content="/posts/build-apps-using-react-advanced-features-in-react/">
+<meta property="og:description" content="Lists without keys Unique Keys for lists Correct key usage Rendering using conditional if Conditional Rendering using variables Conditional Rendering using inline logical ops Ternary ops and preventing rendering Local state Disadvantages Removing state from lower level components Lifting state up to higher components Code reuse using inheritance Code reuse using composition Using composition to customize child elts Using composition for specialization etc ">
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Henry Post">
-<meta property="og:updated_time" content="2021-07-21T12:47:58-05:00">
+<meta property="article:published_time" content="2021-07-21T12:47:58-05:00">
+<meta property="article:modified_time" content="2021-07-21T12:47:58-05:00">
 <meta property="article:section" content="posts">
-<link rel=alternate type=application/rss+xml href=/posts/index.xml title="Henry Post">
 <body class="flex flex-col min-h-screen">
 <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
 <div class="w-full max-w-screen-xl mx-auto"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=='Auto'||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName('html')[0].classList.add('dark')</script>
@@ -72,116 +73,83 @@
 <main class="flex-grow pt-16">
 <div class=pl-scrollbar>
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
-<article class="mx-6 my-8">
-<h1 class="font-bold text-3xl text-primary-text">Posts</h1>
-</article>
-<div class="bg-secondary-bg rounded px-6">
-<div class="overflow-hidden divide-y">
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/posts/2020-04-27-analyzing-document-based-malware-and-reverse-engineering-it/ class="font-bold text-xl hover:text-eureka">Analyzing document-based malware and reverse engineering it</a>
-</div>
-<div class=content>
-The course The course this post is based off of is Expert Malware Analysis and Reverse Engineering by Abhinav Singh.
-https://www.udemy.com/course/expert-malware-analysis-and-reverse-engineering/
-My code All of my code I used to create these screenshots and data is below.
-https://github.com/HenryFBP/VagrantPackerFiles/tree/master/vagrant/windows-analysis-and-vulnerable
-The last commit that this content was modified on can be accessed below.
-https://github.com/HenryFBP/VagrantPackerFiles/tree/d2175b7252f8d3e16e0a41e193a9c7da35942245/
-Tools Windows VM
-https://github.com/HenryFBP/VagrantPackerFiles/tree/master/vagrant/windows-analysis-and-vulnerable Documents
-oledump oleid olemeta PDFs
-pdf-parser pdfid pdfobjflow3 MS Office file formats OLE Compound file You can use oledump and oletools to view OLE files.
-</div>
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: Advanced Features in React</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
 <i class="fas fa-calendar mr-1"></i>
-<span>2020-04-27</span>
+<span>2021-07-21</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>15 min read</span>
+<span>1 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
-<a href=/categories/security/ class=hover:text-eureka>security</a>
-<span>, </span>
-<a href=/categories/hacking/ class=hover:text-eureka>hacking</a>
-<span>, </span>
-<a href=/categories/programming/ class=hover:text-eureka>programming</a>
+<a href=/categories/react/ class=hover:text-eureka>react</a>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class=py-6>
-<div class="flex flex-col-reverse lg:flex-row justify-between">
-<div class=w-full>
-<div class=mb-4>
-<a href=/posts/2020-04-07-exploiting-vulnserver/ class="font-bold text-xl hover:text-eureka">Exploiting Vulnserver!</a>
 </div>
 <div class=content>
-My work/code View my work/code for this blog post at:
-https://github.com/HenryFBP/VagrantPackerFiles/tree/e6b73090ed23bda867f36a7f23951da6a54b55b6
-The course As part of on-the-job training, I got the chance to take a really nice course on UDemy called &amp;lsquo;Ethical Hacking &amp;amp; Bug Hunting: Buffer Overflow For Beginners&amp;rsquo; by Eslam Medhat.
-https://www.udemy.com/course/buffer-overflow-course-exploit-development/
-It uses Kali and Windows VMs that communicate with eachother in order to perform DLL injection that leads to a reverse shell being opened.
-As someone who has never exploited this vulnerability before, this course gave me an intimate look into exactly how these attacks occur and how to craft one from scratch, provided you have the binary of the exploitable program.
+<h2 id=lists-without-keys>Lists without keys</h2>
+<h2 id=unique-keys-for-lists>Unique Keys for lists</h2>
+<h2 id=correct-key-usage>Correct key usage</h2>
+<h2 id=rendering-using-conditional-if>Rendering using conditional if</h2>
+<h2 id=conditional-rendering-using-variables>Conditional Rendering using variables</h2>
+<h2 id=conditional-rendering-using-inline-logical-ops>Conditional Rendering using inline logical ops</h2>
+<h2 id=ternary-ops-and-preventing-rendering>Ternary ops and preventing rendering</h2>
+<h2 id=local-state>Local state</h2>
+<h3 id=disadvantages>Disadvantages</h3>
+<h2 id=removing-state-from-lower-level-components>Removing state from lower level components</h2>
+<h2 id=lifting-state-up-to-higher-components>Lifting state up to higher components</h2>
+<h2 id=code-reuse-using-inheritance>Code reuse using inheritance</h2>
+<h2 id=code-reuse-using-composition>Code reuse using composition</h2>
+<h2 id=using-composition-to-customize-child-elts>Using composition to customize child elts</h2>
+<h2 id=using-composition-for-specialization>Using composition for specialization</h2>
+<h2 id=etc>etc</h2>
 </div>
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-<div class="mr-6 my-2">
-<i class="fas fa-calendar mr-1"></i>
-<span>2020-04-07</span>
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+<div>
 </div>
-<div class="mr-6 my-2">
-<i class="fas fa-clock mr-1"></i>
-<span>7 min read</span>
-</div>
-<div class="mr-6 my-2">
-<i class="fas fa-folder mr-1"></i>
-<a href=/categories/security/ class=hover:text-eureka>security</a>
-<span>, </span>
-<a href=/categories/hacking/ class=hover:text-eureka>hacking</a>
-<span>, </span>
-<a href=/categories/programming/ class=hover:text-eureka>programming</a>
-</div>
-</div>
+<div class="md:text-right mt-4 md:mt-0">
+<span class="block font-bold">Next</span>
+<a href=/posts/build-apps-using-react-props-and-state/ class=block>Build Apps Using React Props and State</a>
 </div>
 </div>
 </div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">On This Page</span>
 </div>
-</div>
-<ul class="pagination pagination-default">
-<li class=page-item>
-<a href=/posts/ aria-label=First class=page-link role=button><span aria-hidden=true>&#171;&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/posts/page/4/ aria-label=Previous class=page-link role=button><span aria-hidden=true>&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/posts/ aria-label="Page 1" class=page-link role=button>1</a>
-</li>
-<li class=page-item>
-<a href=/posts/page/2/ aria-label="Page 2" class=page-link role=button>2</a>
-</li>
-<li class=page-item>
-<a href=/posts/page/3/ aria-label="Page 3" class=page-link role=button>3</a>
-</li>
-<li class=page-item>
-<a href=/posts/page/4/ aria-label="Page 4" class=page-link role=button>4</a>
-</li>
-<li class="page-item active">
-<a href=# aria-current=page aria-label="Page 5" class=page-link role=button>5</a>
-</li>
-<li class="page-item disabled">
-<a href=# aria-disabled=true aria-label=Next class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;</span></a>
-</li>
-<li class="page-item disabled">
-<a href=# aria-disabled=true aria-label=Last class=page-link role=button tabindex=-1><span aria-hidden=true>&#187;&#187;</span></a>
-</li>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#lists-without-keys>Lists without keys</a></li>
+<li><a href=#unique-keys-for-lists>Unique Keys for lists</a></li>
+<li><a href=#correct-key-usage>Correct key usage</a></li>
+<li><a href=#rendering-using-conditional-if>Rendering using conditional if</a></li>
+<li><a href=#conditional-rendering-using-variables>Conditional Rendering using variables</a></li>
+<li><a href=#conditional-rendering-using-inline-logical-ops>Conditional Rendering using inline logical ops</a></li>
+<li><a href=#ternary-ops-and-preventing-rendering>Ternary ops and preventing rendering</a></li>
+<li><a href=#local-state>Local state</a>
+<ul>
+<li><a href=#disadvantages>Disadvantages</a></li>
 </ul>
+</li>
+<li><a href=#removing-state-from-lower-level-components>Removing state from lower level components</a></li>
+<li><a href=#lifting-state-up-to-higher-components>Lifting state up to higher components</a></li>
+<li><a href=#code-reuse-using-inheritance>Code reuse using inheritance</a></li>
+<li><a href=#code-reuse-using-composition>Code reuse using composition</a></li>
+<li><a href=#using-composition-to-customize-child-elts>Using composition to customize child elts</a></li>
+<li><a href=#using-composition-for-specialization>Using composition for specialization</a></li>
+<li><a href=#etc>etc</a></li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
+</div>
+</div>
+<script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
 </div>
 </div>
 </main>

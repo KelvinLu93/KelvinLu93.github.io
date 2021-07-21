@@ -86,7 +86,7 @@ cd comment-app npm start  You can see that in src/index.js, this is where the &l
 <div class=pl-scrollbar>
 <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
-<div class="col-span-2 lg:col-start-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+<div class="col-span-2 lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
 <h1 class="font-bold text-3xl text-primary-text">Build Apps Using React: In Development and Production</h1>
 <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
 <div class="mr-6 my-2">
@@ -96,6 +96,10 @@ cd comment-app npm start  You can see that in src/index.js, this is where the &l
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
 <span>2 min read</span>
+</div>
+<div class="mr-6 my-2">
+<i class="fas fa-folder mr-1"></i>
+<a href=/categories/react/ class=hover:text-eureka>react</a>
 </div>
 </div>
 <div class=content>
@@ -183,6 +187,27 @@ serve -s build/
 <a href=/posts/build-apps-using-react-introducing-react-for-web-applications/ class=block>Build Apps Using React: Introducing React for Web Applications</a>
 </div>
 </div>
+</div>
+<div class=col-span-2>
+<div class="sticky top-16 z-10 hidden lg:block px-6 py-4 bg-primary-bg">
+<span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#overview>Overview</a></li>
+<li><a href=#setting-up-a-simple-comment-application>Setting up a Simple Comment Application</a></li>
+<li><a href=#adding-state-to-the-app>Adding State to the app</a></li>
+<li><a href=#adding-comments>Adding comments</a></li>
+<li><a href=#deleting-comments>Deleting comments</a></li>
+<li><a href=#react-devtools>React devtools</a></li>
+<li><a href=#exploring-components-with-react-devtools>Exploring components with react devtools</a></li>
+<li><a href=#prod-build>Prod build</a></li>
+<li><a href=#serving-a-prod-build>Serving a prod build</a></li>
+</ul>
+</nav>
+</div>
+<script>window.addEventListener('DOMContentLoaded',()=>{enableStickyToc()})</script>
 </div>
 </div>
 <script>document.addEventListener('DOMContentLoaded',()=>{hljs.initHighlightingOnLoad()})</script>
