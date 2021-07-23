@@ -68,14 +68,48 @@ Let's say 70rup = 1usd.
 
 ## Removing state from lower level components
 
+Incomplete code as we removed the state but didn't lift it up yet.
+
+Commit `23cb98bfca74254437c2c3d3a67ab3d77e7fb3d1`.
+
 ## Lifting state up to higher components
+
+See commit `9f7c74a39af8f91372861b93d6fe558bd6142c52`.
 
 ## Code reuse using inheritance
 
+Ideally, don't duplicate functionality if you can avoid it.
+
+Like this commit: `13dc5d20109553f8a9200b7082ee83899efdd6cc`.
+
+Use inheritance to allow for code reuse, especially in React.
+
+In React, it's preferable to use "composition" instead of "inheritance" to reuse code.
+
+In Java, common practice is to make a "base class" and several "derived classes". (this is inheritance.)
+
+In React, it's possible to use inhertiance to reuse code, but it's not preferred.
+
+In this example, we use inheritance, but also will later see why Composition is BETTER than inheritance for code reuse when using React.
+
+See `e3f3860ee0693fefbc60d4b7c027950ff03783b1`.
+
 ## Code reuse using composition
+
+See `ec5effbc509428f0d54a415b7dc83e7fea4a133b`. Much simpler.
 
 ## Using composition to customize child elts
 
+Composition is all about containment. You use composition to enforce design principles on the components that make up your application.
+
+See `155647245eb6844171a0c047835b66ebb9fea248`.
+
 ## Using composition for specialization
 
-## etc
+
+
+## Global properties w/o context
+
+## Using context to specify global properties
+
+## Summary
