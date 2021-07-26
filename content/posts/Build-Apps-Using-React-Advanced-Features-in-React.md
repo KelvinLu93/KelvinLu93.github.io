@@ -106,10 +106,57 @@ See `155647245eb6844171a0c047835b66ebb9fea248`.
 
 ## Using composition for specialization
 
+Generally, in OOP like in Java, you often think of inheritance for specialization.
 
+The base class is more generic, and derived classes are more specific.
+
+i.e.:
+
+- Shape
+    -   Square
+        - Rectangle
+    -   Triange
+        -   EquilateralTriangle
+    -   Circle
+
+In React JS, you'll use composition for specialization.
+
+You make a more generic component that can take a number of values as input via props. You'll then customize this component using props to use for specialized cases.
+
+i.e. a specific component that calls a generic component and customizes it by passing in props.
+
+See commit `0adff014dae89f12363be2fe01f9cc852b8c4e14`
 
 ## Global properties w/o context
 
+Best practices in React dictates that data flows from higher level components down to lower level components via props.
+
+In React, state should be as high as possible and props get passed down to components for the purpose of rendering them.
+
+However, if you have a property specified across your app, and/or have a bunch of nested components within your app that need that property to render, update their state, or change their behavior.
+
+Passing a property like this through the nested component tree may be hard or impossible.
+
+What do we do in this situation?
+
+React lets us use a "Context" to let props flow through components in the tree without passing them manually.
+
+But first, an example of a simple app WITHOUT context, where we must manually pass down properties that are applicable to many components.
+
+See commit `b6d55cf61aa75f501f65e4905f4a85b177111567`.
+
 ## Using context to specify global properties
 
-## Summary
+If you have values that need to be propogated to a lot of components in arbitrary levels, and it's messy if you use props (i.e. repetetive), then you should use "Context" in React.
+
+Context lets you pass data through the component tree without manually passing it through props.
+
+Context is a good idea to use for:
+
+- Themes
+- Locales
+- Other data that generally applies to the entire application
+
+See commit `51b331c559be0f3a08fa902a8c3a10d1792c944c`.
+
+And then see commit `e0c2a9c040e0d814e86365f5971aca068b06d184` for an example of a "Context Provider", a way to specify a value for SOME context that can be consumed by child components. 
