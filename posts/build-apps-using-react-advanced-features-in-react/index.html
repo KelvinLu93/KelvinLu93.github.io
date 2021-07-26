@@ -29,7 +29,7 @@ Ternary ops and preventing rendering see commit 4897df902a9577df74dd53e14ba3ac06
 Local state (don&rsquo;t do this)  Where exactly should state be stored when you have a component tree?
  In the HIGHEST POSSIBLE component in the component tree.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Build Apps Using React: Advanced Features in React","item":"/posts/build-apps-using-react-advanced-features-in-react/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-advanced-features-in-react/"},"headline":"Build Apps Using React: Advanced Features in React | Henry Post","datePublished":"2021-07-21T12:47:58-05:00","dateModified":"2021-07-21T12:47:58-05:00","wordCount":365,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Work can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nLists without keys See commit 5c195b3be2f21b825eb93630919e8f16c7f2b5e6.\nUnique Keys for lists see commit 897258b579322daa5b80cd4d767ace2753f91c54\nCorrect key usage See commit 7e5a54395b3b56b197b65763b636ffd7d01b493c\nRendering using conditional if see commit 30deea9f99491f2fbf6501b8748bab6dbc64060f\nConditional Rendering using variables see commit 84afdf0de4687442e95595522c744d810ebeec2c\nConditional Rendering using inline logical ops see commit 731091a54d4bec6cd7573297615f55bedfec7f00\nTernary ops and preventing rendering see commit 4897df902a9577df74dd53e14ba3ac06845ebb8a\nLocal state (don\u0026rsquo;t do this)  Where exactly should state be stored when you have a component tree?\n In the HIGHEST POSSIBLE component in the component tree."}</script><meta property="og:title" content="Build Apps Using React: Advanced Features in React | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/build-apps-using-react-advanced-features-in-react/"},"headline":"Build Apps Using React: Advanced Features in React | Henry Post","datePublished":"2021-07-21T12:47:58-05:00","dateModified":"2021-07-21T12:47:58-05:00","wordCount":691,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"Work can be found below:\nhttps:\/\/github.com\/HenryFBP\/reactjs-learning\nLists without keys See commit 5c195b3be2f21b825eb93630919e8f16c7f2b5e6.\nUnique Keys for lists see commit 897258b579322daa5b80cd4d767ace2753f91c54\nCorrect key usage See commit 7e5a54395b3b56b197b65763b636ffd7d01b493c\nRendering using conditional if see commit 30deea9f99491f2fbf6501b8748bab6dbc64060f\nConditional Rendering using variables see commit 84afdf0de4687442e95595522c744d810ebeec2c\nConditional Rendering using inline logical ops see commit 731091a54d4bec6cd7573297615f55bedfec7f00\nTernary ops and preventing rendering see commit 4897df902a9577df74dd53e14ba3ac06845ebb8a\nLocal state (don\u0026rsquo;t do this)  Where exactly should state be stored when you have a component tree?\n In the HIGHEST POSSIBLE component in the component tree."}</script><meta property="og:title" content="Build Apps Using React: Advanced Features in React | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/build-apps-using-react-advanced-features-in-react/">
@@ -103,7 +103,7 @@ Local state (don&rsquo;t do this)  Where exactly should state be stored when you
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>2 min read</span>
+<span>4 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
@@ -165,9 +165,50 @@ Local state (don&rsquo;t do this)  Where exactly should state be stored when you
 <p>Composition is all about containment. You use composition to enforce design principles on the components that make up your application.</p>
 <p>See <code>155647245eb6844171a0c047835b66ebb9fea248</code>.</p>
 <h2 id=using-composition-for-specialization>Using composition for specialization</h2>
+<p>Generally, in OOP like in Java, you often think of inheritance for specialization.</p>
+<p>The base class is more generic, and derived classes are more specific.</p>
+<p>i.e.:</p>
+<ul>
+<li>Shape
+<ul>
+<li>Square
+<ul>
+<li>Rectangle</li>
+</ul>
+</li>
+<li>Triange
+<ul>
+<li>EquilateralTriangle</li>
+</ul>
+</li>
+<li>Circle</li>
+</ul>
+</li>
+</ul>
+<p>In React JS, you&rsquo;ll use composition for specialization.</p>
+<p>You make a more generic component that can take a number of values as input via props. You&rsquo;ll then customize this component using props to use for specialized cases.</p>
+<p>i.e. a specific component that calls a generic component and customizes it by passing in props.</p>
+<p>See commit <code>0adff014dae89f12363be2fe01f9cc852b8c4e14</code></p>
 <h2 id=global-properties-wo-context>Global properties w/o context</h2>
+<p>Best practices in React dictates that data flows from higher level components down to lower level components via props.</p>
+<p>In React, state should be as high as possible and props get passed down to components for the purpose of rendering them.</p>
+<p>However, if you have a property specified across your app, and/or have a bunch of nested components within your app that need that property to render, update their state, or change their behavior.</p>
+<p>Passing a property like this through the nested component tree may be hard or impossible.</p>
+<p>What do we do in this situation?</p>
+<p>React lets us use a &ldquo;Context&rdquo; to let props flow through components in the tree without passing them manually.</p>
+<p>But first, an example of a simple app WITHOUT context, where we must manually pass down properties that are applicable to many components.</p>
+<p>See commit <code>b6d55cf61aa75f501f65e4905f4a85b177111567</code>.</p>
 <h2 id=using-context-to-specify-global-properties>Using context to specify global properties</h2>
-<h2 id=summary>Summary</h2>
+<p>If you have values that need to be propogated to a lot of components in arbitrary levels, and it&rsquo;s messy if you use props (i.e. repetetive), then you should use &ldquo;Context&rdquo; in React.</p>
+<p>Context lets you pass data through the component tree without manually passing it through props.</p>
+<p>Context is a good idea to use for:</p>
+<ul>
+<li>Themes</li>
+<li>Locales</li>
+<li>Other data that generally applies to the entire application</li>
+</ul>
+<p>See commit <code>51b331c559be0f3a08fa902a8c3a10d1792c944c</code>.</p>
+<p>And then see commit <code>e0c2a9c040e0d814e86365f5971aca068b06d184</code> for an example of a &ldquo;Context Provider&rdquo;, a way to specify a value for SOME context that can be consumed by child components.</p>
 </div>
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
 <div>
@@ -205,7 +246,6 @@ Local state (don&rsquo;t do this)  Where exactly should state be stored when you
 <li><a href=#using-composition-for-specialization>Using composition for specialization</a></li>
 <li><a href=#global-properties-wo-context>Global properties w/o context</a></li>
 <li><a href=#using-context-to-specify-global-properties>Using context to specify global properties</a></li>
-<li><a href=#summary>Summary</a></li>
 </ul>
 </nav>
 </div>
