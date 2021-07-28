@@ -28,7 +28,7 @@ Overview React is a declarative, component based JS lib made by FB.
 It uses an architectural design called &amp;ldquo;Virtual DOM&amp;rdquo; that makes it ideal for apps that work with fast-changing data.
 It also uses a declarative extension to JS called JSX, making it easy to control component rendering.
 Virtual DOM Helps React improve rendering by only updating changed components JSX Render into HTML Babel compiler JSX -&amp;gt; JS After this course, you&amp;rsquo;ll implement a simple webpage using React APIs.</description></item><item><title>Spring Framework Master Class</title><link>/posts/2021-07-08-spring-framework-master-class/</link><pubDate>Thu, 08 Jul 2021 10:24:50 -0500</pubDate><guid>/posts/2021-07-08-spring-framework-master-class/</guid><description>From https://udemy.com/course/spring-tutorial-for-beginners/.
-Code can be found at
+Work for this can be found at https://github.com/HenryFBP/Spring-Framework-Master-Class
 Section 1. Intro to Spring What is Spring?
 A: It&amp;rsquo;s a Dependency Injection Framework.
 What is DI?
