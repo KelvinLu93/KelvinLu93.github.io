@@ -2,6 +2,13 @@
 title: Resume
 ---
 
+<iframe src="/files/resume.pdf" style="width:100%; height:-webkit-fill-available">
+</iframe>
+
+
+See below for a shorter text version, or [click here to download a PDF version.](/files/resume.pdf)
+
+
 ## TOC
 
 <!-- TOC -->
@@ -32,8 +39,6 @@ title: Resume
 <!-- /TOC -->
 
 ## Aside
-
-[Click here to download a PDF version.](/files/resume.pdf)
 	
 Henry Post
 
