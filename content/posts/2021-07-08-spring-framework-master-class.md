@@ -8,7 +8,7 @@ draft: false
 
 From <https://udemy.com/course/spring-tutorial-for-beginners/>.
 
-Code can be found at 
+Work for this  can be found at <https://github.com/HenryFBP/Spring-Framework-Master-Class>
 
 ## Section 1. Intro to Spring
 
@@ -157,7 +157,7 @@ Spring is a DI Framework!
 
 ## Section 2: Spring Master Class - Level 1 to Level 6 - Course Overview, Github & More
 
-### 2. Spring Framework Master Class - Overview
+### Spring Framework Master Class - Overview
 
 - <https://github.com/in28minutes/spring-master-class>
 - [Course Guide PDF](/files/2021-07-08-spring-framework-master-class/SpringMasterClass-CourseGuidev0.1.pdf)
@@ -166,17 +166,17 @@ You learn the basics of SF in 6 levels. See Course Guide.
 
 ## Section 3: Spring Level 1 - Introduction to Spring Framework in 10 Steps
 
-### 3. Section Introduction - Spring Framework in 10 Steps
+### Section Introduction - Spring Framework in 10 Steps
 
 See <https://github.com/in28minutes/spring-master-class/tree/master/01-spring-in-depth> for code.
 
-Use Eclise Oxyen.
+Use Eclipse Oxygen. (or intellij idea, i do)
 
-### 4. Spring Level 1, 2 and 3 - Github Folder
+### Spring Level 1, 2 and 3 - Github Folder
 
 Also, use Spring Initializr with version 2.3.1. Do NOT use snapshot versions.
 
-### 5. Step 1 - Setting up a Spring Project using <http://start.spring.io>
+### Step 1 - Setting up a Spring Project using <http://start.spring.io>
 
 Let's use <http://start.spring.io>.
 
@@ -186,25 +186,33 @@ Open Eclipse and "Import Existing Maven Projects".
 
 See <https://github.com/HenryFBP/Spring-Framework-Master-Class/tree/master/spring-in-5-steps> for pom.xml.
 
-6. Step 2 - Understanding Tight Coupling using the Binary Search Algorithm Example
+### Step 2 - Understanding Tight Coupling using the Binary Search Algorithm Example
 
-7. Step 3 - Making the Binary Search Algorithm Example Loosely Coupled
+See commit `57067849eacdd31b2fc6847eb0ebd064662e9bc2`.
 
-8. Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired
+### Step 3 - Making the Binary Search Algorithm Example Loosely Coupled
 
-9. Step 5 - What is happening in the background?
+The solution to tight coupling is to use an Interface in Java.
 
-10. Step 6 - Dynamic auto wiring and Troubleshooting - @Primary
+See commit `b89076ee702e351a48e1f567fc552f14a6a79ad6`
 
-11. Fastest Approach to Solve All Your Exceptions
+### Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired
 
-12. Step 7 - Constructor and Setter Injection
 
-13. Step 8 - Spring Modules
 
-14. Step 9 - Spring Projects
+### Step 5 - What is happening in the background?
 
-15. Step 10 - Why is Spring Popular?
+### Step 6 - Dynamic auto wiring and Troubleshooting - @Primary
+
+### Fastest Approach to Solve All Your Exceptions
+
+### Step 7 - Constructor and Setter Injection
+
+### Step 8 - Spring Modules
+
+### Step 9 - Spring Projects
+
+### Step 10 - Why is Spring Popular?
 
 ## Section 4: Spring Level 2 - Spring Framework in Depth
 
