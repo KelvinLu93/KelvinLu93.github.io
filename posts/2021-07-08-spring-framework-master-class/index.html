@@ -27,7 +27,7 @@ Dependency Below, the web layer depends on the business layer. The business laye
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:
 public class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); }  public class BubbleSortAlgo implements SortAlgo { .">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":1926,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:\npublic class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); }  public class BubbleSortAlgo implements SortAlgo { ."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":1964,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:\npublic class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); }  public class BubbleSortAlgo implements SortAlgo { ."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -265,6 +265,21 @@ public class BubbleSortAlgo implements SortAlgo {...}
 <p>The solution to tight coupling is to use an Interface in Java.</p>
 <p>See commit <code>b89076ee702e351a48e1f567fc552f14a6a79ad6</code></p>
 <h3 id=step-4---using-spring-framework-to-manage-dependencies---component-autowired>Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired</h3>
+<p>(A bean is an instance of a class)</p>
+<p>Spring needs to know:</p>
+<ul>
+<li>What are the beans?
+<ul>
+<li>use <code>@Component</code></li>
+</ul>
+</li>
+<li>What are the bean&rsquo;s dependencies?
+<ul>
+<li>use <code>@Autowired</code> to annotate a field as a dependency</li>
+</ul>
+</li>
+<li>Where can I search for beans?</li>
+</ul>
 <h3 id=step-5---what-is-happening-in-the-background>Step 5 - What is happening in the background?</h3>
 <h3 id=step-6---dynamic-auto-wiring-and-troubleshooting---primary>Step 6 - Dynamic auto wiring and Troubleshooting - @Primary</h3>
 <h3 id=fastest-approach-to-solve-all-your-exceptions>Fastest Approach to Solve All Your Exceptions</h3>
