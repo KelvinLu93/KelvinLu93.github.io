@@ -198,7 +198,15 @@ See commit `b89076ee702e351a48e1f567fc552f14a6a79ad6`
 
 ### Step 4 - Using Spring Framework to Manage Dependencies - @Component, @Autowired
 
+(A bean is an instance of a class)
 
+Spring needs to know:
+
+- What are the beans?
+    - use `@Component`
+- What are the bean's dependencies?
+    - use `@Autowired` to annotate a field as a dependency
+- Where can I search for beans?
 
 ### Step 5 - What is happening in the background?
 
