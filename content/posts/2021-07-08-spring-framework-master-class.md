@@ -10,6 +10,8 @@ From <https://udemy.com/course/spring-tutorial-for-beginners/>.
 
 Work for this  can be found at <https://github.com/HenryFBP/Spring-Framework-Master-Class>
 
+Work from the instructor can be found at <https://github.com/in28minutes/spring-master-class/tree/master>
+
 ## Section 1. Intro to Spring
 
 What is Spring?
@@ -298,41 +300,138 @@ Spring actually has great integration with data layers, JDBC, ORM (Hibernate/myB
 
 ### Section Introduction - Spring Framework in Depth
 
-17. Step 11 - Dependency Injection - A few more examples
+...
 
-18. Step 12 - Autowiring in Depth - by Name and @Primary
+### Step 11 - Dependency Injection - A few more examples
 
-19. Step 13 - Autowiring in Depth - @Qualifier annotation
+You can also use DI to hook up DAOs and services as well.
 
-20. Step 14 - Scope of a Bean - Prototype and Singleton
+### Step 12 - Autowiring in Depth - by Name and @Primary
 
-21. Step 15 - Complex Scope Scenarios of a Spring Bean - Mix Prototype and Singleton
+If your bean resolution is ambiguous to Spring, it will error:
 
-22. Step 15B - Difference Between Spring Singleton and GOF Singleton
+```
+Field sortAlgorithm in com.henry.spring.basics.springin5steps.BinarySearchImpl required a single bean, but 2 were found:
+	- bubbleSortAlgorithm: defined in file [C:\Users\henry\Github\Spring-Framework-Master-Class\spring-in-5-steps-level-2\target\classes\com\henry\spring\basics\springin5steps\BubbleSortAlgorithm.class]
+	- quickSortAlgorithm: defined in file [C:\Users\henry\Github\Spring-Framework-Master-Class\spring-in-5-steps-level-2\target\classes\com\henry\spring\basics\springin5steps\QuickSortAlgorithm.class]
 
-23. Step 16 - Using Component Scan to scan for beans
+Action:
 
-24. Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+```
 
-25. Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
+See commit `57bdb3af04534ae89b5e7596338c78adf582ecdd`.
 
-26. Ignore SLF4J Errors in Step 19 - We will fix them in Step 20
+Use `@Primary` to solve this if depending on an interface with multiple implementations, in commit `e318550207d6456805f2c330140a1ea196cda2b9`.
 
-27. Step 19 - Removing Spring Boot in Basic Application
+Or, like in this commit, `48bc0d30cb1b083694745cfb1c6cf37400be339b`, autowire by name:
 
-28. Step 20 - Fixing minor stuff - Add Logback and Close Application Context
+`private SortAlgorithm bubbleSortAlgorithm;`
 
-29. Step 21 - Defining Spring Application Context using XML - Part 1
+Note that `@Primary` has higher priority over name autowiring.
 
-30. Step 22 - Defining Spring Application Context using XML - Part 2
+### Step 13 - Autowiring in Depth - @Qualifier annotation
 
-31. Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
+Alternatively, you can use `@Qualifier("foobar")` to name beans and prefer them.
 
-32. Step 24 - IOC Container vs Application Context vs Bean Factory
+See commit `a876f5e1c599f987266ae5e5e09e85042e0a7fbc`.
 
-33. Step 25 - @Component vs @Service vs @Repository vs @Controller
+### Step 14 - Scope of a Bean - Prototype and Singleton
 
-34. Step 26 - Read values from external properties file
+(Remember "bean" means "instance of a class"...)
+
+Default bean scope is Singleton.
+
+- singleton - One instance per Spring Context
+- prototype - New bean whenever requested
+- request - One bean per HTTP request
+- session - One bean per HTTP session
+
+Use `@Scope()` annotation. See `353de2658dce513de2ea2459244f6e7cc1705afd`.
+
+### Step 15 - Complex Scope Scenarios of a Spring Bean - Mix Prototype and Singleton
+
+What happens if PersonDAO is a singleton, but its dependency, JDBCConnection, is 'prototype' scoped?
+
+Meaning, we want ONE PersonDAO, but every PersonDAO (1) should have a unique JDBCConnection.
+
+```java
+PersonDAO personDAO = applicationContext.getBean(PersonDAO.class);
+PersonDAO personDAO2 = applicationContext.getBean(PersonDAO.class);
+
+LOGGER.info("{}", personDAO);
+LOGGER.info("{}", personDAO.getJdbcConnection());
+LOGGER.info("{}", personDAO2);
+LOGGER.info("{}", personDAO2.getJdbcConnection());
+```
+
+Results in:
+
+```
+2021-07-30 16:45:29.008  INFO 12404 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.PersonDAO@388ffbc2
+2021-07-30 16:45:29.010  INFO 12404 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.JdbcConnection@2187fff7
+2021-07-30 16:45:29.010  INFO 12404 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.PersonDAO@388ffbc2
+2021-07-30 16:45:29.010  INFO 12404 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.JdbcConnection@2187fff7
+```
+
+We only get 1 JdbcConnection object. This is because we're asking for a new "PersonDAO" and just get the same one, and that 1 PersonDAO has the same JdbcConnection object.
+
+If we really want a new instance on JdbcConnection, we need to configure a "Proxy"...
+
+Instead of giving PersonDAO a JdbcConnection object, we give it a proxy that makes sure it gets a new instance of a JdbcConnection object each time.
+
+We do this thusly:
+
+```java
+@Component
+@Scope(value = SCOPE_PROTOTYPE, proxyMode = TARGET_CLASS) //proxymode=target_class means make sure there's a new instance of this class, even with singleton parents that require me
+public class JdbcConnection {
+    public JdbcConnection() {
+        System.out.println("JDBC Connection is coolio! ;)");
+    }
+}
+```
+
+Now our logs look like this:
+
+```
+2021-07-30 16:50:12.284  INFO 13680 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.PersonDAO@52350abb
+JDBC Connection is coolio! ;)
+2021-07-30 16:50:12.286  INFO 13680 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.JdbcConnection@486be205
+2021-07-30 16:50:12.297  INFO 13680 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.PersonDAO@52350abb
+JDBC Connection is coolio! ;)
+2021-07-30 16:50:12.297  INFO 13680 --- [           main] c.h.s.b.s.SpringIn5StepsScopeApplication : com.henry.spring.basics.springin5steps.scope.JdbcConnection@f713686
+
+```
+We can see the JdbcConnection objects both have new hashes - 486be205 and f713686.
+
+See commit `afb4c1e897bb91ad022d6d318f4bf7261f6c4e85`
+
+### Step 15B - Difference Between Spring Singleton and GOF Singleton
+
+### Step 16 - Using Component Scan to scan for beans
+
+### Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy
+
+### Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
+
+### Ignore SLF4J Errors in Step 19 - We will fix them in Step 20
+
+### Step 19 - Removing Spring Boot in Basic Application
+
+### Step 20 - Fixing minor stuff - Add Logback and Close Application Context
+
+### Step 21 - Defining Spring Application Context using XML - Part 1
+
+### Step 22 - Defining Spring Application Context using XML - Part 2
+
+### Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
+
+### Step 24 - IOC Container vs Application Context vs Bean Factory
+
+### Step 25 - @Component vs @Service vs @Repository vs @Controller
+
+### Step 26 - Read values from external properties file
 
 ## Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
 
