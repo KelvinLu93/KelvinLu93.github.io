@@ -29,13 +29,13 @@ It uses an architectural design called &amp;ldquo;Virtual DOM&amp;rdquo; that ma
 It also uses a declarative extension to JS called JSX, making it easy to control component rendering.
 Virtual DOM Helps React improve rendering by only updating changed components JSX Render into HTML Babel compiler JSX -&amp;gt; JS After this course, you&amp;rsquo;ll implement a simple webpage using React APIs.</description></item><item><title>Spring Framework Master Class</title><link>/posts/2021-07-08-spring-framework-master-class/</link><pubDate>Thu, 08 Jul 2021 10:24:50 -0500</pubDate><guid>/posts/2021-07-08-spring-framework-master-class/</guid><description>From https://udemy.com/course/spring-tutorial-for-beginners/.
 Work for this can be found at https://github.com/HenryFBP/Spring-Framework-Master-Class
+Work from the instructor can be found at https://github.com/in28minutes/spring-master-class/tree/master
 Section 1. Intro to Spring What is Spring?
 A: It&amp;rsquo;s a Dependency Injection Framework.
 What is DI?
 What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
-Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.e.:
-public class BusinessService{ SortAlgo sortAlgo = new BubbleSortAlgo(); } public class BubbleSortAlgo implements SortAlgo { .</description></item><item><title>Devops Project CI/CD With Jenkins, Ansible, Docker, K8s</title><link>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</link><pubDate>Sat, 05 Jun 2021 13:52:36 -0500</pubDate><guid>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</guid><description>The course The course is below.
+Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.</description></item><item><title>Devops Project CI/CD With Jenkins, Ansible, Docker, K8s</title><link>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</link><pubDate>Sat, 05 Jun 2021 13:52:36 -0500</pubDate><guid>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</guid><description>The course The course is below.
 https://udemy.com/course/valaxy-devops/
 My work My work on this course can be found at the following links:
 https://github.com/HenryFBP/valaxydevopsproject https://github.com/HenryFBP/valaxydevopsproject-hello-world-app Forked from respectively:
