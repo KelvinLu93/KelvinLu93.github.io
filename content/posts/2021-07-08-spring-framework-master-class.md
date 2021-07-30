@@ -208,23 +208,95 @@ Spring needs to know:
     - use `@Autowired` to annotate a field as a dependency
 - Where can I search for beans?
 
+See commit `850ce6e8eaf825d0ac0aba552b84b6178a6c4f84`
+
 ### Step 5 - What is happening in the background?
+
+Set this prop:
+
+`logging.level.org.springframework = debug`
+
+in the `application.properties` file.
+
+Then search stdout for "QuickSortAlgorithm".
+
+See commit `1f9fd3fd145fade1c904b40074cd2a5c9d0b0cb4`
 
 ### Step 6 - Dynamic auto wiring and Troubleshooting - @Primary
 
+If there are 2 components that could either be preferred as a dependency, an error will be generated.
+
+You need to either use "@Primary" or "@Qualifier".
+
+See `3007cfe1b4232738dcf96890e64d611a572f4fc3` - `@Primary`.
+
+<https://www.baeldung.com/spring-qualifier-annotation> - `@Qualifier`.
+
 ### Fastest Approach to Solve All Your Exceptions
+
+<https://github.com/in28minutes/in28minutes-initiatives/blob/master/The-in28Minutes-TroubleshootingGuide-And-FAQ/quick-start.md>
 
 ### Step 7 - Constructor and Setter Injection
 
+Using `@Autowired` can prevent you from having to use constructors and setters.
+
 ### Step 8 - Spring Modules
+
+Spring is actually not one single framework.
+
+Spring has a bunch of different submodules:
+
+    Maven: org.springframework:spring-aop:5.3.8
+    Maven: org.springframework:spring-beans:5.3.8
+    Maven: org.springframework:spring-context:5.3.8
+    Maven: org.springframework:spring-core:5.3.8
+    Maven: org.springframework:spring-expression:5.3.8
+    Maven: org.springframework:spring-jcl:5.3.8
+    Maven: org.springframework:spring-test:5.3.8
+
+We've just been using:
+
+- Beans
+- Core
+- Context
+
+Nothing else. No DB, no web, no mesaging or test tools.
+
+Spring actually has great integration with data layers, JDBC, ORM (Hibernate/myBatis), JMS, object-to-xml, etc.
 
 ### Step 9 - Spring Projects
 
+- Boot
+- Batch
+    - Batch app support
+- Security
+    - Securing your apps
+- Cloud
+    - Cloud native apps
+- HATEOAS
+    - Develop HATEOAS compatible services (REST but with links and discoverability)
+- Data
+    - Consistent data access
+- Integration
+    - Addresses problems with application integration.
+- etc
+
 ### Step 10 - Why is Spring Popular?
+
+1.  Enables writing testable code...
+    1.  Dependency Injection makes it easy to write unit tests
+    2.  Has good integration with JUnit and Mockito
+2.  No plumbing code.
+    1.  This means you don't need to set up database pipes, query try-catch, resource handling...this is all done for you by Spring
+3.  Spring is flexible and modular.
+    1.  We can use just MVC, just Boot, just DB, etc.
+    2.  It also works well with other frameworks.
+4.  Staying current
+    1.  Spring comes up with new features that keep it relevant, like Spring Cloud, Boot.
 
 ## Section 4: Spring Level 2 - Spring Framework in Depth
 
-16. Section Introduction - Spring Framework in Depth
+### Section Introduction - Spring Framework in Depth
 
 17. Step 11 - Dependency Injection - A few more examples
 
