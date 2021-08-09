@@ -409,9 +409,94 @@ See commit `afb4c1e897bb91ad022d6d318f4bf7261f6c4e85`
 
 ### Step 15B - Difference Between Spring Singleton and GOF Singleton
 
+```java
+        LOGGER.info("{}", personDAO);
+        LOGGER.info("{}", personDAO.getJdbcConnection());
+        LOGGER.info("{}", personDAO.getJdbcConnection());
+
+        LOGGER.info("{}", personDAO2);
+        LOGGER.info("{}", personDAO2.getJdbcConnection());
+```
+
+On line 2 and 3, we get a NEW JdbcConnection object because of annotating the `PersonDAO` as such:
+
+```java
+
+@Component
+@Scope(value = SCOPE_PROTOTYPE, proxyMode = TARGET_CLASS) //proxymode=target_class means make sure there's a new instance of this class, even with singleton parents that require me
+public class JdbcConnection {
+    public JdbcConnection() {
+        System.out.println("JDBC Connection is coolio! ;)");
+    }
+}
+```
+
+Interestingly, when a JdbcConnection class is autowired like below:
+
+```java
+@Component
+@Scope(SCOPE_SINGLETON)
+public class PersonDAO {
+
+    @Autowired
+    JdbcConnection jdbcConnection;
+
+...
+```
+
+A proxy gets autowired into the actual instance:
+
+```java
+result = {JdbcConnection$$EnhancerBySpringCGLIB$$de69c091@3590} "com.henry.spring.basics.springin5steps.scope.JdbcConnection@5488b5c5"
+ CGLIB$BOUND = false
+ CGLIB$CALLBACK_0 = {CglibAopProxy$DynamicAdvisedInterceptor@3601} 
+ CGLIB$CALLBACK_1 = {CglibAopProxy$DynamicUnadvisedInterceptor@3602} 
+ CGLIB$CALLBACK_2 = {CglibAopProxy$SerializableNoOp@3603} 
+ CGLIB$CALLBACK_3 = {CglibAopProxy$SerializableNoOp@3604} 
+ CGLIB$CALLBACK_4 = {CglibAopProxy$AdvisedDispatcher@3605} 
+ CGLIB$CALLBACK_5 = {CglibAopProxy$EqualsInterceptor@3606} 
+ CGLIB$CALLBACK_6 = {CglibAopProxy$HashCodeInterceptor@3607} 
+```
+
+When you call `getJdbcConnection`, that's when you get the real JdbcConnection object.
+
+...
+
+Onto singletons vs "gang of 4" design pattern.
+
+Bean Scope:
+
+Default - singleton
+- singleton: 1 instance per Spring Context (NOT per JVM! There can be multiple app contexts!)
+- prototype - New bean when requested (e.g. `JdbcConnection`)
+- request - 1 bean per HTTP request
+- session - 1 bean per HTTP session
+
+When we talk about spring singletons, there can be 1 instance per 1 app context.
+
+If there are 5 contexts running in the same JVM, then you *can* have 5 instances of singletons.
+
+However, if you have a singleton defined as "Gang of Four" design pattern, it'll be 1 instance.
+
+This difference is relevant when talking about app context, bean factory, and IOC.
+
 ### Step 16 - Using Component Scan to scan for beans
 
+`@ComponentScan` annotation allows a class to look OUTSIDE of its top-level package for components. Can be used as follows:
+
+```java
+@SpringBootApplication
+@ComponentScan("com.henry.spring.basics.outsidepackagename")
+public class SomeClassThatNeedsOutsidePackages {
+    ...
+}
+```
+
+See commit `f5d7774d2b06ed3d8db93c7e8d59a5277207949d`.
+
 ### Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy
+
+
 
 ### Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
 
