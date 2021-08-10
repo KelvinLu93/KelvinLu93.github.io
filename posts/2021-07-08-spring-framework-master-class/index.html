@@ -27,7 +27,7 @@ What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":2942,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":3016,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -99,7 +99,7 @@ Typical code may have a service that is tightly coupled with some implementation
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>14 min read</span>
+<span>15 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
@@ -513,6 +513,29 @@ public class SomeClassThatNeedsOutsidePackages {
 </code></pre>
 <p>See commit <code>f5d7774d2b06ed3d8db93c7e8d59a5277207949d</code>.</p>
 <h3 id=step-17---lifecycle-of-a-bean---postconstruct-and-predestroy>Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy</h3>
+<p>Beans are entirely managed by Spring IOC Container, if they are annotated with <code>@Component</code>.</p>
+<p>But what if we want to do something specfic during the creating of a bean? Or after? Or before it gets destroyed?</p>
+<p>You use the <code>@PostConstruct</code> annotation.</p>
+<p>Example:</p>
+<pre><code class=language-java>
+
+@Component
+@Scope(SCOPE_PROTOTYPE) //give a new bean whenever requested...
+public class BinarySearchImpl {
+
+    ...
+
+    @PostConstruct
+    public void postConstruct() {
+        logger.info(&quot;postConstruct method called&quot;);
+    }
+
+    ...
+
+}
+</code></pre>
+<p>You can also use <code>@PreDestroy</code>.</p>
+<p>See commit <code>28c9cfc93cad001205cbbec5aecb6daeb85f781e</code>.</p>
 <h3 id=step-18---container-and-dependency-injection-cdi---named-inject>Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject</h3>
 <h3 id=ignore-slf4j-errors-in-step-19---we-will-fix-them-in-step-20>Ignore SLF4J Errors in Step 19 - We will fix them in Step 20</h3>
 <h3 id=step-19---removing-spring-boot-in-basic-application>Step 19 - Removing Spring Boot in Basic Application</h3>
