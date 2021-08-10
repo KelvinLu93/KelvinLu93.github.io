@@ -496,7 +496,36 @@ See commit `f5d7774d2b06ed3d8db93c7e8d59a5277207949d`.
 
 ### Step 17 - Lifecycle of a Bean - @PostConstruct and @PreDestroy
 
+Beans are entirely managed by Spring IOC Container, if they are annotated with `@Component`.
 
+But what if we want to do something specfic during the creating of a bean? Or after? Or before it gets destroyed?
+
+You use the `@PostConstruct` annotation.
+
+Example:
+
+```java
+
+
+@Component
+@Scope(SCOPE_PROTOTYPE) //give a new bean whenever requested...
+public class BinarySearchImpl {
+
+    ...
+
+    @PostConstruct
+    public void postConstruct() {
+        logger.info("postConstruct method called");
+    }
+
+    ...
+
+}
+```
+
+You can also use `@PreDestroy`.
+
+See commit `28c9cfc93cad001205cbbec5aecb6daeb85f781e`.
 
 ### Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
 
