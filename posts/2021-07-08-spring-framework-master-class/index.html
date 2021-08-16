@@ -27,7 +27,7 @@ What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":3016,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":3252,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -99,7 +99,7 @@ Typical code may have a service that is tightly coupled with some implementation
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>15 min read</span>
+<span>16 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
@@ -537,10 +537,73 @@ public class BinarySearchImpl {
 <p>You can also use <code>@PreDestroy</code>.</p>
 <p>See commit <code>28c9cfc93cad001205cbbec5aecb6daeb85f781e</code>.</p>
 <h3 id=step-18---container-and-dependency-injection-cdi---named-inject>Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject</h3>
+<p>CDI is Context and Dependency Injection.</p>
+<ul>
+<li>CDI tries to standardize Spring Boot&rsquo;s concepts as part of the Java EE DI standard (JSR-330)</li>
+<li>Spring supports most annotations
+<ul>
+<li>@Inject (@Autowired)</li>
+<li>@Named (@Component & @Qualifier)</li>
+<li>@Singleton (defines scope of singleton)</li>
+</ul>
+</li>
+</ul>
+<p>CDI is more of an interface. And Spring provides the implementation.</p>
+<p>Just like how JPA is an interface, and Hibernate is an implementation.</p>
+<p>This means you can use &ldquo;@Inject&rdquo; in place of &ldquo;@Autowired&rdquo;. Same for &ldquo;@Named&rdquo; in place of &ldquo;@Component&rdquo;.</p>
+<p>In fact, <code>javax.inject</code> dep provides these:</p>
+<pre><code>Inject
+Named
+Provider
+Qualifier
+Scope
+Singleton
+</code></pre>
+<p>So, should we use CDI or Spring?</p>
+<p>It&rsquo;s up to you. Because Spring is the implementation anyway, so it doesn&rsquo;t really matter.</p>
+<p>See commit <code>c2cb7b1f278719838ca70122c6b62e4798e0318d</code>.</p>
 <h3 id=ignore-slf4j-errors-in-step-19---we-will-fix-them-in-step-20>Ignore SLF4J Errors in Step 19 - We will fix them in Step 20</h3>
 <h3 id=step-19---removing-spring-boot-in-basic-application>Step 19 - Removing Spring Boot in Basic Application</h3>
+<p>This is an example to show you how to use Spring without Spring Boot.</p>
+<p>See commit <code>39290cb132d407b82bfe66eb3fc5ae83d819289d</code>, or code below.</p>
+<pre><code class=language-java>@Configuration
+@ComponentScan(&quot;com.henry.spring.basics.springin5steps.basic&quot;)
+public class SpringIn5StepsBasicApplication {
+
+    public static void main(String[] args) {
+
+        System.out.println(&quot;hello world!&quot;);
+        
+        AnnotationConfigApplicationContext acac =
+                new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
+
+        //get BinarySearchImpl from app context
+...
+</code></pre>
 <h3 id=step-20---fixing-minor-stuff---add-logback-and-close-application-context>Step 20 - Fixing minor stuff - Add Logback and Close Application Context</h3>
+<p>See commits near <code>39290cb132d407b82bfe66eb3fc5ae83d819289d</code>.</p>
 <h3 id=step-21---defining-spring-application-context-using-xml---part-1>Step 21 - Defining Spring Application Context using XML - Part 1</h3>
+<p>Before Spring 2.5, annotations were not used. XML files were used to annotate classes and instance variables.</p>
+<p>See <a href=https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans>https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans</a> for example of <code>applicationContext.xml</code> file.</p>
+<pre><code class=language-xml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;  
+        &lt;!-- collaborators and configuration for this bean go here --&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;...&quot; class=&quot;...&quot;&gt;
+        &lt;!-- collaborators and configuration for this bean go here --&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- more bean definitions go here --&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p>See our work in <code>7df20b3921fc8ec8b18e542dc74539cb7ae69a4a</code>.</p>
 <h3 id=step-22---defining-spring-application-context-using-xml---part-2>Step 22 - Defining Spring Application Context using XML - Part 2</h3>
 <h3 id=step-23---mixing-xml-context-with-component-scan-for-beans-defined-with-annotati>Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati</h3>
 <h3 id=step-24---ioc-container-vs-application-context-vs-bean-factory>Step 24 - IOC Container vs Application Context vs Bean Factory</h3>
