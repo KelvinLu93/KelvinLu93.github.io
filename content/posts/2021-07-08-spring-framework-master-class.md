@@ -529,15 +529,94 @@ See commit `28c9cfc93cad001205cbbec5aecb6daeb85f781e`.
 
 ### Step 18 - Container and Dependency Injection (CDI) - @Named, @Inject
 
+CDI is Context and Dependency Injection.
+
+- CDI tries to standardize Spring Boot's concepts as part of the Java EE DI standard (JSR-330)
+- Spring supports most annotations
+    - @Inject (@Autowired)
+    - @Named (@Component & @Qualifier)
+    - @Singleton (defines scope of singleton)
+
+CDI is more of an interface. And Spring provides the implementation.
+
+Just like how JPA is an interface, and Hibernate is an implementation.
+
+This means you can use "@Inject" in place of "@Autowired". Same for "@Named" in place of "@Component".
+
+In fact, `javax.inject` dep provides these:
+
+    Inject
+    Named
+    Provider
+    Qualifier
+    Scope
+    Singleton
+
+So, should we use CDI or Spring?
+
+It's up to you. Because Spring is the implementation anyway, so it doesn't really matter.
+
+See commit `c2cb7b1f278719838ca70122c6b62e4798e0318d`.
+
 ### Ignore SLF4J Errors in Step 19 - We will fix them in Step 20
 
 ### Step 19 - Removing Spring Boot in Basic Application
 
+This is an example to show you how to use Spring without Spring Boot.
+
+See commit `39290cb132d407b82bfe66eb3fc5ae83d819289d`, or code below.
+
+```java
+@Configuration
+@ComponentScan("com.henry.spring.basics.springin5steps.basic")
+public class SpringIn5StepsBasicApplication {
+
+    public static void main(String[] args) {
+
+        System.out.println("hello world!");
+        
+        AnnotationConfigApplicationContext acac =
+                new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
+
+        //get BinarySearchImpl from app context
+...
+```
+
 ### Step 20 - Fixing minor stuff - Add Logback and Close Application Context
+
+See commits near `39290cb132d407b82bfe66eb3fc5ae83d819289d`.
 
 ### Step 21 - Defining Spring Application Context using XML - Part 1
 
+Before Spring 2.5, annotations were not used. XML files were used to annotate classes and instance variables.
+
+See <https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans> for example of `applicationContext.xml` file.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="..." class="...">  
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="..." class="...">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
+```
+
+See our work in `7df20b3921fc8ec8b18e542dc74539cb7ae69a4a`.
+
 ### Step 22 - Defining Spring Application Context using XML - Part 2
+
+
 
 ### Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
 
