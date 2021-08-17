@@ -624,9 +624,32 @@ See commit `62ac932e796f86e354381e2b49fed50d0139bfe6`.
 
 ### Step 24 - IOC Container vs Application Context vs Bean Factory
 
+Disambiguation:
+
+- IOC Container
+    - IOC is control moving out of a controller (needs a dep) and into a framework that handles it
+    - Spring is an IOC Container
+    - The program/framework that facilitates IOC is called an IOC Container
+- App Context
+    - A way to instantiate Beans
+    - It is aware of classes you've defined
+    - i18n capabilities
+    - "Bean Factory++"
+- Bean Factory
+    - Simple way to create classes
+
 ### Step 25 - @Component vs @Service vs @Repository vs @Controller
 
+- @Component - generic component
+- @Repository - encapsulates storage, retrieval, and search, typically from a relational db 
+- @Service - Business service facade
+- @Controller - controller in MVC pattern
+
+See commit `a9de6fd9ac848c4615149dd2bd3b269567d2ab52`.
+
 ### Step 26 - Read values from external properties file
+
+See commit `408e011d858156b4f1b5e1319eec1b6d10ab91e1`
 
 ## Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
 
