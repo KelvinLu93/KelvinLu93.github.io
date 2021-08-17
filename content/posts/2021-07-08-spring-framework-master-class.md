@@ -616,9 +616,11 @@ See our work in `7df20b3921fc8ec8b18e542dc74539cb7ae69a4a`.
 
 ### Step 22 - Defining Spring Application Context using XML - Part 2
 
+Fixed my error in `29641f5f68bd041b32fcfd948e4d9f4fdf7fc399`. See edit to XML file.
 
+### Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotations
 
-### Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotati
+See commit `62ac932e796f86e354381e2b49fed50d0139bfe6`.
 
 ### Step 24 - IOC Container vs Application Context vs Bean Factory
 
