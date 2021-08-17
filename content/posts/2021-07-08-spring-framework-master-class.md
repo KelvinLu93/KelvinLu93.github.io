@@ -681,17 +681,38 @@ Skipped
 
 ### Section Introduction - Mockito in 5 Steps
 
+...
+
 ### Step 1 : Setting up an example using http://start.spring.io
+
+See commit `9401a52a8a7724b405ed50b6b9b7975f14029602` 
 
 ### COURSE UPDATE : JUnit 4 vs JUnit 5
 
+There are small differences b/w JUnit4/JUnit5 annotations. 
+
+But they both still work, you just need to change annotations.
+
 ### Step 2 : Using a Stubs - Disadvantages
+
+1. You have to maintain the stubs
+2. You have to keep making different versions of the stub
+
+This is where mocks come in. Mocks make it easy to dynamically create classes.
+
+See stub example in commit `85b2ff32134ff4d3dbeb60b049e9242ebdfa9274`.
 
 ### Step 3 : Your first mock with Mockito
 
+See commit `c8aa5119c2bd0ee681ed31592f3e8ff505cd31cf`.
+
 ### Step 4 : Using Mockito Annotations - @Mock, @InjectMocks, @RunWith
 
+See commit `eed25169f59b9a61f86353c636abbb14bb2e2894`.
+
 ### Step 5 : Mocking List interface
+
+See commit `4d77bf62e543d1f96e494f48ae6f701a5f7720a8`
 
 ## Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
