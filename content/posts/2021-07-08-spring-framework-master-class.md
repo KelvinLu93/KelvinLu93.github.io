@@ -716,37 +716,49 @@ See commit `4d77bf62e543d1f96e494f48ae6f701a5f7720a8`
 
 ## Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
-48. Section Introduction - Unit Testing with Spring Framework
+### Section Introduction - Unit Testing with Spring Framework
 
-49. Step 27 - Spring Unit Testing with a Java Context
+### Step 27 - Spring Unit Testing with a Java Context
 
-50. Spring Unit Testing with an XML Context
+See `a97eec299baa1be1c8d45984514aaf989d9eb3e9`.
 
-51. Spring Unit Testing with Mockito
+### Spring Unit Testing with an XML Context
+
+See `2387a7ec2ef13138f99a7ce9fa47e6a5e1831a64`.
+
+### Spring Unit Testing with Mockito
+
+See `0f6fc4e8d6b609d33c646c668d20cb2d1da53642`.
+
+Avoid using Spring in unit tests. Use Mockito instead.
 
 ## Section 8: Spring Level 4 - Spring Boot in 10 Steps
 
-52. Section Introduction - Spring Boot in 10 Steps
+### Section Introduction - Spring Boot in 10 Steps
 
-53. Step 1 : Introduction to Spring Boot - Goals and Important Features
+...
 
-54. Step 2 : Developing Spring Applications before Spring Boot
+### Step 1 : Introduction to Spring Boot - Goals and Important Features
 
-55. Step 3 : Using Spring Initializr to create a Spring Boot Application
 
-56. Step 4 : Creating a Simple REST Controller
 
-57. Step 5 : What is Spring Boot Auto Configuration?
+### Step 2 : Developing Spring Applications before Spring Boot
 
-58. Step 6 : Spring Boot vs Spring vs Spring MVC
+### Step 3 : Using Spring Initializr to create a Spring Boot Application
 
-59. Step 7 : Spring Boot Starter Projects - Starter Web and Starter JPA
+### Step 4 : Creating a Simple REST Controller
 
-60. Step 8 : Overview of different Spring Boot Starter Projects
+### Step 5 : What is Spring Boot Auto Configuration?
 
-61. Step 9 : Spring Boot Actuator
+### Step 6 : Spring Boot vs Spring vs Spring MVC
 
-62. Step 10 : Spring Boot Developer Tools
+### Step 7 : Spring Boot Starter Projects - Starter Web and Starter JPA
+
+### Step 8 : Overview of different Spring Boot Starter Projects
+
+### Step 9 : Spring Boot Actuator
+
+### Step 10 : Spring Boot Developer Tools
 
 ## Section 9: Spring Level 5 - Spring AOP
 
