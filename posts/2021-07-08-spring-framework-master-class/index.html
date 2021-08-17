@@ -27,7 +27,7 @@ What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":3265,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":3359,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -609,8 +609,39 @@ public class SpringIn5StepsBasicApplication {
 <h3 id=step-23---mixing-xml-context-with-component-scan-for-beans-defined-with-annotations>Step 23 - Mixing XML Context with Component Scan for Beans defined with Annotations</h3>
 <p>See commit <code>62ac932e796f86e354381e2b49fed50d0139bfe6</code>.</p>
 <h3 id=step-24---ioc-container-vs-application-context-vs-bean-factory>Step 24 - IOC Container vs Application Context vs Bean Factory</h3>
+<p>Disambiguation:</p>
+<ul>
+<li>IOC Container
+<ul>
+<li>IOC is control moving out of a controller (needs a dep) and into a framework that handles it</li>
+<li>Spring is an IOC Container</li>
+<li>The program/framework that facilitates IOC is called an IOC Container</li>
+</ul>
+</li>
+<li>App Context
+<ul>
+<li>A way to instantiate Beans</li>
+<li>It is aware of classes you&rsquo;ve defined</li>
+<li>i18n capabilities</li>
+<li>&ldquo;Bean Factory++&rdquo;</li>
+</ul>
+</li>
+<li>Bean Factory
+<ul>
+<li>Simple way to create classes</li>
+</ul>
+</li>
+</ul>
 <h3 id=step-25---component-vs-service-vs-repository-vs-controller>Step 25 - @Component vs @Service vs @Repository vs @Controller</h3>
+<ul>
+<li>@Component - generic component</li>
+<li>@Repository - encapsulates storage, retrieval, and search, typically from a relational db</li>
+<li>@Service - Business service facade</li>
+<li>@Controller - controller in MVC pattern</li>
+</ul>
+<p>See commit <code>a9de6fd9ac848c4615149dd2bd3b269567d2ab52</code>.</p>
 <h3 id=step-26---read-values-from-external-properties-file>Step 26 - Read values from external properties file</h3>
+<p>See commit <code>408e011d858156b4f1b5e1319eec1b6d10ab91e1</code></p>
 <h2 id=section-5-basic-tools-and-frameworks---junit-in-5-steps>Section 5: Basic Tools and Frameworks - JUnit in 5 Steps</h2>
 <ol start=35>
 <li>
