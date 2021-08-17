@@ -653,35 +653,45 @@ See commit `408e011d858156b4f1b5e1319eec1b6d10ab91e1`
 
 ## Section 5: Basic Tools and Frameworks - JUnit in 5 Steps
 
-35. Section Introduction - JUnit in 5 Steps
+### Section Introduction - JUnit in 5 Steps
 
-36. Step 1 : What is JUnit and Unit
-Testing?
+See <https://github.com/in28minutes/spring-master-class/tree/master/00-framework-tool-introductions>
 
-37. Step 2 : First JUnit Project and Green
-Bar
+### Step 1 : What is JUnit and Unit Testing?
 
-38. Step 3 : First Code and First Unit Test
+Skipped
 
-39. Step 4 : Other assert methods
+### Step 2 : First JUnit Project and Green Bar
 
-40. Step 5 : Important annotations
+See commit `f29b32ef2bb5863b87f3aedffaf7845b6b1cfd9c`.
+
+### Step 3 : First Code and First Unit Test
+
+Skipped
+
+### Step 4 : Other assert methods
+
+Skipped
+
+### Step 5 : Important annotations
+
+Skipped
 
 ## Section 6: Basic Tools and Frameworks - Mockito in 5 Steps
 
-41. Section Introduction - Mockito in 5 Steps
+### Section Introduction - Mockito in 5 Steps
 
-42. Step 1 : Setting up an example using http://start.spring.io
+### Step 1 : Setting up an example using http://start.spring.io
 
-43. COURSE UPDATE : JUnit 4 vs JUnit 5
+### COURSE UPDATE : JUnit 4 vs JUnit 5
 
-44. Step 2 : Using a Stubs - Disadvantages
+### Step 2 : Using a Stubs - Disadvantages
 
-45. Step 3 : Your first mock with Mockito
+### Step 3 : Your first mock with Mockito
 
-46. Step 4 : Using Mockito Annotations - @Mock, @InjectMocks, @RunWith
+### Step 4 : Using Mockito Annotations - @Mock, @InjectMocks, @RunWith
 
-47. Step 5 : Mocking List interface
+### Step 5 : Mocking List interface
 
 ## Section 7: Spring Level 3 - Unit Testing with Spring Framework
 
