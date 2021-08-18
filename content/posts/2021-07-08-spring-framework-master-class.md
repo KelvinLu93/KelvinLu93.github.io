@@ -1051,15 +1051,103 @@ See commit `830ca3f67df7f9ef1ffb377abfbc01f3ac588f24`.
 
 ### Section Introduction - Spring AOP
 
+What TF is AOP?
+
+- Pointcut
+- Advice
+- Aspect
+
+- JoinPoint
+- Weaving
+- Weaver
+
+- @Before, @Around, etc
+
+- Types of Pointcut definitions
+
+- Custom annotation to track time
+
 ### Spring AOP Github Folder
+
+<https://github.com/in28minutes/spring-master-class/tree/master/03-spring-aop>
 
 ### COURSE UPDATE - AOP Dependency Removed From Spring Initializr
 
+In the next step, we use Spring AOP. However, AOP dependency is not available on the Spring Initializr website anymore.
+
+Recommendation:
+
+STEP I: Create a project as shown in the next step without adding AOP.
+
+STEP II: Add this dependency into your pom.xml.
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+```
+
 ### Step 01 - Setting up AOP Example - Part 1
+
+Sometimes, in "layered" apps, we have "cross-cutting concerns" like logging and security, that go across multiple "layers" of the app (across database, business, presentation layer).
+
+These are not related to specific layers. Perfmon/logging/security can apply to all layers.
+
+Aspect Oriented Programming.
+
+We have 2 DAOs and 2 Business services.
+
+We want to intercept calls to these classes. See that in next step.
+
+See commit `0474111e42976b71253336bc1c9ddf603dd352ee`
 
 ### Step 02 - Setting up AOP Example - Part 2
 
+See commit `c6869e3ee3426473cdfc3a3541524fad2a290d2e`.
+
 ### Step 03 - Defining an @Before advice
+
+See this code.
+
+```java
+package com.henry.spring.aop.springaop.aspect;
+
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+
+//config and related to AOP
+@Configuration
+@Aspect
+public class BeforeAspect {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    //What methods do I intercept?
+    // execution(* PACKAGE.*.*(..))
+    //           ^         ^ ^  ^
+    //           |         | |  \----any arguments
+    //           |         | |
+    //           |         | \--- all method calls
+    //           |         |
+    //           |         any class
+    //           |
+    //           any return type
+
+    @Before("execution(* com.henry.spring.aop.springaop.business.*.*(..)") //pass a pointcut to before annotation
+    public void before(){
+        //what do I do?
+        logger.info("intercepted method calls");
+    }
+}
+
+```
+
+See commit `16df3012328d30bbd3aa3facaba002d593d3de46`.
 
 ### Step 04 - Understand AOP Terminology - Pointcut, Advice, Aspect and Join Point
 
