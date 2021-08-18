@@ -27,7 +27,7 @@ What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":4305,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":4508,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -99,7 +99,7 @@ Typical code may have a service that is tightly coupled with some implementation
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>21 min read</span>
+<span>22 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
@@ -936,13 +936,38 @@ public class BookController {
 &lt;/dependency&gt;
 &lt;dependency&gt;
     &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-data-rest-hal-browser&lt;/artifactId&gt;
+    &lt;artifactId&gt;spring-data-rest-hal-explorer&lt;/artifactId&gt;
 &lt;/dependency&gt;
 </code></pre>
 <p>Actuator exposes a lot of REST services. They are compliant with &ldquo;HAL&rdquo; standard.</p>
 <p>We use a &ldquo;HAL&rdquo; browser to view the data. Ex: <a href=http://api.opensupporter.org/hb2/browser.html#/api/v1>http://api.opensupporter.org/hb2/browser.html#/api/v1</a></p>
+<p>After adding those 2 dependencies to pom.xml, visit <a href=http://localhost:8080/actuator>http://localhost:8080/actuator</a></p>
+<p>Note it&rsquo;s kind of empty.</p>
+<p>Add <code>management.endpoints.web.exposure.include=*</code> to your .properties file. Then reload and note how many new things are showing up. Note this is not good practice to enable all endpoints.</p>
+<p>Go to <a href="http://localhost:8080/explorer/index.html#uri=http://localhost:8080/actuator">http://localhost:8080/explorer/index.html#uri=http://localhost:8080/actuator</a> and see that you can use this built in HAL browser to explore the API.</p>
+<p>See commit <code>02c3d29c101d3acbd4c83033b5ab64bf2e055260</code>.</p>
 <h3 id=step-10--spring-boot-developer-tools>Step 10 : Spring Boot Developer Tools</h3>
+<p>If we edit java source code, we need to restart the entire REST server for the changes to take effect. PITA, right?</p>
+<p>This is where this dep helps:</p>
+<pre><code class=language-xml>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>See commit <code>830ca3f67df7f9ef1ffb377abfbc01f3ac588f24</code>.</p>
 <h2 id=section-9-spring-level-5---spring-aop>Section 9: Spring Level 5 - Spring AOP</h2>
+<h3 id=section-introduction---spring-aop>Section Introduction - Spring AOP</h3>
+<h3 id=spring-aop-github-folder>Spring AOP Github Folder</h3>
+<h3 id=course-update---aop-dependency-removed-from-spring-initializr>COURSE UPDATE - AOP Dependency Removed From Spring Initializr</h3>
+<h3 id=step-01---setting-up-aop-example---part-1>Step 01 - Setting up AOP Example - Part 1</h3>
+<h3 id=step-02---setting-up-aop-example---part-2>Step 02 - Setting up AOP Example - Part 2</h3>
+<h3 id=step-03---defining-an-before-advice>Step 03 - Defining an @Before advice</h3>
+<h3 id=step-04---understand-aop-terminology---pointcut-advice-aspect-and-join-point>Step 04 - Understand AOP Terminology - Pointcut, Advice, Aspect and Join Point</h3>
+<h3 id=step-05---using-after-afterreturning-afterthrowing-advices>Step 05 - Using @After, @AfterReturning, @AfterThrowing advices</h3>
+<h3 id=step-06---using-around-advice-to-implement-performance-tracing>Step 06 - Using @Around advice to implement performance tracing</h3>
+<h3 id=step-07---best-practice--use-common-pointcut-configuration>Step 07 - Best Practice : Use common Pointcut Configuration</h3>
+<h3 id=step-08---quick-summary-of-other-pointcuts>Step 08 - Quick summary of other Pointcuts</h3>
+<h3 id=step-09---creating-custom-annotation-and-an-aspect-for-tracking-time>Step 09 - Creating Custom Annotation and an Aspect for Tracking Time</h3>
 <h2 id=section-10-spring-level-6---interacting-with-databases---spring-jdbc-jpa-and-spring-data>Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data</h2>
 <h3 id=section-introduction---spring-jdbc-jpa-and-spring-data>Section Introduction - Spring JDBC, JPA and Spring Data</h3>
 <h3 id=spring-jdbc-to-jpa-with-hibernate---github-folder>Spring JDBC to JPA with Hibernate - Github Folder</h3>
