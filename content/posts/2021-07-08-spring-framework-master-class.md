@@ -740,23 +740,289 @@ Avoid using Spring in unit tests. Use Mockito instead.
 
 ### Step 1 : Introduction to Spring Boot - Goals and Important Features
 
+Goals:
+-   Enable prod-ready apps fast
+-   Provide common non-functional features
+    -   Embedded servers
+    -   Metrics
+    -   Health checks
+    -   Externalized config
 
+Spring boot is NOT:
+-   zero code generation
+-   an app/web server
+
+Features:
+-   Quickly make spring apps
+-   embedded servers - tomcat, jetty, or undertow
+-   Quick start projects with auto config
+    -   Web
+    -   JPA (Hibernate)
+-   Prod-ready features
+    -   Metrics and health checks
+    -   Externalized config
 
 ### Step 2 : Developing Spring Applications before Spring Boot
 
+Spring Boot used to not exist.
+
+This is an old project developed without Spring Boot: <https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step37.md>
+
+- Look how large the pom.xml is!!! <https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step37.md#pomxml>
+- We had to manually add a shitload of deps! And decide their versions!!
+- We had to implement default exception handling! <https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step37.md#srcmainjavacomin28minutescommonexceptioncontrollerjava>
+    - Why?!
+- Big ass config file <https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step37.md#srcmainwebappweb-inftodo-servletxml>
+- All sorts of URL filters in <https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step37.md#srcmainwebappweb-infwebxml>
+- Custom logging/i8n config as well
+
+Spring Boot automatically provides all of those settings for you.
+
 ### Step 3 : Using Spring Initializr to create a Spring Boot Application
+
+See `11c795319c451619c4c449b461d8887e1bf5ecb3`
 
 ### Step 4 : Creating a Simple REST Controller
 
+//localhost:8080/books -> [book1, book2, ... ]
+
+`9efa97ccd3eae8063b61547d6a9502dfa30a9625`.
+
 ### Step 5 : What is Spring Boot Auto Configuration?
+
+How did all the things needed for a REST service to run get auto-config'd?
+
+The annotation here:
+
+```java
+@SpringBootApplication //<--- HERE
+public class SpringbootIn10StepsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootIn10StepsApplication.class, args);
+	}
+
+}
+```
+
+1. It indicates that this is a Spring Context.
+2. It enables "Auto Configuration".
+3. It enables "Component Scan". It scans an entire package for beans.
+
+Then, in our BookController.java:
+```java
+@RestController //<-- HERE
+public class BookController {
+
+    @GetMapping("/books")
+    public List<Book> getAllBooks(){
+        return Arrays.asList(
+                new Book(1,"Mastering Spring", "Ranga Karanam")
+        );
+        //gee, wonder how this returns JSON when queried...magic? or spring?
+    }
+
+}
+```
+
+We use `@RestController`. This causes `BookController` to be registered as a bean.
+
+...
+
+spring-boot-autoconfigure has a lot of logic built into it.
+
+If you go into your project and open:
+
+    org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration
+
+These classes are responsible for creating these beans.
+
+Look at "Example Auto Configuration" at <https://www.springboottutorial.com/spring-boot-auto-configuration>
+
+We can also make `application.properties` and enable debug logging.
+
+```java
+logging.level.org.springframework=DEBUG
+```
+
+See `7738603e669a77b95a98f44096f41474b1a89a99`.
 
 ### Step 6 : Spring Boot vs Spring vs Spring MVC
 
+From <https://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring>.
+
+- Spring Framework
+- Spring MVC
+- Spring Boot
+
+These frameworks have their own roles. They're not really competing. They solve different problems, and solve them well.
+
+#### Spring Framework
+
+Spring solves testability. It enables apps to be loosely coupled when they are developed.
+
+IOC is at the heart of Spring. Dependency Injection is how this is achieved.
+
+1. Define a bean
+2. Define dependencies
+3. Set up dependency resolution
+
+It also prevents you from having to write a bunch of boilerplate code.
+
+It also provides good integration with Hibernate, MyBatis, JUnit and Mockito.
+
+#### Spring MVC
+
+Spring MVC provides a decoupled way of developing web applications.
+
+It allows you to separate all the different types of functionality into separate places.
+
+#### Spring Boot
+
+Allows you to provide automatic config.
+
+Also, gives you starter projects built around good patterns.
+
+Also provides good monitoring features.
+
 ### Step 7 : Spring Boot Starter Projects - Starter Web and Starter JPA
+
+This is the pom.xml from our "Book" app's `spring-boot-starter-web` dependency:
+
+Note that we have json and tomcat dependency which was why we were able to serve JSON responses over HTTP.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-web</artifactId>
+  <version>2.5.3</version>
+  <name>spring-boot-starter-web</name>
+  <description>Starter for building web, including RESTful, applications using Spring MVC. Uses Tomcat as the default embedded container</description>
+  <url>https://spring.io/projects/spring-boot</url>
+  <organization>
+    <name>Pivotal Software, Inc.</name>
+    <url>https://spring.io</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Pivotal</name>
+      <email>info@pivotal.io</email>
+      <organization>Pivotal Software, Inc.</organization>
+      <organizationUrl>https://www.spring.io</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://github.com/spring-projects/spring-boot.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/spring-projects/spring-boot.git</developerConnection>
+    <url>https://github.com/spring-projects/spring-boot</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/spring-projects/spring-boot/issues</url>
+  </issueManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>2.5.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-json</artifactId>
+      <version>2.5.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <version>2.5.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>5.3.9</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>5.3.9</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+</project>
+
+```
+
+Each of those subdeps have hibernate, validation API, jackson (json lib), logging, etc.
+
+The point is, Spring Boot Starter projects provide a wide array of useful libraries.
 
 ### Step 8 : Overview of different Spring Boot Starter Projects
 
+From <https://www.springboottutorial.com/spring-boot-vs-spring-mvc-vs-spring>
+
+- spring-boot-starter-web-services - SOAP Web Services
+    - Like REST, but different slightly. Not mutex to eachother.
+- spring-boot-starter-web - Web & RESTful applications
+- spring-boot-starter-test - Unit testing and Integration Testing
+- spring-boot-starter-jdbc - Traditional JDBC
+- spring-boot-starter-hateoas - Add HATEOAS features to your services
+- spring-boot-starter-security - Authentication and Authorization using Spring Security
+- spring-boot-starter-data-jpa - Spring Data JPA with Hibernate
+- spring-boot-starter-cache - Enabling Spring Framework’s caching support
+- spring-boot-starter-data-rest - Expose Simple REST Services using Spring Data REST
+    - Makes it easy to expose Spring Boot Data JPA Entities as RESTful web services.
+
+There are a few starters for technical stuff as well
+
+- spring-boot-starter-actuator - To use advanced features like monitoring & tracing to your application out of the box
+- spring-boot-starter-undertow, spring-boot-starter-jetty, spring-boot-starter-tomcat - To pick your specific choice of Embedded Servlet Container
+- spring-boot-starter-logging - For Logging using logback
+- spring-boot-starter-log4j2 - Logging using Log4j2
+
+Spring Boot aims to enable production ready applications in quick time.
+
+- Actuator : Enables Advanced Monitoring and Tracing of applications.
+- Embedded Server Integrations - Since server is integrated into the application, I would NOT need to have a separate application server installed on the server.
+- Default Error Handling
+
 ### Step 9 : Spring Boot Actuator
+
+Add these to pom.xml:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-rest-hal-browser</artifactId>
+</dependency>
+```
+
+Actuator exposes a lot of REST services. They are compliant with "HAL" standard.
+
+We use a "HAL" browser to view the data. Ex: <http://api.opensupporter.org/hb2/browser.html#/api/v1>
+
+
 
 ### Step 10 : Spring Boot Developer Tools
 
@@ -764,139 +1030,138 @@ Avoid using Spring in unit tests. Use Mockito instead.
 
 ## Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
 
-75. Section Introduction - Spring JDBC, JPA and Spring Data
+### Section Introduction - Spring JDBC, JPA and Spring Data
 
-76. Spring JDBC to JPA with Hibernate - Github Folder
+### Spring JDBC to JPA with Hibernate - Github Folder
 
-77. Step 01 - Setting up a project with JDBC, JPA, H2 and Web Dependencies
+### Step 01 - Setting up a project with JDBC, JPA, H2 and Web Dependencies
 
-78. COURSE UPDATE : H2 Database URL
+### COURSE UPDATE : H2 Database URL
 
-79. Step 02 - Launching up H2 Console
+### Step 02 - Launching up H2 Console
 
-80. Updates to Step 03 and Step 04
+### Updates to Step 03 and Step 04
 
-81. Step 03 - Creating a Database Table in H2
+### Step 03 - Creating a Database Table in H2
 
-82. Step 04 - Populate data into Person
-Table
+### Step 04 - Populate data into Person Table
 
-83. Step 05 - Implement findAll persons Spring JDBC Query Method
+### Step 05 - Implement findAll persons Spring JDBC Query Method
 
-84. Step 06 - Execute the findAll method using CommandLineRunner
+### Step 06 - Execute the findAll method using CommandLineRunner
 
-85. Step 07 - A Quick Review - JDBC vs Spring JDBC
+### Step 07 - A Quick Review - JDBC vs Spring JDBC
 
-86. Step 08 - Whats in the background? Understanding Spring Boot Autoconfiguration
+### Step 08 - Whats in the background? Understanding Spring Boot Autoconfiguration
 
-87. Step 09 - Implementing findById Spring JDBC Query Method
+### Step 09 - Implementing findById Spring JDBC Query Method
 
-88. Step 10 - Implementing deleteById Spring JDBC Update Method
+### Step 10 - Implementing deleteById Spring JDBC Update Method
 
-89. Step 11 - Implementing insert and update Spring JDBC Update Methods
+### Step 11 - Implementing insert and update Spring JDBC Update Methods
 
-90. Step 12 - Creating a custom Spring JDBC RowMapper
+### Step 12 - Creating a custom Spring JDBC RowMapper
 
-91. Step 13 - Quick introduction to JPA
+### Step 13 - Quick introduction to JPA
 
-92. Step 14 - Defining Person Entity
+### Step 14 - Defining Person Entity
 
-93. Step 15 - Implementing findById JPA Repository Method
+### Step 15 - Implementing findById JPA Repository Method
 
-94. Step 16 - Implementing insert and update JPA Repository Methods
+### Step 16 - Implementing insert and update JPA Repository Methods
 
-95. Step 17 - Implementing deleteById JPA Repository Method
+### Step 17 - Implementing deleteById JPA Repository Method
 
-96. Step 18 - Implementing findAll using JPQL Named Query
+### Step 18 - Implementing findAll using JPQL Named Query
 
-97. Step 19 - Introduction to Spring Data JPA
+### Step 19 - Introduction to Spring Data JPA
 
-98. Step 20 - Connecting to Other Databases
+### Step 20 - Connecting to Other Databases
 
 ## Section 11: Quick Preview - Web Applications With Spring MVC
 
-99. Section Introduction - Basic Web Application
+### Section Introduction - Basic Web Application
 
-100. Links for the Next Lecture
+### Links for the Next Lecture
 
-101. Step 01 : Setting up Your First Java Web Application
+### Step 01 : Setting up Your First Java Web Application
 
-102. Step 01 : Theory 1 - Maven and Magic
+### Step 01 : Theory 1 - Maven and Magic
 
-103. Step 01 : Theory 2 - What is a Servlet?
+### Step 01 : Theory 2 - What is a Servlet?
 
-104. Step 01 : Theory 3 - Web Application Request Flow
+### Step 01 : Theory 3 - Web Application Request Flow
 
-105. Step 01 : Theory 4 - Understand Your First Servlet - LoginServlet
+### Step 01 : Theory 4 - Understand Your First Servlet - LoginServlet
 
-106. Step 02 : Create LoginServlet From Scratch Again and Your First View
+### Step 02 : Create LoginServlet From Scratch Again and Your First View
 
-107. Step 02 : Theory - Play Time - Let's Try Breaking Things
+### Step 02 : Theory - Play Time - Let's Try Breaking Things
 
-108. Step 03 : Passing Request Parameters using Get Method
+### Step 03 : Passing Request Parameters using Get Method
 
-109. Step 03 : Theory - Introduction and End to Scriptlets
+### Step 03 : Theory - Introduction and End to Scriptlets
 
-110. Step 04 : Disadvantages of Get Parameters
+### Step 04 : Disadvantages of Get Parameters
 
-111. Step 05 : Your First Post Request
+### Step 05 : Your First Post Request
 
-112. Step 06 : Your First Servlet doPost Method
+### Step 06 : Your First Servlet doPost Method
 
-113. Step 07 : Lets Add a Password Field
+### Step 07 : Lets Add a Password Field
 
-114. Step 10 : Setting up Maven, Tomcat and Simple JEE Application
+### Step 10 : Setting up Maven, Tomcat and Simple JEE Application
 
-115. Links for the Next Lecture
+### Links for the Next Lecture
 
-116. Step 11 : Setting up Spring MVC with 4 mini steps
+### Step 11 : Setting up Spring MVC with 4 mini steps
 
-117. Step 12 : Your First Spring MVC Controller
+### Step 12 : Your First Spring MVC Controller
 
-118. Step 13 : Part 1 - Your First Spring MVC View : ViewResolver
+### Step 13 : Part 1 - Your First Spring MVC View : ViewResolver
 
-119. Step 13 : Part 2 - Theory Break - Spring MVC Architecture
+### Step 13 : Part 2 - Theory Break - Spring MVC Architecture
 
-120. Step 13 : Part 3 - Play Break - Try Breaking Things
+### Step 13 : Part 3 - Play Break - Try Breaking Things
 
-121. Step 14 : Add Logging Framework Log4j
+### Step 14 : Add Logging Framework Log4j
 
-122. Step 15 : Redirect to Welcome Page: ModelMap and @RequestParam
+### Step 15 : Redirect to Welcome Page: ModelMap and @RequestParam
 
-123. Step 16 : Use LoginService to Authenticate
+### Step 16 : Use LoginService to Authenticate
 
-124. Step 17 : Spring Autowiring and Dependency Injection
+### Step 17 : Spring Autowiring and Dependency Injection
 
 ## Section 12: Basic Tools and Frameworks - Eclipse in 5 Steps
 
-125. Section Introduction - Eclipse in 5 Steps
+### Section Introduction - Eclipse in 5 Steps
 
-126. Step 1 : Create a Java Project
+### Step 1 : Create a Java Project
 
-127. Step 2 : Keyboard Shortcuts
+### Step 2 : Keyboard Shortcuts
 
-128. Step 3 : Views and Perspectives
+### Step 3 : Views and Perspectives
 
-129. Step 4 : Save Actions
+### Step 4 : Save Actions
 
-130. Step 5 : Code Generation
+### Step 5 : Code Generation
 
 ## Section 13: Basic Tools and Frameworks - Maven in 5 Steps
 
-131. Section Introduction - Maven in 5 Steps
+### Section Introduction - Maven in 5 Steps
 
-132. Step 1 : Creating and importing a Maven Project
+### Step 1 : Creating and importing a Maven Project
 
-133. Step 2 : Understanding Project Object Model - pom.xml
+### Step 2 : Understanding Project Object Model - pom.xml
 
-134. Step 3 : Maven Build Life Cycle
+### Step 3 : Maven Build Life Cycle
 
-135. Step 4 : How does Maven Work?
+### Step 4 : How does Maven Work?
 
-136. Step 5 : Important Maven Commands
+### Step 5 : Important Maven Commands
 
 ## Section 14: Congratulations
 
-137. Bonus Lecture
+### Bonus Lecture
 
-138. Spring Master Class - Congratulations on Completing the Course
+### Spring Master Class - Congratulations on Completing the Course
