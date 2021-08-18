@@ -1014,7 +1014,7 @@ Add these to pom.xml:
 </dependency>
 <dependency>
     <groupId>org.springframework.data</groupId>
-    <artifactId>spring-data-rest-hal-browser</artifactId>
+    <artifactId>spring-data-rest-hal-explorer</artifactId>
 </dependency>
 ```
 
@@ -1022,11 +1022,56 @@ Actuator exposes a lot of REST services. They are compliant with "HAL" standard.
 
 We use a "HAL" browser to view the data. Ex: <http://api.opensupporter.org/hb2/browser.html#/api/v1>
 
+After adding those 2 dependencies to pom.xml, visit <http://localhost:8080/actuator>
 
+Note it's kind of empty.
+
+Add `management.endpoints.web.exposure.include=*` to your .properties file. Then reload and note how many new things are showing up. Note this is not good practice to enable all endpoints.
+
+Go to <http://localhost:8080/explorer/index.html#uri=http://localhost:8080/actuator> and see that you can use this built in HAL browser to explore the API.
+
+See commit `02c3d29c101d3acbd4c83033b5ab64bf2e055260`.
 
 ### Step 10 : Spring Boot Developer Tools
 
+If we edit java source code, we need to restart the entire REST server for the changes to take effect. PITA, right?
+
+This is where this dep helps:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+```
+
+See commit `830ca3f67df7f9ef1ffb377abfbc01f3ac588f24`.
+
 ## Section 9: Spring Level 5 - Spring AOP
+
+### Section Introduction - Spring AOP
+
+### Spring AOP Github Folder
+
+### COURSE UPDATE - AOP Dependency Removed From Spring Initializr
+
+### Step 01 - Setting up AOP Example - Part 1
+
+### Step 02 - Setting up AOP Example - Part 2
+
+### Step 03 - Defining an @Before advice
+
+### Step 04 - Understand AOP Terminology - Pointcut, Advice, Aspect and Join Point
+
+### Step 05 - Using @After, @AfterReturning, @AfterThrowing advices
+
+### Step 06 - Using @Around advice to implement performance tracing
+
+### Step 07 - Best Practice : Use common Pointcut Configuration
+
+### Step 08 - Quick summary of other Pointcuts
+
+### Step 09 - Creating Custom Annotation and an Aspect for Tracking Time
 
 ## Section 10: Spring Level 6 - Interacting with Databases - Spring JDBC, JPA and Spring Data
 
