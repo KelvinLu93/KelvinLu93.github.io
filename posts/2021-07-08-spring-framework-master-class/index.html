@@ -27,7 +27,7 @@ What is a dependency??
 Dependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.
 Typical code may have a service that is tightly coupled with some implementation of an algorithm, i.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":2,"name":"Spring Framework Master Class","item":"/posts/2021-07-08-spring-framework-master-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":4743,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/2021-07-08-spring-framework-master-class/"},"headline":"Spring Framework Master Class | Henry Post","datePublished":"2021-07-08T10:24:50-05:00","dateModified":"2021-07-08T10:24:50-05:00","wordCount":4957,"publisher":{"@type":"Person","name":"C. Wang","logo":{"@type":"ImageObject","url":"/images/icon.png"}},"description":"From https:\/\/udemy.com\/course\/spring-tutorial-for-beginners\/.\nWork for this can be found at https:\/\/github.com\/HenryFBP\/Spring-Framework-Master-Class\nWork from the instructor can be found at https:\/\/github.com\/in28minutes\/spring-master-class\/tree\/master\nSection 1. Intro to Spring What is Spring?\nA: It\u0026rsquo;s a Dependency Injection Framework.\nWhat is DI?\nWhat is a dependency??\nDependency Below, the web layer depends on the business layer. The business layer depends on the data layer. Etc.\nTypical code may have a service that is tightly coupled with some implementation of an algorithm, i."}</script><meta property="og:title" content="Spring Framework Master Class | Henry Post">
 <meta property="og:type" content="article">
 <meta property="og:image" content="/images/icon.png">
 <meta property="og:url" content="/posts/2021-07-08-spring-framework-master-class/">
@@ -99,7 +99,7 @@ Typical code may have a service that is tightly coupled with some implementation
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-clock mr-1"></i>
-<span>23 min read</span>
+<span>24 min read</span>
 </div>
 <div class="mr-6 my-2">
 <i class="fas fa-folder mr-1"></i>
@@ -1047,6 +1047,42 @@ public class BeforeAspect {
 </code></pre>
 <p>See commit <code>16df3012328d30bbd3aa3facaba002d593d3de46</code>.</p>
 <h3 id=step-04---understand-aop-terminology---pointcut-advice-aspect-and-join-point>Step 04 - Understand AOP Terminology - Pointcut, Advice, Aspect and Join Point</h3>
+<h4 id=definitions>Definitions</h4>
+<ul>
+<li>Aspect: A modularization of a concern that cuts across multiple objects. Each aspect focuses on a specific crosscutting functionality</li>
+<li>Join point: A point during the execution of a script, such as the execution of a method or property access</li>
+<li>Advice: Action taken by an aspect at a particular join point</li>
+<li>Pointcut: A regular expression that matches join points. An advice is associated with a pointcut expression and runs at any join point that matches the pointcut</li>
+</ul>
+<h4 id=syntax-example>Syntax example</h4>
+<p>This pointcut syntax, a:</p>
+<pre><code>execution(* com.henry.spring.aop.springaop.business.*.*(..)
+</code></pre>
+<p>Versus this, b:</p>
+<pre><code>execution(* com.henry.spring.aop.springaop..*.*(..)
+</code></pre>
+<p>In a, we only intercept all calls inside the <code>business</code> sub-package. But in b, we intercept a superset of the calls in a &ndash; we intercept all calls within the <code>springaop</code> package, not just <code>springaop.business</code>.</p>
+<p>&mldr;</p>
+<h4 id=explanation-of-annotations>Explanation of annotations</h4>
+<pre><code class=language-java>@Configuration
+@Aspect
+public class UserAccessAspect {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Before(&quot;execution(* com.henry.spring.aop.springaop.business.*.*(..))&quot;) //pass a pointcut to before annotation
+    public void before(JoinPoint joinPoint){
+        //what do I do?
+        logger.info(&quot;Checking user access&quot;);
+        logger.info(&quot;Allowing execution - {}&quot;,joinPoint);
+    }
+}
+</code></pre>
+<p>The body of the method <code>before</code> is called &ldquo;advice&rdquo;.
+The argument, <code>joinPoint</code>, passed to <code>before</code> is a specific interception of any method call.</p>
+<p>&mldr;</p>
+<p>See <a href=https://www.baeldung.com/spring-aop-pointcut-tutorial>https://www.baeldung.com/spring-aop-pointcut-tutorial</a> and <a href=https://stackoverflow.com/questions/3371431/what-is-weaving>https://stackoverflow.com/questions/3371431/what-is-weaving</a> for more information.</p>
+<p>&ldquo;Weaving&rdquo; is the process of linking metadata to types/methods/classes. This can be done pre, during, and post compilation.</p>
 <h3 id=step-05---using-after-afterreturning-afterthrowing-advices>Step 05 - Using @After, @AfterReturning, @AfterThrowing advices</h3>
 <h3 id=step-06---using-around-advice-to-implement-performance-tracing>Step 06 - Using @Around advice to implement performance tracing</h3>
 <h3 id=step-07---best-practice--use-common-pointcut-configuration>Step 07 - Best Practice : Use common Pointcut Configuration</h3>
