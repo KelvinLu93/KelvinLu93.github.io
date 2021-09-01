@@ -1151,7 +1151,57 @@ See commit `16df3012328d30bbd3aa3facaba002d593d3de46`.
 
 ### Step 04 - Understand AOP Terminology - Pointcut, Advice, Aspect and Join Point
 
+#### Definitions
+
+- Aspect: A modularization of a concern that cuts across multiple objects. Each aspect focuses on a specific crosscutting functionality
+- Join point: A point during the execution of a script, such as the execution of a method or property access
+- Advice: Action taken by an aspect at a particular join point
+- Pointcut: A regular expression that matches join points. An advice is associated with a pointcut expression and runs at any join point that matches the pointcut
+
+#### Syntax example
+
+This pointcut syntax, a:
+
+    execution(* com.henry.spring.aop.springaop.business.*.*(..)
+
+Versus this, b:
+
+    execution(* com.henry.spring.aop.springaop..*.*(..)
+
+In a, we only intercept all calls inside the `business` sub-package. But in b, we intercept a superset of the calls in a -- we intercept all calls within the `springaop` package, not just `springaop.business`.
+
+...
+
+#### Explanation of annotations
+
+```java
+@Configuration
+@Aspect
+public class UserAccessAspect {
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Before("execution(* com.henry.spring.aop.springaop.business.*.*(..))") //pass a pointcut to before annotation
+    public void before(JoinPoint joinPoint){
+        //what do I do?
+        logger.info("Checking user access");
+        logger.info("Allowing execution - {}",joinPoint);
+    }
+}
+```
+
+The body of the method `before` is called "advice". 
+The argument, `joinPoint`, passed to `before` is a specific interception of any method call.
+
+...
+
+See <https://www.baeldung.com/spring-aop-pointcut-tutorial> and <https://stackoverflow.com/questions/3371431/what-is-weaving> for more information.
+
+"Weaving" is the process of linking metadata to types/methods/classes. This can be done pre, during, and post compilation.
+
 ### Step 05 - Using @After, @AfterReturning, @AfterThrowing advices
+
+
 
 ### Step 06 - Using @Around advice to implement performance tracing
 
