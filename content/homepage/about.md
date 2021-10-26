@@ -54,6 +54,12 @@ widget:
 
 I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
 
+Working full time at U.S. Bank currently and doing a master's program at NYU, so I will not be updating this site very much.
+
+For more cool content, see [my paper for NYU regarding "Automated software vulnerability discovery, exploitation, and patching"](https://github.com/HenryFBP/NYU-CS-GY-6813/blob/master/research-paper/papers/final/Henry%20Post%20-%20NYU-CS-GY-6813%20-%20Automated%20software%20vulnerability%20discovery%2C%20exploitation%2C%20and%20patching%20-%20Combined%20Paper.fodt) and related work ([extra 1](https://github.com/HenryFBP/NYU-CS-GY-6813),[extra 2](https://github.com/HenryFBP/NYU-CS-GY-6813-research-paper-work))
+
+[Use LibreOffice to read my paper.](https://www.libreoffice.org/)
+
 In my free time I like to bake, go cycling, play video games, and scuba dive (if I have enough time).
 
 Check out <u>[my GitHub](https://github.com/HenryFBP/)</u> for code that I make, and message me if you'd like to get tutored on something or have any questions.
