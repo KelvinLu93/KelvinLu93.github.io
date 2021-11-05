@@ -50,7 +50,7 @@ widget:
 
 ## Self Introduction
 
-<i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i>
+<i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i> 
 
 I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
 
