@@ -14,11 +14,11 @@ title: Contact
 
 ### Business
 
-    resplendent [dot] falconeer [at] g/m/a/i/l [dot] c.o.m
+    resplendent [dot] falconeer [at] g/m/a/i/l [dot] c/o/m
 
 ### Personal
 
-    henryfbp+hugosite [at] g/m/a/i/l [dot] c.o.m
+    henryfbp+hugosite [at] g/m/a/i/l [dot] c/o/m
 
 If you want a fast response, I suggest using Google Hangouts to ping me in Gmail.
 
