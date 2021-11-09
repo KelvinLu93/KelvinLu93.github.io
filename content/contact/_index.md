@@ -12,6 +12,8 @@ title: Contact
 
 ## Email
 
+(remove the extra stuff...)
+
 ### Business
 
     resplendent [dot] falconeer [at] g/m/a/i/l [dot] c/o/m
