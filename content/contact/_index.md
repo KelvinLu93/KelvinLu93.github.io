@@ -12,7 +12,7 @@ title: Contact
 
 ## Email
 
-(remove the extra stuff...)
+(remove the e/x/t/r/a \[stuff\]...)
 
 ### Business
 
