@@ -1,10 +1,10 @@
 ---
-title: Henry Post
+title: Kelvin Lu
 draft: false
-role: Security Analyst
+role: Data Analyst
 avatar: images/pictures-of-me/headshot.jpg
 bio: "
-This is the website of me, Henry Post, and it has my work experience, personal projects, and general info about me.
+This is the website of me, Kelvin Lu, and it has my work experience, personal projects, and general info about me.
 "
 organization:
   name: U.S. Bank
@@ -12,16 +12,16 @@ organization:
 social:
   - icon: envelope
     iconPack: fas
-    url: mailto:resplendent.falconeer@gmail.com
+    url: mailto:kelvinlu93@icloud.com 
+  - icon: laptop
+    iconPack: fas
+    url: https://www.linkedin.com/in/kelvinlu93/ 
+  #- icon: laptop
+  #  iconPack: fas
+  #  url: https://github.com/HenryFBP/dotfiles/
   # - icon: twitter
   #   iconPack: fab
   #   url: https://example.com/
-  - icon: github
-    iconPack: fab
-    url: https://github.com/HenryFBP
-  - icon: laptop
-    iconPack: fas
-    url: https://github.com/HenryFBP/dotfiles/
 
 weight: 1
 widget:
