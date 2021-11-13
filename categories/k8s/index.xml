@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>k8s on Henry Post</title><link>/categories/k8s/</link><description>Recent content in k8s on Henry Post</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2021 &lt;a href="http://henrypost.net/">Henry Post&lt;/a></copyright><lastBuildDate>Sat, 05 Jun 2021 13:52:36 -0500</lastBuildDate><atom:link href="/categories/k8s/index.xml" rel="self" type="application/rss+xml"/><item><title>Devops Project CI/CD With Jenkins, Ansible, Docker, K8s</title><link>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</link><pubDate>Sat, 05 Jun 2021 13:52:36 -0500</pubDate><guid>/posts/2021-06-05-devops-project-cicd-with-jenkins-ansible-docker-k8s/</guid><description>The course The course is below.
-https://udemy.com/course/valaxy-devops/
-My work My work on this course can be found at the following links:
-https://github.com/HenryFBP/valaxydevopsproject https://github.com/HenryFBP/valaxydevopsproject-hello-world-app Forked from respectively:
-https://github.com/yankils/Simple-DevOps-Project https://github.com/yankils/hello-world Section 1: Introduction 1. Introduction We&amp;rsquo;ll use Git for SCM, Jenkins for CICD pipelines, Maven as build tool, Ansible for configuraton mgmt post-deployment, Docker to host aps, k8s to manage our docker containers.
-We&amp;rsquo;ll use AWS to set all of this up.
-DevOps Flow Devs usually push code to Git.</description></item></channel></rss>
