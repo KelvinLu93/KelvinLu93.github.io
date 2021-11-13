@@ -52,7 +52,8 @@ widget:
 
 <i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i> 
 
-fluffy bunny  sdfst I'm a Security Analyst at U.S. Bank, Illinois Institute of Technology alumni, and used to work as a private tutor for Python, Java, and web development.
+
+super cool programmer pogggers
 
 Working full time at U.S. Bank currently and doing a master's program at NYU, so I will not be updating this site very much.
 
