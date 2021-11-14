@@ -1,5 +1,5 @@
 baseURL: /
-title: Henry Post
+title: Kelvin Lu
 
 # Comment when installing using Hugo Modules
 #theme: eureka
@@ -8,7 +8,7 @@ theme: eureka
 
 paginate: 3
 copyright: >
-  &copy; 2021 <a href="http://henrypost.net/">Henry Post</a>
+  &copy; 2021 <a href="https://kelvinlu93.github.io">Kelvin Lu</a>
 enableEmoji: true
 enableGitInfo: false
 summaryLength: 75

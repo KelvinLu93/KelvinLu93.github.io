@@ -1,0 +1,27 @@
+From 3c68ce69d5108f8d404d22d2d85b482fded61825 Mon Sep 17 00:00:00 2001
+From: henryfbp <henryfbp@gmail.com>
+Date: Sat, 13 Nov 2021 21:13:17 -0500
+Subject: [PATCH 1/1] fix icon
+
+---
+ content/homepage/about.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/content/homepage/about.md b/content/homepage/about.md
+index 4144ffb..9092b7b 100644
+--- a/content/homepage/about.md
++++ b/content/homepage/about.md
+@@ -13,8 +13,8 @@ social:
+   - icon: envelope
+     iconPack: fas
+     url: mailto:kelvinlu93@icloud.com 
+-  - icon: laptop
+-    iconPack: fas
++  - icon: linkedin
++    iconPack: fab
+     url: https://www.linkedin.com/in/kelvinlu93/ 
+   #- icon: laptop
+   #  iconPack: fas
+-- 
+2.32.0.windows.2
+

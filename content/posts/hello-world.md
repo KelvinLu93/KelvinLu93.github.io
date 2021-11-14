@@ -2,7 +2,7 @@
 title: Hello World
 description:
 toc: true
-authors: ["Henry Post"]
+authors: ["Kelvin Lu"]
 tags: []
 categories: []
 series: []
