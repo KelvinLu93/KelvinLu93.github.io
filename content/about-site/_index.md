@@ -6,11 +6,7 @@ title: About Site
 
 A: Yes!
 
-[My old site](https://github.com/HenryFBP/henryFBP.github.io-old) was based on Jekyll, and I don't recommend it.
-
-I am currently migrating it into Hugo, which this site is running on.
-
-This site is built with Github Actions. See these links.
+This site was built for me by my friend [Henry](https://github.com/HenryFBP). It uses the [Hugo](https://gohugo.io/documentation/) framework and Github Actions. See these links.
 
 - <https://github.com/HenryFBP/henryfbp.github.io/actions>
 - <https://github.com/HenryFBP/henryfbp.github.io/blob/master/.github/workflows/gh-pages.yml>
@@ -24,7 +20,3 @@ Clone [this repo](http://github.com/HenryFBP/henryFBP.github.io) and just edit i
 Alternatively, you can [fork it](https://github.com/HenryFBP/henryfbp.github.io/fork).
 
 See [this link](https://www.wangchucheng.com/en/docs/hugo-eureka/getting-started/) and [this intro link](https://gohugo.io/getting-started/installing/) for more info.
-
-## Q: Nice favicon. Where's it from?
-
-A: Thanks! My good friend [@flexadecimal](https://github.com/flexadecimal/) made it. He is a very talented C programmer. Go give him free coffee and car parts.
