@@ -13,8 +13,8 @@ social:
   - icon: envelope
     iconPack: fas
     url: mailto:kelvinlu93@icloud.com 
-  - icon: laptop
-    iconPack: fas
+  - icon: linkedin
+    iconPack: fab
     url: https://www.linkedin.com/in/kelvinlu93/ 
   #- icon: laptop
   #  iconPack: fas
