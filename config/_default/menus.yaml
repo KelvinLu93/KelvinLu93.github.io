@@ -1,11 +1,11 @@
 main:
   - name: Contact
     url: /contact/
-    weight: 2
+    weight: 1
 
   - name: About Site
     url: /about-site/
-    weight: 1
+    weight: 7
 
   - name: Posts
     url: /posts/
@@ -21,22 +21,22 @@ main:
 
   - name: Resume
     url: /resume/
-    weight: 6
+    weight: 2
 
   - name: Skills
     url: /skills/
-    weight: 7
+    weight: 6
 
-  - name: Certifications
-    url: /certifications/
-    weight: 8
+  #- name: Certifications
+  #  url: /certifications/
+  #  weight: 8
 
-  - name: Why me?
-    url: /why-me/
-    weight: 9
+  #- name: Why me?
+  #  url: /why-me/
+  #  weight: 9
 
   # - name: Docs
   #   url: /docs/
-  #   weight: 10
+  #   weight: 11
 
 #     about-site contact posts hobbies projects resume skills certifications why-me?
