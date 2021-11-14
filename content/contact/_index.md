@@ -4,11 +4,11 @@ title: Contact
 
 ## Github
 
-<https://github.com/HenryFBP/>
+<https://github.com/kelvinlu93/>
 
 ## LinkedIn
 
-<https://www.linkedin.com/in/henryfbp/>
+<https://www.linkedin.com/in/kelvinlu93/>
 
 ## Email
 
@@ -16,12 +16,12 @@ title: Contact
 
 ### Business
 
-    resplendent [dot] falconeer [at] g/m/a/i/l [dot] c/o/m
+    everpunctualep [at] g/m/a/i/l [dot] c/o/m
 
 ### Personal
 
-    henryfbp+hugosite [at] g/m/a/i/l [dot] c/o/m
+    kelvinlu93 [at] i/c/l/o/u/d [dot] c/o/m
 
-If you want a fast response, I suggest using Google Hangouts to ping me in Gmail.
+If you want a fast response, I suggest using [Telegram](https://telegram.org/) to ping [me](https://t.me/keldorado)
 
-I don't check my email often but check Google Hangouts more frequently.
+I check my email daily (roughly) but Telegram notif's are more likely to produce a rapid response.
