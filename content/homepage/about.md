@@ -2,7 +2,7 @@
 title: Kelvin Lu
 draft: false
 role: Data Analyst
-avatar: images/pictures-of-me/headshot.jpg
+avatar: images/pictures-of-me/headshot2.jpg
 bio: "
 This is the website of me, Kelvin Lu - it has my work experience, personal projects, and general info about me.
 "
