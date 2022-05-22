@@ -4,10 +4,9 @@ description:
 toc: true
 authors: ["Kelvin Lu"]
 tags: []
-categories: []
+categories: [updates, blog, misc]
 series: []
-date: '2022-5-02T11:32:52'
-lastmod: '2022-5-02T11:32:52'
+date: 2022-5-02T11:32:52
 featuredImage: ''
 draft: false
 ---

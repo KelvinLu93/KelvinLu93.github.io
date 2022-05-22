@@ -4,10 +4,9 @@ description: Academic paper
 toc: true
 authors: "Kelvin Lu"
 tags: 
-categories: 
+categories: [math, papers, research]
 series: 
-date: '2022-5-18'
-lastmod: '2022-5-18'
+date: 2022-05-18T21:43:11
 featuredImage: ''
 draft: false
 ---
