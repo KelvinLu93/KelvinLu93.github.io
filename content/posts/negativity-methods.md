@@ -13,6 +13,6 @@ draft: false
 ---
 
 <br>
-<iframe src="/files/NegativityMethodsInQuantumTopology.pdf" style="height:1100px;width:100%;" title="Negativity Methods In Quantum Topology">
+<iframe src="/files/NegativityMethods.pdf" style="height:1100px;width:100%;" title="Negativity Methods In Quantum Topology">
 </iframe>
 <br>
