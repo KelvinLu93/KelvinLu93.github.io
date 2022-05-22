@@ -1,12 +1,14 @@
 ---
 title: Projects
+draft: true
 ---
+
+<!-- write up my own version for this sometime-->
 
 ## TOC
 
 <!-- TOC -->
 
-- [TOC](#toc)
 - [OSINT Dashboard: "Bowser"](#osint-dashboard-bowser)
 - [Using Big Data Analytics & Visualization: Improving Preparedness & Responsiveness to Fire Emergencies & Other Disasters](#using-big-data-analytics--visualization-improving-preparedness--responsiveness-to-fire-emergencies--other-disasters)
     - [Whitepaper](#whitepaper)
