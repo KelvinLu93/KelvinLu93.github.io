@@ -2,7 +2,7 @@
 title: Resume
 ---
 
-<iframe src="/files/resume.pdf" style="width:100%; height:-webkit-fill-available">
+<iframe src="/files/resume.pdf" style="width:100%; height:300px">
 </iframe>
 
 
