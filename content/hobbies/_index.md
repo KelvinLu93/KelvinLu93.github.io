@@ -22,11 +22,11 @@ Check out [my youtube channel](https://www.youtube.com/channel/UC-qVbl38eTSddfLo
 
 <table>
 <td>
-<img src="/images/food/food1.JPG" width="400"> </td>
+<img src="/images/food/food1.jpg" width="400"> </td>
 <td>
-<img src="/images/food/food2.JPG" width="400"> </td>
+<img src="/images/food/food2.jpg" width="400"> </td>
 <td>
-<img src="/images/food/food3.JPG" width="400"> </td>
+<img src="/images/food/food3.jpg" width="400"> </td>
 <td>
 <img src="/images/food/food4.jpg" width="400"> </td>
 
@@ -39,7 +39,7 @@ Check out [my youtube channel](https://www.youtube.com/channel/UC-qVbl38eTSddfLo
 <td>
 <img src="/images/food/food6.jpg" width="400"> </td>
 <td>
-<img src="/images/food/food7.JPG" width="400"> </td>
+<img src="/images/food/food7.jpg" width="400"> </td>
 </table>
 
 <table>

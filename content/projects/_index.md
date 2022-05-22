@@ -5,9 +5,12 @@ draft: true
 
 <!-- write up my own version for this sometime-->
 
+Hi, not much going on here for the moment. I shall add to this more soon<sup>(tm)</sup>
+
+<!-- block 1
 ## TOC
 
-<!-- TOC -->
+
 
 - [OSINT Dashboard: "Bowser"](#osint-dashboard-bowser)
 - [Using Big Data Analytics & Visualization: Improving Preparedness & Responsiveness to Fire Emergencies & Other Disasters](#using-big-data-analytics--visualization-improving-preparedness--responsiveness-to-fire-emergencies--other-disasters)
@@ -19,7 +22,7 @@ draft: true
 - [Mathematica ASCII Compression Algorithm](#mathematica-ascii-compression-algorithm)
 - [Desktop-in-a-suitcase](#desktop-in-a-suitcase)
 
-<!-- /TOC -->
+
 
 ## OSINT Dashboard: "Bowser"
 
@@ -77,9 +80,12 @@ We won both Dean's Choice and Best in Track for a total of two awards.
 During my work at OBPL as a librarian, I was involved with a program to replace about 6 or so computers that were very
 old. The only purpose these new computers would serve would be to provide access to a book catalogue website, nothing else.
 
+<!-- TODO: FIX overflow on some of the ```code blocks``` in the MD files! -->
+
+<!-- block 2
 ### Guides
 
-<!-- TODO: FIX overflow on some of the ```code blocks``` in the MD files! -->
+
 
 -   Backing up and restoring
     [(MD)](/files/opac-documentation/BACKING_UP_AND_RESTORING.txt)
@@ -134,4 +140,4 @@ The PCIE-16x cable for the graphics card had to be connected to an extension cab
 
 A power supply cable for a screen driver for an LCD panel was soldered to the GROUND and 5V leads of a molex connector attached to the power supply, making the power for the screen self-contained.
 
-A USB header to USB port to wifi dongle supplies wireless, and there is a free-hanging SSD for boot and other files.
+A USB header to USB port to wifi dongle supplies wireless, and there is a free-hanging SSD for boot and other files. -->
