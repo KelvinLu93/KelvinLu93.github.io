@@ -6,7 +6,7 @@ authors: ["Kelvin Lu"]
 tags: []
 categories: [math, papers, research]
 series: []
-date: 2022-5-20T17:43:22
+date: 2022-05-20T17:43:22
 featuredImage: ''
 draft: false
 ---
