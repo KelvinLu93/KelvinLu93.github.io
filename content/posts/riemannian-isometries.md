@@ -13,6 +13,6 @@ draft: false
 ---
 
 <br>
-<iframe src="/files/RiemannianIsometriesProblemsConvexPotentialTheory.pdf" style="height:1100px;width:100%;" title="Riemannian Isometries Problems Convex Potential Theory">
+<iframe src="/files/RiemannianIsometries.pdf" style="height:1100px;width:100%;" title="Riemannian Isometries Problems Convex Potential Theory">
 </iframe>
 <br>
