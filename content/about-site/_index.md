@@ -6,7 +6,7 @@ title: About Site
 
 A: Yes!
 
-This site was built for me by my friend [Henry](https://github.com/HenryFBP). It uses the [Hugo](https://gohugo.io/documentation/) framework and Github Actions. See these links.
+I built this site based heavily off the work of my friend [Henry](https://github.com/HenryFBP). He laid the foundation with which I was able to put my own spin on. It uses the [Hugo](https://gohugo.io/documentation/) framework and Github Actions. See these links.
 
 - <https://github.com/HenryFBP/henryfbp.github.io/actions>
 - <https://github.com/HenryFBP/henryfbp.github.io/blob/master/.github/workflows/gh-pages.yml>
