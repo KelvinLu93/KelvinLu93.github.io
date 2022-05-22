@@ -4,69 +4,72 @@ title: Hobbies
 
 ## Recreation
 
-I like to run and swim in my free time, and (rarely) will scuba dive.
+My workout activities of choice are cycling, lifting, and dancing.
 
-I cycle more now than running, as it's more convenient.
-
-Baking treats is another hobby of mine, and I like to give treats to my friends and family when I can.
+Learning new recipes is another hobby of mine, and I like to treat myself to good eats at the end of a workout sesh.
 
 Nature is something I love, and camping is super relaxing for me.
 
 ## Music
 
-- Death Grips
-- Venetian Snares
-- FFF
-- Lauren Bousfield
-- Off Me Nut
-- Cardopusher
-- Spongebob Squarewave
-- **Hundreds** of other artists -- see <https://bandcamp.com/henryfbp>.
+I have played piano ever since I was 6! I've been classically trained and continue to play to this day. These days, I mostly play [random songs I find to be cool](https://www.instagram.com/stories/highlights/17890042715433897/) To a much lesser extent, I can play guitar and violin as well.
 
-### Recently Wishlisted Bandcamp Albums
+## Video Editing
 
-{{< bandcampwishlist >}}
+Check out [my youtube channel](https://www.youtube.com/channel/UC-qVbl38eTSddfLo-6yTH8A/featured) for a brief glimpse of my journey as a videographer. I edit my videos with the open source editor [kdenlive](https://kdenlive.org). If you are looking for a feature-rich and open source solution, I suggest you give it a try.
 
-### Recently Purchased Bandcamp Albums
+## Cooking
 
-{{< bandcamppurchases >}}
+<table>
+<td>
+<img src="/images/food/food1.JPG" width="400"> </td>
+<td>
+<img src="/images/food/food2.JPG" width="400"> </td>
+<td>
+<img src="/images/food/food3.JPG" width="400"> </td>
+<td>
+<img src="/images/food/food4.jpg" width="400"> </td>
+
+</table>
+<table>
+<td>
+<img src="/images/food/food8.jpg" width="400"> </td>
+<td>
+<img src="/images/food/food9.jpg" width="400"> </td>>
+<td>
+<img src="/images/food/food6.jpg" width="400"> </td>
+<td>
+<img src="/images/food/food7.JPG" width="400"> </td>
+</table>
+
+<table>
+<td>
+<img src="/images/food/food11.jpg" width="800"> </td>
+<td>
+<img src="/images/food/food12.jpg" width="800"> </td>
+</table>
+
+<table>
+<td>
+<img src="/images/food/food5.jpg" width="800"> </td>
+<td>
+<img src="/images/food/food10.jpg" width="400"> </td>
+</table>
 
 ## Video Games
 
-### Minecraft, and more
+### FPS
 
-Minecraft is likely my most-played game, with over 1,500 hours.
+BR's are a super fun, invigorating genre that lends itself to a dynamic and unique outcome everytime - no 2 rounds are identical
 
-Factorio, Terraria, and other derivatives are stuff I love.
+- Apex Legends
+- PUBG, competed in CBA - starter for Illini Blue and creator of "The spiderk strat"
+- Splitgate
+- Halo Infinite
 
-- Rimworld
-- Dwarf Fortress
-- Far Cry
-- Oxygen Not Included
+### Other
 
-### FPS/MP Shooter
-
-I also adore the Doom (DOS esp.) series and other good shooters.
-
-- Quake Eternal
-- Splitgate Arena Warfare
-- Wolfenstein
-- ULTRAKILL
-
-### Fighting
-
-Super Smash Brothers is great too.
-
-- Ultra Fight da Kyanta 2
-
-### Etc
-
-- Cogmind
-- Hackmud
-- Rust
-- Dyson Sphere Program
-- FATE
-- Castlevania (GBA games!)
-- Summon Night Swordcraft Story
-- Harvest Moon
-- WarioWare
+- League of Legends
+- Yugioh Master Duel
+- Hades
+- Minecraft

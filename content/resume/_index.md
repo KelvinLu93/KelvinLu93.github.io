@@ -13,146 +13,127 @@ See below for a shorter text version, or [click here to download a PDF version.]
 
 <!-- TOC -->
 
-- [TOC](#toc)
 - [Aside](#aside)
 - [Summary of employment](#summary-of-employment)
-    - [Application Security Automation Enablement, U.S. Bank](#application-security-automation-enablement-us-bank)
-    - [Security Analyst, U.S. Bank](#security-analyst-us-bank)
-    - [Private Tutor, Wyzant](#private-tutor-wyzant)
-    - [Librarian/IT Contractor, Martha's Vineyard, Massachusetts](#librarianit-contractor-marthas-vineyard-massachusetts)
-    - [Computer Science and ITM Tutor, Illinois Institute of Technology](#computer-science-and-itm-tutor-illinois-institute-of-technology)
-    - [Technician, uBreakiFix](#technician-ubreakifix)
-    - [Junior Engineer, Northside College Preparatory High School](#junior-engineer-northside-college-preparatory-high-school)
+    - [Accounts Manager, United Energy Services](#accounts-manager-united-energy-services)
+    - [Branch Customer Service Coordinator, TTI Inc.](#branch-customer-service-coordinator-tti-inc)
+    - [Procurement Specialist Support, Creation Technologies](#procurement-specialist-support-creation-technologies)
+    - [Teaching Assistant, University of Illinois](#teaching-assistant-university-of-illinois)
+    - [Orientation Leader, University of Illinois](#orientation-leader-university-of-illinois)
+    - [Accessible Media Specialist, University of Illinois](#accessible-media-specialist-university-of-illinois)
+    - [Office and Warehouse Assistant, Officemate International Corporation](#office--warehouse-assistant-officemate-international-corporation)
 - [Education](#education)
-    - [New York University](#new-york-university)
-    - [Illinois Institute of Technology](#illinois-institute-of-technology)
-    - [Northside College Preparatory High School](#northside-college-preparatory-high-school)
+    - [University of Illinois](#university-of-illinois)
+    - [William Rainey Harper College](#william-rainey-harper-college)
+    - [William Fremd High School](#william-fremd-high-school)
 - [Work](#work)
-    - [Application Security Automation and Enablement](#application-security-automation-and-enablement)
-    - [Security Analyst](#security-analyst)
-    - [Private Tutor](#private-tutor)
-    - [CS and ITM Tutor](#cs-and-itm-tutor)
-    - [Technician](#technician)
-    - [Librarian/IT Contractor](#librarianit-contractor)
-    - [Junior Engineer](#junior-engineer)
+    - [Accounts Manager](#accounts-manager)
+    - [Branch Customer Service Representative](#branch-customer-service-coordinator)
+    - [Procurement Specialist Support](#procurement-specialist-support)
+    - [Teaching Assistant](#teaching-assistant)
+    - [Orientation Leader](#orientation-leader)
+    - [Accessible Media Specialist](#accessible-media-specialist)
+    - [Office and Warehouse Assistant](#office-and-warehouse-assistant)
 
 <!-- /TOC -->
 
 ## Aside
 	
-Henry Post
+Kelvin Lu
 
 ## Summary of employment
 
-### Application Security Automation Enablement, U.S. Bank
-June 2021 - July 2021, 1 month
+### Accounts Manager, United Energy Services
+January 2022 - Present
 
-### Security Analyst, U.S. Bank
-May 2019 - June 2021, 2 years
+### Branch Customer Service Coordinator, TTI Inc.
+July 2019 - January 2020, 7 months 
 
-### Private Tutor, Wyzant
-Oct 2017 - May 2019, 19 months
+### Procurement Specialist Support, Creation Technologies
+November 2018 - June 2019, 8 months (Contractor Position)
 
-### Librarian/IT Contractor, Martha's Vineyard, Massachusetts
-July 2018
+### Teaching Assistant, University of Illinois
+July 2018 - August 2018, 2 months (Internship)
 
-### Computer Science and ITM Tutor, Illinois Institute of Technology
-Feb 2017 - Sep 2017, 6 months
+### Orientation Leader, University of Illinois
+May 2018 - July 2018, 2 months (Internship)
 
-### Technician, uBreakiFix
-May 2016 - Jul 2016, 3 months
+### Accessible Media Specialist, University of Illinois
+June 2017 - April 2018, 11 months
 
-### Junior Engineer, Northside College Preparatory High School
-2012 - 2015, 3 years
+### Office & Warehouse Assistant, Officemate International Corporation
+June 2013 - August 2013, 3 months
 
 ## Education
 
-### New York University
--   TBD
+### University of Illinois
+-   Urbana-Champaign, IL
+-   Graduated in 2018, Bachelor's in Economics
+-   Minor in Applied Statistics
+-   GPA 3.2/4.0
 
-### Illinois Institute of Technology
+### William Rainey Harper College
 
--   Chicago, IL
--   Graduated in 2020, Bachelor's in Information Technology Management (ITM)
--   Made the dean's list in Spring 2016, Fall 2018, Fall 2019.
--   Final Major GPA is 3.45
--   Overall GPA is 3.341
+-   Palatine, IL
+-   Certificates earned: Computers in Business
+-   GPA 4.0/4.0
 
-### Northside College Preparatory High School
+### William Fremd High School
 
--   Chicago, IL
--   Graduated in 2015
--   Studied AP Computer Science
--   Participated in TechCrew, a student-lead computer repair club which serviced the entire school and faculty.
--   Also participated in Dirt Actualizers, a gardening/sustainability club.
+-   Palatine, IL
+-   Illinois State Scholar (awarded based off GPA)
+-   Advanced Placement Scholar, with Distinction (awarded based off average AP test score)
+-   85th percentile class rank
+-   Participated in Speech Team, Model UN
 
 ## Work
 
-### Application Security Automation and Enablement
-> U.S. Bank
--   TBD
+### Accounts Manager 
+> United Energy Services
+- Licensed by Illinois Commerce Commission as a broker of commercial gas and electric utilities, creating and maintaining leads consisting of small to medium sized businesses
+- Manage contracts between Nicor/ComEd and commercial properties ranging from industrial to food service
+- Ensure they were price protected and term of contracts were up to date, rolling over accounts when necessary
 
-### Security Analyst
-> U.S. Bank
+### Branch Customer Service Coordinator
+> TTI Inc.
 
--   Analyzing C\#, Java, ASP.NET, PHP, and JS source code
--   Discussing implementation and security vulnerabilities with developers
--   Managing workload between multiple co-workers and prioritizing work items
--   Creating, disseminating, and maintaining documentation
+-   Responsible for entering new orders and change orders into in-house system from customer PO's, ensuring part numbers are 100% accurate to customer spec. 
+-   Support up to three Inside Sales Representatives in a given day with various tasks including; preparing their weekly backorder reports and verifying dock date's of in-transit PO's, compiling and presenting data in an intuitive and digestible package, allowing them to pinpoint high priority orders and action them accordingly
+-   Meet and communicate with ISR’s regarding market volatility within the industry, manufacturer shortages, parts entering obsolescence, and how to properly phase in up-to-date replacement parts across customer base
 
-### Private Tutor
-> Wyzant, Online and in Chicago
+### Procurement Specialist Support
+> Creation Technologies
 
--   <http://wyzant.com/Tutors/HenryFBP>
--   Teaching tutees online and in-person about various programming languages, technologies, and concepts.
--   Mainly done in Python, Java, HTML, CSS, and JavaScript.
--   Drawing diagrams
--   Scheduling online or in-person tutoring lessons
--   Pair programming
--   Creating lesson plans and exercises
--   Creating interactive programming challenges
--   Aiding in test/exam preparation
--   Creating pieces of example code to illustrate a point
--   Demonstrating underlying programming concepts
+-   Contractor position wherein multiple reports which were relevant to logistical function of business unit were managed, including Purchase Order Action Report, Global Item Analysis Report, and Sales Order Pegging Report, earning frequent praise from superiors with the degree of rigorous detail achieved
+-   Coordinated with suppliers to ensure data integrity on internal component database, averaging 3 additional revisal updates per month relative to prior employee in this role
+-   Maintained and updated various data attributes regarding components within Oracle, enabling more informed decisions to be made production-side
+-   Ensured data alignment on shipments an items within Oracle, allowing proper forecasting for manufacturing
+scheduled
 
-### CS and ITM Tutor
-> Illinois Institute of Technology
+### Teaching Assistant
+> University of Illinois
 
--   Tutored C, C++, Java, Python, digital circuitry (mux, demux, adders, LED grids, selectors)
--   Explained basic programming concepts and data structures such as OOP, lists, linked lists, binary trees, etc.
--   CS350: Computer Organization and Assembly Programming, was done in C and LC-3 assembly.
--   CS330: Algorithms, was done in Python
--   CS201: Accelerated Introduction to Computer Science, was done in Java.
--   The reason I left this job is simple. Private tutoring offered me better hours, better pay, and less stress.
-    Frequently I would find myself tutoring for 4 hours at a time with around 5 people, and private tutoring was much less stressful than that.
+-   Led in-class discussion of topics such as Money & Banking, Comparisons of Monetary Systems, Discounted Cash Flows, and Corporate Accounting Law
+-   Coordinated and led professional, academic, and social activities for ~30 students alongside fellow TA’s
+-   Internship as part of the [JESIE](https://publish.illinois.edu/jesie-lasprogram/about-jesie/) program under the College of LIberal Arts and Sciences 
 
-### Technician
-> uBreakiFix, Chicago
+### Orientation Leader
+> University of Illinois
 
--   Intake of damaged devices, handling workorder flow/time management, diagnosing smartphones/laptops, disassembly, repair, and reassembly of smartphones/laptops.
--   Malware removal, software installation and configuration.
--   Working with small electronics and laptops in-depth, part lookups by product ID numbers, troubleshooting.
--   The reason that my employment length at this job is so short is twofold.
-  - I had my Sophomore year of college after.
-  - My mom was terminally ill.
+-   Assisted an average of 10-15 incoming freshmen and transfers daily with signing up for fall classes
+-   Signed students up for classes faster than previous years’ rate by 20% 
+-   Facilitated communication between students and advisors
 
-### Librarian/IT Contractor 
-> Oak Bluffs Public Library, Massachusetts
+### Accessible Media Specialist
+> University of Illinois
 
--   After working for Oak Bluffs Public Library and replacing many of their old reference computers for a very low cost, I was commissioned by Falmouth Public Library to replicate this for FPL's aging reference computers.
--   This solution was to use the micro-computer known as the Raspberry Pi as a reference computer and configure it with a restricted desktop environment as well as strict web browsing settings, costing about $40 per unit and saving hundreds of dollars of the costs of buying an entire desktop.
--   In addition to cost savings, using a custom site blacklist meant absolute control over what sites patrons were allowed to visit (or not visit).
--   Day-to-day technological operations such as setting up/turning off PCs
--   Troubleshooting IT issues such as connection, computer operation, and printers.
--   Answering patrons' questions regarding printing, word processing software, phones, and all other technological questions.
--   Documenting procedures, protocols, and troubleshooting regarding the custom Raspberry Pi hardware solution.
--   The reason for this one-month employment is I was only visiting my relatives in Massachusetts, and decided to pick up a summer job. I did not expect to be doing contracting work, but it evolved into that after my IT skills were realized and applied by the library's director and word got around.
+-  Transcribed textbooks for vision-impaired students 
+-  Finished training one week faster than the typical employee
+-  Transcribed text at a rate of roughly 1 chapter per hour
 
-### Junior Engineer
-> Northside College Preparatory School
+### Office and Warehouse Assistant
+> Officemate International Corporation
 
--   Repaired student-owned computers and offered technical assistance of any kind/to the best of my and my peers’ abilities.
--   Worked with other students encountering hardware/software problems, such as broken hardware or questions about specific programs.
--   Set up computers by manually configuring them or mass-imaging ISOs onto them.
--   Replaced computer parts of the computers of students and faculty.
--   Did minor data recovery.
+-   Started as a warehouse assistant and got promoted to the office
+-   Handled phone calls with clients and corporate, and filling out orders
+-   Aided in efforts to modernize records-keeping from paper to Microsoft Access 
