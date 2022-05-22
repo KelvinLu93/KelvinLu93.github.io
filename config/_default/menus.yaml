@@ -5,7 +5,7 @@ main:
 
   - name: About Site
     url: /about-site/
-    weight: 7
+    weight: 6
 
   - name: Posts
     url: /posts/
@@ -23,9 +23,9 @@ main:
     url: /resume/
     weight: 2
 
-  - name: Skills
-    url: /skills/
-    weight: 6
+  #- name: Skills
+  #  url: /skills/
+  #  weight: 7
 
   #- name: Certifications
   #  url: /certifications/

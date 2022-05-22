@@ -1,6 +1,6 @@
 ---
 title: Projects
-draft: true
+draft: false
 ---
 
 <!-- write up my own version for this sometime-->
