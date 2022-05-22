@@ -8,6 +8,17 @@ draft: false
 <br>
 Hi, not much going on here for the moment. I shall add to this more soon<sup>(tm)</sup>
 
+## "Guitar Hero" Chartmaker
+
+That's a bit of a misnomer, but it's the best way to succinctly get the idea across. As you may know, Guitar Hero was a popular series of rhythm games that were notable in the 2010s, but by virtue of being a proprietary title, whether or not they had a certain song you wanted it to have was spotty, especially for the more..."musically eccentric" 
+
+That's where [Clone Hero](https://clonehero.net/) comes in. It's essentially a community-run, open source, PC port of Guitar Hero that supports playback of custom songs that anyone with the right tools can create. All you would need is the chart making software and an mp3 file of the desired song you wish to make a chart for. I decided I was uniquely well positioned to make these custom charts thanks to my background in playing real instruments as well as a long history of being an avid Guitar Hero player. I started creating charts occasionally and had two primary criteria for selecting songs:
+
+- There must not be a pre-existing chart someone else made 
+- It must be a song I thoroughly enjoy listening to
+
+I did a few charts in the beginning just to test the waters and hone the skill, as with the creation of any work, there is an art to it. After I felt I was adequate enough, I started taking on open requests by the community. 
+
 <!-- block 1
 ## TOC
 
