@@ -40,6 +40,13 @@ Before I get too lost in horological ramblings, I essentially decided back then,
 
 <img src="/images/movadoscreencap.png" />
 
+## A Corporate Analysis on Microsoft
+
+One of the classes I took in undergrad was financial economics. Our final project was to choose a company and analyze their company from a financial standpoint, create a powerpoint and present it to the class. Fun fact, I was the sole contributor for the aesthetic portion of the presentation, and I am quite proud of how it turned out. Our professor thought so too, because she gave us extra credit for being the best looking powerpoint. FYI, there was absolutely no mention at the onset of the project that any extra credit would be given for any reason, so this was quite a welcome surprise!
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS7vixkpW2aKE3EMVKJUGZVLMXNqHeZ819y3BGk4lNqIaB_mCfjfE3O--Sb3e30MQ/embed?start=false&loop=false&delayms=15000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
 <!-- block 1
 ## TOC
 
