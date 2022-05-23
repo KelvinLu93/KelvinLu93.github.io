@@ -12,12 +12,33 @@ Hi, not much going on here for the moment. I shall add to this more soon<sup>(tm
 
 That's a bit of a misnomer, but it's the best way to succinctly get the idea across. As you may know, Guitar Hero was a popular series of rhythm games that were notable in the 2010s, but by virtue of being a proprietary title, whether or not they had a certain song you wanted it to have was spotty, especially for the more..."musically eccentric" 
 
-That's where [Clone Hero](https://clonehero.net/) comes in. It's essentially a community-run, open source, PC port of Guitar Hero that supports playback of custom songs that anyone with the right tools can create. All you would need is the chart making software and an mp3 file of the desired song you wish to make a chart for. I decided I was uniquely well positioned to make these custom charts thanks to my background in playing real instruments as well as a long history of being an avid Guitar Hero player. I started creating charts occasionally and had two primary criteria for selecting songs:
+That's where [Clone Hero](https://clonehero.net/) comes in. It's essentially a community-run, open source, PC port of Guitar Hero that supports playback of custom songs that anyone with the right tools can create. All you would need is the chart making software and an mp3 file of the desired song you wish to make a chart for.
+
+<img src="/images/chscreenshot2.png" />
+
+ I decided I was uniquely well positioned to make these custom charts thanks to my background in playing real instruments as well as a long history of being an avid Guitar Hero player. I started creating charts occasionally and had two primary criteria for selecting songs:
 
 - There must not be a pre-existing chart someone else made 
 - It must be a song I thoroughly enjoy listening to
 
-I did a few charts in the beginning just to test the waters and hone the skill, as with the creation of any work, there is an art to it. After I felt I was adequate enough, I started taking on open requests by the community. 
+I did a few charts in the beginning just to test the waters and hone the skill, as with the creation of any work, there is an art to it. After I felt I was adequate enough, I started taking on open requests by the community. My works can be found below!
+
+<table><tr><td>
+<a href="https://drive.google.com/drive/folders/15mbC3amzeU66_5q_nLKOWbRYr2_I06D2?usp=sharing"><img src="/images/chgdicon.png" width="180"/></a>
+</td>
+<td>
+<a href="https://forms.gle/m4gGK8bhNgZCnV599"><img src="/images/chfficon.png" width="153" /></a>
+</td></tr></table>
+
+## Movado-themed Live Wallpaper
+
+Back around 2019, I decided to get into watch collecting as a hobby. I had a brief stint of being quite enamored by the Movado Museum. Although the prevailing sentiment of this watch by the enthusiast watch collecting community is one of condescension, I have long advocated that you should get what <i>you</i> like. And I did very much find a beautiful elegance in the Museum's simplicity.
+
+<img src="/images/origmovado.jpg" width="300" />
+
+Before I get too lost in horological ramblings, I essentially decided back then, to create a live wallpaper in the style of this watch. Using javascript and some clever manipulation of image assets, I was able to make a wallpaper of a big ol' clock resembling the Movado Museum, which polled the system clock on the machine it was running to accurately display the time. If you have wallpaper engine, you can open the .js file with it and your wallpaper will double as a timepiece. Here is a screenshot I took of it, at the time of writing this. Notice the positioning of the hands reflects the windows time display on the lower right. If you would like to have this as your wallpaper, you can download the files on [my github repo](https://github.com/KelvinLu93/MvdoMsm).
+
+<img src="/images/movadoscreencap.png" />
 
 <!-- block 1
 ## TOC
