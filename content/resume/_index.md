@@ -15,7 +15,7 @@ See below for a shorter text version, or [click here to download a PDF version.]
 
 - [Aside](#aside)
 - [Summary of employment](#summary-of-employment)
-    - [Accounts Manager, United Energy Services](#accounts-manager-united-energy-services)
+    - [Premium Auditor, Zurich North America](#premium-auditor-zurich)
     - [Branch Customer Service Coordinator, TTI Inc.](#branch-customer-service-coordinator-tti-inc)
     - [Procurement Specialist Support, Creation Technologies](#procurement-specialist-support-creation-technologies)
     - [Teaching Assistant, University of Illinois](#teaching-assistant-university-of-illinois)
@@ -27,7 +27,7 @@ See below for a shorter text version, or [click here to download a PDF version.]
     - [William Rainey Harper College](#william-rainey-harper-college)
     - [William Fremd High School](#william-fremd-high-school)
 - [Work](#work)
-    - [Accounts Manager](#accounts-manager)
+    - [Premium Auditor](#premium-auditor)
     - [Branch Customer Service Representative](#branch-customer-service-coordinator)
     - [Procurement Specialist Support](#procurement-specialist-support)
     - [Teaching Assistant](#teaching-assistant)
@@ -43,8 +43,8 @@ Kelvin Lu
 
 ## Summary of employment
 
-### Accounts Manager, United Energy Services
-January 2022 - Present
+### Premium Auditor, Zurich North America
+August 2022 - Present
 
 ### Branch Customer Service Coordinator, TTI Inc.
 July 2019 - January 2020, 7 months 
@@ -88,11 +88,11 @@ June 2013 - August 2013, 3 months
 
 ## Work
 
-### Accounts Manager 
-> United Energy Services
-- Licensed by Illinois Commerce Commission as a broker of commercial gas and electric utilities, creating and maintaining leads consisting of small to medium sized businesses
-- Manage contracts between Nicor/ComEd and commercial properties ranging from industrial to food service
-- Ensure they were price protected and term of contracts were up to date, rolling over accounts when necessary
+### Premium Auditor 
+> Zurich North America
+- Obtain payroll records and other documentation from enrolled subcontractors of OCIP/CCIP construction projects and compare them against reported payrolls compiled by the broker, documenting findings in audit writeups
+- Responsible for understanding and applying special considerations to projects as they vary from state to state
+- Secondary responsibilities include assisting vendor claims corrections, coordinating team meetings
 
 ### Branch Customer Service Coordinator
 > TTI Inc.

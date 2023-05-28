@@ -53,7 +53,7 @@ widget:
 <i><small>Opinions expressed are solely my own and do not express the views or opinions of my employer.</small></i> 
 
 
-I have worked within the Electronic Components Distribution industry in a logistics and supply chain capacity. I have experience in data aggregation, analysis, and inference. I have used excel for many years now and have taken advantage of its more advanced functionalities (vlookups, pivot tables, VBA, and the like). My wheelhouse also includes Oracle, Python, and much of the rest of Microsoft's Office Suite - namely Access.
+I currently work in corporate insurance as a premium auditor. I have experience in data aggregation, analysis, and inference. I have used excel for many years now and have taken advantage of its more advanced functionalities (vlookups, pivot tables, VBA, and the like). Previously, I've worked within the Electronic Components Distribution industry in a logistics and supply chain capacity. My wheelhouse also includes Oracle, Python, and much of the rest of Microsoft’s Office Suite - namely Access.
 
 Coming from a background in statistics, the idea of using metrics as a means to establish baselines and goals is a core tenet of my beliefs - one that has served me well in my prior procurement and distribution roles. In my time there, I have been given the opportunity to demonstrate my proficiency in the standard tools of the trade, as well as show my ability to learn as I go as such with suites developed in-house. 
 
