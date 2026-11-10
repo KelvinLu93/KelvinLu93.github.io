@@ -1,7 +1,7 @@
 ---
 title: Kelvin Lu
 draft: false
-role: Data Analyst, Inventory Planner, Procurement Specialist, Production Coordinator, Supply Chain Analyst
+role: Data Analyst, Premium Auditor, Inventory Planner, Procurement & Production Coordinator, Supply Chain Analyst
 avatar: images/pictures-of-me/headshot2.jpg
 bio: "
 This is the website of me, Kelvin Lu - it has my work experience, personal projects, and general info about me.
