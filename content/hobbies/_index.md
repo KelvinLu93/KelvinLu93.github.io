@@ -63,14 +63,11 @@ Check out [my youtube channel](https://www.youtube.com/channel/UC-qVbl38eTSddfLo
 BR's are a super fun, invigorating genre that lends itself to a dynamic and unique outcome everytime - no 2 rounds are identical
 
 - Apex Legends
-- PUBG, 
-    - competed in CBA - starter for Illini Blue and creator of "The spiderk strat"
 - Splitgate
 - Halo Infinite
 
 ### Other
 
 - League of Legends
-- Yugioh Master Duel
 - Hades
 - Minecraft

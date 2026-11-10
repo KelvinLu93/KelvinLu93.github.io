@@ -44,7 +44,7 @@ Kelvin Lu
 ## Summary of employment
 
 ### Premium Auditor, Zurich North America
-August 2022 - Present
+July 2022 - January 2026, 3 years & 6 months
 
 ### Branch Customer Service Coordinator, TTI Inc.
 July 2019 - January 2020, 7 months 
@@ -52,17 +52,8 @@ July 2019 - January 2020, 7 months
 ### Procurement Specialist Support, Creation Technologies
 November 2018 - June 2019, 8 months (Contractor Position)
 
-### Teaching Assistant, University of Illinois
-July 2018 - August 2018, 2 months (Internship)
-
-### Orientation Leader, University of Illinois
-May 2018 - July 2018, 2 months (Internship)
-
-### Accessible Media Specialist, University of Illinois
-June 2017 - April 2018, 11 months
-
-### Office & Warehouse Assistant, Officemate International Corporation
-June 2013 - August 2013, 3 months
+### Logistics Coordinator, Officemate International Corporation
+May 2016 - September 2018, 3 months (Contractor Position)
 
 ## Education
 
@@ -78,13 +69,6 @@ June 2013 - August 2013, 3 months
 -   Certificates earned: Computers in Business
 -   GPA 4.0/4.0
 
-### William Fremd High School
-
--   Palatine, IL
--   Illinois State Scholar (awarded based off GPA)
--   Advanced Placement Scholar, with Distinction (awarded based off average AP test score)
--   85th percentile class rank
--   Participated in Speech Team, Model UN
 
 ## Work
 
@@ -110,30 +94,9 @@ June 2013 - August 2013, 3 months
 -   Ensured data alignment on shipments an items within Oracle, allowing proper forecasting for manufacturing
 scheduled
 
-### Teaching Assistant
-> University of Illinois
-
--   Led in-class discussion of topics such as Money & Banking, Comparisons of Monetary Systems, Discounted Cash Flows, and Corporate Accounting Law
--   Coordinated and led professional, academic, and social activities for ~30 students alongside fellow TA’s
--   Internship as part of the [JESIE](https://publish.illinois.edu/jesie-lasprogram/about-jesie/) program under the College of LIberal Arts and Sciences 
-
-### Orientation Leader
-> University of Illinois
-
--   Assisted an average of 10-15 incoming freshmen and transfers daily with signing up for fall classes
--   Signed students up for classes faster than previous years’ rate by 20% 
--   Facilitated communication between students and advisors
-
-### Accessible Media Specialist
-> University of Illinois
-
--  Transcribed textbooks for vision-impaired students 
--  Finished training one week faster than the typical employee
--  Transcribed text at a rate of roughly 1 chapter per hour
-
-### Office and Warehouse Assistant
+### Logistics Coordinator
 > Officemate International Corporation
 
--   Started as a warehouse assistant and got promoted to the office
--   Handled phone calls with clients and corporate, and filling out orders
--   Aided in efforts to modernize records-keeping from paper to Microsoft Access 
+-   Coordinated daily shipping, receiving, and delivery operations to ensure timely and accurate transportation of goods.
+-   Monitored inventory levels, tracked shipments, and maintained accurate logistics records to support efficient supply chain operations.
+-   Communicated with vendors and carriers to resolve delivery issues, optimize transportation schedules, and maintain customer satisfaction.
